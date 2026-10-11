@@ -98,3 +98,21 @@
 > btw, what are the remaining phases?
 
 **Summary:** Only phase 2 remains, in 7 milestones (M1 foundation, M2 x86 interpreter with an automatic fallback, M3 assets and fonts, M4 engine core, M5 shell, M6 audio and input, M7 acceptance). Asked 12 questions; answers: emulate the game code, 50 Hz default (as a setting), XP Luna look, Standard font smoothing, the user supplies the XP fonts and `luna.msstyles` later, ToS in the canvas, View All Games with the Moeboid tile only, splash kept for about 2 s, empty Mail This slot, local git, Wine only on a hidden Xvfb display, unsupervised through M7. All decisions are in `docs/decisions.md`; items 10 and 11 are deferred with provisional defaults and saved as a reminder. Created a local git repository with the phase 1 state as the first commit (`5ec0b61`). Resumed the orchestrator for phase 2; it keeps `docs/progress.md` up to date.
+
+## 12
+
+> get the fonts from https://github.com/pjobson/Microsoft-Fonts
+
+**Summary:** The repository has no retail Windows XP folder and no `luna.msstyles`; its XP Media Center folder mixes versions (its Trebuchet MS Bold is version 5.00 from 2006). Installed into `fonts/`, from the Windows Server 2003 R2 folder (the same Windows generation as XP SP2/SP3): `tahoma.ttf` and `tahomabd.ttf` (version 3.15) and `trebucbd.ttf` (version 1.22), with MD5 values verified and sources in `fonts/SOURCES.md`. Tahoma's ASCII glyph hinting differs between versions 2.80, 2.95 and 3.15, so whether retail XP had exactly 3.15 is unverified. The orchestrator received the files; `luna.msstyles` is still missing.
+
+## 13
+
+> https://github.com/pazuzu156/KalebKlein/raw/refs/heads/master/Windows%20XP%20Theme%20Installer/Themes/Luna/Luna.msstyles
+
+**Summary:** The file is not Microsoft's Windows XP `luna.msstyles`. Its version resource says "AveStyle DLL" by Andreas Verhoeven (2008), and its resource layout (VARIANT, VMAP, RMAP, BCMAP, IMAGE, STREAM) is the Windows Vista/7 visual-style format, so it is a third-party recreation of Luna for Vista/7. Not installed into the project; the copy stays in the scratchpad. Asked the user whether to use it as a stand-in or look for the genuine XP file.
+
+## 14
+
+> i downloaded it to ./
+
+**Summary:** `XP Luna Theme/Luna/luna.msstyles` is very probably the genuine Windows XP SP3 file: Microsoft version information, the XP theme format (INI text resources and 558 bitmaps), a PE build date of 2008-04-13, and a 144-byte signature block at the end. Copied it to `fonts/luna.msstyles` (read-only) and recorded the evidence in `fonts/SOURCES.md`. Its settings confirm Trebuchet MS 10 pt bold captions, a 25 px caption bar and Tahoma 8 pt message-box text. The orchestrator now uses it instead of the placeholder frame. Added `/XP Luna Theme/` to `.gitignore`.

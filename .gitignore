@@ -13,3 +13,6 @@ __pycache__/
 # Build outputs
 /port/build/
 node_modules/
+
+# User download folder; the used copy is fonts/luna.msstyles
+/XP Luna Theme/
