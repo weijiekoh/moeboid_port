@@ -39,3 +39,14 @@ Date: 2026-10-11. Source: user answers to `docs/architecture.md` section 6 and l
 - Version control: local git repository in the project, commit at each verified step. No remote, no push.
 - Wine reference runs: only on a hidden X display (Xvfb unpacked from the Arch package into `tools/`, no system install), always through `tools/bin/nonet`. Never on the user's display `:0`.
 - Autonomy: run M1 to M7 without stopping. Stop only for a decision that belongs to the user, a missing file that blocks all remaining work, or a failed gate with no planned fallback.
+
+## Orchestrator decisions (phase 2)
+
+| # | Decision | Reason |
+|---|---|---|
+| O1 | XP Luna applies to the non-client frame only (title bar, caption buttons, border). Dialog controls and MessageBox buttons are classic (comctl32 v5 look) but use the Luna system colours (for example COLOR_3DFACE #ECE9D8). MessageBox text uses the NONCLIENTMETRICS message font (Tahoma 8 pt); captions use the Luna caption font (Trebuchet MS Bold 10 pt). | Windows XP themes client controls only for applications with a Common Controls 6.0 manifest; it themes the non-client area of every top-level window when a visual style is active (external knowledge). ZapSpot.exe has no RT_MANIFEST resource (verified: `assets/INDEX.md`, resource types CURSOR, BITMAP, ICON, DIALOG, STRING, RCDATA, GROUP_CURSOR, GROUP_ICON), and the launcher writes no `.manifest` file (verified: `analysis/reference/NOTES.md` layout: ZapSpot.exe, Moeboid.gam, ZapLock). Luna colour and metric values stay inferred until `fonts/luna.msstyles` is supplied. |
+| O2 | Guest memory map of the interpreter equals the Unicorn harness map (`docs/port-design.md` section 4). | Lets the existing harness and corpus compare both CPU backends without translation. |
+| O3 | The Python harness drives the C interpreter through `ctypes` and a Unicorn-compatible shim; the mock engine stays in Python for the M2 gate. | Reuses the verified mock and corpus (verification.md 1); no second mock implementation. |
+| O4 | TypeScript is converted with node's built-in `module.stripTypeScriptTypes`; no bundler. `typescript` and `playwright-core` are dev-only npm packages in the project `node_modules/` (git-ignored). Browser tests use the installed `/usr/bin/chromium` through `playwright-core`, headless, inside `tools/bin/nonet`. | No download of browser binaries; no npm package in the shipped page. |
+| O5 | Subagents never touch git. The orchestrator commits after each verified step. | One writer of the git index. |
+| O6 | Greyscale text model (decision 4b): hint at the target size, rasterize the hinted outline with 4x4 oversampling, 17 coverage levels, linear blend of text colour over the destination pixel; `gasp` decides mono or grey per size. Marked unproven. | Best-documented GDI standard-smoothing model available without Windows (fonts.md 10.2, 10.5). |
