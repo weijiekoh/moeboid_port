@@ -1,0 +1,55 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  font: 16px sans-serif;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Integer scale: main.ts sets width and height (CSS px) to a whole number of device pixels per
+   frame pixel. No smoothing (rendering.md 11). */
+#screen {
+  display: block;
+  image-rendering: pixelated;
+  outline: none;
+  background: #3333cc;
+}
+
+#start {
+  position: absolute;
+  padding: 12px 28px;
+  font: bold 20px sans-serif;
+  color: #fff;
+  background: #3333cc;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+#start:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+#start[hidden] {
+  display: none;
+}
+
+#status {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+}

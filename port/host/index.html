@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!--
+  Content-Security-Policy (the same policy also comes as an HTTP header from host/serve.py):
+  default-src 'none'            everything not listed below is blocked (fonts, frames, workers, media, objects)
+  script-src 'self'             the page scripts main.js, input.js, storage.js, audio.js from this origin
+             'wasm-unsafe-eval' WebAssembly.compile/instantiate of moeboid.wasm (no JavaScript eval)
+  style-src 'self'              style.css only; no inline style attributes (script sets CSSOM properties)
+  img-src blob: data:           cursor images made from pack data (M6) and the empty data: icon below
+  connect-src 'self'            fetch of moeboid.wasm, pack.bin, Moeboid.gam from this origin only
+  base-uri 'none', form-action 'none'   not covered by default-src; no base change, no form submission
+  Audio uses Web Audio buffers (no media element), so media-src stays 'none'.
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src blob: data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moeboid</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="main.js"></script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="screen" width="800" height="572" tabindex="0"></canvas>
+  <button id="start" type="button" disabled>Loading</button>
+  <p id="status" role="status"></p>
+</div>
+</body>
+</html>
