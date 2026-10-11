@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'">
+<title>web-test fixture</title>
+<link rel="stylesheet" href="fixture.css">
+</head>
+<body>
+<!-- Fixture for port/tests/browser/smoke.mjs: canvas fill, 1-pixel marker, wasm load. -->
+<canvas id="c" width="800" height="572"></canvas>
+<script>
+const ctx = document.getElementById("c").getContext("2d", { willReadFrequently: true });
+ctx.fillStyle = "#3333cc";                  // frame blue (decisions.md item 9)
+ctx.fillRect(0, 0, 800, 572);
+const img = ctx.createImageData(1, 1);      // marker pixel at (5,7)
+img.data.set([0xec, 0xe9, 0xd8, 0xff]);
+ctx.putImageData(img, 5, 7);
+console.log("fixture: canvas drawn");
+WebAssembly.instantiateStreaming(fetch("add.wasm"))
+  .then(({ instance }) => { window.wasmResult = instance.exports.add(2, 3); })
+  .catch((e) => { window.wasmResult = String(e); })
+  .finally(() => { window.fixtureDone = true; console.log("fixture: wasm result " + window.wasmResult); });
+</script>
+</body>
+</html>

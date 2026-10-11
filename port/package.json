@@ -1,0 +1,14 @@
+{
+  "name": "moeboid-port",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Moeboid browser port. Development tools only; the shipped page has no npm dependency.",
+  "type": "module",
+  "scripts": {
+    "test:browser": "../tools/bin/web-test --root tests/browser/fixtures tests/browser/smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.0",
+    "typescript": "7.0.2"
+  }
+}

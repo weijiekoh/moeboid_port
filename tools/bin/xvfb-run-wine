@@ -1,0 +1,88 @@
+#!/bin/bash
+# Run a command on a private hidden X display (Xvfb) inside tools/bin/nonet.
+#
+# Usage: xvfb-run-wine [-d N] [-f FILE] [--] CMD [ARGS...]
+#   -d N      use display :N (N >= 90). Default: the first free display from :90 to :189.
+#   -f FILE   write ":N" to FILE when the server accepts connections; remove FILE at the end.
+# Environment:
+#   XVFB_SCREEN   screen geometry (default 1024x768x24; holds the 1024x768 Wine virtual desktop)
+#   XVFB_LOG      Xvfb output (default tools/home/tmp/xvfbN.log)
+#
+# Xvfb and CMD run in one nonet process tree (private network namespace, loopback only).
+# Xvfb listens on the abstract socket of that namespace and on /tmp/.X11-unix/XN, so helper
+# tools outside the namespace (xhelper.py, import) can use DISPLAY=:N too. No TCP listener.
+# CMD gets DISPLAY=:N; WAYLAND_DISPLAY and XAUTHORITY are unset. When CMD ends, the script
+# waits up to 10 s for the wineserver of $WINEPREFIX to end, then stops Xvfb.
+# Exit status: the status of CMD (125 for a setup error). Never uses display :0.
+set -u
+T="$(cd "$(dirname "$0")/.." && pwd)"
+XVFB="$T/xvfb/usr/bin/Xvfb"
+
+if [ "${1:-}" != "--in-nonet" ]; then
+    exec "$T/bin/nonet" "$0" --in-nonet "$@"
+fi
+shift
+
+die() { echo "xvfb-run-wine: $*" >&2; exit 125; }
+
+# Refuse to run outside a private network namespace (only "lo" in this namespace).
+[ "$(awk 'NR > 2 { sub(":", "", $1); print $1 }' /proc/net/dev | tr '\n' ' ')" = "lo " ] \
+    || die "not inside a private network namespace"
+
+disp="" file=""
+while [ $# -gt 0 ]; do
+    case "$1" in
+    -d) disp="${2:?}"; shift 2 ;;
+    -f) file="${2:?}"; shift 2 ;;
+    --) shift; break ;;
+    -*) die "unknown option $1" ;;
+    *) break ;;
+    esac
+done
+[ $# -gt 0 ] || die "no command"
+[ -x "$XVFB" ] || die "missing $XVFB"
+if [ -n "$disp" ]; then
+    [[ "$disp" =~ ^[0-9]+$ ]] && [ "$disp" -ge 90 ] || die "display must be a number >= 90"
+    candidates="$disp"
+else
+    candidates="$(seq 90 189)"
+fi
+
+xpid=""
+cleanup() {
+    if [ -n "${WINEPREFIX:-}" ] && command -v wineserver >/dev/null 2>&1; then
+        timeout 10 wineserver -w >/dev/null 2>&1
+    fi
+    if [ -n "$xpid" ]; then
+        kill "$xpid" 2>/dev/null
+        wait "$xpid" 2>/dev/null
+    fi
+    [ -n "$file" ] && rm -f "$file"
+}
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM HUP
+
+screen="${XVFB_SCREEN:-1024x768x24}"
+ready=""
+for n in $candidates; do
+    [ -e "/tmp/.X$n-lock" ] || [ -e "/tmp/.X11-unix/X$n" ] && continue
+    log="${XVFB_LOG:-$T/home/tmp/xvfb$n.log}"
+    mkdir -p "$(dirname "$log")"
+    "$XVFB" ":$n" -nolisten tcp -noreset -screen 0 "$screen" >"$log" 2>&1 &
+    xpid=$!
+    for _ in $(seq 100); do
+        kill -0 "$xpid" 2>/dev/null || break
+        if xdpyinfo -display ":$n" >/dev/null 2>&1; then ready=$n; break; fi
+        sleep 0.1
+    done
+    [ -n "$ready" ] && break
+    kill "$xpid" 2>/dev/null; wait "$xpid" 2>/dev/null; xpid=""
+done
+[ -n "$ready" ] || die "no Xvfb display started (tried: $(echo $candidates | cut -c1-40))"
+
+export DISPLAY=":$ready"
+unset WAYLAND_DISPLAY XAUTHORITY
+[ -n "$file" ] && echo "$DISPLAY" > "$file"
+"$@"
+exit $?

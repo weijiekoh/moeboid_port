@@ -85,11 +85,46 @@ Imports (host, module `env`): `host_log(ptr, len)`, `host_trace(ptr, len)` (test
 
 ## 7. Resource pack (`pack.bin`)
 
-Little-endian. Header `MPAK`, u32 version 1, u32 count, then entries {u32 name_len, name (ASCII, upper-case resource names as in `assets/index.json`, prefixed `zap/`, `gam/`, `font/`, `data/`), u32 offset, u32 length}, then data. Contents: every RCDATA, STRING, DIALOG, CURSOR, BITMAP resource of ZapSpot.exe and Moeboid.gam byte-exact, glyph atlases, tables. The whole `Moeboid.gam` file is passed separately to `port_init`.
+Producer: `port/tools/mkpack.py` (`port/build.sh pack`). Reader: `src/text/atlas.h` (`mpack_open`, `mpack_next`, `mpack_find`). Details and checks: `port/tools/README.md`.
 
-## 8. Glyph atlases
+- Little-endian. Header: `MPAK`, u32 version 1, u32 count. Directory: count x {u32 name_len, name (ASCII, no NUL), u32 offset (from file start), u32 length}. Then data; each entry starts on a 4-byte boundary (padding 0). Entries are sorted bytewise by name.
+- `zap/<TYPE>/<NAME>`, `gam/<TYPE>/<NAME>`: every resource of ZapSpot.exe (82) and Moeboid.gam (60), byte-exact. TYPE: CURSOR, BITMAP, ICON, DIALOG, STRING, RCDATA, GROUP_CURSOR, GROUP_ICON. NAME: the stored name (upper case, with suffix, for example `gam/RCDATA/HELP.ZML`, `zap/RCDATA/SLB-BEVELEDGES.GIF`) or the decimal id (`zap/STRING/63` = string block 63, ids 992..1007; `zap/CURSOR/1`). The type is part of the name because names collide across types (STRING 1 and CURSOR 1 in ZapSpot.exe).
+- `font/<FACE>-<px>-<weight>-<MONO|GRAY>`: glyph atlases (section 8). FACE is upper case without spaces (ARIAL, MSSANSSERIF, TAHOMA, TREBUCHETMS).
+- `data/...`: tables of other tools that define `pack_entries()` (`mkpack.TABLE_PRODUCERS`; now `data/luna/NORMALBLUE` from `mkluna.py`). A producer whose input is missing is skipped with a warning.
+- mkpack compares the sha256 and file offset of every resource with `assets/index.json` (verified: 142 of 142 equal). Output is deterministic (verified: same sha256 in repeated runs). `extracted/Moeboid.gam` is copied to `port/build/web/Moeboid.gam` and passed separately to `port_init`.
 
-One entry per (face, px, weight, underline-independent, mode) where mode is `mono` or `gray` (GDI standard smoothing model, decision 4b, unproven). Per character 0x20..0xFF: width, height, left offset, top offset (from baseline), advance, coverage bytes (mono: 0/1; gray: 0..16 levels as GDI GGO_GRAY4 style, inferred). Per font: tmHeight, tmAscent, tmDescent, tmInternalLeading, tmExternalLeading, tmAveCharWidth, underline position and thickness. Producer: `port/tools/mkatlas.*`. Consumer: `src/text/`.
+## 8. Glyph atlases, image buffer, text API
+
+Producer: `port/tools/mkatlas.py` with the FreeType helper `mkatlas_ft.c`. Consumer: `src/text/atlas.c` (loader), `src/text/gdi_text.c` (GDI text). Rebuild, FreeType version, checks, unproven parts: `port/tools/README.md`.
+
+**Atlases.** One entry per (face, px, weight, mode); underline and strikeout are drawn at run time. px = -lfHeight (em height in pixels). Contents: Arial regular and bold at 8, 10, 11, 12, 14, 18, 24, 36 px (mono); grey atlases exactly where the `gasp` table allows grey: regular 8, 18, 24, 36, bold 8, 11, 12, 14, 18, 24, 36; MS Sans Serif em 11 (the 13 px strike of `sserife.fon`, exact copy); Tahoma 11 regular and bold (MessageBox and small caption font, 8 pt; gasp allows no grey at 9..16 ppem); Trebuchet MS bold 13 (Luna caption, 10 pt; mono and grey). Tahoma and Trebuchet MS come from the user files (flag UNVERIFIED: XP-generation font, version unverified); without the files mkatlas writes Arial placeholders (flag PLACEHOLDER).
+
+Blob (little-endian): header 120 bytes, glyph records, coverage bytes.
+
+| Offset | Type | Field |
+|---|---|---|
+| 0 | 4 bytes | `MATL` |
+| 4 | u16 | version 1 |
+| 6 | u8 | mode: 0 mono (coverage 0/1), 1 grey (coverage 0..16) |
+| 7 | u8 | flags: 0x01 PLACEHOLDER, 0x02 RASTER (bitmap strike), 0x04 HINTED, 0x08 gasp GRIDFIT at px, 0x10 gasp DOGRAY at px (grey allowed), 0x20 UNVERIFIED |
+| 8 | u16 | px (em height) |
+| 10 | u16 | weight (400, 700) |
+| 12, 14, 16 | u16 | first char, last char (inclusive), default char (for bytes outside first..last). TrueType: 0x00..0xFF (cp1252 to Unicode, undefined bytes to the same code point, unmapped to .notdef); MS Sans Serif: 0x20..0xFF, default 0x81 |
+| 18..30 | i16 x 7 | tmHeight, tmAscent, tmDescent, tmInternalLeading, tmExternalLeading, tmAveCharWidth, tmMaxCharWidth |
+| 32, 34 | i16 | underline offset (top row = baseline row + offset), underline thickness |
+| 36, 38 | i16 | strikeout offset (top row = baseline row - offset), thickness (inferred, unused) |
+| 40 | 4 bytes | reserved (0) |
+| 44 | char[32] | face, NUL-padded ("Arial", "MS Sans Serif", "Tahoma", "Trebuchet MS") |
+| 76 | char[32] | source file and version |
+| 108, 112, 116 | u32 | glyph table offset (120), coverage offset, coverage length |
+
+Glyph record, 16 bytes, one per char first..last: i16 left (first column relative to the pen x), i16 top (rows above the baseline: first row = baseline row - top), u16 width, u16 height, i16 advance, u16 0, u32 coverage offset. Coverage: width x height bytes, top row first. Baseline row = y + tmAscent (the first row below the baseline).
+
+Metric rules (TrueType; values for Arial equal the fonts.md 10.4 table, verified by test): tmAscent and tmDescent from VDMX yMax and -yMin at px (fallback: usWinAscent/usWinDescent scaled); tmInternalLeading = tmHeight - px; tmExternalLeading = max(0, lineGap - ((winAscent + winDescent) - (hhea ascender - descender))) scaled; tmAveCharWidth = OS/2 xAvgCharWidth scaled; underline = post underlinePosition (negated) and underlineThickness (at least 1) scaled. Scaling rounds half away from zero (inferred). Advances: the `hdmx` device width when hdmx lists px (GDI behaviour, inferred), else the FreeType hinted advance. Grey atlases carry the mono advances, so layout does not depend on smoothing (inferred).
+
+**Image buffer** (`src/gfx/image.h`, shared with M4): `Image {int32_t w, h, stride (pixels per row); uint32_t *px (row-major, top-down); uint8_t keyed}`. Pixel = uint32 0xAABBGGRR, bytes R, G, B, A in memory (canvas order). Colour = Windows COLORREF (0x00BBGGRR) | 0xFF000000 (`IMG_RGB(r, g, b)`). Keyed images mark transparent pixels with `IMG_KEY` = (255, 0, 255, alpha 0); the RGB stays magenta so that grey text over the key tints as on Windows.
+
+**Text API** (`src/text/gdi_text.h`): `TextFonts` holds every atlas of the pack (`text_fonts_load`). `gdi_font_select(&font, fonts, face, lfHeight, lfWeight, underline, strikeout)` maps a LOGFONT (lfHeight < 0: em height; > 0: tmHeight; weight >= 550 selects 700). `gdi_get_text_metrics`, `gdi_get_text_extent_point32` (cx = sum of advances, cy = tmHeight). `gdi_ext_text_out(&image, x, y, options, &rect, str, len, &font, &state)`: options `GDI_ETO_CLIPPED`, `GDI_ETO_OPAQUE`; state = text colour, background colour, background mode (`GDI_TRANSPARENT`, `GDI_OPAQUE`: cell x..x+cx, y..y+tmHeight filled first), smoothing switch. Pen starts at (x, y + tmAscent), no kerning, no extra spacing. Grey atlas only when smoothing is on and gasp allows grey at px; grey blend per channel `(dst * (16 - v) + text * v + 8) >> 4`, alpha 255 (decision O6, unproven). Underline: thickness rows from baseline row + offset, across cx, text colour.
 
 ## 9. Lockstep trace
 

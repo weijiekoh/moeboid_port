@@ -16,3 +16,8 @@ node_modules/
 
 # User download folder; the used copy is fonts/luna.msstyles
 /XP Luna Theme/
+# Infrastructure records (small text files)
+!/tools/INFRA.md
+!/tools/xvfb/
+/tools/xvfb/*
+!/tools/xvfb/SOURCE.md

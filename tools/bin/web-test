@@ -1,0 +1,38 @@
+#!/bin/bash
+# Run one Playwright test script against a static server on 127.0.0.1, inside tools/bin/nonet,
+# with headless /usr/bin/chromium (playwright-core from port/node_modules).
+#
+# Usage: web-test [--root DIR] [--out DIR] [--timeout SEC] SCRIPT.mjs [ARGS...]
+#   --root DIR     directory to serve (default: port/build/web)
+#   --out DIR      report and screenshots (default: port/build/browser-tests/<script name>)
+#   --timeout SEC  limit for the script (default 60)
+# SCRIPT.mjs default-exports  async function (t)  with t = { page, context, browser, baseURL,
+#   root, outDir, args, assert, log }. A thrown error fails the test.
+# The run fails (exit 1) also on an uncaught page error, or on any request to a host other
+# than 127.0.0.1 (such requests are aborted and listed). Report: <out>/report.json with every
+# request, response status and console message.
+# Environment: WEB_TEST_CHROMIUM (default /usr/bin/chromium), WEB_TEST_ARGS (extra Chromium
+# arguments, space-separated), WEB_TEST_NO_SANDBOX=1 (disable the Chromium sandbox).
+set -u
+T="$(cd "$(dirname "$0")/.." && pwd)"
+ROOT="$(cd "$T/.." && pwd)"
+
+if [ "${1:-}" != "--in-nonet" ]; then
+    exec "$T/bin/nonet" "$0" --in-nonet "$@"
+fi
+shift
+
+die() { echo "web-test: $*" >&2; exit 2; }
+[ "$(awk 'NR > 2 { sub(":", "", $1); print $1 }' /proc/net/dev | tr '\n' ' ')" = "lo " ] \
+    || die "not inside a private network namespace"
+[ -d "$ROOT/port/node_modules/playwright-core" ] || die "missing port/node_modules/playwright-core (npm install in port/)"
+
+# Headless only: no X or Wayland display. Temporary files (Chromium profile) stay in the project.
+unset DISPLAY WAYLAND_DISPLAY XAUTHORITY
+mkdir -p "$T/home/tmp"
+TMPDIR="$(mktemp -d "$T/home/tmp/web-test.XXXXXX")" || die "mktemp failed"
+export TMPDIR
+trap 'rm -rf "$TMPDIR"' EXIT
+
+node "$ROOT/port/tests/browser/run.mjs" "$@"
+exit $?
