@@ -116,3 +116,7 @@
 > i downloaded it to ./
 
 **Summary:** `XP Luna Theme/Luna/luna.msstyles` is very probably the genuine Windows XP SP3 file: Microsoft version information, the XP theme format (INI text resources and 558 bitmaps), a PE build date of 2008-04-13, and a 144-byte signature block at the end. Copied it to `fonts/luna.msstyles` (read-only) and recorded the evidence in `fonts/SOURCES.md`. Its settings confirm Trebuchet MS 10 pt bold captions, a 25 px caption bar and Tahoma 8 pt message-box text. The orchestrator now uses it instead of the placeholder frame. Added `/XP Luna Theme/` to `.gitignore`.
+
+## Event (not a prompt): phase 2 report received
+
+**Summary:** The orchestrator finished phase 2 (M1 to M7, last commit e7a8413). The original `Moeboid.gam` runs unchanged on a C x86 interpreter in wasm, and `port/build.sh verify` passes 74 of 74 checks (re-checked in `port/tests/results/verify.txt`). Start it with `port/run.sh` and open http://127.0.0.1:8000/. Glyph pixels, greyscale smoothing, XP dialog geometry and the retail XP font versions remain unproven, and the details are in `docs/exactness.md`. Deferred decisions #10 (quirks, including a newly found use-after-free crash on CREDITS after a game) and #11 (FSIN/FCOS values) now wait for the user.
