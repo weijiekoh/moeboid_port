@@ -1,19 +1,19 @@
 # Phase 2 progress
 
-Last update: 2026-10-11 (orchestrator). Plan: `docs/architecture.md` section 7. Contract: `docs/port-design.md`. Decisions: `docs/decisions.md`.
+Last update: 2026-10-11 11:10 (orchestrator). Plan: `docs/architecture.md` section 7. Contract: `docs/port-design.md`. Decisions: `docs/decisions.md`.
 
 | Milestone | Status | Gate | Gate result |
 |---|---|---|---|
 | M0 Decisions | done | answers recorded | `docs/decisions.md` |
 | M1 Foundation | done (2fc8234) | timer unit tests reproduce timing.md section 5 table | pass: 8 native test programs (orchestrator re-run), table exact for 1/10.0144/15.625/54.925 ms; node smoke 76 checks; headless Chromium click-to-start and CSP |
-| M2 CPU | in progress | per-instruction-form differential test against Unicorn, corpus hashes equal | - |
+| M2 CPU | done (fc1bb3a) | per-instruction-form differential test against Unicorn, corpus hashes equal | pass: 15677 addresses, 280 forms, 156770 states, 0 unexplained mismatches (orchestrator re-run); recordings identical on 3 backends; option (d) confirmed, no fallback |
 | M3 Assets and fonts | done (fe61941) | GIF output equals engine rules for 81 GIFs; atlas advances equal `hdmx` | pass: 81 GIFs, 258 frames, 0 pixel differences (re-run by orchestrator); 0/2304 advances differ from hdmx; sserife exact; pack deterministic |
 | Luna frame (from luna.msstyles) | done (dbeb924) | frame metrics and colours equal NORMALBLUE_INI | pass: 192 checks |
-| Engine ZML renderer | in progress | line breaks and positions equal Wine mono-font captures | - |
+| Engine ZML renderer | done (32f89cf) | line breaks and positions equal Wine captures | pass: all captured pages, same line breaks, max 1 px position difference |
 | Infra (Xvfb, browser tests) | done (6a32e41) | Wine runs on hidden Xvfb display; headless Chromium in nonet | pass: Xvfb package verified (sha256 + gpg); Wine frame captured on hidden display, no window on :0; web-test blocks non-loopback requests |
-| M4 Engine core | not started | corpus with real engine equals reference; frame pixel checks | - |
-| M5 Shell | not started | layout and colour equal Wine captures except text artefacts; no network | - |
-| M6 Audio and input | not started | trigger timing, sample identity, focus pause | - |
+| M4 Engine core | in progress | corpus with real engine equals reference; frame pixel checks | - |
+| M5 Shell | in progress (dialog component first) | layout and colour equal Wine captures except text artefacts; no network | - |
+| M6 Audio and input | in progress (host side) | trigger timing, sample identity, focus pause | - |
 | M7 Acceptance | not started | full check suite, packaging | - |
 
 ## Open issues
