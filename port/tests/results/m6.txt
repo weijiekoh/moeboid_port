@@ -1,0 +1,107 @@
+M6 host audio and input: test results
+Date: 2026-10-11. Chromium 153.0.8010.52 headless (playwright-core 1.64.0) inside tools/bin/nonet,
+through tools/bin/web-test, root port/build/web (port/build.sh host; pack.bin from mkpack.py).
+Commands:
+  source tools/env.sh
+  port/build.sh host
+  tools/bin/web-test port/tests/browser/audio_wav.mjs     # (a) WAV decoding, sound id contract
+  tools/bin/web-test port/tests/browser/audio_sched.mjs   # (b) scheduling keeps tick spacing
+  tools/bin/web-test port/tests/browser/audio_focus.mjs   # (c) mute on blur, kinds 6/7
+  tools/bin/web-test port/tests/browser/input_keys.mjs    # (d) key mapping, WM_CHAR, pointer
+Result: 4 of 4 PASS. Every request went to 127.0.0.1 (network guard of web-test).
+
+Summary
+(a) 15 of 15 sounds: rate, channels, frame count and float32 samples (sha256 of 128544 samples)
+    equal the Python reference decode of the phase 1 assets (audio_wav_ref.py). SOUND_TABLE and
+    op constants equal src/core/sound_ids.h; every WAV in pack.bin has an id. 10 synthetic RIFF
+    cases follow the engine rules. The real page creates the AudioContext at 48000 Hz (device
+    rate of headless Chromium) and decodes 15 sounds after the click.
+(b) 62 commands over 54 fake host frames (16 ms, a 48 ms and a 120 ms gap): every start time =
+    at_ms / 1000 + constant (spacing exact across frames); rendered impulses at exactly 32 samples
+    per ms of tick spacing (max deviation 0 samples); 16 same-tick pairs start in the same sample;
+    5 commands older than LATENCY_S (50 ms) start at the frame time; u32 clock wrap; STOP of one
+    voice and of all voices at their scheduled time.
+(c) blur, focus, visibilitychange hidden/visible: kinds 6, 7, 6, 7, no repeats; output 0 in the
+    mute windows (event time + 50 ms), the ramp continues at the running position after unmute
+    (sources keep running); a GLOBALFOCUS sound stays audible.
+(d) 137 synthetic key events (US, German, French, Russian layouts; NumLock on and off; F1..F12;
+    Ctrl, Alt, AltGr, dead key) and 11 cp1252 cases without mismatch; 20 trusted key sequences
+    with the expected port_input events and defaultPrevented (F5 does not reload; F10 and
+    Alt+Y send no key-down); 12 trusted pointer sequences at scale 2 (move dedupe, capture,
+    chord, middle ignored, drag-in); framePos at device pixel ratio 1.5: 2400 of 2400 points.
+
+Output
+=== audio_wav
+audio_wav_ref: 15 sounds
+[test]  1 SND_GAMEOPEN             11025 Hz  8-bit  10253 frames sha256 b22842f8f3a08d45 equal
+[test]  2 SND_GAMEOVER_HIGHSCORE   11025 Hz  8-bit  10176 frames sha256 74b8110c32ac60e2 equal
+[test]  3 SND_GAMEOVER             11025 Hz  8-bit   6538 frames sha256 b49dcef694b4ac77 equal
+[test]  4 SND_GAMESTART            8000 Hz 16-bit  16415 frames sha256 be56089608946ea2 equal
+[test]  5 SND_LOSELIFE             11025 Hz  8-bit   3821 frames sha256 f698ecfa6bf29b45 equal
+[test]  6 SND_MOEBEATS             11025 Hz  8-bit   1652 frames sha256 05ff613c16e1a18f equal
+[test]  7 SND_MOEBGROWTH           11025 Hz  8-bit   4513 frames sha256 f2af3c7a12e06230 equal
+[test]  8 SND_NEWBADDIEGOOD        11025 Hz  8-bit   1932 frames sha256 3890049abcaca6e9 equal
+[test]  9 SND_NEWBADDIEBAD         11025 Hz  8-bit   2029 frames sha256 a1c59003c00befd3 equal
+[test] 10 SND_RANDBG               11025 Hz  8-bit  19993 frames sha256 83de16bed8f25272 equal
+[test] 11 SND_EXTRALIFE            11025 Hz 16-bit   6786 frames sha256 07ff04005297db9f equal
+[test] 12 SND_BTNCLICK             11025 Hz  8-bit    480 frames sha256 404ff2ede8d2832b equal
+[test] 13 SND_POPUP                11025 Hz  8-bit   1692 frames sha256 fba3e98617141d7b equal
+[test] 14 SND_OPENSHELL            11025 Hz  8-bit  31863 frames sha256 6ea5946045d9bce9 equal
+[test] 15 SND_CLOSESHELL           11025 Hz  8-bit  10401 frames sha256 8f755d28637260e5 equal
+[test] sample identity: 15 sounds, 128544 samples equal the Python reference
+[test] parseWav RIFF rules: 10 synthetic cases pass
+[test] page: moeboid: audio: 15 sounds, 48000 Hz
+PASS
+exit 0
+=== audio_sched
+[test] LATENCY_S = 0.05; 54 frames, 67 start() calls, 47 rendered impulses
+[test] start times: 62 commands at at_ms/1000 + -0.950 s (exact spacing over all frames), 5 older than 50 ms clamped to the frame time
+[test] rendered: 62 impulses at 32 samples per ms of tick time, max deviation 0 samples; 16 same-tick pairs start in the same sample
+[test] startTime wrap and clamp: [1.0290000000000001,1.071,2,2.05]
+[test] STOP: levels [[10,0],[140,0.5],[149,0.5],[160,0.25],[260,0],[400,0]]
+PASS
+exit 0
+=== audio_focus
+[test] events [[6,0,0],[7,0,0],[6,0,0],[7,0,0]]; muted [[0,false],[0.2,true],[0.3,false],[0.4,true],[0.44,true],[0.5,false],[0.52,false]]
+[test] mute windows (samples at 32000 Hz): [[8000,11200],[14400,17600]] = event time + 50 ms
+[test] ramp: silent while muted, continues at the running position after unmute: 32000 samples, 0 differ
+[test] GLOBALFOCUS sound (CloseShell) stays audible while muted: 32000 samples, 0 differ
+PASS
+exit 0
+=== input_keys
+[test] key table: 137 key events, 11 cp1252 cases, 0 mismatches
+[test] ok   press ArrowLeft: [[1,37,0],[2,37,0]] prevented [ArrowLeft:P]
+[test] ok   Space: [[1,32,0],[9,32,0],[2,32,0]] prevented [Space:P]
+[test] ok   KeyY held (auto-repeat): [[1,89,0],[9,121,0],[1,89,1],[9,121,1],[2,89,0]] prevented [KeyY:P KeyY:P]
+[test] ok   F10 (WM_SYSKEYDOWN): [] prevented [F10:-]
+[test] ok   F5 (credits quirk 't'; no reload): [[1,116,0],[2,116,0]] prevented [F5:P]
+[test] ok   F3: [[1,114,0],[2,114,0]] prevented [F3:P]
+[test] ok   F4: [[1,115,0],[2,115,0]] prevented [F4:P]
+[test] ok   F2 (not used: browser keeps it): [[1,113,0],[2,113,0]] prevented [F2:-]
+[test] ok   Alt+KeyY (WM_SYSKEYDOWN; key-up kept): [[2,89,0]] prevented [AltLeft:- KeyY:-]
+[test] ok   NumpadDecimal, NumLock off: [[1,46,0],[2,46,0]] prevented [NumpadDecimal:P]
+[test] ok   Numpad3, NumLock off: [[1,34,0],[2,34,0]] prevented [Numpad3:P]
+[test] ok   NumpadDecimal, NumLock on (VK_DECIMAL, 'n' quirk): [[1,110,0],[9,46,0],[2,110,0]] prevented [NumpadDecimal:P]
+[test] ok   Numpad3, NumLock on ('c' quirk): [[1,99,0],[9,51,0],[2,99,0]] prevented [Numpad3:P]
+[test] ok   Numpad5, NumLock on ('e' quirk): [[1,101,0],[9,53,0],[2,101,0]] prevented [Numpad5:P]
+[test] ok   Shift+KeyA: [[1,16,0],[1,65,0],[9,65,0],[2,65,0],[2,16,0]] prevented [ShiftLeft:- KeyA:P]
+[test] ok   Control+KeyC: [[1,17,0],[1,67,0],[9,3,0],[2,67,0],[2,17,0]] prevented [ControlLeft:- KeyC:-]
+[test] ok   Enter: [[1,13,0],[9,13,0],[2,13,0]] prevented [Enter:P]
+[test] ok   Escape: [[1,27,0],[9,27,0],[2,27,0]] prevented [Escape:P]
+[test] ok   Tab: [[1,9,0],[9,9,0],[2,9,0]] prevented [Tab:P]
+[test] ok   type credits: [[1,67,0],[9,99,0],[2,67,0],[1,82,0],[9,114,0],[2,82,0],[1,69,0],[9,101,0],[2,69,0],[1,68,0],[9,100,0],[2,68,0],[1,73,0],[9,105,0],[2,73,0],[1,84,0],[9,116,0],[2,84,0],[1,83,0],[9,115,0],[2,83,0]] prevented [KeyC:P KeyR:P KeyE:P KeyD:P KeyI:P KeyT:P KeyS:P]
+[test] ok   pointer move to (100, 50): [[3,100,50]]
+[test] ok   pointer move inside the same frame pixel: []
+[test] ok   pointer left down: [[4,100,50]]
+[test] ok   pointer right down (chord): [[516,100,50]]
+[test] ok   pointer right up (chord): [[517,100,50]]
+[test] ok   pointer move outside with left captured: [[3,-3,-8]]
+[test] ok   pointer left up outside: [[5,-3,-8]]
+[test] ok   pointer middle click (ignored): [[3,10,10]]
+[test] ok   pointer right click: [[516,10,10],[517,10,10]]
+[test] ok   pointer move to (799, 571): [[3,799,571]]
+[test] ok   pointer move to (0, 0): [[3,0,0]]
+[test] ok   pointer left drag from outside into the canvas, release inside (no button message): [[3,20,30]]
+[test] framePos at dpr 1.5, scale 2: 2400 points, 0 wrong
+PASS
+exit 0

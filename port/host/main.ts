@@ -24,6 +24,7 @@ interface PortExports {
   port_storage_get_ptr(): number;
   port_storage_get_len(): number;
   port_storage_load(p: number, n: number): number;
+  port_now(): number;
 }
 
 const ADV_FRAME = 1;
@@ -77,7 +78,10 @@ function fitCanvas(canvas: HTMLCanvasElement, w: number, h: number): void {
 async function start(module: WebAssembly.Module, pack: Uint8Array, gam: Uint8Array, clickTime: number): Promise<void> {
   const canvas = $<HTMLCanvasElement>("screen");
   const button = $<HTMLButtonElement>("start");
-  const audio: PortAudio = createAudio(); // inside the click gesture
+  // M6 audio: AudioContext inside the click gesture; sounds decoded from pack.bin.
+  const audio: PortAudio = createAudio();
+  const nSounds = audio.load(pack);
+  if (audio.ctx) console.info(`moeboid: audio: ${nSounds} sounds, ${audio.ctx.sampleRate} Hz`);
   const decoder = new TextDecoder("latin1");
   let ex: PortExports;
   const text = (p: number, n: number): string => decoder.decode(new Uint8Array(ex.memory.buffer, p, n));
@@ -115,11 +119,16 @@ async function start(module: WebAssembly.Module, pack: Uint8Array, gam: Uint8Arr
     return;
   }
 
-  attachInput(canvas, W, H, (kind, a, b, t) => {
-    ex.port_input(kind, a, b, t);
-  });
-  window.addEventListener("blur", () => audio.setActive(false));
-  window.addEventListener("focus", () => audio.setActive(true));
+  // M6 input: focus loss sends kind 6 and mutes audio, focus gain kind 7 and unmutes.
+  attachInput(
+    canvas,
+    W,
+    H,
+    (kind, a, b, t) => {
+      ex.port_input(kind, a, b, t);
+    },
+    (active) => audio.setActive(active),
+  );
   ex.port_input(IN_START, 0, 0, Math.floor(clickTime) >>> 0);
 
   const ctx = canvas.getContext("2d", { alpha: false });
@@ -140,8 +149,10 @@ async function start(module: WebAssembly.Module, pack: Uint8Array, gam: Uint8Arr
       ctx.putImageData(new ImageData(px, W, H), 0, 0);
     }
     if (flags & ADV_SOUND) {
+      // M6: start times keep the clock spacing of the commands (audio.ts startTime).
       const n = ex.port_sound_cmds(soundBuf);
-      audio.commands(new Uint32Array(ex.memory.buffer, soundBuf, n * 4), n);
+      const now = ex.port_now();
+      audio.commands(new Uint32Array(ex.memory.buffer, soundBuf, n * 4), n, now);
     }
     if (flags & ADV_STORAGE) {
       const p = ex.port_storage_get_ptr();
