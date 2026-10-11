@@ -1,6 +1,6 @@
 # Phase 2 progress
 
-Last update: 2026-10-11 12:30 (orchestrator). Plan: `docs/architecture.md` section 7. Contract: `docs/port-design.md`. Decisions: `docs/decisions.md`.
+Last update: 2026-10-11 13:30 (orchestrator). Plan: `docs/architecture.md` section 7. Contract: `docs/port-design.md`. Decisions: `docs/decisions.md`.
 
 | Milestone | Status | Gate | Gate result |
 |---|---|---|---|
@@ -12,15 +12,13 @@ Last update: 2026-10-11 12:30 (orchestrator). Plan: `docs/architecture.md` secti
 | Engine ZML renderer | done (32f89cf) | line breaks and positions equal Wine captures | pass: all captured pages, same line breaks, max 1 px position difference |
 | Infra (Xvfb, browser tests) | done (6a32e41) | Wine runs on hidden Xvfb display; headless Chromium in nonet | pass: Xvfb package verified (sha256 + gpg); Wine frame captured on hidden display, no window on :0; web-test blocks non-loopback requests |
 | M4 Engine core | done (1075e2b) | corpus with real engine equals reference; frame pixel checks | pass: lockstep identical per tick for 5 cases (orchestrator re-run); 221 engine checks; title frame equals Wine mono capture except moving sprites and 2 underline rows; playable in headless Chromium |
-| M5 Shell | M5a dialogs done (1c4bdce): 8 templates geometry exact, ToS lines pixel-equal to Wine mono capture; M5b frame/pages/splash/cursors in progress | layout and colour equal Wine captures except text artefacts; no network | - |
+| M5 Shell | done (1c4bdce, f93d445) | layout and colour equal Wine captures except text artefacts; no network | pass: 21 screens vs Wine mono-font captures, 0 layout/image/colour differences outside intended masks; text differences explained (O14); full suite 25/25 and shell browser flow pass (orchestrator re-run) |
 | M6 Audio and input | host side done (fd88842); C voice table in M4 | trigger timing, sample identity, focus pause | host pass: 15 sounds sample-identical, tick spacing 0 samples deviation, mute on blur, 137 key events (orchestrator re-ran 2 of 4 tests) |
-| M7 Acceptance | not started | full check suite, packaging | - |
+| M7 Acceptance | in progress | full check suite, packaging | - |
 
 ## Open issues
 - Underline row: Wine draws it 1 row higher than the port (inferred GDI rule in gdi_text.c); no Windows ground truth.
 - XP system cursors (arrow, I-beam) for dialogs are not in any supplied file; placeholder: CSS `default`/`text`.
-- Wheel input (kind 10) not sent by the host yet; added in M7 if M4/M5b do not.
-- Cursor images: host still uses CSS cursor names; the six original cursors (PNG + hotspot) go to M5b.
 - Arial Bold '-' and 0xAD at 11 and 17 px: FreeType advance differs from hdmx by 1; atlases use hdmx (as GDI, inferred). No kept text uses these sizes.
 - Wine on Xvfb needs `WINE_D3D_CONFIG=renderer=no3d` (default in run_original.sh).
 
