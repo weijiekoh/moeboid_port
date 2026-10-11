@@ -85,3 +85,16 @@
 ## Event (not a prompt): phase 1 report received
 
 **Summary:** The orchestrator finished phase 1: 10 workstreams and `docs/architecture.md`. It recommends option (d): the original `Moeboid.gam` runs unchanged in a small x86 interpreter, and a rewritten ZapSpot engine and shell in C, compiled to wasm, plus a thin TypeScript host. A Wine crash at 09:03 left a core dump in `/var/lib/systemd/coredump` and a KDE crash record in `~/.cache/drkonqi/crashes/`, both outside the project; `tools/bin/nonet` now sets `ulimit -c 0`. No screenshot of the user's own screen remains; the scratch contact sheets show only the Wine desktop and the game. 13 decisions from `docs/architecture.md` section 6 wait for the user.
+
+## 11
+
+> 8. remove the minimize and close buttons
+> 9. blue background color
+> 10. remind me about these later
+> 11. remind me about these later
+>
+> finally, ask me any remaining critical questions so that you can run unsupervised for the other phases as long as possible
+>
+> btw, what are the remaining phases?
+
+**Summary:** Only phase 2 remains, in 7 milestones (M1 foundation, M2 x86 interpreter with an automatic fallback, M3 assets and fonts, M4 engine core, M5 shell, M6 audio and input, M7 acceptance). Asked 12 questions; answers: emulate the game code, 50 Hz default (as a setting), XP Luna look, Standard font smoothing, the user supplies the XP fonts and `luna.msstyles` later, ToS in the canvas, View All Games with the Moeboid tile only, splash kept for about 2 s, empty Mail This slot, local git, Wine only on a hidden Xvfb display, unsupervised through M7. All decisions are in `docs/decisions.md`; items 10 and 11 are deferred with provisional defaults and saved as a reminder. Created a local git repository with the phase 1 state as the first commit (`5ec0b61`). Resumed the orchestrator for phase 2; it keeps `docs/progress.md` up to date.
