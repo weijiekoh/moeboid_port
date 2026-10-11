@@ -1,0 +1,131 @@
+# Wine reference captures for the M5b shell comparison (port/tests/py/test_shell_compare.py).
+# Run: FONT_SMOOTHING=off analysis/reference/run_original.sh start 420
+#      analysis/reference/run_original.sh x python -I -B analysis/reference/capture_session.py OUT port/tests/py/test_shell_wine_steps.txt
+# Frame coordinates. "click 100 300" (news text area, no handler) moves the pointer away before a shot.
+# The native test port/tests/native/test_shell.c runs the same sequence on the port.
+waitframe 40
+wait 4
+click 100 300
+wait 1
+shot frame_title_m5b
+click 233 310
+wait 2
+click 100 300
+wait 1
+shot frame_how_to_play
+click 233 242
+wait 1.5
+click 233 242
+wait 1.5
+click 100 300
+wait 1
+shot frame_paused
+click 740 450
+wait 1.5
+click 718 22
+wait 2
+click 100 300
+wait 1
+shot frame_help_101
+click 332 123
+wait 2
+click 100 300
+wait 1
+shot frame_help_111
+click 718 22
+wait 1.5
+click 373 170
+wait 2
+click 100 300
+wait 1
+shot frame_help_112
+click 718 22
+wait 1.5
+click 368 186
+wait 2
+click 100 300
+wait 1
+shot frame_help_113
+click 718 22
+wait 1.5
+click 435 201
+wait 2
+click 100 300
+wait 1
+shot frame_help_114
+click 718 22
+wait 1.5
+click 386 247
+wait 2
+click 100 300
+wait 1
+shot frame_help_115
+click 718 22
+wait 1.5
+click 391 294
+wait 2
+click 100 300
+wait 1
+shot frame_help_116
+click 718 22
+wait 1.5
+click 351 371
+wait 2
+click 100 300
+wait 1
+shot frame_help_117
+click 718 22
+wait 1.5
+click 364 325
+wait 2
+click 100 300
+wait 1
+shot frame_help_118
+click 718 22
+wait 1.5
+click 95 234
+wait 2
+click 100 300
+wait 1
+shot frame_about
+click 95 199
+wait 2
+click 100 300
+wait 1
+shot frame_personalize_sound_on
+click 676 308
+wait 2
+click 100 300
+wait 1
+shot frame_personalize_sound_off
+click 676 308
+wait 1.5
+click 740 450
+wait 1.5
+click 95 164
+wait 2
+click 100 300
+wait 1
+shot frame_view_all_games
+click 333 111
+wait 3
+click 100 300
+wait 1
+shot frame_title_again
+click 557 252
+wait 8
+click 100 300
+wait 1
+shot frame_game_running
+click 233 175
+wait 2
+desk desktop_quit_dialog
+wshot dialog_quit_saved Warning: Game in Progress
+wkey Escape Warning: Game in Progress
+wait 1.5
+click 120 531
+wait 2
+desk desktop_tos_dialog
+wclick 212 289 ZapSpot Terms of Service
+wait 1
+tree

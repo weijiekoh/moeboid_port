@@ -10,6 +10,7 @@
 
 #include "../core/port.h"
 #include "../gfx/image.h"
+#include "../text/gdi_text.h"
 
 typedef struct Engine Engine;
 
@@ -71,6 +72,10 @@ int32_t engine_surface_play(Port *p, uint32_t s);                              /
 void engine_release(Port *p, uint32_t h);  /* external Release (Z:0x414f90) of a handle the API returned */
 Image *engine_image_pixels(Port *p, uint32_t img); /* draw into it, then call engine_image_changed */
 void engine_image_changed(Port *p, uint32_t img);  /* Z:0x414120 */
+/* DrawZML (IImage +0x14, Z:0x413c90) into an engine image with its persistent render-context state
+ * (font, text colour, T, centre, shadow; the game's ZML-lite and the shell share ctx[3] this way).
+ * rect NULL = whole image. Links are drawn but create no click target (decision 8b). Returns 0. */
+int32_t engine_image_zml(Port *p, uint32_t img, const char *text, int32_t x, int32_t y, const GdiRect *rect);
 /* Button (Z:0x419730) with a C callback: cb(p, ctx, id) on a left click (event 0xe). */
 typedef void (*EngineButtonFn)(Port *p, void *ctx, int32_t id);
 uint32_t engine_button(Port *p, uint32_t parent, int32_t x, int32_t y, int32_t w, int32_t h, uint32_t faces_img,

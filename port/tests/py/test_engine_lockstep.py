@@ -2,11 +2,14 @@
 
 (a) reference: analysis/verification/harness/run.py on Unicorn with refmock.py (copy of mock.py with
     the real metrics of the port and the original-engine semantics R1-R7, see refmock.py);
-(b) native port: the C interpreter and the C engine (port/build/libmoeboid.so), inputs through the
+(b) native port: the C interpreter and the C engine (objects of the native build without the shell,
+    enginedrv.engine_only_lib), inputs through the
     real input path (enginedrv.NativeEngine: key messages, mouse move/down/up on the button found by
     the hit test, applet event 0x10, InputBox answers);
-(c) wasm port: port/build/moeboid-trace.wasm (the browser build with the trace exports) in node, same
-    inputs (wasm_replay.mjs); its rows must equal (b).
+(c) wasm port: the trace-build objects without the shell (enginedrv.engine_only_wasm, the browser
+    build's engine with the trace exports) in node, same inputs (wasm_replay.mjs); rows must equal (b).
+The shell (M5) is left out: its splash starts the game later and blocks input; the engine alone (weak
+shell_api.h defaults) starts the game at step 0, as the reference harness.
 Both write one row per engine-to-game call (tick, clock ms, calls, SHA-256 of the canonical call
 lines, SHA-256 of the game state digest). Recordings: analysis/verification/logs/run_autopilot.input.tsv
 (60 s) and run_tour.input.tsv (120 s) at the 1 ms clock step; also the autopilot recording at the
@@ -123,7 +126,7 @@ def main():
                         out.append(f"  ref:    {x}")
                         out.append(f"  native: {y}")
                         break
-            wasm = os.path.join(ROOT, "port", "build", "moeboid-trace.wasm")
+            wasm = enginedrv.engine_only_wasm()
             if not wasm_check:
                 continue
             t0 = time.time()
@@ -134,7 +137,7 @@ def main():
             wd = compare(nrows, wrows)
             if q.returncode != 0 or wd is not None:
                 ok = False
-            out.append(f"  wasm (moeboid-trace.wasm in node {time.time() - t0:.1f} s): {len(wrows)} ticks, rows "
+            out.append(f"  wasm (engine trace build in node {time.time() - t0:.1f} s): {len(wrows)} ticks, rows "
                        + ("identical to the native port" if wd is None and q.returncode == 0
                           else f"DIFFER at tick {wd} (exit {q.returncode}) {q.stderr[-300:]}"))
             orig = os.path.join(LOGS, f"run_{name}.ticks.tsv")

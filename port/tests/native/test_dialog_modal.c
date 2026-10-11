@@ -77,6 +77,11 @@ bool engine_paused(Port *p) {
     (void)p;
     return E.paused;
 }
+/* M5b: shell_modal.c holds the engine while a frame-opened dialog (quit, ToS) is open */
+void engine_modal_hold(Port *p, bool on) {
+    (void)p;
+    (void)on;
+}
 void engine_set_paused(Port *p, bool paused) {
     (void)p;
     E.paused = paused;

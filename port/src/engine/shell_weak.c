@@ -42,3 +42,13 @@ __attribute__((weak)) void shell_applet_changed(Port *p, bool running) {
     (void)p;
     (void)running;
 }
+
+__attribute__((weak)) bool shell_starts_applet(Port *p) {
+    (void)p;
+    return false;
+}
+
+__attribute__((weak)) bool shell_input_blocked(Port *p) {
+    (void)p;
+    return false;
+}

@@ -409,6 +409,30 @@ static void test_modal_hold(const uint8_t *pack, uint32_t pack_len) {
     free(p);
 }
 
+static void test_zml_and_owner(const uint8_t *pack, uint32_t pack_len) {
+    Port *p = new_engine(pack, pack_len, 0xffffffffu);
+    Engine *e = engine_of(p);
+    /* DrawZML with the persistent render-context state (Z:0x413c90, fonts.md 5) */
+    uint32_t img = eng_image_new(e, 200, 40, false);
+    CHECK_EQ(engine_image_zml(p, img, "<B><CFF0000>Hi", 0, 0, NULL), 0);
+    CImage *im = eng_image(e, img);
+    CFont *f = ENG_GET(e, im->font, CFont, OT_FONT);
+    CHECK(f != NULL && (f->style & 1u));
+    CHECK_EQ(im->text_color & 0xffffffu, 0x0000ff); /* IMG_RGB(255, 0, 0) */
+    draw_clear(&im->img, IMG_BLACK);
+    engine_image_zml(p, img, "WW", 0, 0, NULL); /* bold red stays */
+    int red = 0;
+    for (int i = 0; i < 200 * 40; i++) red += (im->img.px[i] & 0xffffffu) == 0x0000ffu;
+    CHECK(red > 20);
+    /* objects that the shell makes through engine.h during a game call stay the shell's (owner 0) */
+    e->alloc_owner = 5;
+    uint32_t s = engine_surface_blank(p, 10, 10, 0);
+    CHECK_EQ(eng_obj_get(e, s, OT_SURFACE)->owner, 0);
+    CHECK_EQ(e->alloc_owner, 5);
+    e->alloc_owner = 0;
+    free(p);
+}
+
 int main(void) {
     uint32_t pack_len = 0;
     uint8_t *pack = read_file("port/build/web/pack.bin", &pack_len);
@@ -425,5 +449,6 @@ int main(void) {
     test_settings(pack, pack_len);
     test_keys_and_buttons(pack, pack_len);
     test_modal_hold(pack, pack_len);
+    test_zml_and_owner(pack, pack_len);
     return test_report("test_engine");
 }

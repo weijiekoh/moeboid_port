@@ -4,6 +4,8 @@
  * the pause toggle only toggles the timer pause.
  *
  * Original routines: CShell (Z:0x41acb0) and the platform object (DAT_0045cf9c, vtable Z:0x42e6b4).
+ * The engine calls every shell_* function with allocation owner 0, so objects that the shell makes
+ * through engine.h inside a game call stay the shell's (they survive the New Game sweep).
  *
  * Modal dialogs (ISystem::MessageBox / InputBox, Z:0x4058c0 / Z:0x405480):
  *   1. The engine saves IsPaused, pauses, renders the frame once (Z:0x41b210), then calls
@@ -59,5 +61,11 @@ void shell_pause_toggle(Port *p);
 void shell_frame_build(Port *p);
 /* Applet started (after Shell_StartApplet) or stopped (after FreeLibrary). Default: nothing. */
 void shell_applet_changed(Port *p, bool running);
+/* true: the shell starts the applet itself (engine_applet_start or engine_new_game), for example after
+ * its splash (decision 13); the engine init then does not start it. Default: false. */
+bool shell_starts_applet(Port *p);
+/* true: the engine routes no input event to the game or the surfaces (for example during the
+ * splash). Called for every event. Default: false. */
+bool shell_input_blocked(Port *p);
 
 #endif

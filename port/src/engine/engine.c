@@ -2,6 +2,7 @@
  * See engine.h, README.md. Addresses: ZapSpot.exe (Z:) and Moeboid.gam (G:). */
 #include "eng_int.h"
 #include "shell_api.h"
+#include "../text/zml.h"
 
 #define SHELL_KEY 0x5348454cu /* protect key of ctx[2]; the original uses the CShell pointer (Z:0x41d6c0) */
 
@@ -333,7 +334,7 @@ int32_t engine_applet_start(Port *p) {
     e->running = true; /* manager +4 */
     uint32_t ctx = e->ctx;
     top_call(e, cpu_machine_export(e->cpu, "Shell_StartApplet"), 1, &ctx, "Shell_StartApplet(ctx)", true);
-    shell_applet_changed(p, true);
+    ENG_SHELL_CALL(e, shell_applet_changed(p, true));
     return e->dead ? 5 : 0;
 }
 
@@ -356,7 +357,7 @@ void engine_applet_stop(Port *p) {
     unload_game(e);
     e->running = false;
     e->ctx = e->sysobj = 0;
-    shell_applet_changed(p, false);
+    ENG_SHELL_CALL(e, shell_applet_changed(p, false));
 }
 
 /* Port only: free the objects that the stopped game made and never released (the game leaks its
@@ -460,6 +461,7 @@ static void eng_input(Port *p, const PortInput *ev) {
     Engine *e = engine_of(p);
     if (!e) return;
     e->input_seq = ev->seq;
+    if (shell_input_blocked(p)) return; /* for example the splash (shell_api.h) */
     if (e->modal.active || e->shell_hold || e->dead) return; /* a modal dialog owns the input (shell_api.h) */
     uint32_t kind = PORT_IN_KIND(ev->kind), btn = PORT_IN_BUTTON(ev->kind);
     switch (kind) {
@@ -467,7 +469,7 @@ static void eng_input(Port *p, const PortInput *ev) {
         if (ev->a == 0x1b) {
             /* VK_ESCAPE: pause toggle of a running game (Z:0x41cb30); the minimise (video +0x38) is
              * removed (decision 8a). Not passed to the game. */
-            if (e->running) shell_pause_toggle(p);
+            if (e->running) ENG_SHELL_CALL(e, shell_pause_toggle(p));
             return;
         }
         key_origin(e, 0xb, (uint32_t)ev->a & 0xffffu);
@@ -494,7 +496,7 @@ static void eng_input(Port *p, const PortInput *ev) {
     case PORT_IN_FOCUS_LOST:
         /* WM_ACTIVATE WA_INACTIVE: pause a running unpaused game (Z:0x41cb30), render once; the core
          * then stops the timer passes (inactive). */
-        if (!timersys_is_paused(&p->timers) && e->running) shell_pause_toggle(p);
+        if (!timersys_is_paused(&p->timers) && e->running) ENG_SHELL_CALL(e, shell_pause_toggle(p));
         eng_render(e);
         break;
     default: break;
@@ -548,6 +550,9 @@ static int32_t eng_init(Port *p, const uint8_t *pack, uint32_t pack_len, const u
         rt_log("engine: no game image");
         return 0;
     }
+    /* decision 13: a shell with a splash starts the applet itself after it (original start-up:
+     * View All Games Z:0x41f500, then New Game Z:0x41c910) */
+    if (shell_starts_applet(p)) return 0;
     int32_t r = engine_applet_start(p);
     if (r) rt_log("engine: applet start failed (%d): %s", r, e->fault);
     return 0;
@@ -588,12 +593,16 @@ static uint32_t api_ref(Engine *e, uint32_t h) {
 
 uint32_t engine_surface_blank(Port *p, int32_t w, int32_t h, uint32_t flags) {
     Engine *e = engine_of(p);
-    return e ? api_ref(e, eng_surface_new_blank(e, w, h, flags)) : 0u;
+    uint32_t r = 0;
+    if (e) ENG_SHELL_CALL(e, r = api_ref(e, eng_surface_new_blank(e, w, h, flags)));
+    return r;
 }
 
 uint32_t engine_surface_gif(Port *p, const char *name, uint32_t flags) {
     Engine *e = engine_of(p);
-    return e ? api_ref(e, eng_surface_new_gif(e, name, flags)) : 0u;
+    uint32_t r = 0;
+    if (e) ENG_SHELL_CALL(e, r = api_ref(e, eng_surface_new_gif(e, name, flags)));
+    return r;
 }
 
 int32_t engine_surface_attach(Port *p, uint32_t parent, uint32_t child) {
@@ -649,6 +658,40 @@ void engine_image_changed(Port *p, uint32_t img) {
     if (e) eng_image_changed(e, img);
 }
 
+int32_t engine_image_zml(Port *p, uint32_t img, const char *text, int32_t x, int32_t y, const GdiRect *rect) {
+    /* DrawZML Z:0x413c90: rect NULL = {0, 0, width, height}, len = strlen, the engine ZML renderer
+     * Z:0x416190 with the persistent state of the render context (font, text colour, T, centre,
+     * shadow; fonts.md 5), then Z:0x414120. Links are drawn, without CHyperLink surfaces (inert,
+     * decision 8b). */
+    Engine *e = engine_of(p);
+    CImage *im = e ? eng_image(e, img) : NULL;
+    if (!im || !text) return 0;
+    ZmlContext c;
+    zml_context_init(&c, &e->fonts, e->smoothing);
+    CFont *f = ENG_GET(e, im->font, CFont, OT_FONT);
+    if (f) zml_font_create(&c.font, &e->fonts, f->face, f->px, f->style);
+    c.text_color = im->text_color;
+    c.bk_color = im->bk_color;
+    c.transparent = im->transparent;
+    c.centre = im->centre;
+    c.shadow = im->shadow;
+    zml_draw(&c, &im->img, text, (int32_t)rt_strlen(text), x, y, rect, 0, NULL);
+    im = eng_image(e, img);
+    if (!im) return 0;
+    if (!f || f->px != c.font.px || f->style != c.font.style || !eng_str_ieq(f->face, c.font.face)) {
+        uint32_t nf;
+        ENG_SHELL_CALL(e, nf = eng_font_create(e, c.font.face, c.font.px, c.font.style));
+        eng_image_set_font(e, img, nf);
+        eng_release_int_h(e, nf); /* the cache reference of this lookup (the image holds its own) */
+    }
+    im->text_color = c.text_color;
+    im->transparent = c.transparent;
+    im->centre = c.centre;
+    im->shadow = c.shadow;
+    eng_image_changed(e, img);
+    return 0;
+}
+
 typedef struct ApiButton {
     EngineButtonFn fn;
     void *ctx;
@@ -668,7 +711,9 @@ uint32_t engine_button(Port *p, uint32_t parent, int32_t x, int32_t y, int32_t w
     if (!b) return 0;
     b->fn = cb;
     b->ctx = ctx;
-    return api_ref(e, eng_button_new(e, parent, 0, x, y, w, h, faces_img, face_index, id, 0, api_button_cb, b));
+    uint32_t r = 0;
+    ENG_SHELL_CALL(e, r = api_ref(e, eng_button_new(e, parent, 0, x, y, w, h, faces_img, face_index, id, 0, api_button_cb, b)));
+    return r;
 }
 
 uint32_t engine_test_live_objects(Port *p) { return engine_of(p) ? engine_of(p)->live : 0u; }

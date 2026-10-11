@@ -2,7 +2,7 @@
 
 Copy of analysis/verification/harness/mock.py (that file stays unchanged). Changes, each because the
 original engine code differs from the earlier model (the original code wins, task M4):
-  R1 MeasureText, GIF sizes: the port's C font/atlas and GIF code through libmoeboid.so (ctypes),
+  R1 MeasureText, GIF sizes: the port's C font/atlas and GIF code (enginedrv.lib(), ctypes),
      not the 7 px x 16 px placeholder (fonts.md; Z:0x40c2c0 GetTextExtentPoint32A, Z:0x418d90).
   R2 ISystem::MessageBox returns 1 for IDOK (Z:0x405928), not 0.
   R3 ISystem::GetKeyState returns the GetKeyState SHORT sign-extended in EAX (Z:0x426bf0 returns the
@@ -42,7 +42,7 @@ import struct
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import enginedrv  # noqa: E402  (libmoeboid.so: real metrics)
+import enginedrv  # noqa: E402  (the port's C code: real metrics)
 
 import emu
 from emu import FAKE_LO, Stop

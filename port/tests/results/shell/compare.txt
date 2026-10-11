@@ -1,0 +1,53 @@
+splash                 ref IMG-SPLASH_0409.png              compared  78360  different     0  (non-black outside: 0)
+title                  frame_title_m5b.png             compared 164684  different  1038  text moved  1038  glyphs/breaks     0  game grey text    0  other    0
+how_to_play            frame_how_to_play.png           compared 374684  different  3380  text moved  2784  glyphs/breaks   596  game grey text    0  other    0
+    glyphs/breaks (548, 393)-(679, 406): 596 px
+paused                 frame_paused.png                compared 374684  different  3546  text moved  3546  glyphs/breaks     0  game grey text    0  other    0
+help_101               frame_help_101.png              compared 374684  different  6688  text moved  4702  glyphs/breaks  1986  game grey text    0  other    0
+    glyphs/breaks (459, 165)-(748, 176): 886 px
+    glyphs/breaks (464, 181)-(771, 192): 1100 px
+help_111               frame_help_111.png              compared 374684  different  9412  text moved  2321  glyphs/breaks  7091  game grey text    0  other    0
+    glyphs/breaks (763, 120)-(781, 127): 43 px
+    glyphs/breaks (283, 134)-(499, 145): 723 px
+    glyphs/breaks (505, 134)-(742, 145): 753 px
+    glyphs/breaks (758, 211)-(780, 220): 60 px
+    glyphs/breaks (283, 226)-(298, 235): 30 px
+    glyphs/breaks (283, 226)-(781, 252): 3060 px
+    glyphs/breaks (764, 228)-(779, 235): 51 px
+    glyphs/breaks (282, 256)-(780, 282): 2371 px
+help_112               frame_help_112.png              compared 374684  different  5961  text moved  2322  glyphs/breaks  3639  game grey text    0  other    0
+    glyphs/breaks (282, 256)-(780, 312): 3444 px
+    glyphs/breaks (282, 301)-(320, 312): 133 px
+    glyphs/breaks (389, 301)-(412, 312): 62 px
+help_113               frame_help_113.png              compared 374684  different  2322  text moved  2322  glyphs/breaks     0  game grey text    0  other    0
+help_114               frame_help_114.png              compared 374684  different  7103  text moved  7089  glyphs/breaks    14  game grey text    0  other    0
+    glyphs/breaks (698, 107)-(712, 108): 14 px
+help_115               frame_help_115.png              compared 374684  different 12883  text moved  2321  glyphs/breaks 10562  game grey text    0  other    0
+    glyphs/breaks (768, 256)-(782, 265): 41 px
+    glyphs/breaks (282, 271)-(298, 280): 35 px
+    glyphs/breaks (282, 271)-(780, 312): 4459 px
+    glyphs/breaks (282, 316)-(773, 372): 5084 px
+    glyphs/breaks (283, 376)-(423, 402): 943 px
+help_116               frame_help_116.png              compared 374684  different  3900  text moved  2324  glyphs/breaks  1576  game grey text    0  other    0
+    glyphs/breaks (737, 318)-(782, 327): 119 px
+    glyphs/breaks (282, 333)-(512, 344): 717 px
+    glyphs/breaks (516, 333)-(720, 344): 654 px
+    glyphs/breaks (724, 333)-(759, 344): 86 px
+help_117               frame_help_117.png              compared 374684  different  2324  text moved  2324  glyphs/breaks     0  game grey text    0  other    0
+help_118               frame_help_118.png              compared 374684  different  2324  text moved  2324  glyphs/breaks     0  game grey text    0  other    0
+about                  frame_about.png                 compared 374684  different 10421  text moved  3706  glyphs/breaks  6715  game grey text    0  other    0
+    glyphs/breaks (438, 158)-(500, 169): 195 px
+    glyphs/breaks (560, 158)-(767, 169): 593 px
+    glyphs/breaks (504, 160)-(556, 169): 154 px
+    glyphs/breaks (747, 190)-(765, 199): 46 px
+    glyphs/breaks (297, 203)-(766, 214): 1530 px
+    glyphs/breaks (297, 248)-(767, 289): 3047 px
+    glyphs/breaks (416, 383)-(666, 409): 1150 px
+personalize_sound_on   frame_personalize_sound_on.png  compared 330684  different  2838  text moved  2838  glyphs/breaks     0  game grey text    0  other    0
+personalize_sound_off  frame_personalize_sound_off.png compared 330684  different  2838  text moved  2838  glyphs/breaks     0  game grey text    0  other    0
+view_all_games         frame_view_all_games.png        compared 336964  different   715  text moved   559  glyphs/breaks   156  game grey text    0  other    0
+    glyphs/breaks (313, 141)-(363, 149): 156 px
+title_again            frame_title_again.png           compared 164684  different  1038  text moved  1038  glyphs/breaks     0  game grey text    0  other    0
+game_running           frame_game_running.png          compared 164684  different  1038  text moved  1038  glyphs/breaks     0  game grey text    0  other    0
+quit_dialog            desktop_quit_dialog.png         compared 160244  different   951  text moved   951  glyphs/breaks     0  game grey text    0  other    0
+tos_dialog             desktop_tos_dialog.png          compared 138093  different   559  text moved   559  glyphs/breaks     0  game grey text    0  other    0

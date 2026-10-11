@@ -137,16 +137,16 @@ static uint32_t dispatch(Engine *e, uint32_t iface, uint32_t slot, uint32_t self
     /* ---- ISystem (vtable Z:0x42ec3c, object of Z:0x415df0) ---- */
     case CPU_IF_ISYSTEM << 8 | 2: { /* SetCaption: Z:0x415f20 (shell +0x88, Z:0x41b7f0) */
         gstr(e, arg(e, a, 0), e->caption, sizeof e->caption);
-        shell_caption_changed(e->p, e->caption);
+        ENG_SHELL_CALL(e, shell_caption_changed(e->p, e->caption));
         break;
     }
     case CPU_IF_ISYSTEM << 8 | 3: /* SetGameInProgress: Z:0x415f50 -> Z:0x41b970 */
         e->game_in_progress = (int32_t)arg(e, a, 0);
-        shell_game_in_progress(e->p, e->game_in_progress);
+        ENG_SHELL_CALL(e, shell_game_in_progress(e->p, e->game_in_progress));
         break;
     case CPU_IF_ISYSTEM << 8 | 4: /* SetShellButtons: Z:0x415f70 -> Z:0x41b990 */
         e->shell_buttons = arg(e, a, 0);
-        shell_buttons_changed(e->p, e->shell_buttons);
+        ENG_SHELL_CALL(e, shell_buttons_changed(e->p, e->shell_buttons));
         break;
     case CPU_IF_ISYSTEM << 8 | 5: /* MessageBox: Z:0x415f90 -> Z:0x41c2c0 -> platform +0x40 Z:0x4058c0 */
         gstr(e, arg(e, a, 0), s1, sizeof s1);

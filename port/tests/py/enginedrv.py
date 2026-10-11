@@ -1,4 +1,5 @@
-"""Native port driver for tests (M4): the C CPU and the C engine in port/build/libmoeboid.so (ctypes).
+"""Native port driver for tests (M4): the C CPU and the C engine (ctypes), from the objects of the native
+build without the shell (engine_only_lib; port/build.sh native must be current).
 
 NativeEngine runs Moeboid.gam on the port engine with a fresh Port, collects the lockstep trace
 (port-design.md section 9: one row per tick, as analysis/verification/harness/run.py writes
@@ -7,10 +8,10 @@ through the real input path (key and mouse events, button hit test).
 """
 import ctypes
 import os
+import subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", "..", ".."))
-LIB = os.path.join(ROOT, "port", "build", "libmoeboid.so")
 PACK = os.path.join(ROOT, "port", "build", "web", "pack.bin")
 GAM = os.path.join(ROOT, "extracted", "Moeboid.gam")
 GUID = "{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}"
@@ -20,13 +21,42 @@ SINK = ctypes.CFUNCTYPE(None, ctypes.c_char_p, ctypes.c_uint32)
 KEY_VK = {0: 0x08, 1: 0x2E, 2: 0x09, 3: 0x0D, 5: 0x11, 6: 0x25, 7: 0x27, 8: 0x26, 9: 0x28, 10: 0x24, 11: 0x23, 12: 0x10}
 IN_KEYDOWN, IN_KEYUP, IN_MOUSEMOVE, IN_BUTTONDOWN, IN_BUTTONUP = 1, 2, 3, 4, 5
 
+ENGINE_LIB = os.path.join(ROOT, "port", "build", "libmoeboid-engine.so")
+ENGINE_WASM = os.path.join(ROOT, "port", "build", "moeboid-engine-trace.wasm")
 _lib = None
+
+
+def _newer(target, sources):
+    return os.path.exists(target) and all(os.path.getmtime(target) >= os.path.getmtime(s) for s in sources)
+
+
+def engine_only_lib():
+    """port/build/libmoeboid-engine.so: the objects of the native build without src/shell (M4 tests
+    check the engine alone: the shell's splash starts the game later and blocks input; with the
+    weak shell_api.h defaults the engine starts the game at step 0, as the reference harness)."""
+    objs = [ln.strip() for ln in open(os.path.join(ROOT, "port", "build", "native", "obj", ".objects"))
+            if ln.strip() and "/shell/" not in ln]
+    if not _newer(ENGINE_LIB, objs):
+        subprocess.run(["clang", "-shared", "-o", ENGINE_LIB, *objs], check=True)
+    return ENGINE_LIB
+
+
+def engine_only_wasm():
+    """port/build/moeboid-engine-trace.wasm: the trace-build objects without src/shell (wasm-ld flags
+    of port/build.sh build_wasm)."""
+    d = os.path.join(ROOT, "port", "build", "wasm-obj-1")
+    objs = [ln.strip() for ln in open(os.path.join(d, ".objects")) if ln.strip() and "/shell/" not in ln]
+    objs.append(os.path.join(d, "main", "main.o"))
+    if not _newer(ENGINE_WASM, objs):
+        subprocess.run(["wasm-ld", "--no-entry", "--stack-first", "-z", "stack-size=4194304", "--strip-debug",
+                        "-o", ENGINE_WASM, *objs], check=True)
+    return ENGINE_WASM
 
 
 def lib():
     global _lib
     if _lib is None:
-        L = ctypes.CDLL(LIB)
+        L = ctypes.CDLL(engine_only_lib())
         P, U, I, B = ctypes.c_void_p, ctypes.c_uint32, ctypes.c_int32, ctypes.c_bool
         sig = {
             "engine_test_port_new": ([], P), "core_init": ([P, U, U, U], None),

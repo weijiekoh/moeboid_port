@@ -1,14 +1,14 @@
-autopilot (60000 ms): reference run.py+refmock ok, 2968 ticks (1.6 s); native port 2968 ticks (0.9 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
+autopilot (60000 ms): reference run.py+refmock ok, 2968 ticks (1.6 s); native port 2968 ticks (0.8 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
   calls compared 50500, ticks with a game-state digest 2933, engine log lines 2
-  wasm (moeboid-trace.wasm in node 1.0 s): 2968 ticks, rows identical to the native port
+  wasm (engine trace build in node 0.9 s): 2968 ticks, rows identical to the native port
   information: refmock vs the original mock.py log (run_autopilot.ticks.tsv): first difference at tick 2 (R1-R7 of refmock.py)
-tour (120000 ms): reference run.py+refmock ok, 5940 ticks (3.9 s); native port 5940 ticks (1.9 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
+tour (120000 ms): reference run.py+refmock ok, 5940 ticks (3.9 s); native port 5940 ticks (1.8 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
   calls compared 137457, ticks with a game-state digest 5721, engine log lines 2
-  wasm (moeboid-trace.wasm in node 1.9 s): 5940 ticks, rows identical to the native port
+  wasm (engine trace build in node 1.7 s): 5940 ticks, rows identical to the native port
 autopilot, clock step 15.625 ms (60000 ms): reference run.py+refmock ok, 1961 ticks (1.1 s); native port 1961 ticks (0.6 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
   calls compared 33088, ticks with a game-state digest 1929, engine log lines 0
-autopilot, clock step 54.925 ms (60000 ms): reference run.py+refmock ok, 1188 ticks (0.5 s); native port 1188 ticks (0.5 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
+autopilot, clock step 54.925 ms (60000 ms): reference run.py+refmock ok, 1188 ticks (0.6 s); native port 1188 ticks (0.4 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
   calls compared 11340, ticks with a game-state digest 1156, engine log lines 0
-tour, engine seed 999 (120000 ms): reference run.py+refmock ok, 5940 ticks (2.9 s); native port 5940 ticks (1.5 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
+tour, engine seed 999 (120000 ms): reference run.py+refmock ok, 5940 ticks (2.9 s); native port 5940 ticks (1.4 s), fault ''; per-tick call hashes, call counts, clock ms and state digests: identical
   calls compared 98303, ticks with a game-state digest 5721, engine log lines 2
 # result: PASS

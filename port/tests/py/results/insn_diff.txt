@@ -5,7 +5,7 @@
 # FSIN/FCOS states compared against the x87 table: 20
 # DIV/IDIV states where Unicorn left EIP at the instruction without reporting #DE (counted as #DE): 82
 # control transfers to an unmapped target (Unicorn reports the fetch fault of the next instruction, same EIP): 20
-# wall time 29.9 s
+# wall time 29.7 s
 form	addresses	states	error_states	mismatches
 adc r32,i32 pfx=- op=83	2	20	0	0
 add m32,i32 pfx=- op=81	7	70	0	0

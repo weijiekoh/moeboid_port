@@ -397,6 +397,16 @@ void eng_trace_finish_line(Engine *e, char *line, uint32_t ret);
 extern const uint32_t eng_callsites[];
 extern const uint32_t eng_callsite_count;
 
+/* Calls into the shell run with allocation owner 0: objects the shell makes during a game call
+ * belong to the shell, not to the game (sweep at New Game). */
+#define ENG_SHELL_CALL(e, stmt)                 \
+    do {                                        \
+        uint32_t own_ = (e)->alloc_owner;       \
+        (e)->alloc_owner = 0;                   \
+        stmt;                                   \
+        (e)->alloc_owner = own_;                \
+    } while (0)
+
 /* ---- engine services (engine.c) ---- */
 void eng_render(Engine *e);                  /* Z:0x41b210 */
 void eng_present(Engine *e);                 /* video +0x34 */

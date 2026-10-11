@@ -72,6 +72,9 @@ static void finish(Port *p) {
         s->frame_result_ready = true;
         s->frame_kind = kind;
         s->frame_result = result;
+        /* end of the modal loop of DialogBoxParamA (Z:0x40536e, Z:0x4055a5): timer passes and game input
+         * resume (M5b) */
+        engine_modal_hold(p, false);
         do_repaint(p);
         return;
     }
@@ -178,6 +181,8 @@ static int32_t frame_open(Port *p, uint32_t kind) {
     s->saved_paused = engine_paused(p);
     engine_set_paused(p, true);
     s->frame_owned = true;
+    /* the dialog runs its own modal loop: no timer pass, no input for the game (M5b) */
+    engine_modal_hold(p, true);
     s->frame_result_ready = false;
     s->composed = false;
     return 0;

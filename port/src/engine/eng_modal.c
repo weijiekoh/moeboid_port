@@ -155,7 +155,7 @@ uint32_t eng_modal_dialog(Engine *e, uint32_t kind, const char *title, const cha
             e->n_answers--;
         }
     } else {
-        st = shell_dialog_open(p, &d, &res, buf, sizeof buf);
+        ENG_SHELL_CALL(e, st = shell_dialog_open(p, &d, &res, buf, sizeof buf));
     }
     if (st == SHELL_DLG_DONE) {
         if (kind == SHELL_DLG_INPUTBOX && res == 1) write_input_text(e, buf);

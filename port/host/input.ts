@@ -14,6 +14,18 @@ export const IN_FOCUS_LOST = 6;
 export const IN_FOCUS_GAINED = 7;
 export const IN_START = 8;
 export const IN_CHAR = 9;
+// Port extension (M5a/M5b, src/shell/shell_modal.h SHELL_IN_WHEEL): WM_MOUSEWHEEL for the modal
+// dialogs; a = signed delta in WHEEL_DELTA units (120 per notch, positive = wheel away from the user).
+export const IN_WHEEL = 10;
+
+// DOM wheel delta to Windows wheel units. Windows: 120 per notch = 3 lines (SPI_GETWHEELSCROLLLINES
+// default). Browsers: deltaMode 1 (lines) 3 lines per notch; deltaMode 0 (pixels) about 100 px per
+// notch (Chromium, inferred); deltaMode 2 (pages) taken as one notch per page. DOM deltaY > 0 means
+// "down" (towards the user), the opposite sign of WM_MOUSEWHEEL.
+export function wheelUnits(deltaY: number, deltaMode: number): number {
+  const per = deltaMode === 1 ? 40 : deltaMode === 2 ? 120 : 1.2;
+  return -deltaY * per;
+}
 
 const VK_MENU = 0x12;
 const VK_F10 = 0x79;
@@ -235,6 +247,22 @@ export function attachInput(
       }
     }
   });
+
+  // Mouse wheel: only the modal dialogs read it (the frame WndProc has no WM_MOUSEWHEEL case,
+  // audio-input.md 3.2). Fractions are carried to the next event, so slow touchpads add up.
+  let wheelRest = 0;
+  canvas.addEventListener(
+    "wheel",
+    (e: WheelEvent) => {
+      if (!active) return;
+      e.preventDefault();
+      const units = wheelUnits(e.deltaY, e.deltaMode) + wheelRest;
+      const whole = Math.trunc(units);
+      wheelRest = units - whole;
+      if (whole !== 0) sink(IN_WHEEL, whole, 0, t(e));
+    },
+    { passive: false },
+  );
 
   // Focus: WM_ACTIVATE model (timing.md 2.5, 9 rule 6). One event per state change. The C side
   // releases every key and button on focus loss; the host forgets its button state too.
