@@ -1,6 +1,6 @@
 # Phase 2 progress
 
-Last update: 2026-10-11 11:10 (orchestrator). Plan: `docs/architecture.md` section 7. Contract: `docs/port-design.md`. Decisions: `docs/decisions.md`.
+Last update: 2026-10-11 11:30 (orchestrator). Plan: `docs/architecture.md` section 7. Contract: `docs/port-design.md`. Decisions: `docs/decisions.md`.
 
 | Milestone | Status | Gate | Gate result |
 |---|---|---|---|
@@ -13,10 +13,11 @@ Last update: 2026-10-11 11:10 (orchestrator). Plan: `docs/architecture.md` secti
 | Infra (Xvfb, browser tests) | done (6a32e41) | Wine runs on hidden Xvfb display; headless Chromium in nonet | pass: Xvfb package verified (sha256 + gpg); Wine frame captured on hidden display, no window on :0; web-test blocks non-loopback requests |
 | M4 Engine core | in progress | corpus with real engine equals reference; frame pixel checks | - |
 | M5 Shell | in progress (dialog component first) | layout and colour equal Wine captures except text artefacts; no network | - |
-| M6 Audio and input | in progress (host side) | trigger timing, sample identity, focus pause | - |
+| M6 Audio and input | host side done (fd88842); C voice table in M4 | trigger timing, sample identity, focus pause | host pass: 15 sounds sample-identical, tick spacing 0 samples deviation, mute on blur, 137 key events (orchestrator re-ran 2 of 4 tests) |
 | M7 Acceptance | not started | full check suite, packaging | - |
 
 ## Open issues
+- Cursor images: host still uses CSS cursor names; the six original cursors (PNG + hotspot) go to M5b.
 - Arial Bold '-' and 0xAD at 11 and 17 px: FreeType advance differs from hdmx by 1; atlases use hdmx (as GDI, inferred). No kept text uses these sizes.
 - Wine on Xvfb needs `WINE_D3D_CONFIG=renderer=no3d` (default in run_original.sh).
 
