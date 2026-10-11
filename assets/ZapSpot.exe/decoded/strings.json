@@ -1,0 +1,2018 @@
+[
+ {
+  "id": 0,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "01.01.01.1034"
+ },
+ {
+  "id": 2,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "www.ZapSpot.com"
+ },
+ {
+  "id": 3,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 4,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 5,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 6,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 7,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 8,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 9,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 11,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 12,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 13,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 14,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 15,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 96,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 97,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 98,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 99,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 100,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": true,
+  "string": "ZapSpot Help"
+ },
+ {
+  "id": 101,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Table of Contents</U><br><br><S2><B>Getting Started with ZapSpot</B><BR><S3><A111>What is ZapSpot?</A>, <A111>How do I start playing?</A>, <A111>Wow, can I keep it?</A><BR><BR><S2><B>Enjoying ZapSpot Games</B><BR><S3><A112>Can I get more ZapSpot games?</A>, <A112>How do I save all my ZapSpot games in one place?</A><BR><A113>How do I play different games?</A>, <A113>How do I close ZapSpot?</A>, <A113>How do I hide it from the boss?</A><BR><A114>What's the difference between different colored games?</A><BR><BR><S2><B>Sharing ZapSpot Games</B><BR><S3><A115>Can I share ZapSpot with my friends?</A>, <A115>Why should I subscribe?</A><BR><BR><S2><B>Product Support</B><BR><S3><A116>What will ZapSpot do on my Computer?</A>, <A116>How do I unsubscribe?</A><BR><A116>How do I remove ZapSpot from my computer?</A><BR><A118>Extended Support Information</A><BR><BR><S2><B>ZapSpot Information</B><BR><S3><A117>Where can I learn more?</A>, <A117>How do I contact ZapSpot?</A><BR>"
+ },
+ {
+  "id": 102,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 103,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 104,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 105,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 106,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 107,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 108,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 109,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 110,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 111,
+  "lang": "0x0409",
+  "block": 7,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Getting started with ZapSpot</u><br><br><S2><B>What is ZapSpot?</B><BR><S3>So what is ZapSpot, you might ask? Well, ZapSpot is fun. ZapSpot is relief. ZapSpot is a cool game, delivered straight to your e-mail inbox every week. And it's absolutely free.<br><br><S2><B>How do I start playing?</b><br><s3>Depending on when you read this, you may already be in the middle of a ZapSpot game.  You'll know because the bottom of the screen will say the game is paused.  If you are in the middle of a game, just unpause using the arrow button.  If you want to switch games or select a new game to play, click the View All Games button.  To select a game, just click on its icon and you'll jump right into the fun.  To reset a game and start over, click the New Game button.  If you need to take a break from the game, just click the Pause button and then resume it by clicking on the Resume button.<br><br><S2><B>Wow, can I keep it?</b><br><s3>Absolutely! Not only can you keep this ZapSpot game and any future ones, but you can also play with them when you are not connected to the Internet!  If you haven't already saved ZapSpot, just click the Install ZapSpot link from within the shell, or the Save and Exit button on your way out of ZapSpot. After you save, you can click on the ZapSpot icon on your desktop and dive into your fun break.<BR><BR><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 112,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Enjoying ZapSpot Games</U><br><br><S2><B>Can I get more ZapSpot games?</B><BR><S3>Of course! We design a new game every week and send it out to subscribers all over the world. You can enjoy many more fun games by simply sending us your e-mail address. All you have to do is enter it in the 'Subscribe to ZapSpot' textbox and click the arrow.  We will then Zap you a new cool, free game the next week, the week after that, the week after that...<br><br><S2><B>How do I save all my ZapSpot games in one place?</B><br><S3>You don't have to do a thing, because we will do it for you!  All you have to do is click the Install ZapSpot link inside ZapSpot.  Alternatively, you can click the Save and Exit button when you close ZapSpot.  Either of these options will add ZapSpot to your desktop and give you the full ZapSpot experience.  After this, every time you open a new game, it automatically gets stored in the same \"Spot\" as the others.  When you run ZapSpot from your desktop you will start in the game selection screen and you can select which of the many games you want to play.<BR><BR><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 113,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Enjoying ZapSpot Games</U><br><br><S2><B>How do I play different games?</B><BR><S3>It's simple.  If you start ZapSpot after installing it to your desktop, you will automatically be in the View All Games screen.  From there, just click on any game to start the fun.<BR><BR>If you are already in the middle of playing a game, just click the View all Games button and you'll be placed into the View All screen.  And like we said, just click on any game to start the fun.  It's easy.<BR><BR><S2><B>How do I close ZapSpot?</B><BR><S3>To close ZapSpot, click the round button with the 'X' on it.<br><br><S2><B>How do I hide ZapSpot from the boss?</B><BR><S3>The ultimate pastime wouldn't be as good without a little guilt, eh?  Well, to hide ZapSpot, just click the ESC key on your computer.  ZapSpot will instantly minimize itself to your taskbar.<br><BR><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 114,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Enjoying ZapSpot Games<br><br><S2><B>What's the difference between Blue, Green, and Red Games?</B></u><br><S3>ZapSpot specializes in games that are easy to learn and fun to play. When you get a ZapSpot game, the color of its border indicates the type of experience you are about to get:<br><br><B>Red Games</b> (Make you sweat) - Looking for some fast action?  A little eye-hand satisfaction?  Something more than a little distraction?  Then get ready for the Red Games, because they'll keep you at the edge of your seat.<br><br><B>Blue Games</b> (Make you think) - Put on your thinking cap and wipe off that smile, because you're going nowhere, pal. Blue Games might seem easy at first, but they get very difficult, very fast.<br><br><b>Green Games</b> (Make you relax) - Think of Green Games as entertaining bits of fun. You can enjoy Green Games while talking on the phone, sitting in a boring meeting, or pretending to take lecture notes on your laptop. Isn't that what computers are really for?<BR><BR><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 115,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Sharing ZapSpot Games</U><br><br><S2><B>Can I share the games with my friends?</B><BR><S3>Absolutely! That's the best part about ZapSpot. If you got ZapSpot via e-mail, you can simply forward the e-mail to your friends.  If you're in the middle of a game, just click the Mail This button, and our servers will e-mail the game for you.  Think of it as sending a little bit of interactive fun directly through e-mail.  And of course, you can always put ZapSpot on a floppy and take it with you.  Either way, ZapSpot games require no other downloads or installations.<br><br><S2><B>Why should I subscribe if I can get the games from other users?</B><br><S3>Good question! Here at ZapSpot, we're continually looking for ways to improve your ZapSpot experience. This means that we not only design new games, but also constantly improve the old ones. For instance, we will periodically add certain features to already existing games that will enhance your excitement and increase your fun. This is why subscribing to ZapSpot is the best way to enjoy our service. If you are a member of the ZapSpot community, you will receive ZapSpot updates and improvements along with your weekly supply of new games. And remember - our service is absolutely free. If you have not yet subscribed, be sure to do so in the 'Subscribe to ZapSpot' section, or sign up on our web site at <A10000>www.ZapSpot.com</a><BR><BR><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 116,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Product Support</U><br><br><S2><B>What will ZapSpot do on my computer?</B><BR><S3>ZapSpot considers your privacy, safety and stability to be the company's top priority, and we want our users to be satisfied with our product.  So, while other applications install files to sensitive areas within your hard drive, ZapSpot does not.  We've made it possible for you to run ZapSpot with a single click, without ever accessing your core files or affecting the stability of your machine.  In short - you can be sure that ZapSpot is safe.<br><br><S2><B>How do I unsubscribe from my weekly game mailing?</B><br><S3>To cancel your weekly ZapSpot game and stop receiving this e-mail, simply send an e-mail to unsubscribe@ZapSpot.com from the e-mail address that you used to subscribe.<BR><BR><S2><B>How do I remove ZapSpot from my computer?</B></u><br><S3>Although this version of ZapSpot does not include an uninstall feature, a complete uninstall feature will be included in the next version of ZapSpot.  In the interim, we have placed a tool that will remove ZapSpot from your computer on our web site.  Should you desire to uninstall ZapSpot, detailed instructions for doing so can be found on our support site, at<br><A10003>http://www.ZapSpot.com/support</a>.<br><br><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 117,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": true,
+  "string": "<S1><Cffffff><U>ZapSpot Information</U><br><br><S2><B>Where can I learn more about ZapSpot?</B><br><S3>For a more in-depth knowledge of the technical aspects of ZapSpot, as well as the company's background and employment opportunities, please visit our web site at <br><A10000>www.ZapSpot.com.</A><br><br><S2><B>I have some questions about ZapSpot. How do I contact you?</B><br><S3>If you need to contact the ZapSpot team for any reason (questions about the product, technical issues, etc.) you can send an e-mail to any of the following addresses:<br><BR>  info@ZapSpot.com : general information and feedback.<BR>  jobs@ZapSpot.com : employment opportunities.<BR>  support@ZapSpot.com : technical support issues.<BR>  unsubscribe@zapspot.com : unsubscribe from ZapSpot.<BR><BR><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 118,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": true,
+  "string": "<S1><Cffffff><U>Extended Support Information</U><br><br><S2><BR>ZapSpot Shell Version:<BR>ZapSpot Shell GUID:<BR>ZapSpot Install Folder:<BR><BR>Active Game:<BR>Game Version:<BR><BR><BR><BR><BR><BR><A101>Back to Table of Contents</A><BR>"
+ },
+ {
+  "id": 119,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 120,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 121,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 122,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 123,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 124,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 125,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 126,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 127,
+  "lang": "0x0409",
+  "block": 8,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 992,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 993,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 994,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 995,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 996,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 997,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 998,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 999,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1000,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": true,
+  "string": "About ZapSpot"
+ },
+ {
+  "id": 1001,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": true,
+  "string": "<S3><Cffffff>So, what is ZapSpot?  And why do you care??  ZapSpot is fun.  ZapSpot is relief.  ZapSpot is like chocolate without the guilt.  ZapSpot is a quick distraction from the world around you.  ZapSpot is a fresh breeze wafting through a stuffy room.<BR><BR>And what does ZapSpot give you?<BR><BR><b>Free Games Every Week</b> - ZapSpot means games.  Fun, quick, easy to play games in endless colors, shapes, and sizes.  Just join the ZapSpot family, and we'll send you a new game every week - right in your e-mail.  And did we mention it's all free???  All you have to do is subscribe in the 'Subscribe to ZapSpot' section over there (look down and left).<BR><BR>So, who makes ZapSpot?  Our team is made up of fun-loving, easy-going, break-taking folks that decided to change the way the world relaxes and distracts itself.  Our mission? Simple.  Make the world a better place with weekly bits of fun.<BR><BR>We hope you will enjoy playing ZapSpot as much as we enjoy creating it.<BR><BR>Get started in <A20002>ZapSpot Help</A> (also accessible via the question mark in the upper right).<BR><BR>Find out about <A20000>ZapSpot's security precautions</a>.<BR>To find out more, visit <A10000>http://www.ZapSpot.com</A>.<BR>To inquire about jobs at ZapSpot, visit <A10001>http://www.ZapSpot.com/jobs</A>.<BR>To partner with ZapSpot, visit <A10002>http://www.ZapSpot.com/partners</A>.<BR>"
+ },
+ {
+  "id": 1002,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": true,
+  "string": "<S3><Cffffff>Are you concerned about security? So are we.  The ZapSpot team has taken every possible safety measure and precaution to ensure that you get the best experience."
+ },
+ {
+  "id": 1003,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": true,
+  "string": "<S3><Cffffff>We start by virus checking every one of our executables using McAfee.com Clinic.  The best way to protect yoruself is with an anti-virus program.  That is why we partnered with McAfee.com to offer you a <A10004>FREE Trial Subscription to Clinic</a>.<BR><BR>We then sign all of our executables with a Digital ID acquired from Verisign.  This <A10005>digital signature</a> authenticates the files you get and lets you now that the game you got is an authentic ZapSpot game.  If you are running on Internet Explorer or Outlook Express, look for the certificate saying ZapSpot, Inc.  That way, you'll know it's coming from us."
+ },
+ {
+  "id": 1004,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": true,
+  "string": "<S3><Cffffff>We take security very seriously at ZapSpot.  If you have any questions, concerns, ideas, or suggestions, please contact us at info@ZapSpot.com<BR>Sincerely,<BR><BR>- the ZapSpot team"
+ },
+ {
+  "id": 1005,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1006,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1007,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1088,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1089,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1090,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1091,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1092,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1093,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1094,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1095,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1096,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1097,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1098,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1099,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1100,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": true,
+  "string": "Personalize ZapSpot"
+ },
+ {
+  "id": 1101,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": true,
+  "string": "<s3><cffffff>Our team believes that you should get the most personalized, customized experience possible when using your software.  We are in the process of adding technology to ZapSpot that will allow you to make using it as fun and exciting as possible.<BR><BR><BR>Want to stay on top of all ZapSpot developments?  It's easy.  All you have to do is subscribe to ZapSpot (over to the left) or visit our web site at <A10000>http://www.ZapSpot.com</a>."
+ },
+ {
+  "id": 1102,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": true,
+  "string": "<S3><cffffff>Sound effects are currently"
+ },
+ {
+  "id": 1103,
+  "lang": "0x0409",
+  "block": 69,
+  "defined": true,
+  "string": "   <B><C00FFFF>On</b>"
+ },
+ {
+  "id": 1104,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": true,
+  "string": "   <B><C00FFFF>Off</b>"
+ },
+ {
+  "id": 1105,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": true,
+  "string": "Toggle"
+ },
+ {
+  "id": 1106,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": true,
+  "string": "<s3><cffffff>If ZapSpot is unable to see the internet, you may need to tell us your 'proxy server':"
+ },
+ {
+  "id": 1107,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": true,
+  "string": "<s3><cffffff>Server Name"
+ },
+ {
+  "id": 1108,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": true,
+  "string": "<s3><cffffff>Port Number"
+ },
+ {
+  "id": 1109,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1110,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1111,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1112,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1113,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1114,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1115,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1116,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1117,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1118,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1119,
+  "lang": "0x0409",
+  "block": 70,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1200,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "View All Games"
+ },
+ {
+  "id": 1201,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "<S2><Cffffff><b>My ZapSpot</b>"
+ },
+ {
+  "id": 1202,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "<s4><cffffff>Coming soon..."
+ },
+ {
+  "id": 1203,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "<S4><cffffff>Make You Think"
+ },
+ {
+  "id": 1204,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "<S4><cffffff>Make You Relax"
+ },
+ {
+  "id": 1205,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "<S4><cffffff>Make You Sweat"
+ },
+ {
+  "id": 1206,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "<S2><cffffff>ZapSpot is best experienced in resolutions of 800x600 or greater.  However, we've made it possible for you to play anyway.  Please understand that some of the functionality may not be accessible in this resolution until a future version.<br><BR>Key Links:"
+ },
+ {
+  "id": 1207,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "About ZapSpot"
+ },
+ {
+  "id": 1208,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "Personalize ZapSpot"
+ },
+ {
+  "id": 1209,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": true,
+  "string": "<S2><cffffff>To subscribe to ZapSpot, send mail to: subscribe@zapspot.com"
+ },
+ {
+  "id": 1210,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1211,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1212,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1213,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1214,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1215,
+  "lang": "0x0409",
+  "block": 76,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2000,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": true,
+  "string": "Zap Me A Game"
+ },
+ {
+  "id": 2001,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": true,
+  "string": "<s3><cffffff>ZapSpot is committed to delivering new and exciting content to you.  This is one easy way we thought to bring our content to you.  You select the game and we'll e-mail it to you.  It's that easy.<BR><BR>Please enter the e-mail to which you would like us to send the game."
+ },
+ {
+  "id": 2002,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": true,
+  "string": "<s3><cffffff>E-mail (e.g. dan@zapspot.com):"
+ },
+ {
+  "id": 2003,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": true,
+  "string": "<s3><cffffff><b><c>The server has received your request.<BR>You should receive your game shortly</c></b>"
+ },
+ {
+  "id": 2004,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2005,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2006,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2007,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2008,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2009,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2010,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2011,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2012,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2013,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2014,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2015,
+  "lang": "0x0409",
+  "block": 126,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2096,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2097,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2098,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2099,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2100,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": true,
+  "string": "Coming Soon!"
+ },
+ {
+  "id": 2101,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": true,
+  "string": "<s3><cffffff>Here at ZapSpot Gaming Central (ZGC, for those of you who are acronym driven) we're always looking to make more fun.  Big fun.  Exciting fun.  Casual fun.  You know, fun fun.<BR><BR>And there's more fun coming your way.  All you have to do is 'Subscribe to ZapSpot' (enter your e-mail address in the text box in the lower left corner of ZapSpot to subscribe!).<BR><BR>We're looking forward to having you as part of our team,<BR><BR>- the ZapSpot team"
+ },
+ {
+  "id": 2102,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2103,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2104,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2105,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2106,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2107,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2108,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2109,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2110,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2111,
+  "lang": "0x0409",
+  "block": 132,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2192,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2193,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2194,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2195,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2196,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2197,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2198,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2199,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2200,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": true,
+  "string": "Zap %s to a Friend"
+ },
+ {
+  "id": 2201,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": true,
+  "string": "<S3><cffffff>Zap %s to your friends and add some fun to their lives.<BR><BR>All you have to do is enter their e-mail names and click on the Send button.  If you'd like, you can also enter a simple message for them.<BR><BR>You can enter multiple e-mail addresses, separated by a comma."
+ },
+ {
+  "id": 2202,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": true,
+  "string": "<s3><cffffff>'From' E-mail address:"
+ },
+ {
+  "id": 2203,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": true,
+  "string": "<s3><cffffff>'To' E-mail address :"
+ },
+ {
+  "id": 2204,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": true,
+  "string": "<s3><cffffff>Message:"
+ },
+ {
+  "id": 2205,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": true,
+  "string": "<s3><cffffff><b><c>Your friend has been zapped.<BR>Feel free to zap another!</b></c>"
+ },
+ {
+  "id": 2206,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2207,
+  "lang": "0x0409",
+  "block": 138,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2288,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2289,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2290,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2291,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2292,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2293,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2294,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2295,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2296,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2297,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2298,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2299,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2300,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": true,
+  "string": "Subscribe to ZapSpot"
+ },
+ {
+  "id": 2301,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": true,
+  "string": "<S1><cffffff><C>That's not your e-mail!</c>"
+ },
+ {
+  "id": 2302,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": true,
+  "string": "<S3><cffffff>How do we know that?  Because you typed an invalid or incomplete e-mail address.  A complete e-mail address requires an '@', a '.', and cannot contain spaces.  For example, 'joe21@zapspot.com' is a valid e-mail address.  Please reenter your e-mail in the 'Subscribe to ZapSpot' textbox to the left.<BR><BR>Thanks,<BR><BR>- the ZapSpot team"
+ },
+ {
+  "id": 2303,
+  "lang": "0x0409",
+  "block": 144,
+  "defined": true,
+  "string": "<S1><cffffff><c>Sending subscription information to server...</c>"
+ },
+ {
+  "id": 2304,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": true,
+  "string": "<S3><cffffff>ZapSpot will now send your e-mail address to our servers so we can start sending you weekly bits of fun.  This action requires ZapSpot to connect to the internet and may take a little bit of time to complete (like bringing up a web page).<BR><BR>Sit back, relax, and think of all the entertainment you're about to get.<BR><BR>Back in a minute,<BR><BR>- the ZapSpot team"
+ },
+ {
+  "id": 2305,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": true,
+  "string": "<S1><cffffff><c>Cannot Connect to Server.</c>"
+ },
+ {
+  "id": 2306,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": true,
+  "string": "<S3><cffffff>We're sorry, but we cannot contact our servers, and therefore cannot send up your subscription request.  However, if you connect to the internet later on and have ZapSpot running, we will automatically send it up.<BR><BR>You can also subscribe by sending mail to subscribe@ZapSpot.com - it's easy!<BR><BR>Apologies,<BR><BR>- the ZapSpot team"
+ },
+ {
+  "id": 2307,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": true,
+  "string": "<S1><cffffff><c>Duplicate subscription</c>"
+ },
+ {
+  "id": 2308,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": true,
+  "string": "<S3><cffffff>You know what?  Looking at our servers, it seems as though you have already subscribed to ZapSpot.  Don't worry, we won't double your mail load, but you'll continue to receive ZapSpot games every week.  And if you were looking for two games a week, then you'll just have to wait your turn like everyone else.<BR><BR>Enjoy,<BR><BR>- the ZapSpot team"
+ },
+ {
+  "id": 2309,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": true,
+  "string": "<S1><cffffff><c>Subscription received</c>"
+ },
+ {
+  "id": 2310,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": true,
+  "string": "<S3><cffffff>You have been successfully subscribed, and will begin receiving your free games soon.  You will be receiving a confirmation e-mail shortly.  In the meantime, feel free to continue playing!<BR><BR>Enjoy,<BR><BR>- the ZapSpot team"
+ },
+ {
+  "id": 2311,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2312,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2313,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2314,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2315,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2316,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2317,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2318,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2319,
+  "lang": "0x0409",
+  "block": 145,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2400,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": true,
+  "string": "How To Play"
+ },
+ {
+  "id": 2401,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2402,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2403,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2404,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2405,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2406,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2407,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2408,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2409,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2410,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2411,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2412,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2413,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2414,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2415,
+  "lang": "0x0409",
+  "block": 151,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2496,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2497,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2498,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2499,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2500,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": true,
+  "string": "Install ZapSpot"
+ },
+ {
+  "id": 2501,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": true,
+  "string": "<s1><cffffff><C>ZapSpot has been saved to your desktop</c>"
+ },
+ {
+  "id": 2502,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2503,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2504,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2505,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2506,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2507,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2508,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2509,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2510,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2511,
+  "lang": "0x0409",
+  "block": 157,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10000,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "View All Games"
+ },
+ {
+  "id": 10001,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "Personalize ZapSpot"
+ },
+ {
+  "id": 10002,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "About ZapSpot"
+ },
+ {
+  "id": 10003,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "<s4><cffffff><sh>Coming Soon...  ZapSpot news and messages.</sh>"
+ },
+ {
+  "id": 10004,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "<S1><Cffffff><B><SH><C>Subscribe To ZapSpot</C></SH></B>"
+ },
+ {
+  "id": 10005,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "<s4><Cffffff>Enter your e-mail to get free games every week and save ZapSpot on your computer"
+ },
+ {
+  "id": 10006,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10007,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "Install ZapSpot"
+ },
+ {
+  "id": 10008,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "Terms of Service and Privacy Policy"
+ },
+ {
+  "id": 10009,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "<s4><cffffff><sh>Please support our advertisers and keep ZapSpot free (Clicking will automatically pause your game):</sh>"
+ },
+ {
+  "id": 10010,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "Mail This"
+ },
+ {
+  "id": 10011,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "New Game"
+ },
+ {
+  "id": 10012,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "Pause"
+ },
+ {
+  "id": 10013,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "Resume"
+ },
+ {
+  "id": 10014,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "How To Play"
+ },
+ {
+  "id": 10015,
+  "lang": "0x0409",
+  "block": 626,
+  "defined": true,
+  "string": "High Scores"
+ },
+ {
+  "id": 10016,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": true,
+  "string": "<S1><cffffff><c>Resume your game using the button to the left</c>"
+ },
+ {
+  "id": 10017,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": true,
+  "string": "<s3><cffffff><c>Your game is currently paused.  Jump out and go back to your game?</c>"
+ },
+ {
+  "id": 10018,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": true,
+  "string": "<s4><cffffff><c>Want to play when you're not connected?</c>"
+ },
+ {
+  "id": 10019,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": true,
+  "string": "<s4><cffffff><c>Want to save your high scores and games?</c>"
+ },
+ {
+  "id": 10020,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10021,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10022,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10023,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10024,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10025,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10026,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10027,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10028,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10029,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10030,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 10031,
+  "lang": "0x0409",
+  "block": 627,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20000,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": true,
+  "string": "Send"
+ },
+ {
+  "id": 20001,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": true,
+  "string": "Cancel"
+ },
+ {
+  "id": 20002,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": true,
+  "string": "Apply"
+ },
+ {
+  "id": 20003,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": true,
+  "string": "<s3><cff0000><b>An error was encountered...<BR><cffffff>You must enter a valid e-mail of the form 'dan@zapspot.com'</b>"
+ },
+ {
+  "id": 20004,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": true,
+  "string": "<s3><cff0000><b>An error was encountered...<BR><cffffff>Spaces are not valid characters in e-mail names.<BR>Please retype your e-mail name.</b>"
+ },
+ {
+  "id": 20005,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": true,
+  "string": "<s3><ccc0000><b>Please wait - sending...</b>"
+ },
+ {
+  "id": 20006,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": true,
+  "string": "<s3><cff0000><b>Error: Cannot contact server...<BR><cffffff>ZapSpot cannot complete this action.<BR>Please try again later.</b>"
+ },
+ {
+  "id": 20007,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20008,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20009,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20010,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20011,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20012,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20013,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20014,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 20015,
+  "lang": "0x0409",
+  "block": 1251,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30000,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": true,
+  "string": "LANG_ENGLISH"
+ },
+ {
+  "id": 30001,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30002,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30003,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30004,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30005,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30006,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30007,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30008,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30009,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30010,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30011,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30012,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30013,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30014,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 30015,
+  "lang": "0x0409",
+  "block": 1876,
+  "defined": false,
+  "string": ""
+ }
+]

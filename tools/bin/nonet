@@ -1,0 +1,10 @@
+#!/bin/sh
+# Run a command with no network access: private network namespace (loopback only)
+# and hosts lookups from /etc/hosts only, so no DNS query leaves through the host resolver.
+T="$(cd "$(dirname "$0")/.." && pwd)"
+# No core dumps: a crash must not leave files in /var/lib/systemd/coredump.
+ulimit -c 0
+exec bwrap --dev-bind / / --unshare-net \
+  --ro-bind "$T/home/nsswitch.nonet.conf" /etc/nsswitch.conf \
+  --tmpfs /run/systemd/resolve \
+  -- "$@"

@@ -1,0 +1,6 @@
+click 776 22
+wait 1.5
+wshot 58_close_in_game_dialog Warning: Game in Progress
+wclick 102 86 Warning: Game in Progress
+wait 2
+tree

@@ -1,0 +1,57 @@
+{
+ "group_type": "cursor",
+ "group_header": {
+  "reserved": 0,
+  "type": 2,
+  "count": 1
+ },
+ "entries": [
+  {
+   "width": 32,
+   "height_field": 64,
+   "planes": 1,
+   "bit_count": 1,
+   "bytes_in_res": 308,
+   "id": 4
+  }
+ ],
+ "images": [
+  {
+   "header": {
+    "biSize": 40,
+    "biWidth": 32,
+    "biHeight": 64,
+    "biPlanes": 1,
+    "biBitCount": 1,
+    "biCompression": 0,
+    "biSizeImage": 128,
+    "biXPelsPerMeter": 0,
+    "biYPelsPerMeter": 0,
+    "biClrUsed": 0,
+    "biClrImportant": 0
+   },
+   "width": 32,
+   "height": 32,
+   "bits_per_pixel": 1,
+   "palette": [
+    "#000000",
+    "#ffffff"
+   ],
+   "mask_bytes_expected_end": 304,
+   "data_size": 304,
+   "pixel_stats": {
+    "transparent": 845,
+    "opaque": 179
+   },
+   "preview_note": "AND=1 & XOR=black: transparent; AND=1 & XOR!=black: screen invert, shown magenta",
+   "resource_id": 4,
+   "hotspot": [
+    15,
+    17
+   ],
+   "png": "ZapSpot.exe/decoded/CURSOR/OPENHAND_0409_32x32x1.png"
+  }
+ ],
+ "file": "ZapSpot.exe/decoded/CURSOR/OPENHAND_0409.cur",
+ "pillow_open_check": "CUR (32, 32) LA"
+}

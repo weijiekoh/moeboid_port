@@ -1,0 +1,19 @@
+x/8x *(int*)0x45cfb0
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 0)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 4)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 8)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 12)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 16)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 20)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 24)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 28)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 32)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 36)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 40)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 44)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 48)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 52)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 56)
+x/12x *(int*)(*(int*)(*(int*)0x45cfb0 + 8) + 60)
+detach
+quit

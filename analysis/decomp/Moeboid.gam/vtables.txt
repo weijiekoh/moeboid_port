@@ -1,0 +1,56 @@
+# RTTI type descriptor names (.?AV/.?AU) and derived vtables
+
+# Candidate vtables: runs of >=2 dwords pointing to function entries, in non-executable initialized memory
+VTABLE 1000d150 n=2 sym=PTR_FUN_1000d150 xrefs=10002668:FUN_10002660@10002660,100026b0:FUN_100026b0@100026b0
+  +0x000 10002680 FUN_10002680
+  +0x004 100028c0 FUN_100028c0
+VTABLE 1000d158 n=2 sym=PTR_FUN_1000d158 xrefs=10002aac:FUN_10002a80@10002a80,10002d13:FUN_10002cf0@10002cf0
+  +0x000 10002cc0 FUN_10002cc0
+  +0x004 10004320 FUN_10004320
+VTABLE 1000d22c n=2 xrefs=
+  +0x000 10006b9a (no function at target)
+  +0x004 10006ba4 (no function at target)
+VTABLE 1000d248 n=2 xrefs=
+  +0x000 10006cfe (no function at target)
+  +0x004 10006d08 (no function at target)
+VTABLE 1000d254 n=2 xrefs=
+  +0x000 10006f50 (no function at target)
+  +0x004 10006f54 (no function at target)
+VTABLE 1000d264 n=2 xrefs=
+  +0x000 10006fb2 (no function at target)
+  +0x004 10006fbb (no function at target)
+VTABLE 1000d280 n=2 xrefs=
+  +0x000 10007079 (no function at target)
+  +0x004 1000707d (no function at target)
+VTABLE 1000d298 n=2 xrefs=
+  +0x000 100070df (no function at target)
+  +0x004 100070e3 (no function at target)
+VTABLE 1000d59c n=2 xrefs=
+  +0x000 1000a0c4 (no function at target)
+  +0x004 1000a0c8 (no function at target)
+VTABLE 1000d5e4 n=2 xrefs=
+  +0x000 1000ac62 (no function at target)
+  +0x004 1000ac66 (no function at target)
+VTABLE 1000d5f0 n=2 xrefs=
+  +0x000 1000ad16 (no function at target)
+  +0x004 1000ad1a (no function at target)
+VTABLE 1000e00c n=3 xrefs=
+  +0x000 10009b82 (no function at target)
+  +0x004 1000a4e8 FUN_1000a4e8
+  +0x008 10009ddb (no function at target)
+VTABLE 1000ea20 n=3 sym=PTR_FUN_1000ea20 xrefs=100071a4:FUN_100071a4@100071a4
+  +0x000 10005137 FUN_10005137
+  +0x004 1000514e (no function at target)
+  +0x008 1000514e (no function at target)
+VTABLE 1000ea50 n=2 sym=PTR___exit_1000ea50 xrefs=1000596d:__amsg_exit@10005943
+  +0x000 100071e2 __exit
+  +0x004 1000893b __fptrap
+VTABLE 1000ea58 n=2 sym=PTR___fptrap_1000ea58 xrefs=10005154:FUN_1000514f@1000514f,100063c4:FUN_10005fe2@10005fe2
+  +0x000 1000893b __fptrap
+  +0x004 1000893b __fptrap
+VTABLE 1000ea60 n=2 sym=PTR___fptrap_1000ea60 xrefs=1000516d:FUN_1000514f@1000514f,100063ad:FUN_10005fe2@10005fe2
+  +0x000 1000893b __fptrap
+  +0x004 1000893b __fptrap
+VTABLE 1000ea80 n=2 xrefs=
+  +0x000 1000703c FUN_1000703c
+  +0x004 1000703c FUN_1000703c

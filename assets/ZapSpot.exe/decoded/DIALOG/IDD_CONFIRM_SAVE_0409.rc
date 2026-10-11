@@ -1,0 +1,19 @@
+// ZapSpot.exe RT_DIALOG IDD_CONFIRM_SAVE, language 0x0409, DLGTEMPLATE, 820 bytes, file offset 0x68FA0
+// Pixel values: dialog base units 6x13 (MS Sans Serif 8pt strike from sserife.fon, 96 DPI). Client area only; frame size depends on the non-client metrics.
+IDD_CONFIRM_SAVE DIALOG 0, 0, 207, 90
+// client px: x=0 y=0 w=311 h=146
+STYLE DS_SETFONT | DS_CENTER | WS_CAPTION | WS_POPUP | WS_VISIBLE   // 0x90C00840
+CAPTION "Save to Desktop Requested"
+FONT 8, "MS Sans Serif"   // DLGTEMPLATE: weight, italic and charset are not stored
+BEGIN
+    CONTROL "&OK", 2002, "Button", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 46, 69, 53, 16
+        // id=2002 (0x7D2) style=0x50030001 exstyle=0x00000000 | px x=69 y=112 w=80 h=26
+    CONTROL ">>", 2007, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 40, 9, 9
+        // id=2007 (0x7D7) style=0x50010000 exstyle=0x00000000 | px x=11 y=65 w=14 h=15
+    CONTROL "&Cancel", 2004, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 105, 69, 53, 16
+        // id=2004 (0x7D4) style=0x50030000 exstyle=0x00000000 | px x=158 y=112 w=80 h=26
+    CONTROL "In order to save this setting, ZapSpot needs to save its file to your machine.  This will also start your own personal ZapSpot and allow you to collect ZapSpot games.", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 191, 27
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=11 y=11 w=287 h=44
+    CONTROL "If you save ZapSpot, you agree to ZapSpot's Terms of Service and Privacy Policy.  Click this button to read them.", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 19, 40, 187, 27
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=29 y=65 w=281 h=44
+END

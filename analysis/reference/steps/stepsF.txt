@@ -1,0 +1,9 @@
+waitframe 30
+wait 2
+click 563 253
+wait 3
+idleplay 85 40_idle
+wait 1
+shot 41_end
+desk 41_end_desk
+tree

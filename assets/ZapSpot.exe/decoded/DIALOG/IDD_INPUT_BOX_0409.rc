@@ -1,0 +1,17 @@
+// ZapSpot.exe RT_DIALOG IDD_INPUT_BOX, language 0x0409, DLGTEMPLATE, 206 bytes, file offset 0x692D8
+// Pixel values: dialog base units 6x13 (MS Sans Serif 8pt strike from sserife.fon, 96 DPI). Client area only; frame size depends on the non-client metrics.
+IDD_INPUT_BOX DIALOG 0, 0, 167, 61
+// client px: x=0 y=0 w=251 h=99
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_POPUP   // 0x80C008C0
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"   // DLGTEMPLATE: weight, italic and charset are not stored
+BEGIN
+    CONTROL "", 1003, "Edit", ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 25, 158, 12
+        // id=1003 (0x3EB) style=0x50810080 exstyle=0x00000000 | px x=6 y=41 w=237 h=20
+    CONTROL "OK", 1, "Button", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 32, 41, 50, 14
+        // id=1 (0x1) style=0x50010001 exstyle=0x00000000 | px x=48 y=67 w=75 h=23
+    CONTROL "Cancel", 2, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 85, 41, 50, 14
+        // id=2 (0x2) style=0x50010000 exstyle=0x00000000 | px x=128 y=67 w=75 h=23
+    CONTROL "Static", 1002, "Static", SS_CENTER | WS_CHILD | WS_VISIBLE | WS_GROUP, 4, 4, 158, 20
+        // id=1002 (0x3EA) style=0x50020001 exstyle=0x00000000 | px x=6 y=7 w=237 h=33
+END

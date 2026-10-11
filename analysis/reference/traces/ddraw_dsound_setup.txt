@@ -1,0 +1,144 @@
+# Run D2: WINEDEBUG=+timestamp,+pid,+ddraw,+dsound (no relay). Same session as run T: title idle 8 s, Start, intro, keys, gameplay.
+# ZapSpot.exe = pid 00d8. Wine virtual desktop 1024x768, X server depth 24 (32 bpp XRGB).
+
+## DirectDraw and DirectSound set-up (first 140 trace lines of the process, Mesa noise removed)
+572264.018:00d8:00dc:trace:ddraw:DirectDrawCreate driver_guid (null), ddraw 0026FD48, outer 00000000.
+572264.018:00d8:00dc:trace:ddraw:DDRAW_Create driver_guid (null), ddraw 0026FD48, outer_unknown 00000000, interface_iid {6c14db80-a733-11ce-a521-0020af0be560}.
+572264.308:00d8:00dc:trace:ddraw:device_parent_wined3d_device_created device_parent 00155BA8, device 01570020.
+572264.308:00d8:00dc:trace:ddraw:ddraw7_QueryInterface iface 00155B88, riid {6c14db80-a733-11ce-a521-0020af0be560}, out 0026FD48.
+572264.308:00d8:00dc:trace:ddraw:ddraw7_QueryInterface Returning IDirectDraw interface 00155B94.
+572264.308:00d8:00dc:trace:ddraw:ddraw1_AddRef 00155B88 increasing refcount to 1.
+572264.308:00d8:00dc:trace:ddraw:ddraw7_Release 00155B88 decreasing refcount to 0.
+572264.308:00d8:00dc:trace:ddraw:ddraw1_Initialize iface 00155B94, guid (null).
+572264.308:00d8:00dc:trace:ddraw:ddraw7_Initialize iface 00155B88, guid (null).
+572264.308:00d8:00dc:trace:ddraw:ddraw1_Release 00155B88 decreasing refcount to 0.
+572264.308:00d8:00dc:trace:ddraw:ddraw7_SetCooperativeLevel iface 00155B88, window 00000000, flags 0x8.
+572264.308:00d8:00dc:trace:ddraw:ddraw_set_cooperative_level ddraw 00155B88, window 00000000, flags 0x8, restore_mode_on_normal 1.
+572264.308:00d8:00dc:trace:ddraw:DDRAW_dump_cooperativelevel  - DDSCL_NORMAL 
+572264.308:00d8:00dc:trace:ddraw:ddraw_attach_d3d_device ddraw 00155B88.
+572264.309:00d8:00dc:warn:ddraw:ddraw_attach_d3d_device No window for the Direct3DDevice, created hidden window 00020074.
+572264.309:00d8:00dc:trace:ddraw:device_parent_texture_sub_resource_created device_parent 00155BA8, type 0x3, wined3d_texture 002DCEB8, sub_resource_idx 0, parent 002DD08C, parent_ops 002DD090.
+572264.309:00d8:00dc:trace:ddraw:device_parent_texture_sub_resource_created device_parent 00155BA8, type 0x3, wined3d_texture 01574040, sub_resource_idx 0, parent 01574214, parent_ops 01574218.
+572264.343:00d8:00dc:trace:ddraw:ddraw_attach_d3d_device Successfully initialized 3D.
+572264.343:00d8:00dc:trace:ddraw:ddraw_set_cooperative_level SetCooperativeLevel returning DD_OK
+572264.343:00d8:00dc:trace:ddraw:ddraw7_RestoreDisplayMode iface 00155B88.
+572264.343:00d8:00dc:trace:ddraw:ddraw_destroy_swapchain Destroying the swapchain.
+572264.347:00d8:00dc:trace:ddraw:ddraw_destroy_swapchain Destroying the hidden render window 00020074.
+572264.348:00d8:00dc:trace:ddraw:ddraw_destroy_swapchain Swapchain destroyed.
+572264.349:00d8:00dc:trace:ddraw:DirectDrawCreate driver_guid (null), ddraw 01797144, outer 00000000.
+572264.349:00d8:00dc:trace:ddraw:DDRAW_Create driver_guid (null), ddraw 01797144, outer_unknown 00000000, interface_iid {6c14db80-a733-11ce-a521-0020af0be560}.
+572264.378:00d8:00dc:trace:ddraw:device_parent_wined3d_device_created device_parent 00155BA8, device 003BAF68.
+572264.378:00d8:00dc:trace:ddraw:ddraw7_QueryInterface iface 00155B88, riid {6c14db80-a733-11ce-a521-0020af0be560}, out 01797144.
+572264.378:00d8:00dc:trace:ddraw:ddraw7_QueryInterface Returning IDirectDraw interface 00155B94.
+572264.378:00d8:00dc:trace:ddraw:ddraw1_AddRef 00155B88 increasing refcount to 1.
+572264.378:00d8:00dc:trace:ddraw:ddraw7_Release 00155B88 decreasing refcount to 0.
+572264.378:00d8:00dc:trace:ddraw:ddraw1_Initialize iface 00155B94, guid (null).
+572264.378:00d8:00dc:trace:ddraw:ddraw7_Initialize iface 00155B88, guid (null).
+572264.378:00d8:00dc:trace:ddraw:ddraw1_SetCooperativeLevel iface 00155B94, window 0001006A, flags 0x8.
+572264.378:00d8:00dc:trace:ddraw:ddraw_set_cooperative_level ddraw 00155B88, window 0001006A, flags 0x8, restore_mode_on_normal 0.
+572264.378:00d8:00dc:trace:ddraw:DDRAW_dump_cooperativelevel  - DDSCL_NORMAL 
+572264.378:00d8:00dc:trace:ddraw:ddraw_attach_d3d_device ddraw 00155B88.
+572264.378:00d8:00dc:trace:ddraw:ddraw_attach_d3d_device Using existing window 0001006A for Direct3D rendering.
+572264.378:00d8:00dc:trace:ddraw:device_parent_texture_sub_resource_created device_parent 00155BA8, type 0x3, wined3d_texture 002DCE30, sub_resource_idx 0, parent 002DD004, parent_ops 002DD008.
+572264.378:00d8:00dc:trace:ddraw:device_parent_texture_sub_resource_created device_parent 00155BA8, type 0x3, wined3d_texture 002DD040, sub_resource_idx 0, parent 002DD214, parent_ops 002DD218.
+572264.412:00d8:00dc:trace:ddraw:ddraw_attach_d3d_device Successfully initialized 3D.
+572264.412:00d8:00dc:trace:ddraw:ddraw_set_cooperative_level SetCooperativeLevel returning DD_OK
+572264.412:00d8:00dc:trace:ddraw:ddraw1_GetDisplayMode iface 00155B94, surface_desc 0026FC84.
+572264.412:00d8:00dc:trace:ddraw:ddraw7_GetDisplayMode iface 00155B88, surface_desc 0026FC84.
+572264.412:00d8:00dc:trace:ddraw:ddrawformat_from_wined3dformat Returning: ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.412:00d8:00dc:trace:ddraw:ddraw7_GetDisplayMode Returning surface desc :
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_HEIGHT : 768
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_WIDTH : 1024
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_PITCH : 4096
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_REFRESHRATE : 60
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_PIXELFORMAT : ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.412:00d8:00dc:trace:ddraw:ddraw1_CreateSurface iface 00155B94, surface_desc 0026FC84, surface 01797148, outer_unknown 00000000.
+572264.412:00d8:00dc:trace:ddraw:ddraw_surface_create ddraw 00155B88, surface_desc 0026F7E0, surface 0026F784, outer_unknown 00000000, version 1.
+572264.412:00d8:00dc:trace:ddraw:ddraw_surface_create Requesting surface desc:
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_CAPS : DDSCAPS_PRIMARYSURFACE 
+572264.412:00d8:00dc:trace:ddraw:ddrawformat_from_wined3dformat Returning: ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.412:00d8:00dc:trace:ddraw:wined3dformat_from_ddrawformat Convert a DirectDraw Pixelformat to a WineD3D Pixelformat
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_pixelformat ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.412:00d8:00dc:trace:ddraw:wined3dformat_from_ddrawformat Convert a DirectDraw Pixelformat to a WineD3D Pixelformat
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_pixelformat ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.412:00d8:00dc:trace:ddraw:device_parent_texture_sub_resource_created device_parent 00155BA8, type 0x3, wined3d_texture 003BFC40, sub_resource_idx 0, parent 003BFE14, parent_ops 003BFE18.
+572264.412:00d8:00dc:trace:ddraw:ddraw_texture_init Created ddraw surface 003BFE50.
+572264.412:00d8:00dc:trace:ddraw:ddraw_texture_init Surface 003BFE50, created draw_texture 00000000, wined3d_texture 003BFC40.
+572264.412:00d8:00dc:trace:ddraw:ddraw1_GetDisplayMode iface 00155B94, surface_desc 0026FC84.
+572264.412:00d8:00dc:trace:ddraw:ddraw7_GetDisplayMode iface 00155B88, surface_desc 0026FC84.
+572264.412:00d8:00dc:trace:ddraw:ddrawformat_from_wined3dformat Returning: ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.412:00d8:00dc:trace:ddraw:ddraw7_GetDisplayMode Returning surface desc :
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_HEIGHT : 768
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_WIDTH : 1024
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_PITCH : 4096
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_REFRESHRATE : 60
+572264.412:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_PIXELFORMAT : ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.412:00d8:00dc:trace:ddraw:ddraw1_CreateClipper iface 00155B94, flags 0, clipper 0179714C, outer_unknown 00000000.
+572264.412:00d8:00dc:trace:ddraw:ddraw7_CreateClipper iface 00155B88, flags 0, clipper 0179714C, outer_unknown 00000000.
+572264.412:00d8:00dc:trace:ddraw:DirectDrawCreateClipper flags 0, clipper 0179714C, outer_unknown 00000000.
+572264.412:00d8:00dc:trace:ddraw:DirectDrawCreateClipper Created clipper 002C3030.
+572264.412:00d8:00dc:trace:ddraw:ddraw_surface1_SetClipper iface 003BFE60, clipper 002C3030.
+572264.412:00d8:00dc:trace:ddraw:ddraw_surface7_SetClipper iface 003BFE50, clipper 002C3030.
+572264.412:00d8:00dc:trace:ddraw:ddraw_clipper_AddRef 002C3030 increasing refcount to 2.
+572264.412:00d8:00dc:trace:ddraw:ddraw_clipper_GetHWnd iface 002C3030, window 0026F858.
+572264.412:00d8:00dc:trace:ddraw:ddraw_clipper_SetHWnd iface 002C3030, flags 0, window 0001006A.
+572264.423:00d8:00dc:trace:dsound:DllMain (79F10000 1 00000000)
+572264.423:00d8:00dc:trace:dsound:DirectSoundCreate ((null),00CC4E44,00000000)
+572264.423:00d8:00dc:trace:dsound:IDirectSoundImpl_Create ({279afa83-4981-11ce-a521-0020af0be560}, 0026FCBC)
+572264.423:00d8:00dc:trace:dsound:setup_dsound_options appname = [ZapSpot.exe\DirectSound]
+572264.423:00d8:00dc:trace:dsound:setup_dsound_options ds_hel_buflen = 65536
+572264.423:00d8:00dc:trace:dsound:IUnknownImpl_QueryInterface (002C2998,{279afa83-4981-11ce-a521-0020af0be560},0026FCBC)
+572264.423:00d8:00dc:trace:dsound:IDirectSound8Impl_AddRef (002C2998) refds=1
+572264.423:00d8:00dc:trace:dsound:IUnknownImpl_Release (002C2998) ref=0
+572264.423:00d8:00dc:trace:dsound:IDirectSound8Impl_Initialize (002C2998, (null))
+572264.423:00d8:00dc:trace:dsound:DirectSoundDevice_Initialize (002C29B0,(null))
+572264.423:00d8:00dc:trace:dsound:GetDeviceID (DSDEVID_DefaultPlayback,0026FC60)
+572264.631:00d8:00dc:trace:dsound:DirectSoundDevice_Create (0026FC58)
+572264.631:00d8:00dc:trace:dsound:DSOUND_ReopenDevice (00391260, 0)
+572264.646:00d8:00dc:trace:dsound:DSOUND_ReopenDevice period 20 ms frag_frames 960 buf_frames 2880
+572264.646:00d8:00dc:trace:dsound:DSOUND_PrimaryOpen (00391260)
+572264.646:00d8:00dc:trace:dsound:DSOUND_PrimaryOpen buflen: 65536, frames 2880
+572264.646:00d8:00dc:trace:dsound:IDirectSound8Impl_SetCooperativeLevel (002C2998,0001006A,DSSCL_PRIORITY)
+572264.646:00d8:00dc:warn:dsound:IDirectSound8Impl_SetCooperativeLevel level=DSSCL_PRIORITY not fully supported
+572264.646:00d8:00dc:trace:dsound:IDirectSound8Impl_CreateSoundBuffer (002C2998,0026FCF4,0026FD38,00000000)
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (00391260,0026FCF4,0026FD38,00000000)
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (structsize=20)
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x00000001:
+572264.646:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_PRIMARYBUFFER )
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=0)
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=00000000)
+572264.646:00d8:00dc:trace:dsound:primarybuffer_create 00391260,00391328,0026FCF4)
+572264.646:00d8:00dc:trace:dsound:primarybuffer_create Created primary buffer at 00391420
+572264.646:00d8:00dc:trace:dsound:primarybuffer_create (formattag=0xfffe,chans=2,samplerate=48000,bytespersec=384000,blockalign=8,bitspersamp=32,cbSize=22)
+572264.646:00d8:00dc:trace:dsound:PrimaryBufferImpl_AddRef (00391420) ref 1
+572264.646:00d8:00dc:trace:dsound:PrimaryBufferImpl_SetFormat (00391420,0026FD08)
+572264.646:00d8:00dc:trace:dsound:primarybuffer_SetFormat (00391260,0026FD08)
+572264.646:00d8:00dc:trace:dsound:primarybuffer_SetFormat (formattag=0x0001,chans=2,samplerate=22050,bytespersec=88200,blockalign=4,bitspersamp=16,cbSize=0)
+572264.646:00d8:00dc:trace:dsound:PrimaryBufferImpl_Release (00391420) primary ref 0
+572264.646:00d8:0134:trace:dsound:DSOUND_mixthread (00391260)
+572264.651:00d8:00dc:trace:ddraw:ddraw1_CreateSurface iface 00155B94, surface_desc 0026F964, surface 0026F9E0, outer_unknown 00000000.
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface_create ddraw 00155B88, surface_desc 0026F8CC, surface 0026F870, outer_unknown 00000000, version 1.
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface_create Requesting surface desc:
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_CAPS : DDSCAPS_OFFSCREENPLAIN DDSCAPS_SYSTEMMEMORY 
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_HEIGHT : 572
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_WIDTH : 800
+572264.651:00d8:00dc:trace:ddraw:ddrawformat_from_wined3dformat Returning: ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.651:00d8:00dc:trace:ddraw:wined3dformat_from_ddrawformat Convert a DirectDraw Pixelformat to a WineD3D Pixelformat
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_pixelformat ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.651:00d8:00dc:trace:ddraw:device_parent_texture_sub_resource_created device_parent 00155BA8, type 0x3, wined3d_texture 003A8E88, sub_resource_idx 0, parent 003A905C, parent_ops 003A9060.
+572264.651:00d8:00dc:trace:ddraw:device_parent_texture_sub_resource_created device_parent 00155BA8, type 0x3, wined3d_texture 003A9098, sub_resource_idx 0, parent 003A926C, parent_ops 003A9270.
+572264.651:00d8:00dc:trace:ddraw:ddraw_texture_init Created ddraw surface 003931D0.
+572264.651:00d8:00dc:trace:ddraw:ddraw_texture_init Surface 003931D0, created draw_texture 003A8E88, wined3d_texture 003A9098.
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface1_GetDC iface 003931E0, dc 0026FA0C.
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface7_GetDC iface 003931D0, dc 0026FA0C.
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface1_ReleaseDC iface 003931E0, dc 01410075.
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface7_ReleaseDC iface 003931D0, dc 01410075.
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface1_Lock iface 003931E0, rect (null), surface_desc 0026FA20, flags 0x1, h 00000000.
+572264.651:00d8:00dc:trace:ddraw:surface_lock surface 003931D0, rect (null), surface_desc 0026F970, surface_desc_size 108, flags 0x1, h 00000000.
+572264.651:00d8:00dc:trace:ddraw:surface_lock locked surface returning description :
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_CAPS : DDSCAPS_OFFSCREENPLAIN DDSCAPS_SYSTEMMEMORY 
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_HEIGHT : 572
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_WIDTH : 800
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_PITCH : 3200
+572264.651:00d8:00dc:trace:ddraw:DDRAW_dump_members  - DDSD_PIXELFORMAT : ( DDPF_RGB , RGB bits: 32, R 0x00ff0000 G 0x0000ff00 B 0x000000ff)
+572264.651:00d8:00dc:trace:ddraw:ddraw_surface1_Unlock iface 003931E0, data 01B80030.

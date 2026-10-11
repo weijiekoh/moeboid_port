@@ -1,0 +1,15 @@
+reference: run.py --script autopilot --ms 60000 --full-ticks 60: ok
+repeat (same command again): run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay of the input recording: run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay, scribble 0x00 (stack below ESP and new heap blocks): run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay, scribble 0xa5: run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay, scribble 0x5a: run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay, initial stack/heap fill 0xcc: run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay, image relocated to 0x20000000: run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay, Unicorn FSIN/FCOS (no x87 table): run ok; per-tick call hashes and state digests identical (2835 ticks)
+replay, engine RNG seed 999 (must diverge): run ok; per-tick call hashes and state digests DIVERGES at tick 35 (ms 4100 vs 4100)
+replay, GetTickCount step 15.625 ms (timing model; must diverge): run ok; per-tick call hashes and state digests DIVERGES at tick 5 (ms 1100 vs 1109)
+tour: run.py --script tour --ms 120000 --coverage: ok
+# coverage: game functions entered 70/72; game code bytes executed 14748/16656 (88.5%)
+# functions not entered: 10002680 10005030
+tour replay: run ok; per-tick call hashes and state digests identical (5663 ticks)

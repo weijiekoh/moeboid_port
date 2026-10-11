@@ -1,0 +1,23 @@
+splash 00_splash
+waitframe 30
+wait 2
+click 233 110
+wait 2
+shot 06_mail_this
+desk 06_mail_this_desktop
+tree
+click 120 531
+wait 2
+shot 07_terms
+desk 07_terms_desktop
+tree
+click 122 508
+wait 2
+shot 08_install
+desk 08_install_desktop
+tree
+click 718 22
+wait 2
+shot 09_help_button
+desk 09_help_button_desktop
+tree

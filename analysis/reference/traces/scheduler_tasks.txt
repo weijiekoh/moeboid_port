@@ -1,0 +1,85 @@
+# Engine scheduler task table, read from the running process with winedbg (nonet wine winedbg --file CMDS <wpid>).
+# Scheduler object pointer at 0x45cfb0 (ZapSpot.exe). Task layout from code at 0x413510:
+#   +0x10 period ms, +0x14 last fire time, +0x18 start time, +0x1c callback (cdecl, one struct* arg), +0x24 user pointer,
+#   +0x28 byte flag: 0 = pause-aware elapsed time (timer method 0x427510), 1 = total elapsed time (method 0x4274f0).
+# Fire rule (0x413510): if (now - last) >= period (unsigned) then callback(); last = now (time read before the callback).
+# Time source: GetTickCount (timer object vtable 0x42f058, methods 0x4274f0 and 0x427510).
+# Caveat: the winedbg attach crashes ZapSpot after detach (Wine wow64 break-in thread faults), so take one dump per run.
+
+## Title screen (run M, 3 s after the frame appeared)
+scheduler object 0xcc29d0 (vtable 0x42f058): capacity 50, task array 0xcc2900, task count 5
+task         period callback     user       flag time base
+0xcc44b0       50 ms 0x41f1d0     0xca5fe8      1 total (runs while paused)
+0xcc4b80     1000 ms 0x41aca0     0xcc4bc0      1 total (runs while paused)
+0xcd5a40       50 ms 0x417850     0xcd6850      0 active (stops while paused)
+0xcd9810       50 ms 0x417850     0xcd9850      1 total (runs while paused)
+0xcd9d40    60000 ms 0x422b40     0xcd8050      1 total (runs while paused)
+
+## Gameplay (run M3, 7 s after Start)
+scheduler object 0xcc29d0 (vtable 0x42f058): capacity 50, task array 0xcc2900, task count 13
+task         period callback     user       flag time base
+0xcc44b0       50 ms 0x41f1d0     0xca5fe8      1 total (runs while paused)
+0xcc4b80     1000 ms 0x41aca0     0xcc4bc0      1 total (runs while paused)
+0xccf170       50 ms 0x417850     0xccf480      0 active (stops while paused)
+0xcd4690       50 ms 0x417850     0xcd47f0      0 active (stops while paused)
+0xcd9810       50 ms 0x417850     0xcd9850      1 total (runs while paused)
+0xcd9d40    60000 ms 0x422b40     0xcd8050      1 total (runs while paused)
+0xcda0c0       50 ms 0x417850     0xcda100      0 active (stops while paused)
+0xcda1f0       50 ms 0x417850     0xcda250      0 active (stops while paused)
+0xcda340       50 ms 0x417850     0xcda380      0 active (stops while paused)
+0xcda6d0       50 ms 0x417850     0xcda710      0 active (stops while paused)
+0xcdb990       20 ms 0x100031e0   0x2892770     0 active (stops while paused)
+0xcdbbe0       50 ms 0x417850     0xcdbc20      0 active (stops while paused)
+0xcdbcc0       50 ms 0x417850     0xcdba40      0 active (stops while paused)
+
+## Raw winedbg output, gameplay
+0x00000000cc29d0:  0042f058 00000032 00cc2900 0000000d
+0x00000000cc29e0:  2221fca6 00000000 2221fca6 00000000
+0x00000000cc4b80:  0042ea40 00000000 00000000 00000000
+0x00000000cc4b90:  000003e8 00002625 000002d1 0041aca0
+0x00000000cc4ba0:  00000001 00cc4bc0 00000001 00000000
+0x00000000cc44b0:  0042ea40 00000000 00000000 00000000
+0x00000000cc44c0:  00000032 00002992 000002d1 0041f1d0
+0x00000000cc44d0:  00000001 00ca5fe8 00000001 00000000
+0x00000000cd9d40:  0042ea40 00000000 00000000 000000b0
+0x00000000cd9d50:  0000ea60 000002ff 000002ff 00422b40
+0x00000000cd9d60:  00000201 00cd8050 01769501 ffff00ff
+0x00000000cd9810:  0042ea40 00000000 00000000 00000000
+0x00000000cd9820:  00000032 000029a7 000002ff 00417850
+0x00000000cd9830:  00000001 00cd9850 01010101 01010101
+0x00000000cd4690:  0042ea40 00000000 00000000 00ffcc00
+0x00000000cd46a0:  00000032 000029a7 00000ba9 00417850
+0x00000000cd46b0:  66330001 00cd47f0 00000000 00000000
+0x00000000ccf170:  0042ea40 00000000 00000000 00000000
+0x00000000ccf180:  00000032 000029a7 0000179b 00417850
+0x00000000ccf190:  00000001 00ccf480 00000000 00000000
+0x00000000cda340:  0042ea40 00000000 00000000 00000000
+0x00000000cda350:  00000032 000029a7 0000179b 00417850
+0x00000000cda360:  00000001 00cda380 00000000 00000000
+0x00000000cda0c0:  0042ea40 00000000 00000000 00000000
+0x00000000cda0d0:  00000032 000029a7 0000179b 00417850
+0x00000000cda0e0:  00000001 00cda100 00000000 00000000
+0x00000000cdb990:  0042ea40 00000001 00000000 00000000
+0x00000000cdb9a0:  00000014 000029bd 0000179b 100031e0
+0x00000000cdb9b0:  00000001 02892770 00000000 00000000
+0x00000000cda6d0:  0042ea40 00000000 00000000 00000000
+0x00000000cda6e0:  00000032 000029a7 0000234e 00417850
+0x00000000cda6f0:  00000001 00cda710 00000000 00000000
+0x00000000cda1f0:  0042ea40 00000000 00000000 00000000
+0x00000000cda200:  00000032 00002995 00002549 00417850
+0x00000000cda210:  00000001 00cda250 00000000 00000000
+0x00000000cdbcc0:  0042ea40 00000000 00000000 00cdbc80
+0x00000000cdbcd0:  00000032 000029a7 00002908 00417850
+0x00000000cdbce0:  00000001 00cdba40 00000000 00cdbc70
+0x00000000cdbbe0:  0042ea40 00000000 00000000 00000000
+0x00000000cdbbf0:  00000032 000029bd 000029bd 00417850
+0x00000000cdbc00:  00000001 00cdbc20 00000000 00000000
+0x00000000cdbcc0:  0042ea40 00000000 00000000 00cdbc80
+0x00000000cdbcd0:  00000032 000029a7 00002908 00417850
+0x00000000cdbce0:  00000001 00cdba40 00000000 00cdbc70
+0x00000000cdbf50:  00ca0d58 00ca0d58 00000000 00000000
+0x00000000cdbf60:  00000032 00002886 0000265e 00417850
+0x00000000cdbf70:  00000001 00cdbf90 00000000 00000000
+0x00000000cda1f0:  0042ea40 00000000 00000000 00000000
+0x00000000cda200:  00000032 00002995 00002549 00417850
+0x00000000cda210:  00000001 00cda250 00000000 00000000

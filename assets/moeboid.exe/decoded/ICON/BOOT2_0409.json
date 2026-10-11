@@ -1,0 +1,126 @@
+{
+ "group_type": "icon",
+ "group_header": {
+  "reserved": 0,
+  "type": 1,
+  "count": 2
+ },
+ "entries": [
+  {
+   "width": 32,
+   "height": 32,
+   "color_count": 16,
+   "reserved": 0,
+   "planes": 1,
+   "bit_count": 4,
+   "bytes_in_res": 744,
+   "id": 1
+  },
+  {
+   "width": 16,
+   "height": 16,
+   "color_count": 16,
+   "reserved": 0,
+   "planes": 1,
+   "bit_count": 4,
+   "bytes_in_res": 296,
+   "id": 2
+  }
+ ],
+ "images": [
+  {
+   "header": {
+    "biSize": 40,
+    "biWidth": 32,
+    "biHeight": 64,
+    "biPlanes": 1,
+    "biBitCount": 4,
+    "biCompression": 0,
+    "biSizeImage": 640,
+    "biXPelsPerMeter": 0,
+    "biYPelsPerMeter": 0,
+    "biClrUsed": 0,
+    "biClrImportant": 0
+   },
+   "width": 32,
+   "height": 32,
+   "bits_per_pixel": 4,
+   "palette": [
+    "#000000",
+    "#800000",
+    "#008000",
+    "#808000",
+    "#000080",
+    "#800080",
+    "#008080",
+    "#c0c0c0",
+    "#808080",
+    "#ff0000",
+    "#00ff00",
+    "#ffff00",
+    "#0000ff",
+    "#ff00ff",
+    "#00ffff",
+    "#ffffff"
+   ],
+   "mask_bytes_expected_end": 744,
+   "data_size": 744,
+   "pixel_stats": {
+    "transparent": 173,
+    "opaque": 851
+   },
+   "preview_note": "AND=1 & XOR=black: transparent; AND=1 & XOR!=black: screen invert, shown magenta",
+   "resource_id": 1,
+   "hotspot": null,
+   "png": "moeboid.exe/decoded/ICON/BOOT2_0409_32x32x4.png"
+  },
+  {
+   "header": {
+    "biSize": 40,
+    "biWidth": 16,
+    "biHeight": 32,
+    "biPlanes": 1,
+    "biBitCount": 4,
+    "biCompression": 0,
+    "biSizeImage": 192,
+    "biXPelsPerMeter": 0,
+    "biYPelsPerMeter": 0,
+    "biClrUsed": 0,
+    "biClrImportant": 0
+   },
+   "width": 16,
+   "height": 16,
+   "bits_per_pixel": 4,
+   "palette": [
+    "#000000",
+    "#800000",
+    "#008000",
+    "#808000",
+    "#000080",
+    "#800080",
+    "#008080",
+    "#c0c0c0",
+    "#808080",
+    "#ff0000",
+    "#00ff00",
+    "#ffff00",
+    "#0000ff",
+    "#ff00ff",
+    "#00ffff",
+    "#ffffff"
+   ],
+   "mask_bytes_expected_end": 296,
+   "data_size": 296,
+   "pixel_stats": {
+    "transparent": 27,
+    "opaque": 229
+   },
+   "preview_note": "AND=1 & XOR=black: transparent; AND=1 & XOR!=black: screen invert, shown magenta",
+   "resource_id": 2,
+   "hotspot": null,
+   "png": "moeboid.exe/decoded/ICON/BOOT2_0409_16x16x4.png"
+  }
+ ],
+ "file": "moeboid.exe/decoded/ICON/BOOT2_0409.ico",
+ "pillow_open_check": "ICO (32, 32) RGBA"
+}

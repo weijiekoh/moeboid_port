@@ -1,0 +1,202 @@
+# Run I: fresh (not installed) state. Click 'Install ZapSpot' (frame 122,508) at session 3.9 s, then close button (776,22) at 9.2 s.
+# WINEDEBUG=+timestamp,+pid,+relay,+winsock,+wininet. RelayInclude:
+L"RelayInclude" = L"wsock32.*;ws2_32.*;InternetGetConnectedState;ShellExecuteA;ShellExecuteExA;RegOpenKeyExA;RegQueryValueExA;RegCreateKeyExA;RegSetValueExA;RegDeleteValueA;CreateFileA;CreateDirectoryA;CopyFileA;DeleteFileA;MoveFileA;MoveFileExA;RemoveDirectoryA;CoCreateInstance;LoadLibraryA;timeEndPeriod;SH"...
+# ZapSpot.exe = pid 00d8. Repeated LoadLibraryA("*.gam") lines cut after 4. sock_ioctl lines (interface queries of InternetGetConnectedState) removed.
+# advapi32.RegSetValueExA lines at exit come from Wine msacm32 (ret=7b0d....), not from the engine; removed.
+# CSIDL values: 0x1a APPDATA, 0x05 PERSONAL (Documents), 0x00 DESKTOP, 0x17 COMMON_PROGRAMS.
+572918.360:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026fa04) ret=0040720a
+572918.361:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572918.361:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6220,0026fb1c) ret=00407218
+572918.361:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572918.361:00d8:00dc:Call KERNEL32.CreateFileA(0026fb1c "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Core.ZDT",80000000,00000000,00000000,00000003,00000080,00000000) ret=0040d125
+572918.361:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=ffffffff ret=0040d125
+572918.361:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026fa04) ret=0040720a
+572918.362:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572918.362:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6220,0026fb1c) ret=00407218
+572918.362:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572918.362:00d8:00dc:Call KERNEL32.CreateFileA(0026fb1c "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Outbox.ZDT",80000000,00000000,00000000,00000003,00000080,00000000) ret=0040d125
+572918.362:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=ffffffff ret=0040d125
+572918.362:00d8:00dc:Call KERNEL32.LoadLibraryA(0043345c "DDraw.dll") ret=00426d13
+572918.366:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=7a530000 ret=00426d13
+572918.690:00d8:00dc:Call KERNEL32.LoadLibraryA(0043345c "DDraw.dll") ret=00408100
+572918.690:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=7a530000 ret=00408100
+572918.768:00d8:00dc:Call KERNEL32.LoadLibraryA(00432eac "DSound.dll") ret=00408eb3
+572918.769:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79f10000 ret=00408eb3
+572918.769:00d8:00dc:Call combase.CoCreateInstance(79f3b674,00000000,00000001,79f3b6c4,0026fc04) ret=79f1d3bb
+572918.984:00d8:00dc:Ret  combase.CoCreateInstance() retval=00000000 ret=79f1d3bb
+572918.984:00d8:00dc:Call combase.CoCreateInstance(79f3b674,00000000,00000001,79f3b6c4,0026fbf4) ret=79f30a0e
+572918.984:00d8:00dc:Ret  combase.CoCreateInstance() retval=00000000 ret=79f30a0e
+572919.004:00d8:00dc:Call ws2_32.WSAStartup(00000101,0026fbb4) ret=0040747c
+572919.004:00d8:00dc:trace:winsock:WSAStartup version 0x101
+572919.004:00d8:00dc:trace:winsock:WSAStartup increasing startup count to 1
+572919.004:00d8:00dc:Ret  ws2_32.WSAStartup() retval=00000000 ret=0040747c
+572919.004:00d8:00dc:Call KERNEL32.LoadLibraryA(00433368 "wininet.dll") ret=00407670
+572919.006:00d8:00dc:trace:wininet:DllMain 79D00000,1,00000000
+572919.006:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79d00000 ret=00407670
+572919.006:00d8:00dc:Call wininet.InternetGetConnectedState(0026fb9c,00000000) ret=0040768e
+572919.006:00d8:00dc:trace:wininet:InternetGetConnectedState (0026FB9C, 0x00000000)
+572919.006:00d8:00dc:trace:wininet:InternetGetConnectedStateExW (0026FB9C, 00000000, 0, 0x00000000)
+572919.008:00d8:00dc:Ret  wininet.InternetGetConnectedState() retval=00000000 ret=0040768e
+572919.008:00d8:00dc:trace:wininet:DllMain 79D00000,0,00000000
+572919.024:00d8:00dc:Call KERNEL32.FindFirstFileA(00435d70 "*.gam",0026cb30) ret=00426846
+572919.028:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=02847ee8 ret=00426846
+572919.028:00d8:00dc:Call KERNEL32.LoadLibraryA(0026cb5c "Moeboid.gam") ret=004243ef
+572919.028:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=10000000 ret=004243ef
+572919.029:00d8:00dc:Call KERNEL32.LoadLibraryA(0026e334 "Moeboid.gam") ret=004243ef
+572919.031:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=10000000 ret=004243ef
+572919.055:00d8:00dc:Call KERNEL32.FindFirstFileA(004328f8 "eid-*.zdt",0026fb10) ret=004059a1
+572919.061:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=ffffffff ret=004059a1
+572919.061:00d8:00dc:Call KERNEL32.LoadLibraryA(00432894 "WinInet.dll") ret=004056c8
+572919.064:00d8:00dc:trace:wininet:DllMain 79D00000,1,00000000
+572919.065:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79d00000 ret=004056c8
+572919.065:00d8:00dc:trace:wininet:DllMain 79D00000,0,00000000
+572919.065:00d8:00dc:Call KERNEL32.LoadLibraryA(00432880 "Crypt32.dll") ret=00405702
+572919.070:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79ca0000 ret=00405702
+572921.391:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,00000005,0026d3ac) ret=0040a115
+572921.391:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040a115
+572921.391:00d8:00dc:Call shell32.SHGetPathFromIDListA(0057a6a8,0026cc78) ret=0040a126
+572921.392:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=0040a126
+572921.392:00d8:00dc:Call KERNEL32.CreateDirectoryA(0026cc78 "C:\\users\\user\\Documents\\My ZapSpot",00000000) ret=0040a17d
+572921.392:00d8:00dc:Ret  KERNEL32.CreateDirectoryA() retval=00000001 ret=0040a17d
+572921.392:00d8:00dc:Call KERNEL32.CopyFileA(0026cb74 "C:\\Moeboid\\moeboid.exe",0026d290 "C:\\users\\user\\Documents\\My ZapSpot\\moeboid.exe",00000000) ret=0040a237
+572921.393:00d8:00dc:Ret  KERNEL32.CopyFileA() retval=00000001 ret=0040a237
+572921.393:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026d3ac) ret=0040a245
+572921.394:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040a245
+572921.394:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6340,0026d18c) ret=0040a256
+572921.394:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=0040a256
+572921.394:00d8:00dc:Call KERNEL32.CreateDirectoryA(0026d18c "C:\\users\\user\\AppData\\Roaming\\ZapSpot",00000000) ret=0040a360
+572921.394:00d8:00dc:Ret  KERNEL32.CreateDirectoryA() retval=00000001 ret=0040a360
+572921.394:00d8:00dc:Call KERNEL32.CreateDirectoryA(0026ce80 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System",00000000) ret=0040a3c3
+572921.394:00d8:00dc:Ret  KERNEL32.CreateDirectoryA() retval=00000001 ret=0040a3c3
+572921.394:00d8:00dc:Call KERNEL32.CreateDirectoryA(0026ce80 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\Games",00000000) ret=0040a426
+572921.394:00d8:00dc:Ret  KERNEL32.CreateDirectoryA() retval=00000001 ret=0040a426
+572921.394:00d8:00dc:Call KERNEL32.CopyFileA(0026cf84 "C:\\users\\user\\AppData\\Local\\Temp\\~zs0001.tmp\\ZapSpot.exe",0026d290 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\ZapSpot.exe",00000000) ret=0040a4d3
+572921.394:00d8:00dc:Ret  KERNEL32.CopyFileA() retval=00000001 ret=0040a4d3
+572921.394:00d8:00dc:Call KERNEL32.CreateDirectoryA(0026d290 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\Games\\{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}",00000000) ret=0040a5a2
+572921.395:00d8:00dc:Ret  KERNEL32.CreateDirectoryA() retval=00000001 ret=0040a5a2
+572921.395:00d8:00dc:Call KERNEL32.CopyFileA(0026cf84 "C:\\users\\user\\AppData\\Local\\Temp\\~zs0001.tmp\\Moeboid.gam",0026d290 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\Games\\{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}\\{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}.gam",00000000) ret=0040a6c0
+572921.395:00d8:00dc:Ret  KERNEL32.CopyFileA() retval=00000001 ret=0040a6c0
+572921.395:00d8:00dc:Call combase.CoCreateInstance(0042e8b0,00000000,00000001,0042e8c0,0026d3a4) ret=0040a6e0
+572921.395:00d8:00dc:Ret  combase.CoCreateInstance() retval=00000000 ret=0040a6e0
+572921.397:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,00000000,0026d3ac) ret=0040a79a
+572921.397:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040a79a
+572921.397:00d8:00dc:Call shell32.SHGetPathFromIDListA(0057a6c8,0026d088) ret=0040a7ab
+572921.397:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=0040a7ab
+572921.400:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,00000017,0026d3ac) ret=0040a885
+572921.402:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040a885
+572921.402:00d8:00dc:Call shell32.SHGetPathFromIDListA(00581dd8,0026d088) ret=0040a898
+572921.402:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=0040a898
+572921.404:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026d084) ret=0040720a
+572921.405:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572921.405:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6340,0026d2a0) ret=00407218
+572921.405:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572921.405:00d8:00dc:Call KERNEL32.CreateFileA(0026d2a0 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Core.zdt",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+572921.405:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000e0 ret=0040c9c5
+572921.406:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026d07c) ret=0040720a
+572921.406:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572921.406:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6340,0026d298) ret=00407218
+572921.406:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572921.406:00d8:00dc:Call KERNEL32.CreateFileA(0026d298 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Outbox.zdt",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+572921.407:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000e0 ret=0040c9c5
+572921.407:00d8:00dc:Call KERNEL32.FindFirstFileA(004328f8 "eid-*.zdt",0026d164) ret=004059a1
+572921.407:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=ffffffff ret=004059a1
+572921.407:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026e444) ret=0040720a
+572921.411:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572921.411:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6340,0026e660) ret=00407218
+572921.411:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572921.411:00d8:00dc:Call KERNEL32.CreateFileA(0026e660 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Core.zdt",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+572921.411:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000e0 ret=0040c9c5
+572921.411:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026e43c) ret=0040720a
+572921.412:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572921.412:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6340,0026e658) ret=00407218
+572921.412:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572921.412:00d8:00dc:Call KERNEL32.CreateFileA(0026e658 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Outbox.zdt",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+572921.412:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000e0 ret=0040c9c5
+572927.732:00d8:00dc:Call ws2_32.WSACleanup() ret=004074cb
+572927.732:00d8:00dc:trace:winsock:WSACleanup decreasing startup count from 1
+572927.732:00d8:00dc:Ret  ws2_32.WSACleanup() retval=00000000 ret=004074cb
+572927.732:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026f9c8) ret=0040720a
+572927.735:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572927.735:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6340,0026fbe4) ret=00407218
+572927.736:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572927.736:00d8:00dc:Call KERNEL32.CreateFileA(0026fbe4 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Core.ZDT",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+572927.736:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000c0 ret=0040c9c5
+572927.736:00d8:00dc:Call shell32.SHGetSpecialFolderLocation(00000000,0000001a,0026f9c8) ret=0040720a
+572927.738:00d8:00dc:Ret  shell32.SHGetSpecialFolderLocation() retval=00000000 ret=0040720a
+572927.738:00d8:00dc:Call shell32.SHGetPathFromIDListA(004d6340,0026fbe4) ret=00407218
+572927.738:00d8:00dc:Ret  shell32.SHGetPathFromIDListA() retval=00000001 ret=00407218
+572927.738:00d8:00dc:Call KERNEL32.CreateFileA(0026fbe4 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Outbox.ZDT",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+572927.738:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000c0 ret=0040c9c5
+572927.741:00d8:00dc:Call winmm.timeEndPeriod(00000001) ret=00404b5c
+572927.741:00d8:00dc:Call KERNEL32.timeEndPeriod(00000001) ret=7bf0d214
+572927.741:00d8:00dc:Ret  KERNEL32.timeEndPeriod() retval=00000000 ret=7bf0d214
+572927.741:00d8:00dc:Ret  winmm.timeEndPeriod() retval=00000000 ret=00404b5c
+
+# Run X: installed state (after run I). Title, Start, 10 s play, close button, 'Warning: Game in Progress' answered Yes, engine exits.
+573020.373:00d8:00dc:Call KERNEL32.CreateFileA(0026fb1c "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Core.ZDT",80000000,00000000,00000000,00000003,00000080,00000000) ret=0040d125
+573020.373:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000b4 ret=0040d125
+573020.374:00d8:00dc:Call KERNEL32.CreateFileA(0026fb1c "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Outbox.ZDT",80000000,00000000,00000000,00000003,00000080,00000000) ret=0040d125
+573020.374:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000b4 ret=0040d125
+573020.374:00d8:00dc:Call KERNEL32.LoadLibraryA(0043345c "DDraw.dll") ret=00426d13
+573020.378:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=7a530000 ret=00426d13
+573020.751:00d8:00dc:Call KERNEL32.LoadLibraryA(0043345c "DDraw.dll") ret=00408100
+573020.751:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=7a530000 ret=00408100
+573020.826:00d8:00dc:Call KERNEL32.LoadLibraryA(00432eac "DSound.dll") ret=00408eb3
+573020.827:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79f10000 ret=00408eb3
+573020.827:00d8:00dc:Call combase.CoCreateInstance(79f3b674,00000000,00000001,79f3b6c4,0026fc04) ret=79f1d3bb
+573021.065:00d8:00dc:Ret  combase.CoCreateInstance() retval=00000000 ret=79f1d3bb
+573021.065:00d8:00dc:Call combase.CoCreateInstance(79f3b674,00000000,00000001,79f3b6c4,0026fbf4) ret=79f30a0e
+573021.065:00d8:00dc:Ret  combase.CoCreateInstance() retval=00000000 ret=79f30a0e
+573021.079:00d8:00dc:Call ws2_32.WSAStartup(00000101,0026fbb4) ret=0040747c
+573021.079:00d8:00dc:trace:winsock:WSAStartup version 0x101
+573021.079:00d8:00dc:trace:winsock:WSAStartup increasing startup count to 1
+573021.079:00d8:00dc:Ret  ws2_32.WSAStartup() retval=00000000 ret=0040747c
+573021.079:00d8:00dc:Call KERNEL32.LoadLibraryA(00433368 "wininet.dll") ret=00407670
+573021.081:00d8:00dc:trace:wininet:DllMain 79D00000,1,00000000
+573021.081:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79d00000 ret=00407670
+573021.081:00d8:00dc:Call wininet.InternetGetConnectedState(0026fb9c,00000000) ret=0040768e
+573021.081:00d8:00dc:trace:wininet:InternetGetConnectedState (0026FB9C, 0x00000000)
+573021.081:00d8:00dc:trace:wininet:InternetGetConnectedStateExW (0026FB9C, 00000000, 0, 0x00000000)
+573021.081:00d8:0134:trace:wininet:DllMain 79D00000,2,00000000
+573021.081:00d8:0138:trace:wininet:DllMain 79D00000,2,00000000
+573021.084:00d8:00dc:Ret  wininet.InternetGetConnectedState() retval=00000000 ret=0040768e
+573021.084:00d8:00dc:trace:wininet:DllMain 79D00000,0,00000000
+573021.106:00d8:00dc:Call KERNEL32.FindFirstFileA(00432f90 "*.*",0026e284) ret=00426762
+573021.106:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=0283a3d0 ret=00426762
+573021.106:00d8:00dc:Call KERNEL32.FindFirstFileA(00435d70 "*.gam",0026e040) ret=00426795
+573021.106:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=ffffffff ret=00426795
+573021.106:00d8:00dc:Call KERNEL32.FindFirstFileA(00435d70 "*.gam",0026e040) ret=00426795
+573021.106:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=ffffffff ret=00426795
+573021.106:00d8:00dc:Call KERNEL32.FindFirstFileA(00435d70 "*.gam",0026e040) ret=00426795
+573021.106:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=028484b8 ret=00426795
+573021.106:00d8:00dc:Call KERNEL32.LoadLibraryA(0026e06c "{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}.gam") ret=004243ef
+573021.107:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=10000000 ret=004243ef
+573021.108:00d8:00dc:Call KERNEL32.LoadLibraryA(0026e5f0 "C:\\users\\user\\AppData\\Local\\Temp\\~zs0001.tmp\\Moeboid.gam") ret=00404d70
+573021.108:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=10000000 ret=00404d70
+573021.109:00d8:00dc:Call KERNEL32.FindFirstFileA(00432f90 "*.*",0026ceb4) ret=00426762
+573021.109:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=0283a3d0 ret=00426762
+573021.109:00d8:00dc:Call KERNEL32.FindFirstFileA(00435d70 "*.gam",0026cc70) ret=00426795
+573021.110:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=ffffffff ret=00426795
+573021.110:00d8:00dc:Call KERNEL32.FindFirstFileA(00435d70 "*.gam",0026cc70) ret=00426795
+573021.110:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=ffffffff ret=00426795
+573021.110:00d8:00dc:Call KERNEL32.FindFirstFileA(00435d70 "*.gam",0026cc70) ret=00426795
+573021.110:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=028484b8 ret=00426795
+573021.144:00d8:00dc:Call KERNEL32.FindFirstFileA(004328f8 "eid-*.zdt",0026fb10) ret=004059a1
+573021.144:00d8:00dc:Ret  KERNEL32.FindFirstFileA() retval=ffffffff ret=004059a1
+573021.144:00d8:00dc:Call KERNEL32.LoadLibraryA(00432894 "WinInet.dll") ret=004056c8
+573021.145:00d8:00dc:trace:wininet:DllMain 79D00000,1,00000000
+573021.145:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79d00000 ret=004056c8
+573021.145:00d8:00dc:trace:wininet:DllMain 79D00000,0,00000000
+573021.146:00d8:00dc:Call KERNEL32.LoadLibraryA(00432880 "Crypt32.dll") ret=00405702
+573021.147:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79ca0000 ret=00405702
+573040.198:00d8:00dc:Call ws2_32.WSACleanup() ret=004074cb
+573040.198:00d8:00dc:trace:winsock:WSACleanup decreasing startup count from 1
+573040.198:00d8:00dc:Ret  ws2_32.WSACleanup() retval=00000000 ret=004074cb
+573040.200:00d8:00dc:Call KERNEL32.CreateFileA(0026fbe4 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Core.ZDT",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+573040.200:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000bc ret=0040c9c5
+573040.201:00d8:00dc:Call KERNEL32.CreateFileA(0026fbe4 "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Outbox.ZDT",40000000,00000000,00000000,00000002,00000080,00000000) ret=0040c9c5
+573040.201:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=000000bc ret=0040c9c5
+573040.203:00d8:00dc:Call winmm.timeEndPeriod(00000001) ret=00404b5c
+573040.203:00d8:00dc:Call KERNEL32.timeEndPeriod(00000001) ret=7bf0d214
+573040.203:00d8:00dc:Ret  KERNEL32.timeEndPeriod() retval=00000000 ret=7bf0d214
+573040.203:00d8:00dc:Ret  winmm.timeEndPeriod() retval=00000000 ret=00404b5c

@@ -1,0 +1,5 @@
+waitframe 30
+wait 2
+click 563 253
+wait 3
+log bot

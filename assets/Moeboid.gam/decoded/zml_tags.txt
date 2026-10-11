@@ -1,0 +1,19 @@
+# Moeboid.gam HELP.ZML: distinct markup tags, exact spelling, with counts
+# 34 tags, 8 distinct
+    22  <BR>
+     3  <CFFFFFF>
+     2  </B>
+     2  <B>
+     2  <Cffffff>
+     1  <CFF3333>
+     1  <S2>
+     1  <S3>
+
+# Case-folded (upper case) counts
+    22  <BR>
+     5  <CFFFFFF>
+     2  </B>
+     2  <B>
+     1  <CFF3333>
+     1  <S2>
+     1  <S3>

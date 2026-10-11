@@ -1,0 +1,20 @@
+<ZDT ver="00.01.00.00" shellver="01.01.01.1034">
+   <Users>
+      <User localid="0">
+         <Message MsgIDH="845050089" MsgIDL="638384128" MsgType="TrackEvent" Function="TrackEvent" Params="845050089,GameStarted,{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2},845050089" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050089" MsgIDL="638391554" MsgType="TrackEvent" Function="TrackEvent" Params="845050089,SessionStarted,845050088" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050089" MsgIDL="638394627" MsgType="TrackEvent" Function="TrackEvent" Params="845050089,OSInfo2,WinNT,6.2.9200,1024x768,32,DX5.1,1,1" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050089" MsgIDL="638391553" MsgType="GetARBInfoA" Function="GetARBInfoB" Params="" ForceConn="false" Priority="9"/>
+         <Message MsgIDH="845050098" MsgIDL="640606476" MsgType="TrackEvent" Function="TrackEvent" Params="845050098,GameStopped2,9,{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050098" MsgIDL="640606477" MsgType="TrackEvent" Function="TrackEvent" Params="845050098,SessionStopped,10" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050191" MsgIDL="664517632" MsgType="TrackEvent" Function="TrackEvent" Params="845050191,GameStarted,{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2},845050191" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050191" MsgIDL="664524801" MsgType="GetARBInfoA" Function="GetARBInfoB" Params="" ForceConn="false" Priority="9"/>
+         <Message MsgIDH="845050191" MsgIDL="664524802" MsgType="TrackEvent" Function="TrackEvent" Params="845050191,SessionStarted,845050190" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050191" MsgIDL="664526083" MsgType="TrackEvent" Function="TrackEvent" Params="845050191,OSInfo2,WinNT,6.2.9200,1024x768,32,DX5.1,1,1" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050092" MsgIDL="638992134" MsgType="GetShellGUID" Function="GetShellGUID" Params="01.01.01.1034" ForceConn="false" Priority="12"/>
+         <Message MsgIDH="845050210" MsgIDL="669397524" MsgType="TrackEvent" Function="TrackEvent" Params="845050210,GameStopped2,19,{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}" ForceConn="false" Priority="0"/>
+         <Message MsgIDH="845050210" MsgIDL="669397781" MsgType="TrackEvent" Function="TrackEvent" Params="845050210,SessionStopped,20" ForceConn="false" Priority="0"/>
+   </Users>
+</ZDT>
+ers>
+</ZDT>

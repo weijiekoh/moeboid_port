@@ -1,0 +1,73 @@
+# Registry value diffs (timestamps ignored) and file diffs around engine runs. Prefix: tools/home/wineprefix.
+# RelayInclude and Wine\Explorer values are written by run_original.sh, not by the engine.
+## run N, fresh state, killed: user.reg
+  [Software\\Wine\\Debug] new/changed value: "RelayInclude"="wsock32.*;ws2_32.*;ShellExecuteA;ShellExecuteExA;ShellExecuteExW;RegOpenKeyExA;RegQueryValueExA;CreateFileA;CreateDirectoryA;CopyFileA;DeleteFileA;MoveFileA;CoCreateInstance;LoadLibrar
+  (0 Wine device-enumeration keys with value changes omitted: System\ControlSet001, MMDevices)
+## run N, fresh state, killed: system.reg
+  (no value changes outside skipped keys)
+  (1 Wine device-enumeration keys with value changes omitted: System\ControlSet001, MMDevices)
+## run I, fresh state, Install clicked, clean exit: user.reg
+  [Software\\Wine\\Debug] new/changed value: "RelayInclude"="wsock32.*;ws2_32.*;InternetGetConnectedState;ShellExecuteA;ShellExecuteExA;RegOpenKeyExA;RegQueryValueExA;RegCreateKeyExA;RegSetValueExA;RegDeleteValueA;CreateFileA;CreateDirectoryA;Co
+  (0 Wine device-enumeration keys with value changes omitted: System\ControlSet001, MMDevices)
+## run I, fresh state, Install clicked, clean exit: system.reg
+  (no value changes outside skipped keys)
+  (1 Wine device-enumeration keys with value changes omitted: System\ControlSet001, MMDevices)
+## run X, installed state, clean exit: user.reg
+  (no value changes outside skipped keys)
+  (0 Wine device-enumeration keys with value changes omitted: System\ControlSet001, MMDevices)
+## run X, installed state, clean exit: system.reg
+  (no value changes outside skipped keys)
+  (1 Wine device-enumeration keys with value changes omitted: System\ControlSet001, MMDevices)
+
+## files: run I (fresh state, Install clicked, clean exit) (outside drive_c/windows; dosdevices and *.reg excluded; type size path)
+< d 54 ./drive_c/ProgramData/Microsoft/Windows/Start Menu/Programs  
+> d 76 ./drive_c/ProgramData/Microsoft/Windows/Start Menu/Programs  
+> f 787 ./drive_c/ProgramData/Microsoft/Windows/Start Menu/Programs/ZapSpot.lnk  
+< d 18 ./drive_c/users/user/AppData/Roaming   
+> d 32 ./drive_c/users/user/AppData/Roaming   
+> d 44 ./drive_c/users/user/AppData/Roaming/ZapSpot   
+> d 76 ./drive_c/users/user/AppData/Roaming/ZapSpot/Games   
+> d 84 ./drive_c/users/user/AppData/Roaming/ZapSpot/Games/{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}   
+> f 270880 ./drive_c/users/user/AppData/Roaming/ZapSpot/Games/{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}/{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}.gam   
+> d 36 ./drive_c/users/user/AppData/Roaming/ZapSpot/System   
+> f 920 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Core.zdt   
+> f 1393 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Outbox.zdt   
+> f 492056 ./drive_c/users/user/AppData/Roaming/ZapSpot/ZapSpot.exe   
+< d 0 ./drive_c/users/user/Desktop   
+< d 0 ./drive_c/users/user/Documents   
+> d 22 ./drive_c/users/user/Desktop   
+> f 787 ./drive_c/users/user/Desktop/ZapSpot.lnk   
+> d 20 ./drive_c/users/user/Documents   
+> d 22 ./drive_c/users/user/Documents/My ZapSpot  
+> f 520672 ./drive_c/users/user/Documents/My ZapSpot/moeboid.exe  
+## files with new mtime only: run I (fresh state, Install clicked, clean exit)
+   f 158 2026-10-11_09:08:04.4056993650 ./drive_c/Moeboid/run.bat 
+   d 76 2026-10-11_09:08:11.9998460930 ./drive_c/ProgramData/Microsoft/Windows/Start Menu/Programs
+   f 787 2026-10-11_09:08:12.0041679740 ./drive_c/ProgramData/Microsoft/Windows/Start Menu/Programs/ZapSpot.lnk
+   d 32 2026-10-11_09:08:11.9936232730 ./drive_c/users/user/AppData/Roaming 
+   d 44 2026-10-11_09:08:11.9950184650 ./drive_c/users/user/AppData/Roaming/ZapSpot 
+   d 76 2026-10-11_09:08:11.9953549560 ./drive_c/users/user/AppData/Roaming/ZapSpot/Games 
+   d 84 2026-10-11_09:08:11.9959985120 ./drive_c/users/user/AppData/Roaming/ZapSpot/Games/{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2} 
+   f 270880 2026-10-11_08:18:23.9698309000 ./drive_c/users/user/AppData/Roaming/ZapSpot/Games/{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}/{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}.gam 
+   d 36 2026-10-11_09:08:12.0064636100 ./drive_c/users/user/AppData/Roaming/ZapSpot/System 
+   f 920 2026-10-11_09:08:18.3323779550 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Core.zdt 
+   f 1393 2026-10-11_09:08:18.3357112990 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Outbox.zdt 
+   f 492056 2026-10-11_08:18:23.9698309000 ./drive_c/users/user/AppData/Roaming/ZapSpot/ZapSpot.exe 
+   d 22 2026-10-11_09:08:11.9961761740 ./drive_c/users/user/Desktop 
+   f 787 2026-10-11_09:08:11.9998460930 ./drive_c/users/user/Desktop/ZapSpot.lnk 
+   d 20 2026-10-11_09:08:11.9890223760 ./drive_c/users/user/Documents 
+   d 22 2026-10-11_09:08:11.9931182120 ./drive_c/users/user/Documents/My ZapSpot
+   f 520672 2026-10-11_08:18:23.9698309000 ./drive_c/users/user/Documents/My ZapSpot/moeboid.exe
+
+## files: run X (installed state, clean exit) (outside drive_c/windows; dosdevices and *.reg excluded; type size path)
+< f 1393 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Outbox.zdt   
+> f 2502 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Outbox.zdt   
+## files with new mtime only: run X (installed state, clean exit)
+   f 158 2026-10-11_09:09:46.4791678140 ./drive_c/Moeboid/run.bat 
+   f 920 2026-10-11_09:10:10.7961149310 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Core.zdt 
+   f 2502 2026-10-11_09:10:10.8018249890 ./drive_c/users/user/AppData/Roaming/ZapSpot/System/Outbox.zdt 
+
+## files: run N (fresh state, killed by timeout) (outside drive_c/windows; dosdevices and *.reg excluded; type size path)
+  (no change)
+## files with new mtime only: run N (fresh state, killed by timeout)
+   f 158 2026-10-11_08:50:46.6993116440 ./drive_c/Moeboid/run.bat 

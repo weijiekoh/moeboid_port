@@ -1,0 +1,76 @@
+# Run N: fresh state (no install), network trace, new screens, clean close.
+log start
+deskloop 16 0.2 00_splash
+waitframe 30
+wait 2
+shot 01_title_fresh
+desk 01_title_fresh_desk
+tree
+log mail_this
+click 233 110
+wait 1.5
+click 475 344
+wait 1.5
+shot 15_mail_send_empty
+desk 15_mail_send_empty_desk
+tree
+log help
+click 718 22
+wait 1.5
+shot 09_help_toc
+click 325 118
+wait 1.5
+shot 11_help_what_is
+click 718 22
+wait 1.5
+click 665 181
+wait 1.5
+shot 12_help_boss
+click 718 22
+wait 1.5
+click 365 315
+wait 2
+shot 13_help_extended_support
+desk 13_help_extended_support_desk
+tree
+log resume
+click 740 450
+wait 1.5
+shot 16_after_resume_arrow
+log start_game
+click 563 253
+wait 4
+shot 20_game_start
+key Right 500
+key Down 500
+shot 20_game_moving
+log new_game_button
+click 233 177
+wait 1
+shot 17_new_game_button
+desk 17_new_game_button_desk
+tree
+wait 3
+shot 17_new_game_button_after
+key Left 500
+key Up 500
+wait 3
+shot 20_game_later
+log personalize
+click 95 199
+wait 1.5
+click 675 309
+wait 1
+shot 14_personalize_sound_off
+click 675 309
+wait 1
+shot 14_personalize_sound_on
+log close
+click 776 22
+wait 1.5
+desk 54_close_a
+tree
+wait 4
+desk 54_close_b
+tree
+log end

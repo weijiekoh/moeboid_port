@@ -1,0 +1,15 @@
+# Local tools: large, downloaded, reinstallable. Keep only the small project scripts.
+/tools/*
+!/tools/env.sh
+!/tools/bin/
+!/tools/pe_rsrc.py
+!/tools/home/
+/tools/home/*
+!/tools/home/nsswitch.nonet.conf
+# Ghidra project database (binary, regenerable from extracted/)
+/analysis/ghidra_project/
+__pycache__/
+*.pyc
+# Build outputs
+/port/build/
+node_modules/

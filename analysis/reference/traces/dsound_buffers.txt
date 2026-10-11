@@ -1,0 +1,126 @@
+# Run D2 DirectSound buffers. Secondary buffer flags 0x000100e2 = DSBCAPS_STATIC|CTRLFREQUENCY|CTRLPAN|CTRLVOLUME|GETCURRENTPOSITION2.
+# cbSize values are not real: the format pointer points at a 16-byte PCM 'fmt ' chunk inside a RIFF image, so Wine reads the next chunk id
+# (0x6164 = 'da' of 'data', 0x6166 = 'fa' of 'fact', 0x4150 = 'PA' of 'PAD ').
+# lpwfxFormat 0x1001xxxx..0x1002xxxx = inside Moeboid.gam (game sounds); 0x0046xxxx/0x0047xxxx = inside ZapSpot.exe (shell sounds).
+
+## CreateSoundBuffer / Duplicate / Play / Release sequence
+572264.646:00d8:00dc:trace:dsound:DSOUND_ReopenDevice period 20 ms frag_frames 960 buf_frames 2880
+572264.646:00d8:00dc:trace:dsound:IDirectSound8Impl_SetCooperativeLevel (002C2998,0001006A,DSSCL_PRIORITY)
+572264.646:00d8:00dc:warn:dsound:IDirectSound8Impl_SetCooperativeLevel level=DSSCL_PRIORITY not fully supported
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x00000001:
+572264.646:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_PRIMARYBUFFER )
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=0)
+572264.646:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=00000000)
+572264.646:00d8:00dc:trace:dsound:primarybuffer_create (formattag=0xfffe,chans=2,samplerate=48000,bytespersec=384000,blockalign=8,bitspersamp=32,cbSize=22)
+572264.646:00d8:00dc:trace:dsound:primarybuffer_SetFormat (formattag=0x0001,chans=2,samplerate=22050,bytespersec=88200,blockalign=4,bitspersamp=16,cbSize=0)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=10253)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=10012C6C)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01768668
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=10176)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=100154AC)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 017687A8
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=6538)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=10017C9C)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 017688E8
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=32830)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=10019654)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=8000,bytespersec=16000,blockalign=2,bitspersamp=16,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01768A28
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=3821)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=100216C4)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01768B68
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=1652)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=100225E4)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01768CA8
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=4513)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=10022C84)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=16720)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01768DE8
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=1932)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=1002402C)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24934)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01768F28
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=2029)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=100247F4)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01769068
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=19993)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=10025014)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=16720)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 017691A8
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.708:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=13572)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=1002A034)
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=22050,blockalign=2,bitspersamp=16,cbSize=24932)
+572264.708:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 017692E8
+572264.708:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01768668,0026D434)
+572264.708:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.737:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=480)
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=00473B7C)
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=0)
+572264.737:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01769CE8
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.737:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=1692)
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=00473E4C)
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24934)
+572264.737:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01769E28
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (flags=0x000100e2:
+572264.737:00d8:00dc:trace:dsound:_dump_DSBCAPS DSBCAPS_STATIC DSBCAPS_CTRLFREQUENCY DSBCAPS_CTRLPAN DSBCAPS_CTRLVOLUME DSBCAPS_GETCURRENTPOSITION2 )
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (bufferbytes=31863)
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (lpwfxFormat=0046BED4)
+572264.737:00d8:00dc:trace:dsound:DirectSoundDevice_CreateSoundBuffer (formattag=0x0001,chans=1,samplerate=11025,bytespersec=11025,blockalign=1,bitspersamp=8,cbSize=24932)
+572264.737:00d8:00dc:trace:dsound:secondarybuffer_create Created buffer at 01769F68
+572265.650:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572273.115:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01768A28,0026FAE0)
+572273.115:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572275.183:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572277.445:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01768F28,0026FD18)
+572277.445:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572277.628:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572278.363:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01769068,0026FD18)
+572278.364:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572278.566:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572278.727:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01768F28,0026FD18)
+572278.727:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572278.911:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572279.065:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01768F28,0026FD18)
+572279.065:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572279.241:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572279.255:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01769068,0026FD18)
+572279.255:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572279.450:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572280.108:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,01768F28,0026FD18)
+572280.108:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572280.294:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0
+572281.042:00d8:00dc:trace:dsound:DirectSoundDevice_DuplicateSoundBuffer (00391260,017691A8,0026FD48)
+572281.042:00d8:00dc:trace:dsound:IDirectSoundBufferImpl_Play (01769428,00000000,00000000,00000000)
+572282.875:00d8:0138:trace:dsound:IDirectSoundBufferImpl_Release (01769428) ref 0

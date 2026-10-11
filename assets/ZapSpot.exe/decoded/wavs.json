@@ -1,0 +1,261 @@
+{
+ "BTNCLICK.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 710,
+  "form": "WAVE",
+  "resource_size": 718,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 18,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8,
+     "cb_size": 0,
+     "extra_hex": ""
+    }
+   },
+   {
+    "id": "cue ",
+    "offset": 38,
+    "size": 76,
+    "cues": [
+     {
+      "id": 1,
+      "position": 0,
+      "chunk": "data",
+      "chunk_start": 0,
+      "block_start": 0,
+      "sample_offset": 0
+     },
+     {
+      "id": 2,
+      "position": 41707,
+      "chunk": "data",
+      "chunk_start": 0,
+      "block_start": 0,
+      "sample_offset": 41707
+     },
+     {
+      "id": 3,
+      "position": 41707,
+      "chunk": "data",
+      "chunk_start": 0,
+      "block_start": 0,
+      "sample_offset": 41707
+     }
+    ]
+   },
+   {
+    "id": "LIST",
+    "offset": 122,
+    "size": 88,
+    "list_type": "adtl",
+    "subchunks": [
+     {
+      "id": "labl",
+      "size": 22,
+      "value": "\u0001\u0000\u0000\u0000Untitled Marker 3"
+     },
+     {
+      "id": "labl",
+      "size": 18,
+      "value": "\u0002\u0000\u0000\u0000New File mix2"
+     },
+     {
+      "id": "labl",
+      "size": 20,
+      "value": "\u0003\u0000\u0000\u0000New File mix2.2"
+     }
+    ]
+   },
+   {
+    "id": "fact",
+    "offset": 218,
+    "size": 4,
+    "sample_count": 480
+   },
+   {
+    "id": "data",
+    "offset": 230,
+    "size": 480,
+    "data_sha256": "fee50b60c4c6a855971849a87520115eaa4379dfb958649a42b1f34482c6ee3e"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8,
+   "cb_size": 0,
+   "extra_hex": ""
+  },
+  "data_length": 480,
+  "bytes_after_riff": 0,
+  "sample_frames": 480,
+  "duration_s": 0.043537,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [
+   "cue ",
+   "LIST",
+   "fact"
+  ],
+  "notes": [
+   "cue 2 at sample 41707 is beyond the 480 data samples",
+   "cue 3 at sample 41707 is beyond the 480 data samples"
+  ]
+ },
+ "CLOSESHELL.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 10438,
+  "form": "WAVE",
+  "resource_size": 10446,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 10401,
+    "data_sha256": "32a737a1185653be79f450a6c2784fed5f6763024bf065eb66a1dfb1c4a68f38"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 10401,
+  "bytes_after_riff": 0,
+  "sample_frames": 10401,
+  "duration_s": 0.943401,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "OPENSHELL.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 31899,
+  "form": "WAVE",
+  "resource_size": 31907,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 31863,
+    "data_sha256": "2ee9e31d96bc2a5781f22132bf3010ee37f7310b85b390f7a96821473dd4e464"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 31863,
+  "bytes_after_riff": 0,
+  "sample_frames": 31863,
+  "duration_s": 2.890068,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "POPUP.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 1740,
+  "form": "WAVE",
+  "resource_size": 1748,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "fact",
+    "offset": 36,
+    "size": 4,
+    "sample_count": 1692
+   },
+   {
+    "id": "data",
+    "offset": 48,
+    "size": 1692,
+    "data_sha256": "c65cb755c84edfd33ea0bf5bece4e59fa7b2d27c4a984377d2d5a3b691ec97e4"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 1692,
+  "bytes_after_riff": 0,
+  "sample_frames": 1692,
+  "duration_s": 0.153469,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [
+   "fact"
+  ],
+  "notes": []
+ }
+}

@@ -1,0 +1,27 @@
+// ZapSpot.exe RT_DIALOG DUMPINFO2, language 0x0409, DLGTEMPLATE, 1868 bytes, file offset 0x69C20
+// Pixel values: dialog base units 6x13 (MS Sans Serif 8pt strike from sserife.fon, 96 DPI). Client area only; frame size depends on the non-client metrics.
+DUMPINFO2 DIALOG 0, 0, 320, 236
+// client px: x=0 y=0 w=480 h=384
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_POPUP   // 0x80C008C0
+CAPTION "Unexpected Error Occurred"
+FONT 8, "MS Sans Serif"   // DLGTEMPLATE: weight, italic and charset are not stored
+BEGIN
+    CONTROL "Close ZapSpot", 1, "Button", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 163, 216, 66, 16
+        // id=1 (0x1) style=0x50030001 exstyle=0x00000000 | px x=245 y=351 w=99 h=26
+    CONTROL "We apologize for the inconvenience and promise to address these issues immediately.", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 77, 302, 8
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=11 y=125 w=453 h=13
+    CONTROL "<<", 2011, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 303, 217, 12, 16
+        // id=2011 (0x7DB) style=0x50030000 exstyle=0x00000000 | px x=455 y=353 w=18 h=26
+    CONTROL "", 2009, "Edit", ES_LEFT | ES_MULTILINE | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_GROUP | WS_TABSTOP, 7, 95, 303, 115
+        // id=2009 (0x7D9) style=0x50A30084 exstyle=0x00000000 | px x=11 y=154 w=455 h=187
+    CONTROL "Copy to Clipboard", 2008, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 89, 216, 68, 16
+        // id=2008 (0x7D8) style=0x50030000 exstyle=0x00000000 | px x=134 y=351 w=102 h=26
+    CONTROL "Zapspot has encountered an unexpected error and needs to be shut down.  This dialog gathers key ZapSpot specific system information which will help us fix the problem that you have run", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 302, 18
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=11 y=11 w=453 h=29
+    CONTROL "into.  We would like to ask you to help us out by sending us this information in an email.", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 23, 302, 8
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=11 y=37 w=453 h=13
+    CONTROL "To do so, please click the ""Copy to Clipboard button"" on this dialog.  Then, open up your email and write an email to Support@ZapSpot.com.  Please include a description of what happened", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 36, 301, 18
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=11 y=59 w=452 h=29
+    CONTROL "and then use your email program's Paste function to place the information from this dialog into your email.  When you're ready, send the mail to us and we will respond as soon as possible", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 53, 301, 18
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=11 y=86 w=452 h=29
+END

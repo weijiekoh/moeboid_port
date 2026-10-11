@@ -1,0 +1,226 @@
+[
+ {
+  "id": 0,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 2,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 3,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "00.01.01.08"
+ },
+ {
+  "id": 4,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "Moeboid"
+ },
+ {
+  "id": 5,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}"
+ },
+ {
+  "id": 6,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "img-shell_icon-80x60.gif"
+ },
+ {
+  "id": 7,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "Action"
+ },
+ {
+  "id": 8,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "Sweat"
+ },
+ {
+  "id": 9,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": true,
+  "string": "ZapSpot's Moeboid: Amoeboes Have all the Fun"
+ },
+ {
+  "id": 10,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 11,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 12,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 13,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 14,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 15,
+  "lang": "0x0409",
+  "block": 1,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 992,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 993,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 994,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 995,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 996,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 997,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 998,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 999,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1000,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": true,
+  "string": "LANG_ENGLISH"
+ },
+ {
+  "id": 1001,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1002,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1003,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1004,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1005,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1006,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ },
+ {
+  "id": 1007,
+  "lang": "0x0409",
+  "block": 63,
+  "defined": false,
+  "string": ""
+ }
+]

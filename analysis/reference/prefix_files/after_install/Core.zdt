@@ -1,0 +1,24 @@
+<ZDT ver="00.01.00.00" shellver="01.01.01.1034">
+   <Users>
+      <User localid="0">
+         <Email>guest</Email>
+         <RegDate>845047641</RegDate>
+         <ZLS ownerid="{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}">
+            <ZLSProp name="Score1Name" value="ZapSpot"/>
+            <ZLSProp name="Score1Score" value="10000"/>
+            <ZLSProp name="Score2Name" value="ZapSpot"/>
+            <ZLSProp name="Score2Score" value="5000"/>
+            <ZLSProp name="Score3Name" value="ZapSpot"/>
+            <ZLSProp name="Score3Score" value="2500"/>
+            <ZLSProp name="Score4Name" value="ZapSpot"/>
+            <ZLSProp name="Score4Score" value="1000"/>
+            <ZLSProp name="Score5Name" value="ZapSpot"/>
+            <ZLSProp name="Score5Score" value="500"/>
+         </ZLS>
+      </User>
+   </Users>
+   <Zaplets/>
+   <Shell>
+      <DefaultUser localid="0"/>
+   </Shell>
+</ZDT>

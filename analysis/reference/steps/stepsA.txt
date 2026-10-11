@@ -1,0 +1,21 @@
+splash 00_splash
+waitframe 30
+wait 1.5
+shot 01_title_a
+wait 3.5
+shot 01_title_b
+click 233 310
+wait 1.5
+shot 02_how_to_play
+click 95 164
+wait 2
+shot 03_view_all_games
+tree
+click 95 199
+wait 2
+shot 04_personalize
+tree
+click 95 234
+wait 2
+shot 05_about
+tree

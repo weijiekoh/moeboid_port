@@ -1,0 +1,521 @@
+{
+ "SND-EXTRALIFE.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 13608,
+  "form": "WAVE",
+  "resource_size": 13616,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 22050,
+     "block_align": 2,
+     "bits_per_sample": 16
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 13572,
+    "data_sha256": "2029a335450379b27bf7f0fd5a605229d46decf1f646835f04c1b7e1d7ea9942"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 22050,
+   "block_align": 2,
+   "bits_per_sample": 16
+  },
+  "data_length": 13572,
+  "bytes_after_riff": 0,
+  "sample_frames": 6786,
+  "duration_s": 0.61551,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-GAMEOPEN.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 10290,
+  "form": "WAVE",
+  "resource_size": 10298,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 10253,
+    "data_sha256": "46435f5e07c56171d1f0731e1ecdfa4fbf4650b4049b23e92e1133e98e3fbc07"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 10253,
+  "bytes_after_riff": 0,
+  "sample_frames": 10253,
+  "duration_s": 0.929977,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-GAMEOVER-HIGHSCORE.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 10212,
+  "form": "WAVE",
+  "resource_size": 10220,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 10176,
+    "data_sha256": "b49e4fec7d670b5961488a14b5946f024552b81e7e62d3d1e0e2f4d97e572aab"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 10176,
+  "bytes_after_riff": 0,
+  "sample_frames": 10176,
+  "duration_s": 0.922993,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-GAMEOVER.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 6574,
+  "form": "WAVE",
+  "resource_size": 6582,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 6538,
+    "data_sha256": "30e73c27549302b26169d931fb3c15d4ee9d2dda5c43fdf9cb23ff3ee274f791"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 6538,
+  "bytes_after_riff": 0,
+  "sample_frames": 6538,
+  "duration_s": 0.593016,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-GAMESTART.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 32866,
+  "form": "WAVE",
+  "resource_size": 32874,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 8000,
+     "avg_bytes_per_sec": 16000,
+     "block_align": 2,
+     "bits_per_sample": 16
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 32830,
+    "data_sha256": "d21f5809b3ca4a83324b3cdf4245399604d13ee42782529b24e94da52d90b2ae"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 8000,
+   "avg_bytes_per_sec": 16000,
+   "block_align": 2,
+   "bits_per_sample": 16
+  },
+  "data_length": 32830,
+  "bytes_after_riff": 0,
+  "sample_frames": 16415,
+  "duration_s": 2.051875,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-LOSELIFE.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 3858,
+  "form": "WAVE",
+  "resource_size": 3866,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 3821,
+    "data_sha256": "11f389fb37d5ba92adbf048881e3a006f5d65f8dcbfadb03b49c919c44c5114e"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 3821,
+  "bytes_after_riff": 0,
+  "sample_frames": 3821,
+  "duration_s": 0.346576,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-MOEBEATS.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 1688,
+  "form": "WAVE",
+  "resource_size": 1696,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 1652,
+    "data_sha256": "6fc82abb75be714f45de379eb43ad01ac4122e53cdb8eb80ad53a2c92f039aee"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 1652,
+  "bytes_after_riff": 0,
+  "sample_frames": 1652,
+  "duration_s": 0.149841,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-MOEBGROWTH.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 5018,
+  "form": "WAVE",
+  "resource_size": 5026,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "PAD ",
+    "offset": 36,
+    "size": 460,
+    "body_hex_head": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "id": "data",
+    "offset": 504,
+    "size": 4513,
+    "data_sha256": "7aa08ea794c1d9f4dcb185a4c7f09746d7fd528521a22ac66ffb1ff39a5b2503"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 4513,
+  "bytes_after_riff": 0,
+  "sample_frames": 4513,
+  "duration_s": 0.409342,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [
+   "PAD "
+  ],
+  "notes": []
+ },
+ "SND-NEWBADDIEBAD.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 2066,
+  "form": "WAVE",
+  "resource_size": 2074,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "data",
+    "offset": 36,
+    "size": 2029,
+    "data_sha256": "8f4c2d00826ab7c70fceecbdc8f4cc677b7f24ad0fe819d7d37ff5a46ec81f70"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 2029,
+  "bytes_after_riff": 0,
+  "sample_frames": 2029,
+  "duration_s": 0.184036,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [],
+  "notes": []
+ },
+ "SND-NEWBADDIEGOOD.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 1980,
+  "form": "WAVE",
+  "resource_size": 1988,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "fact",
+    "offset": 36,
+    "size": 4,
+    "sample_count": 1932
+   },
+   {
+    "id": "data",
+    "offset": 48,
+    "size": 1932,
+    "data_sha256": "e472588bd420ba093f83e52b6c65d79724f5e739ef5a4d689e0545e64ac9ca02"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 1932,
+  "bytes_after_riff": 0,
+  "sample_frames": 1932,
+  "duration_s": 0.175238,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [
+   "fact"
+  ],
+  "notes": []
+ },
+ "SND-RANDBG.WAV": {
+  "riff_id": "RIFF",
+  "riff_size_field": 20498,
+  "form": "WAVE",
+  "resource_size": 20506,
+  "riff_size_matches": true,
+  "chunks": [
+   {
+    "id": "fmt ",
+    "offset": 12,
+    "size": 16,
+    "fmt": {
+     "format_tag": 1,
+     "format_name": "PCM",
+     "channels": 1,
+     "sample_rate": 11025,
+     "avg_bytes_per_sec": 11025,
+     "block_align": 1,
+     "bits_per_sample": 8
+    }
+   },
+   {
+    "id": "PAD ",
+    "offset": 36,
+    "size": 460,
+    "body_hex_head": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "id": "data",
+    "offset": 504,
+    "size": 19993,
+    "data_sha256": "cf7b53f1b648238094d0588867ce487ab960283de2f734d511de7811a27b6ed0"
+   }
+  ],
+  "fmt": {
+   "format_tag": 1,
+   "format_name": "PCM",
+   "channels": 1,
+   "sample_rate": 11025,
+   "avg_bytes_per_sec": 11025,
+   "block_align": 1,
+   "bits_per_sample": 8
+  },
+  "data_length": 19993,
+  "bytes_after_riff": 0,
+  "sample_frames": 19993,
+  "duration_s": 1.813424,
+  "data_length_is_block_multiple": true,
+  "extra_chunks": [
+   "PAD "
+  ],
+  "notes": []
+ }
+}

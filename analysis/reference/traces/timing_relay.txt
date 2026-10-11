@@ -1,0 +1,130 @@
+# Run T: WINEDEBUG=+timestamp,+pid,+relay; RelayInclude:
+L"RelayInclude" = L"timeGetTime;timeBeginPeriod;timeEndPeriod;timeSetEvent;timeKillEvent;timeGetDevCaps;Sleep;SleepEx;GetTickCount;QueryPerformanceCounter;QueryPerformanceFrequency;WaitForSingleObject;WaitForMultipleObjects;MsgWaitForMultipleObjects;PeekMessageA;GetMessageA;BitBlt;StretchBlt;SetDIBitsToDevic"...
+# Session: title idle 8 s, Start clicked, intro 6 s, arrow keys 3 s, gameplay. Log 1.1 GB (not kept). ZapSpot.exe = pid 00d8.
+# Wine relay slows the busy loop; absolute call rates below are NOT native rates.
+
+## Call counts per thread / function / caller address (whole run, ZapSpot process only)
+3432544 thread 00dc KERNEL32.GetTickCount ret=004274fc
+3430440 thread 00dc KERNEL32.GetTickCount ret=0042751c
+ 858075 thread 00dc user32.PeekMessageA ret=00404aca
+   1928 thread 0134 KERNEL32.WaitForSingleObject ret=79f18599
+   1907 thread 0138 KERNEL32.Sleep ret=004093da
+     28 thread 00dc KERNEL32.timeGetTime ret=7bf0d214
+     27 thread 00dc winmm.timeGetTime ret=004275bb
+      2 thread 00dc KERNEL32.WaitForSingleObject ret=79d3de80
+      2 thread 00dc KERNEL32.SetEvent ret=79d3de67
+      2 thread 00dc KERNEL32.CreateThread ret=7a3739f7
+      1 thread 00dc winmm.timeGetTime ret=00403dca
+      1 thread 00dc KERNEL32.SetThreadPriority ret=79f220e7
+      1 thread 00dc KERNEL32.SetThreadPriority ret=00408f66
+      1 thread 00dc KERNEL32.GetTickCount ret=00427251
+      1 thread 00dc KERNEL32.CreateThread ret=79f220c1
+      1 thread 00dc KERNEL32.CreateThread ret=00408f52
+      1 thread 00dc gdi32.BitBlt ret=00403f7c
+      1 thread 00dc dsound.DirectSoundCreate ret=0040913a
+      1 thread 00dc ddraw.DirectDrawCreate ret=00426d5d
+      1 thread 00dc ddraw.DirectDrawCreate ret=004081a3
+
+## Thread creation and priorities (ZapSpot process)
+572120.832:00d8:00dc:Call ddraw.DirectDrawCreate(00000000,0026fd48,00000000) ret=00426d5d
+572121.152:00d8:00dc:Call KERNEL32.CreateThread(00000000,00000000,7a378720,01670020,00000000,00000000) ret=7a3739f7
+572121.153:00d8:00dc:Ret  KERNEL32.CreateThread() retval=000000b4 ret=7a3739f7
+572121.153:00d8:00dc:Ret  ddraw.DirectDrawCreate() retval=00000000 ret=00426d5d
+572121.206:00d8:00dc:Call ddraw.DirectDrawCreate(00000000,01697144,00000000) ret=004081a3
+572121.232:00d8:00dc:Call KERNEL32.CreateThread(00000000,00000000,7a378720,01f80020,00000000,00000000) ret=7a3739f7
+572121.232:00d8:00dc:Ret  KERNEL32.CreateThread() retval=000000b4 ret=7a3739f7
+572121.232:00d8:00dc:Ret  ddraw.DirectDrawCreate() retval=00000000 ret=004081a3
+572121.287:00d8:00dc:Call dsound.DirectSoundCreate(00000000,00dc4c64,00000000) ret=0040913a
+572121.536:00d8:00dc:Call KERNEL32.CreateThread(00000000,00000000,79f18520,00576b10,00000000,00000000) ret=79f220c1
+572121.536:00d8:00dc:Ret  KERNEL32.CreateThread() retval=000000d4 ret=79f220c1
+572121.536:00d8:00dc:Call KERNEL32.SetThreadPriority(000000d4,0000000f) ret=79f220e7
+572121.536:00d8:00dc:Ret  KERNEL32.SetThreadPriority() retval=00000001 ret=79f220e7
+572121.536:00d8:00dc:Ret  dsound.DirectSoundCreate() retval=00000000 ret=0040913a
+572121.536:00d8:00dc:Call KERNEL32.CreateThread(00000000,00000000,00409340,00000000,00000000,0026fd40) ret=00408f52
+572121.537:00d8:00dc:Ret  KERNEL32.CreateThread() retval=000000d8 ret=00408f52
+572121.537:00d8:00dc:Call KERNEL32.SetThreadPriority(000000d8,ffffffff) ret=00408f66
+572121.537:00d8:00dc:Ret  KERNEL32.SetThreadPriority() retval=00000001 ret=00408f66
+
+## Sample: main thread 00dc, 60 lines near the end of the run (gameplay)
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call user32.PeekMessageA(0026fdc8,00000000,00000000,00000000,00000001) ret=00404aca
+572140.389:00d8:00dc:Ret  user32.PeekMessageA() retval=00000000 ret=00404aca
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=0042751c
+572140.389:00d8:00dc:Call user32.PeekMessageA(0026fdc8,00000000,00000000,00000000,00000001) ret=00404aca
+572140.389:00d8:00dc:Ret  user32.PeekMessageA() retval=00000000 ret=00404aca
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=004274fc
+572140.389:00d8:00dc:Ret  KERNEL32.GetTickCount() retval=221a2b65 ret=004274fc
+572140.389:00d8:00dc:Call KERNEL32.GetTickCount() ret=0042751c
+
+## Sample: engine sound thread (start 00409340), 12 lines
+572140.697:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.711:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.719:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.729:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.746:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.746:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.766:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.766:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.778:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.789:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.800:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+572140.813:00d8:0138:Call KERNEL32.Sleep(0000000a) ret=004093da
+
+## Sample: Wine dsound mixer thread 0134, 6 lines
+572140.800:00d8:0134:Ret  KERNEL32.WaitForSingleObject() retval=00000000 ret=79f18599
+572140.800:00d8:0134:Call KERNEL32.WaitForSingleObject(000000c0,00000032) ret=79f18599
+572140.810:00d8:0134:Ret  KERNEL32.WaitForSingleObject() retval=00000000 ret=79f18599
+572140.810:00d8:0134:Call KERNEL32.WaitForSingleObject(000000c0,00000032) ret=79f18599
+572140.819:00d8:0134:Ret  KERNEL32.WaitForSingleObject() retval=00000000 ret=79f18599
+572140.819:00d8:0134:Call KERNEL32.WaitForSingleObject(000000c0,00000032) ret=79f18599

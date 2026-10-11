@@ -1,0 +1,25 @@
+waitframe 30
+wait 2
+click 122 508
+wait 2
+shot 08_install
+desk 08_install_desktop
+tree
+click 718 22
+wait 2
+shot 09_help_button
+desk 09_help_button_desktop
+tree
+click 120 531
+wait 2
+wshot 07_terms_dialog ZapSpot Terms of Service
+tree
+wclick 212 289 ZapSpot Terms of Service
+wait 1
+desk 07_terms_after_ok
+tree
+click 209 451
+wait 2
+shot 10_subscribe_empty
+desk 10_subscribe_empty_desktop
+tree

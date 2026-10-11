@@ -1,0 +1,123 @@
+waitframe 30
+wait 2
+shot 30_title_mod_table
+click 563 253
+wait 1.2
+shot 31_intro
+wait 1.5
+key Right 600
+key Down 600
+key Left 600
+key Up 600
+shot 32_play_00
+key space 80
+wait 0.5
+shot 32_play_01
+key Right 600
+key Up 600
+key Left 600
+key Down 600
+shot 32_play_02
+key space 80
+wait 0.5
+shot 32_play_03
+key Right 600
+key Down 600
+key Left 600
+key Up 600
+shot 32_play_04
+key space 80
+wait 0.5
+shot 32_play_05
+key Right 600
+key Up 600
+key Left 600
+key Down 600
+shot 32_play_06
+key space 80
+wait 0.5
+shot 32_play_07
+key Right 600
+key Down 600
+key Left 600
+key Up 600
+shot 32_play_08
+key space 80
+wait 0.5
+shot 32_play_09
+key Right 600
+key Up 600
+key Left 600
+key Down 600
+shot 32_play_10
+key space 80
+wait 0.5
+shot 32_play_11
+key Right 600
+key Down 600
+key Left 600
+key Up 600
+shot 32_play_12
+key space 80
+wait 0.5
+shot 32_play_13
+key Right 600
+key Up 600
+key Left 600
+key Down 600
+shot 32_play_14
+key space 80
+wait 0.5
+shot 32_play_15
+key Right 600
+key Down 600
+key Left 600
+key Up 600
+shot 32_play_16
+key space 80
+wait 0.5
+shot 32_play_17
+key Right 600
+key Up 600
+key Left 600
+key Down 600
+shot 32_play_18
+key space 80
+wait 0.5
+shot 32_play_19
+key Right 600
+key Down 600
+key Left 600
+key Up 600
+shot 32_play_20
+key space 80
+wait 0.5
+shot 32_play_21
+key Right 600
+key Up 600
+key Left 600
+key Down 600
+shot 32_play_22
+key space 80
+wait 0.5
+shot 32_play_23
+key Right 600
+key Down 600
+key Left 600
+key Up 600
+shot 32_play_24
+key space 80
+wait 0.5
+shot 32_play_25
+key Right 600
+key Up 600
+key Left 600
+key Down 600
+shot 32_play_26
+key space 80
+wait 0.5
+shot 32_play_27
+wait 2
+shot 33_end_a
+desk 33_end_a_desk
+tree

@@ -1,0 +1,16 @@
+waitframe 40
+log title_idle_begin
+wait 8
+shot T_title
+log title_idle_end
+click 563 253
+log start_clicked
+wait 6
+log game_play_begin
+key Right 700
+key Down 700
+key Left 700
+key Up 700
+wait 2
+shot T_game
+log game_play_end

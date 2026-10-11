@@ -1,0 +1,17 @@
+# fsin_check (host x87) 2026-10-11
+B y53 mismatch k=1 r=39 x87=0x1.ebff9b18e77a5p+7 libm=0x1.ebff9b18e77a4p+7
+C y53 mismatch k=1 r=39 x87=0x1.ebff9b18e77a5p+7 table=0x1.ebff9b18e77a4p+7
+B y53 mismatch k=1 r=44 x87=0x1.f5ff8e2939aadp+7 libm=0x1.f5ff8e2939aacp+7
+C y53 mismatch k=1 r=44 x87=0x1.f5ff8e2939aadp+7 table=0x1.f5ff8e2939aacp+7
+B y53 mismatch k=1 r=78 x87=0x1.1cff9b18e77a5p+8 libm=0x1.1cff9b18e77a4p+8
+C y53 mismatch k=1 r=78 x87=0x1.1cff9b18e77a5p+8 table=0x1.1cff9b18e77a4p+8
+args=1000 fsin(rounded to double)!=libm sin: 3; fcos: 2
+pairs=179000
+B (libm double, = Unicorn/QEMU): mismatches x32=0 y32=0 y53=11470
+C (table of x87 FSIN/FCOS rounded to double): mismatches x32=0 y32=0 y53=11470
+D (table of 80-bit x87 FSIN/FCOS + exact PC53 multiply): mismatches x32=0 y32=0 y53=0
+model name	: 13th Gen Intel(R) Core(TM) i7-13700HX
+ldd (GNU libc) 2.44
+# unicorn_fsin.py (Unicorn 2.1.4, original bytes 0x10001252..0x1000127c)
+unicorn mode=raw pairs=179000 mismatches x32=0 y32=0 y53=11470; e.g. k=1 r=39 unicorn=0x1.ebff9b18e77a4p+7 x87=0x1.ebff9b18e77a5p+7; k=1 r=44 unicorn=0x1.f5ff8e2939aacp+7 x87=0x1.f5ff8e2939aadp+7
+unicorn mode=table pairs=179000 mismatches x32=0 y32=0 y53=0

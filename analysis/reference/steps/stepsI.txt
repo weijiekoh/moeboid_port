@@ -1,0 +1,18 @@
+waitframe 40
+wait 2
+shot 01_title_fresh_I
+log install_click
+click 122 508
+wait 3
+shot 08_install_I
+desk 08_install_I_desk
+tree
+wait 2
+log close_click
+click 776 22
+wait 2
+desk 54_close_I
+tree
+wait 3
+desk 54_close_I_b
+tree

@@ -1,0 +1,17 @@
+waitframe 40
+log title_idle_begin
+wait 5
+log title_idle_end
+click 563 253
+log start_clicked
+wait 5
+log game_play_begin
+key Right 1500
+key Down 1500
+key Left 1500
+key Up 1500
+key Right 1500
+key Down 1500
+wait 3
+shot F_game
+log game_play_end

@@ -1,0 +1,218 @@
+address	type	xrefs	value
+1000d176	string		GAIsProcessorFeaturePresent
+1000d194	string	100059c6:FUN_100059c6@100059c6	KERNEL32
+1000d1a8	string	10005b80:FUN_10005aed@10005aed	e+000
+1000d20e	unicode	10006258:FUN_10005fe2@10005fe2,1000668b:FUN_10005fe2@10005fe2	null)
+1000d21d	string	1000644b:FUN_10005fe2@10005fe2	null)
+1000d2a0	string		runtime error 
+1000d2b4	string		TLOSS error\r\n
+1000d2c4	string		SING error\r\n
+1000d2d4	string		DOMAIN error\r\n
+1000d2e4	string		R6028\r\n- unable to initialize heap\r\n
+1000d30c	string		R6027\r\n- not enough space for lowio initialization\r\n
+1000d344	string		R6026\r\n- not enough space for stdio initialization\r\n
+1000d37c	string		R6025\r\n- pure virtual function call\r\n
+1000d3a4	string		R6024\r\n- not enough space for _onexit/atexit table\r\n
+1000d3dc	string		R6019\r\n- unable to open console device\r\n
+1000d408	string		R6018\r\n- unexpected heap error\r\n
+1000d42c	string		R6017\r\n- unexpected multithread lock error\r\n
+1000d45c	string		R6016\r\n- not enough space for thread data\r\n
+1000d488	string		\r\nabnormal program termination\r\n
+1000d4ac	string	10007ab0:FUN_100079b4@100079b4,10007aea:FUN_100079b4@100079b4,10007af3:FUN_100079b4@100079b4,1000ecc4:-	R6009\r\n- not enough space for environment\r\n
+1000d4d8	string		R6008\r\n- not enough space for arguments\r\n
+1000d504	string		R6002\r\n- floating point not loaded\r\n
+1000d52c	string	10007acd:FUN_100079b4@100079b4	Microsoft Visual C++ Runtime Library
+1000d558	string	10007a87:FUN_100079b4@100079b4	Runtime Error!\n\nProgram: 
+1000d578	string	10007a31:FUN_100079b4@100079b4	<program name unknown>
+1000d5a4	string	1000a882:FUN_1000a845@1000a845	GetLastActivePopup
+1000d5b8	string	1000a87a:FUN_1000a845@1000a845	GetActiveWindow
+1000d5c8	string	1000a869:FUN_1000a845@1000a845	MessageBoxA
+1000d5d4	string	1000a852:FUN_1000a845@1000a845	user32.dll
+1000d5f8	string	1000b544:FUN_1000b44f@1000b44f	1#QNAN
+1000d600	string	1000b527:FUN_1000b44f@1000b44f	1#INF
+1000d608	string	1000b516:FUN_1000b44f@1000b44f	1#IND
+1000d610	string	1000b4fc:FUN_1000b44f@1000b44f	1#SNAN
+1000d9b2	TerminatedCString		SizeofResource
+1000d9c4	TerminatedCString		LockResource
+1000d9d4	TerminatedCString		LoadResource
+1000d9e4	TerminatedCString		CloseHandle
+1000d9f2	TerminatedCString		ReadFile
+1000d9fe	TerminatedCString		GetFileSize
+1000da0c	TerminatedCString		CreateFileA
+1000da1a	TerminatedCString		FindResourceA
+1000da2a	TerminatedCString		RtlUnwind
+1000da36	TerminatedCString		GetCommandLineA
+1000da48	TerminatedCString		GetVersion
+1000da56	TerminatedCString		GetProcAddress
+1000da68	TerminatedCString		GetModuleHandleA
+1000da7c	TerminatedCString		HeapFree
+1000da88	TerminatedCString		HeapAlloc
+1000da94	TerminatedCString		ExitProcess
+1000daa2	TerminatedCString		TerminateProcess
+1000dab6	TerminatedCString		GetCurrentProcess
+1000daca	TerminatedCString		HeapDestroy
+1000dad8	TerminatedCString		HeapCreate
+1000dae6	TerminatedCString		VirtualFree
+1000daf4	TerminatedCString		SetHandleCount
+1000db06	TerminatedCString		GetStdHandle
+1000db16	TerminatedCString		GetFileType
+1000db24	TerminatedCString		GetStartupInfoA
+1000db36	TerminatedCString		GetModuleFileNameA
+1000db4c	TerminatedCString		FreeEnvironmentStringsA
+1000db66	TerminatedCString		FreeEnvironmentStringsW
+1000db80	TerminatedCString		WideCharToMultiByte
+1000db96	TerminatedCString		GetEnvironmentStrings
+1000dbae	TerminatedCString		GetEnvironmentStringsW
+1000dbc8	TerminatedCString		WriteFile
+1000dbd4	TerminatedCString		VirtualAlloc
+1000dbe4	TerminatedCString		HeapReAlloc
+1000dbf2	TerminatedCString		IsBadWritePtr
+1000dc02	TerminatedCString		GetLastError
+1000dc12	TerminatedCString		SetFilePointer
+1000dc24	TerminatedCString		SetUnhandledExceptionFilter
+1000dc42	TerminatedCString		IsBadReadPtr
+1000dc52	TerminatedCString		IsBadCodePtr
+1000dc62	TerminatedCString		MultiByteToWideChar
+1000dc78	TerminatedCString		GetStringTypeA
+1000dc8a	TerminatedCString		GetStringTypeW
+1000dc9c	TerminatedCString		GetCPInfo
+1000dca8	TerminatedCString		GetACP
+1000dcb2	TerminatedCString		GetOEMCP
+1000dcbe	TerminatedCString		LoadLibraryA
+1000dcce	TerminatedCString		UnhandledExceptionFilter
+1000dcea	TerminatedCString		LCMapStringA
+1000dcfa	TerminatedCString		LCMapStringW
+1000dd0a	TerminatedCString		SetStdHandle
+1000dd1a	TerminatedCString		SetConsoleCtrlHandler
+1000dd32	TerminatedCString		FlushFileBuffers
+1000dd44	TerminatedCString		KERNEL32.dll
+1000dd9c	TerminatedCString	1000dd6c:-	Moeboid.dll
+1000dda8	TerminatedCString	1000dd90:-	Shell_StartApplet
+1000ddba	TerminatedCString	1000dd94:-	Shell_StopApplet
+1000e040	string	10001aeb:FUN_100016a0@100016a0	snd-ExtraLife.wav
+1000e054	string	10001ad3:FUN_100016a0@100016a0	snd-randbg.wav
+1000e064	string	10001abb:FUN_100016a0@100016a0	snd-newbaddieBad.wav
+1000e07c	string	10001aa3:FUN_100016a0@100016a0	snd-newbaddieGood.wav
+1000e094	string	10001a8b:FUN_100016a0@100016a0	snd-moebgrowth.wav
+1000e0a8	string	10001a73:FUN_100016a0@100016a0	snd-moebeats.wav
+1000e0bc	string	10001a5b:FUN_100016a0@100016a0	snd-loselife.wav
+1000e0d0	string	10001a43:FUN_100016a0@100016a0	snd-gamestart.wav
+1000e0e4	string	10001a2b:FUN_100016a0@100016a0	snd-gameover.wav
+1000e0f8	string	10001a13:FUN_100016a0@100016a0	snd-gameover-highscore.wav
+1000e114	string	100019fb:FUN_100016a0@100016a0	snd-gameopen.wav
+1000e128	string	100019de:FUN_100016a0@100016a0	ani-titlescreen_animation-500x79.gif
+1000e150	string	100019b3:FUN_100016a0@100016a0	ani-meboid_angel-19x19.gif
+1000e16c	string	10001976:FUN_100016a0@100016a0	ani-baddie-blob-39x39.gif
+1000e188	string	10001926:FUN_100016a0@100016a0	img-backgroundscreen-500x420.gif
+1000e1ac	string	100018fd:FUN_100016a0@100016a0	img-titlescreen-500x420.gif
+1000e1c8	string	100018b4:FUN_100016a0@100016a0	ani-meboid_left-%dx%d.gif
+1000e1e4	string	1000185b:FUN_100016a0@100016a0	ani-meboid_right-%dx%d.gif
+1000e200	string	100017e7:FUN_100016a0@100016a0	ani-baddie_left-%dx%d.gif
+1000e21c	string	10001792:FUN_100016a0@100016a0	ani-baddie_right-%dx%d.gif
+1000e238	string	10001d80:FUN_10001c90@10001c90	<C999999><s4>Moeboid is a trademark of ZapSpot, Inc.
+1000e270	string	10001cda:FUN_10001c90@10001c90	Help.zml
+1000e27c	string	10001eeb:FUN_10001de0@10001de0	</B></U>
+1000e288	string	10001ea8:FUN_10001de0@10001de0	<B><U>
+1000e290	string	10001df7:FUN_10001de0@10001de0,10003b32:FUN_10003ad0@10003ad0,100047f7:FUN_10004640@10004640	Arial
+1000e360	string	1000261c:Shell_StartApplet@100025f0	Moeboid
+1000e3c0	string	10002811:FUN_100026c0@100026c0,1000e3bc:-	Xenia Lok
+1000e3cc	string	1000e3b8:-	Victor Cho
+1000e3d8	string	1000e3b4:-	Travis Fabian
+1000e3e8	string	1000e3b0:-	Terry Janssen
+1000e3f8	string	1000e3ac:-	Sohail Iqbal
+1000e408	string	1000e3a8:-	Sandy Keller
+1000e418	string	1000e3a4:-	Rodney Cooke
+1000e428	string	1000e3a0:-	Paul Parente
+1000e438	string	1000e39c:-	Oscar Aird
+1000e444	string	1000e398:-	Nick Jain
+1000e450	string	1000e394:-	Mike Gunderloy
+1000e460	string	1000e390:-	Lynn Akashi
+1000e46c	string	1000e38c:-	Len Li
+1000e474	string	1000e388:-	Kevin Wong
+1000e480	string	1000e384:-	Kenny Davis
+1000e48c	string	1000e380:-	Jeff Simon
+1000e498	string	1000e37c:-	Hermann Leung
+1000e4a8	string	1000e378:-	Eytan Schwartz
+1000e4b8	string	1000e374:-	David Wadler
+1000e4c8	string	1000e370:-	Dan Frumin
+1000e4d4	string	100027e6:FUN_100026c0@100026c0,1000e36c:-	Ari Feldman
+1000e4e0	string	100027e6:FUN_100026c0@100026c0,1000e368:-	Adam Smith
+1000e4ec	string	100027e7:FUN_100026c0@100026c0	<S3><c><b><c000000>%s</b></c>
+1000e50c	string	100027c6:FUN_100026c0@100026c0	<S2><c><b><c000000><u>The ZapSpot Team</b></c></u>
+1000e548	string	1000394a:FUN_100037d0@100037d0,1000399a:FUN_100037d0@100037d0,100039f0:FUN_100037d0@100037d0,1000477c:FUN_10004640@10004640	Score%dName
+1000e554	string	100038e8:FUN_100037d0@100037d0	Name too long
+1000e564	string	100038e3:FUN_100037d0@100037d0	We're sorry, but names must be 12 letters or smaller.
+1000e59c	string	100038be:FUN_100037d0@100037d0,1000390b:FUN_100037d0@100037d0	Congratulations
+1000e5ac	string	100038b9:FUN_100037d0@100037d0,10003906:FUN_100037d0@100037d0	You got a high score! Survival of the fittest at it's best.  Please enter your name:
+1000e60c	string	10003873:FUN_100037d0@100037d0,1000392f:FUN_100037d0@100037d0	LastNameEntered
+1000e61c	string	100037e9:FUN_100037d0@100037d0,1000396f:FUN_100037d0@100037d0,100039bf:FUN_100037d0@100037d0,10003a15:FUN_100037d0@100037d0,100047a4:FUN_10004640@10004640	Score%dScore
+1000e62c	string	10003a9d:FUN_10003a60@10003a60	<s0><ccc3399><b>%d</b>
+1000e648	string	10003e5b:FUN_10003d80@10003d80	<C000000>Press the space bar to continue...
+1000e674	string	10003e39:FUN_10003d80@10003d80	life left...
+1000e684	string	10003e2b:FUN_10003d80@10003d80	lives left...
+1000e694	string	10003df2:FUN_10003d80@10003d80	<s3><c333399><b>That's ok, you have %d more
+1000e6c0	string	10003dd9:FUN_10003d80@10003d80	<s3><c333399><b>should do the eating, you know?
+1000e6f0	string	10003dc4:FUN_10003d80@10003d80	<s3><c333399><b>be eaten" we really meant you
+1000e720	string	10003daf:FUN_10003d80@10003d80	<s3><c333399><b>Hmm... When we said "Eat or
+1000e74c	string	10003f32:FUN_10003e70@10003e70	No (N)
+1000e754	string	10003f01:FUN_10003e70@10003e70	Yes (Y)
+1000e75c	string	10003ed5:FUN_10003e70@10003e70	<s3><c333399><b><c>Play Again?</c>
+1000e780	string	10003ec0:FUN_10003e70@10003e70	<s3><c333399><b>for this little moeboid.
+1000e7ac	string	10003eab:FUN_10003e70@10003e70	<s3><c333399><b>that was also all the lives
+1000e7d8	string	10003e96:FUN_10003e70@10003e70	<s3><c333399><b>That was good.  Unfortunately
+1000e808	string	100042a3:FUN_100041a0@100041a0	<C000000><S1><b><u>Top Moeboids</u></b>
+1000e830	string	10004288:FUN_100041a0@100041a0	Start
+1000e838	string	10004443:FUN_100043f0@100043f0	INVINCIBLE
+1000e844	string	10004410:FUN_100043f0@100043f0	credits
+1000e84c	string	1000440b:FUN_100043f0@100043f0	CREDITS
+1000e854	string	10004944:FUN_10004640@10004640	<s3><b><c000000>%d</b>
+1000e86c	string	1000492d:FUN_10004640@10004640	<s3><b><c000000>%d,%03d</b>
+1000e888	string	100048f2:FUN_10004640@10004640	<s3><b><c000000>%d,%03d,%03d</b>
+1000e8ac	string	10004885:FUN_10004640@10004640	<s3><b><c000000>%s</b>
+1000e8c8	string	1000474b:FUN_10004640@10004640	<s3><c000000><b>. . . . . . . . . . . . . . . . .</b>
+1000e900	string	10004731:FUN_10004640@10004640	Score5Score
+1000e910	string	1000471c:FUN_10004640@10004640	Score5Name
+1000e91c	string	10004707:FUN_10004640@10004640	Score4Score
+1000e930	string	100046f2:FUN_10004640@10004640	Score4Name
+1000e93c	string	100046dd:FUN_10004640@10004640	Score3Score
+1000e950	string	100046c8:FUN_10004640@10004640	Score3Name
+1000e95c	string	100046b3:FUN_10004640@10004640	Score2Score
+1000e970	string	1000469e:FUN_10004640@10004640	Score2Name
+1000e97c	string	10004689:FUN_10004640@10004640	Score1Score
+1000e988	string	10004684:FUN_10004640@10004640	10000
+1000e990	string	1000466f:FUN_10004640@10004640,10004699:FUN_10004640@10004640,100046c3:FUN_10004640@10004640,100046ed:FUN_10004640@10004640,10004717:FUN_10004640@10004640	ZapSpot
+1000e998	string	10004656:FUN_10004640@10004640,10004674:FUN_10004640@10004640	Score1Name
+10040cd0	PascalUnicode		
+10040cd2	PascalUnicode		
+10040cd4	PascalUnicode		
+10040cd6	PascalUnicode		00.01.01.08
+10040cee	PascalUnicode		Moeboid
+10040cfe	PascalUnicode		{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}
+10040d4c	PascalUnicode		img-shell_icon-80x60.gif
+10040d7e	PascalUnicode		Action
+10040d8c	PascalUnicode		Sweat
+10040d98	PascalUnicode		ZapSpot's Moeboid: Amoeboes Have all the Fun
+10040df2	PascalUnicode		
+10040df4	PascalUnicode		
+10040df6	PascalUnicode		
+10040df8	PascalUnicode		
+10040dfa	PascalUnicode		
+10040dfc	PascalUnicode		
+10040e00	PascalUnicode		
+10040e02	PascalUnicode		
+10040e04	PascalUnicode		
+10040e06	PascalUnicode		
+10040e08	PascalUnicode		
+10040e0a	PascalUnicode		
+10040e0c	PascalUnicode		
+10040e0e	PascalUnicode		
+10040e10	PascalUnicode		LANG_ENGLISH
+10040e2a	PascalUnicode		
+10040e2c	PascalUnicode		
+10040e2e	PascalUnicode		
+10040e30	PascalUnicode		
+10040e32	PascalUnicode		
+10040e34	PascalUnicode		
+10040e36	PascalUnicode		
+ffdff1ac	uchar[36]		
+ffdffc00	wchar16[261]		

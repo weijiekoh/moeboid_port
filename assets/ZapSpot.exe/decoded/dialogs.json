@@ -1,0 +1,1864 @@
+{
+ "DUMPINFO": {
+  "format": "DLGTEMPLATE",
+  "style": 2160068800,
+  "exstyle": 0,
+  "help_id": null,
+  "item_count": 9,
+  "x": 0,
+  "y": 0,
+  "cx": 320,
+  "cy": 122,
+  "menu": null,
+  "class": null,
+  "caption": "Unexpected Error Occurred",
+  "font": {
+   "point_size": 8,
+   "weight": null,
+   "italic": null,
+   "charset": null,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_MODALFRAME",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 104,
+    "style": 1342373889,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1,
+    "id_signed": 1,
+    "x": 163,
+    "y": 101,
+    "cx": 66,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Close ZapSpot",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_DEFPUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 245,
+     "y": 164,
+     "w": 99,
+     "h": 26
+    }
+   },
+   {
+    "offset": 156,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 7,
+    "cx": 302,
+    "cy": 18,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "Zapspot has encountered an unexpected error and needs to be shut down.  This dialog gathers key ZapSpot specific system information which will help us fix the problem that you have run",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 11,
+     "w": 453,
+     "h": 29
+    }
+   },
+   {
+    "offset": 552,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 36,
+    "cx": 301,
+    "cy": 18,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "To do so, please click the \"Copy to Clipboard button\" on this dialog.  Then, open up your email and write an email to Support@ZapSpot.com.  Please include a description of what happened",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 59,
+     "w": 452,
+     "h": 29
+    }
+   },
+   {
+    "offset": 948,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 74,
+    "cx": 302,
+    "cy": 8,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "To see the information that will be copied, click the \">>\" button.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 120,
+     "w": 453,
+     "h": 13
+    }
+   },
+   {
+    "offset": 1108,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 87,
+    "cx": 302,
+    "cy": 8,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "We apologize for the inconvenience and promise to address these issues immediately.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 141,
+     "w": 453,
+     "h": 13
+    }
+   },
+   {
+    "offset": 1300,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2010,
+    "id_signed": 2010,
+    "x": 303,
+    "y": 104,
+    "cx": 12,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": ">>",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 455,
+     "y": 169,
+     "w": 18,
+     "h": 26
+    }
+   },
+   {
+    "offset": 1332,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2008,
+    "id_signed": 2008,
+    "x": 89,
+    "y": 101,
+    "cx": 68,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Copy to Clipboard",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 134,
+     "y": 164,
+     "w": 102,
+     "h": 26
+    }
+   },
+   {
+    "offset": 1392,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 23,
+    "cx": 302,
+    "cy": 8,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "into.  We would like to ask you to help us out by sending us this information in an email.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 37,
+     "w": 453,
+     "h": 13
+    }
+   },
+   {
+    "offset": 1600,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 53,
+    "cx": 301,
+    "cy": 18,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "and then use your email program's Paste function to place the information from this dialog into your email.  When you're ready, send the mail to us and we will respond as soon as possible",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 86,
+     "w": 452,
+     "h": 29
+    }
+   }
+  ],
+  "bytes_used": 2000,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 480,
+   "h": 198
+  }
+ },
+ "DUMPINFO2": {
+  "format": "DLGTEMPLATE",
+  "style": 2160068800,
+  "exstyle": 0,
+  "help_id": null,
+  "item_count": 9,
+  "x": 0,
+  "y": 0,
+  "cx": 320,
+  "cy": 236,
+  "menu": null,
+  "class": null,
+  "caption": "Unexpected Error Occurred",
+  "font": {
+   "point_size": 8,
+   "weight": null,
+   "italic": null,
+   "charset": null,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_MODALFRAME",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 104,
+    "style": 1342373889,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1,
+    "id_signed": 1,
+    "x": 163,
+    "y": 216,
+    "cx": 66,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Close ZapSpot",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_DEFPUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 245,
+     "y": 351,
+     "w": 99,
+     "h": 26
+    }
+   },
+   {
+    "offset": 156,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 77,
+    "cx": 302,
+    "cy": 8,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "We apologize for the inconvenience and promise to address these issues immediately.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 125,
+     "w": 453,
+     "h": 13
+    }
+   },
+   {
+    "offset": 348,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2011,
+    "id_signed": 2011,
+    "x": 303,
+    "y": 217,
+    "cx": 12,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "<<",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 455,
+     "y": 353,
+     "w": 18,
+     "h": 26
+    }
+   },
+   {
+    "offset": 380,
+    "style": 1352859780,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2009,
+    "id_signed": 2009,
+    "x": 7,
+    "y": 95,
+    "cx": 303,
+    "cy": 115,
+    "class_raw": 129,
+    "class": "Edit",
+    "text": "",
+    "creation_data_hex": null,
+    "style_names": [
+     "ES_LEFT",
+     "ES_MULTILINE",
+     "ES_AUTOHSCROLL",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_BORDER",
+     "WS_VSCROLL",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 154,
+     "w": 455,
+     "h": 187
+    }
+   },
+   {
+    "offset": 408,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2008,
+    "id_signed": 2008,
+    "x": 89,
+    "y": 216,
+    "cx": 68,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Copy to Clipboard",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 134,
+     "y": 351,
+     "w": 102,
+     "h": 26
+    }
+   },
+   {
+    "offset": 468,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 7,
+    "cx": 302,
+    "cy": 18,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "Zapspot has encountered an unexpected error and needs to be shut down.  This dialog gathers key ZapSpot specific system information which will help us fix the problem that you have run",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 11,
+     "w": 453,
+     "h": 29
+    }
+   },
+   {
+    "offset": 864,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 23,
+    "cx": 302,
+    "cy": 8,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "into.  We would like to ask you to help us out by sending us this information in an email.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 37,
+     "w": 453,
+     "h": 13
+    }
+   },
+   {
+    "offset": 1072,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 36,
+    "cx": 301,
+    "cy": 18,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "To do so, please click the \"Copy to Clipboard button\" on this dialog.  Then, open up your email and write an email to Support@ZapSpot.com.  Please include a description of what happened",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 59,
+     "w": 452,
+     "h": 29
+    }
+   },
+   {
+    "offset": 1468,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 53,
+    "cx": 301,
+    "cy": 18,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "and then use your email program's Paste function to place the information from this dialog into your email.  When you're ready, send the mail to us and we will respond as soon as possible",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 86,
+     "w": 452,
+     "h": 29
+    }
+   }
+  ],
+  "bytes_used": 1868,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 480,
+   "h": 384
+  }
+ },
+ "IDD_CONFIRM_SAVE": {
+  "format": "DLGTEMPLATE",
+  "style": 2428504128,
+  "exstyle": 0,
+  "help_id": null,
+  "item_count": 5,
+  "x": 0,
+  "y": 0,
+  "cx": 207,
+  "cy": 90,
+  "menu": null,
+  "class": null,
+  "caption": "Save to Desktop Requested",
+  "font": {
+   "point_size": 8,
+   "weight": null,
+   "italic": null,
+   "charset": null,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP",
+   "WS_VISIBLE"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 104,
+    "style": 1342373889,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2002,
+    "id_signed": 2002,
+    "x": 46,
+    "y": 69,
+    "cx": 53,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "&OK",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_DEFPUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 69,
+     "y": 112,
+     "w": 80,
+     "h": 26
+    }
+   },
+   {
+    "offset": 136,
+    "style": 1342242816,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2007,
+    "id_signed": 2007,
+    "x": 7,
+    "y": 40,
+    "cx": 9,
+    "cy": 9,
+    "class_raw": 128,
+    "class": "Button",
+    "text": ">>",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 65,
+     "w": 14,
+     "h": 15
+    }
+   },
+   {
+    "offset": 168,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2004,
+    "id_signed": 2004,
+    "x": 105,
+    "y": 69,
+    "cx": 53,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "&Cancel",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 158,
+     "y": 112,
+     "w": 80,
+     "h": 26
+    }
+   },
+   {
+    "offset": 208,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 7,
+    "cx": 191,
+    "cy": 27,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "In order to save this setting, ZapSpot needs to save its file to your machine.  This will also start your own personal ZapSpot and allow you to collect ZapSpot games.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 11,
+     "w": 287,
+     "h": 44
+    }
+   },
+   {
+    "offset": 568,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 19,
+    "y": 40,
+    "cx": 187,
+    "cy": 27,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "If you save ZapSpot, you agree to ZapSpot's Terms of Service and Privacy Policy.  Click this button to read them.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 29,
+     "y": 65,
+     "w": 281,
+     "h": 44
+    }
+   }
+  ],
+  "bytes_used": 820,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 311,
+   "h": 146
+  }
+ },
+ "IDD_INPUT_BOX": {
+  "format": "DLGTEMPLATE",
+  "style": 2160068800,
+  "exstyle": 0,
+  "help_id": null,
+  "item_count": 4,
+  "x": 0,
+  "y": 0,
+  "cx": 167,
+  "cy": 61,
+  "menu": null,
+  "class": null,
+  "caption": "Dialog",
+  "font": {
+   "point_size": 8,
+   "weight": null,
+   "italic": null,
+   "charset": null,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_MODALFRAME",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 68,
+    "style": 1350631552,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1003,
+    "id_signed": 1003,
+    "x": 4,
+    "y": 25,
+    "cx": 158,
+    "cy": 12,
+    "class_raw": 129,
+    "class": "Edit",
+    "text": "",
+    "creation_data_hex": null,
+    "style_names": [
+     "ES_LEFT",
+     "ES_AUTOHSCROLL",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_BORDER",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 6,
+     "y": 41,
+     "w": 237,
+     "h": 20
+    }
+   },
+   {
+    "offset": 96,
+    "style": 1342242817,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1,
+    "id_signed": 1,
+    "x": 32,
+    "y": 41,
+    "cx": 50,
+    "cy": 14,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "OK",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_DEFPUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 48,
+     "y": 67,
+     "w": 75,
+     "h": 23
+    }
+   },
+   {
+    "offset": 128,
+    "style": 1342242816,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2,
+    "id_signed": 2,
+    "x": 85,
+    "y": 41,
+    "cx": 50,
+    "cy": 14,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Cancel",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 128,
+     "y": 67,
+     "w": 75,
+     "h": 23
+    }
+   },
+   {
+    "offset": 168,
+    "style": 1342308353,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1002,
+    "id_signed": 1002,
+    "x": 4,
+    "y": 4,
+    "cx": 158,
+    "cy": 20,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "Static",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_CENTER",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 6,
+     "y": 7,
+     "w": 237,
+     "h": 33
+    }
+   }
+  ],
+  "bytes_used": 206,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 251,
+   "h": 99
+  }
+ },
+ "IDD_INPUT_BOX2": {
+  "format": "DLGTEMPLATE",
+  "style": 2160068800,
+  "exstyle": 0,
+  "help_id": null,
+  "item_count": 3,
+  "x": 0,
+  "y": 0,
+  "cx": 167,
+  "cy": 61,
+  "menu": null,
+  "class": null,
+  "caption": "Dialog",
+  "font": {
+   "point_size": 8,
+   "weight": null,
+   "italic": null,
+   "charset": null,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_MODALFRAME",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 68,
+    "style": 1350631552,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1003,
+    "id_signed": 1003,
+    "x": 4,
+    "y": 25,
+    "cx": 158,
+    "cy": 12,
+    "class_raw": 129,
+    "class": "Edit",
+    "text": "",
+    "creation_data_hex": null,
+    "style_names": [
+     "ES_LEFT",
+     "ES_AUTOHSCROLL",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_BORDER",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 6,
+     "y": 41,
+     "w": 237,
+     "h": 20
+    }
+   },
+   {
+    "offset": 96,
+    "style": 1342242817,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1,
+    "id_signed": 1,
+    "x": 59,
+    "y": 41,
+    "cx": 50,
+    "cy": 14,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "OK",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_DEFPUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 89,
+     "y": 67,
+     "w": 75,
+     "h": 23
+    }
+   },
+   {
+    "offset": 128,
+    "style": 1342308353,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 1002,
+    "id_signed": 1002,
+    "x": 4,
+    "y": 4,
+    "cx": 158,
+    "cy": 20,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "Static",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_CENTER",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 6,
+     "y": 7,
+     "w": 237,
+     "h": 33
+    }
+   }
+  ],
+  "bytes_used": 166,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 251,
+   "h": 99
+  }
+ },
+ "IDD_QUIT_NOTSAVED": {
+  "format": "DLGTEMPLATE",
+  "style": 2160068800,
+  "exstyle": 0,
+  "help_id": null,
+  "item_count": 6,
+  "x": 0,
+  "y": 0,
+  "cx": 235,
+  "cy": 90,
+  "menu": null,
+  "class": null,
+  "caption": "Play Again Soon",
+  "font": {
+   "point_size": 8,
+   "weight": null,
+   "italic": null,
+   "charset": null,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_MODALFRAME",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 84,
+    "style": 1342373889,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2003,
+    "id_signed": 2003,
+    "x": 159,
+    "y": 70,
+    "cx": 70,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Save And Exit",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_DEFPUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 239,
+     "y": 114,
+     "w": 105,
+     "h": 26
+    }
+   },
+   {
+    "offset": 136,
+    "style": 1342242816,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2007,
+    "id_signed": 2007,
+    "x": 7,
+    "y": 40,
+    "cx": 9,
+    "cy": 9,
+    "class_raw": 128,
+    "class": "Button",
+    "text": ">>",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 65,
+     "w": 14,
+     "h": 15
+    }
+   },
+   {
+    "offset": 168,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2001,
+    "id_signed": 2001,
+    "x": 6,
+    "y": 70,
+    "cx": 70,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Keep Playing",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 9,
+     "y": 114,
+     "w": 105,
+     "h": 26
+    }
+   },
+   {
+    "offset": 220,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2004,
+    "id_signed": 2004,
+    "x": 86,
+    "y": 70,
+    "cx": 70,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Dont Save, just Exit",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 129,
+     "y": 114,
+     "w": 105,
+     "h": 26
+    }
+   },
+   {
+    "offset": 288,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 7,
+    "y": 7,
+    "cx": 219,
+    "cy": 27,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "You are about to exit ZapSpot.  You can click the \"Save and Exit\" button to start your own personal ZapSpot and keep all your games in one place.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 11,
+     "w": 329,
+     "h": 44
+    }
+   },
+   {
+    "offset": 604,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 19,
+    "y": 40,
+    "cx": 207,
+    "cy": 27,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "If you save ZapSpot, you agree to ZapSpot's Terms of Service and Privacy Policy.  Click this button to read them.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 29,
+     "y": 65,
+     "w": 311,
+     "h": 44
+    }
+   }
+  ],
+  "bytes_used": 856,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 353,
+   "h": 146
+  }
+ },
+ "IDD_QUIT_SAVED": {
+  "format": "DLGTEMPLATE",
+  "style": 2160068800,
+  "exstyle": 0,
+  "help_id": null,
+  "item_count": 3,
+  "x": 0,
+  "y": 0,
+  "cx": 198,
+  "cy": 50,
+  "menu": null,
+  "class": null,
+  "caption": "Warning: Game in Progress",
+  "font": {
+   "point_size": 8,
+   "weight": null,
+   "italic": null,
+   "charset": null,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_MODALFRAME",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 104,
+    "style": 1342373889,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2001,
+    "id_signed": 2001,
+    "x": 102,
+    "y": 27,
+    "cx": 50,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "&No",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_DEFPUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 153,
+     "y": 44,
+     "w": 75,
+     "h": 26
+    }
+   },
+   {
+    "offset": 136,
+    "style": 1342308352,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 65535,
+    "id_signed": -1,
+    "x": 8,
+    "y": 10,
+    "cx": 182,
+    "cy": 13,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "Do you want to leave the game you are currently playing?",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 12,
+     "y": 16,
+     "w": 273,
+     "h": 21
+    }
+   },
+   {
+    "offset": 276,
+    "style": 1342373888,
+    "exstyle": 0,
+    "help_id": null,
+    "id": 2002,
+    "id_signed": 2002,
+    "x": 41,
+    "y": 27,
+    "cx": 50,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "&Yes",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 62,
+     "y": 44,
+     "w": 75,
+     "h": 26
+    }
+   }
+  ],
+  "bytes_used": 310,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 297,
+   "h": 81
+  }
+ },
+ "IDD_TERMSOFSERVICE": {
+  "format": "DLGTEMPLATEEX",
+  "help_id": 0,
+  "exstyle": 0,
+  "style": 2160068800,
+  "item_count": 4,
+  "x": 0,
+  "y": 0,
+  "cx": 279,
+  "cy": 170,
+  "menu": null,
+  "class": null,
+  "caption": "ZapSpot Terms of Service and Privacy Policy",
+  "font": {
+   "point_size": 8,
+   "weight": 0,
+   "italic": 0,
+   "charset": 1,
+   "face": "MS Sans Serif"
+  },
+  "style_names": [
+   "DS_SETFONT",
+   "DS_MODALFRAME",
+   "DS_CENTER",
+   "WS_CAPTION",
+   "WS_POPUP"
+  ],
+  "style_unknown": null,
+  "style_unknown_bits": null,
+  "exstyle_names": [],
+  "exstyle_unknown_bits": null,
+  "items": [
+   {
+    "offset": 152,
+    "help_id": 0,
+    "exstyle": 32,
+    "style": 1342373888,
+    "id": 2002,
+    "id_signed": 2002,
+    "x": 101,
+    "y": 151,
+    "cx": 73,
+    "cy": 16,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "&OK",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_PUSHBUTTON",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [
+     "WS_EX_TRANSPARENT"
+    ],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 152,
+     "y": 245,
+     "w": 110,
+     "h": 26
+    }
+   },
+   {
+    "offset": 192,
+    "help_id": 0,
+    "exstyle": 0,
+    "style": 1352861700,
+    "id": 2005,
+    "id_signed": 2005,
+    "x": 5,
+    "y": 7,
+    "cx": 266,
+    "cy": 85,
+    "class_raw": 129,
+    "class": "Edit",
+    "text": "",
+    "creation_data_hex": null,
+    "style_names": [
+     "ES_LEFT",
+     "ES_MULTILINE",
+     "ES_READONLY",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_BORDER",
+     "WS_VSCROLL",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 8,
+     "y": 11,
+     "w": 399,
+     "h": 138
+    }
+   },
+   {
+    "offset": 224,
+    "help_id": 0,
+    "exstyle": 0,
+    "style": 1342383107,
+    "id": 2006,
+    "id_signed": 2006,
+    "x": 7,
+    "y": 98,
+    "cx": 272,
+    "cy": 26,
+    "class_raw": 128,
+    "class": "Button",
+    "text": "Yes, I would like to receive special offers, advertisments, and promotions from ZapSpot based on my usage. (If you uncheck this option, we will need to save ZapSpot to your machine in order to keep track of your privacy preferences).",
+    "creation_data_hex": null,
+    "style_names": [
+     "BS_AUTOCHECKBOX",
+     "BS_TOP",
+     "BS_MULTILINE",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP",
+     "WS_TABSTOP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 11,
+     "y": 159,
+     "w": 408,
+     "h": 42
+    }
+   },
+   {
+    "offset": 724,
+    "help_id": 0,
+    "exstyle": 0,
+    "style": 1342308352,
+    "id": 4294967295,
+    "id_signed": -1,
+    "x": 8,
+    "y": 128,
+    "cx": 271,
+    "cy": 23,
+    "class_raw": 130,
+    "class": "Static",
+    "text": "ZapSpot respects your online privacy. If you'd like to review our policy or understand what data is being sent to ZapSpot, please read our full Privacy Policy above.",
+    "creation_data_hex": null,
+    "style_names": [
+     "SS_LEFT",
+     "WS_CHILD",
+     "WS_VISIBLE",
+     "WS_GROUP"
+    ],
+    "style_unknown_bits": null,
+    "exstyle_names": [],
+    "exstyle_unknown_bits": null,
+    "px": {
+     "x": 12,
+     "y": 208,
+     "w": 407,
+     "h": 37
+    }
+   }
+  ],
+  "bytes_used": 1086,
+  "trailing_bytes": 0,
+  "base_units": {
+   "x": 6,
+   "y": 13,
+   "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
+   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
+   "strike": {
+    "points": 8,
+    "pix_height": 13,
+    "internal_leading": 2,
+    "ascent": 11,
+    "avg_width": 5,
+    "charset": 0,
+    "version": "0x200"
+   },
+   "alphabet_extent_px": 323,
+   "requested_height_px": -11,
+   "logpixelsy": 96
+  },
+  "pixel_conversion": "computed",
+  "client_px": {
+   "x": 0,
+   "y": 0,
+   "w": 419,
+   "h": 276
+  }
+ }
+}

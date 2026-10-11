@@ -1,0 +1,298 @@
+address	function	instruction	vtable_offset	nargs	caller_pop	push_addresses
+10001071	FUN_10001060	call dword ptr [eax + 8]	0x8	0	0	
+1000109b	FUN_10001060	call dword ptr [edx + 8]	0x8	0	0	
+100010b6	FUN_10001060	call dword ptr [eax + 8]	0x8	0	0	
+100010e0	FUN_10001060	call dword ptr [edx + 8]	0x8	0	0	
+10001131	FUN_10001100	call dword ptr [edx + 0x1c]	0x1c	1	0	1000112e
+10001139	FUN_10001100	call dword ptr [eax + 4]	0x4	0	0	
+10001158	FUN_10001100	call dword ptr [edx + 0x14]	0x14	1	0	10001157
+10001168	FUN_10001100	call dword ptr [edx + 8]	0x8	2	0	10001163,10001165
+10001172	FUN_10001100	call dword ptr [eax + 4]	0x4	0	0	
+1000117a	FUN_10001100	call dword ptr [edx + 0x2c]	0x2c	0	0	
+10001189	FUN_10001100	call dword ptr [eax + 0x18]	0x18	1	0	10001186
+10001199	FUN_10001100	call dword ptr [eax + 0x48]	0x48	2	0	10001195,10001198
+100011d0	FUN_100011a0	call dword ptr [edx + 8]	0x8	0	0	
+100011f3	FUN_100011a0	call dword ptr [edx + 8]	0x8	0	0	
+1000121b	FUN_100011a0	call dword ptr [edx + 8]	0x8	0	0	
+10001240	FUN_100011a0	call dword ptr [edx + 8]	0x8	0	0	
+100012cf	FUN_100011a0	call dword ptr [eax + 8]	0x8	3	0	100012b2,100012c3,100012c9
+100012db	FUN_100011a0	call dword ptr [edx + 0x10]	0x10	2	0	100012d5,100012d7
+100012f3	FUN_100011a0	call dword ptr [eax + 0x14]	0x14	1	0	100012f2
+10001303	FUN_100011a0	call dword ptr [eax + 8]	0x8	2	0	100012fe,10001300
+1000130d	FUN_100011a0	call dword ptr [edx + 4]	0x4	0	0	
+10001320	FUN_100011a0	call dword ptr [edx + 8]	0x8	0	0	
+1000134f	FUN_10001340	call dword ptr [eax + 0x1c]	0x1c	1	0	1000134e
+10001357	FUN_10001340	call dword ptr [eax + 4]	0x4	0	0	
+10001371	FUN_10001340	call dword ptr [edx + 0x1c]	0x1c	1	0	1000136e
+10001379	FUN_10001340	call dword ptr [eax + 4]	0x4	0	0	
+100013ba	FUN_10001380	call dword ptr [edx + 0x18]	0x18	1	0	100013b7
+100013c2	FUN_10001380	call dword ptr [edx + 0x2c]	0x2c	0	0	
+100013ec	FUN_10001380	call dword ptr [eax + 8]	0x8	3	0	100013c8,100013dd,100013e8
+10001414	FUN_10001380	call dword ptr [edx + 8]	0x8	1	0	1000140a
+1000142e	FUN_10001380	call dword ptr [edx + 8]	0x8	1	0	10001424
+10001463	FUN_10001380	call dword ptr [edx + 0x1c]	0x1c	1	0	10001460
+1000146b	FUN_10001380	call dword ptr [eax + 4]	0x4	0	0	
+1000147e	FUN_10001380	call dword ptr [edx + 0x10]	0x10	2	0	10001478,1000147a
+10001489	FUN_10001380	call dword ptr [eax + 8]	0x8	0	0	
+1000165f	FUN_10001380	call dword ptr [eax + 8]	0x8	3	0	10001641,10001653,10001659
+1000168c	FUN_10001380	call dword ptr [edx + 8]	0x8	3	0	1000166e,10001680,10001689
+100016e2	FUN_100016a0	call dword ptr [eax + 0x44]	0x44	1	0	100016db
+10001716	FUN_100016a0	call dword ptr [edx + 0x44]	0x44	4	0	100016e8,10001712,10001713,10001715
+10001729	FUN_100016a0	call dword ptr [edx + 0x10]	0x10	1	0	10001722
+100017b1	FUN_100016a0	call dword ptr [edx + 0xc]	0xc	2	0	100017ae,100017b0
+100017be	FUN_100016a0	call dword ptr [edx + 0x3c]	0x3c	1	0	100017b9
+100017cd	FUN_100016a0	call dword ptr [edx + 0x10]	0x10	1	0	100017cc
+100017d5	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+100017dc	FUN_100016a0	call dword ptr [eax + 4]	0x4	0	0	
+10001806	FUN_100016a0	call dword ptr [edx + 0xc]	0xc	2	0	10001803,10001805
+10001813	FUN_100016a0	call dword ptr [edx + 0x3c]	0x3c	1	0	1000180e
+1000181f	FUN_100016a0	call dword ptr [edx + 0x10]	0x10	1	0	1000181c
+10001827	FUN_100016a0	call dword ptr [eax + 4]	0x4	0	0	
+1000182e	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+1000187a	FUN_100016a0	call dword ptr [edx + 0xc]	0xc	2	0	10001877,10001879
+1000188b	FUN_100016a0	call dword ptr [edx + 0x3c]	0x3c	1	0	10001886
+1000189e	FUN_100016a0	call dword ptr [edx + 0x44]	0x44	1	0	1000189b
+100018a5	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+100018d3	FUN_100016a0	call dword ptr [edx + 0xc]	0xc	2	0	100018d0,100018d2
+100018e1	FUN_100016a0	call dword ptr [edx + 0x3c]	0x3c	1	0	100018dc
+100018e8	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+10001904	FUN_100016a0	call dword ptr [eax + 0xc]	0xc	2	0	100018fb,100018fd
+10001914	FUN_100016a0	call dword ptr [edx + 0x44]	0x44	1	0	1000190f
+1000191b	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+1000192d	FUN_100016a0	call dword ptr [eax + 0xc]	0xc	2	0	10001924,10001926
+1000193e	FUN_100016a0	call dword ptr [edx + 0x3c]	0x3c	1	0	1000193b
+1000194a	FUN_100016a0	call dword ptr [edx + 0x10]	0x10	1	0	10001947
+1000195b	FUN_100016a0	call dword ptr [edx + 0x10]	0x10	2	0	10001956,10001957
+10001963	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+1000196b	FUN_100016a0	call dword ptr [eax + 4]	0x4	0	0	
+1000197d	FUN_100016a0	call dword ptr [edx + 0xc]	0xc	2	0	10001974,10001976
+1000198a	FUN_100016a0	call dword ptr [eax + 0x3c]	0x3c	1	0	10001985
+10001999	FUN_100016a0	call dword ptr [edx + 0x10]	0x10	1	0	10001996
+100019a0	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+100019a8	FUN_100016a0	call dword ptr [eax + 4]	0x4	0	0	
+100019ba	FUN_100016a0	call dword ptr [edx + 0xc]	0xc	2	0	100019b1,100019b3
+100019ca	FUN_100016a0	call dword ptr [eax + 0x3c]	0x3c	1	0	100019c5
+100019d1	FUN_100016a0	call dword ptr [edx + 4]	0x4	0	0	
+100019e3	FUN_100016a0	call dword ptr [eax + 0xc]	0xc	2	0	100019da,100019de
+10001a02	FUN_100016a0	call dword ptr [edx + 0x40]	0x40	2	0	100019f9,100019fb
+10001a1a	FUN_100016a0	call dword ptr [eax + 0x40]	0x40	2	0	10001a11,10001a13
+10001a32	FUN_100016a0	call dword ptr [edx + 0x40]	0x40	2	0	10001a29,10001a2b
+10001a4a	FUN_100016a0	call dword ptr [eax + 0x40]	0x40	2	0	10001a41,10001a43
+10001a62	FUN_100016a0	call dword ptr [edx + 0x40]	0x40	2	0	10001a59,10001a5b
+10001a7a	FUN_100016a0	call dword ptr [eax + 0x40]	0x40	2	0	10001a71,10001a73
+10001a92	FUN_100016a0	call dword ptr [edx + 0x40]	0x40	2	0	10001a89,10001a8b
+10001aaa	FUN_100016a0	call dword ptr [eax + 0x40]	0x40	2	0	10001aa1,10001aa3
+10001ac2	FUN_100016a0	call dword ptr [edx + 0x40]	0x40	2	0	10001ab9,10001abb
+10001ada	FUN_100016a0	call dword ptr [eax + 0x40]	0x40	2	0	10001ad1,10001ad3
+10001af2	FUN_100016a0	call dword ptr [edx + 0x40]	0x40	2	0	10001ae9,10001aeb
+10001b5b	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001b63	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001b6e	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001b8a	FUN_10001b50	call dword ptr [edx + 0x1c]	0x1c	1	0	10001b87
+10001b97	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001baa	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001bb1	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001bc2	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001bcd	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001bd8	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001be3	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001bee	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001bf9	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001c04	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001c0f	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001c1a	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001c25	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001c30	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001c3b	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001c46	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001c51	FUN_10001b50	call dword ptr [edx + 4]	0x4	0	0	
+10001c60	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001c75	FUN_10001b50	call dword ptr [edx]	0x0	1	0	10001c73
+10001c7f	FUN_10001b50	call dword ptr [eax + 4]	0x4	0	0	
+10001cbf	FUN_10001c90	call dword ptr [eax + 0x44]	0x44	1	0	10001cbc
+10001d93	FUN_10001c90	call dword ptr [edx + 4]	0x4	0	0	
+10001dc1	FUN_10001db0	call dword ptr [eax]	0x0	1	0	10001dbf
+10001dfc	FUN_10001de0	call dword ptr [eax + 0x28]	0x28	3	0	10001df4,10001df6,10001df7
+10001e22	FUN_10001de0	call dword ptr [esi + 0x58]	0x58	4	0	10001e0a,10001e1a,10001e1e,10001e1f
+10001e40	FUN_10001de0	call dword ptr [edx + 0x20]	0x20	3	0	10001e31,10001e3b,10001e3f
+10001e4a	FUN_10001de0	call dword ptr [edx + 0x48]	0x48	1	0	10001e45
+10001e7c	FUN_10001de0	call dword ptr [edx + 0x34]	0x34	3	0	10001e6e,10001e73,10001e78
+10001e94	FUN_10001de0	call dword ptr [eax + 0x34]	0x34	3	0	10001e58,10001e5a,10001e5f
+10001ea1	FUN_10001de0	call dword ptr [edx + 0x24]	0x24	3	0	10001e99,10001e9b,10001e9d
+10001ed7	FUN_10001de0	call dword ptr [edx + 0x24]	0x24	3	0	10001ec8,10001ecd,10001ed2
+10001efd	FUN_10001de0	call dword ptr [edx + 4]	0x4	0	0	
+10001f28	FUN_10001de0	call dword ptr [eax + 0x30]	0x30	10	0	10001f09,10001f0d,10001f11,10001f13,10001f14,10001f18,10001f1b,10001f1f,10001f23,10001f27
+10001f31	FUN_10001de0	call dword ptr [eax + 4]	0x4	0	0	
+1000201f	FUN_10002010	call dword ptr [eax + 0x1c]	0x1c	1	0	1000201e
+10002027	FUN_10002010	call dword ptr [eax + 4]	0x4	0	0	
+1000207f	FUN_10002030	call dword ptr [ebx + 8]	0x8	3	0	10002067,10002076,1000207c
+100020ad	FUN_10002090	call dword ptr [edx + 0x1c]	0x1c	1	0	100020aa
+100020b5	FUN_10002090	call dword ptr [eax + 4]	0x4	0	0	
+100020dc	FUN_10002090	call dword ptr [edx + 8]	0x8	2	0	100020c7,100020db
+100020eb	FUN_10002090	call dword ptr [edx + 0x18]	0x18	1	0	100020e8
+100020f3	FUN_10002090	call dword ptr [edx + 0x2c]	0x2c	0	0	
+10002103	FUN_10002090	call dword ptr [eax + 0x48]	0x48	2	0	100020ff,10002102
+1000245d	FUN_10002330	call dword ptr [ebx + 8]	0x8	3	0	10002446,10002454,1000245a
+10002525	FUN_100024e0	call dword ptr [edx + 8]	0x8	1	0	1000251b
+10002546	FUN_100024e0	call dword ptr [edx + 8]	0x8	1	0	1000253c
+100025c9	FUN_100024e0	call dword ptr [eax + 8]	0x8	1	0	100025bf
+10002623	Shell_StartApplet	call dword ptr [eax + 8]	0x8	1	0	1000261c
+10002719	FUN_100026c0	call dword ptr [edx + 0x40]	0x40	3	0	10002707,1000270f,10002711
+10002730	FUN_100026c0	call dword ptr [edx + 0x1c]	0x1c	3	0	10002722,10002724,10002729
+10002743	FUN_100026c0	call dword ptr [eax + 0x10]	0x10	4	0	10002739,1000273b,1000273d,10002741
+10002762	FUN_100026c0	call dword ptr [edx + 0x10]	0x10	4	0	1000274c,10002751,10002756,1000275d
+10002773	FUN_100026c0	call dword ptr [eax + 0x1c]	0x1c	3	0	1000276b,1000276d,1000276f
+1000278c	FUN_100026c0	call dword ptr [edx + 0x10]	0x10	4	0	1000277c,1000277e,10002783,10002787
+10002842	FUN_100026c0	call dword ptr [eax + 8]	0x8	0	0	
+1000288d	FUN_100026c0	call dword ptr [eax + 0x34]	0x34	3	0	10002883,10002888,1000288a
+1000289a	FUN_100026c0	call dword ptr [edx + 8]	0x8	0	0	
+1000292c	FUN_100028f0	call dword ptr [eax + 0x1c]	0x1c	1	0	10002926
+10002937	FUN_100028f0	call dword ptr [eax + 4]	0x4	0	0	
+1000297f	FUN_100028f0	call dword ptr [eax + 4]	0x4	0	0	
+10002ae7	FUN_10002a80	call dword ptr [eax + 0x40]	0x40	3	0	10002ad9,10002ae0,10002ae3
+10002b6a	FUN_10002a80	call dword ptr [edx + 8]	0x8	0	0	
+10002c17	FUN_10002a80	call dword ptr [edx + 0x44]	0x44	4	0	10002c0c,10002c11,10002c14,10002c16
+10002c30	FUN_10002a80	call dword ptr [edx + 0x34]	0x34	3	0	10002c26,10002c2b,10002c2f
+10002c3d	FUN_10002a80	call dword ptr [edx + 8]	0x8	0	0	
+10002c6f	FUN_10002a80	call dword ptr [eax + 8]	0x8	0	0	
+10002c9d	FUN_10002a80	call dword ptr [edx + 0xc]	0xc	1	0	10002c87
+10002d26	FUN_10002cf0	call dword ptr [eax + 4]	0x4	0	0	
+10002d87	FUN_10002cf0	call dword ptr [eax + 4]	0x4	0	0	
+10002d9d	FUN_10002cf0	call dword ptr [edx + 0x1c]	0x1c	1	0	10002d9a
+10002da8	FUN_10002cf0	call dword ptr [eax + 4]	0x4	0	0	
+10002dbe	FUN_10002cf0	call dword ptr [edx + 0x1c]	0x1c	1	0	10002dbb
+10002dc9	FUN_10002cf0	call dword ptr [eax + 4]	0x4	0	0	
+10002ddf	FUN_10002cf0	call dword ptr [edx + 0x1c]	0x1c	1	0	10002ddc
+10002dea	FUN_10002cf0	call dword ptr [eax + 4]	0x4	0	0	
+10002df5	FUN_10002cf0	call dword ptr [edx + 4]	0x4	0	0	
+10002f48	FUN_10002ea0	call dword ptr [eax + 0x1c]	0x1c	1	0	10002f45
+10002f53	FUN_10002ea0	call dword ptr [eax + 4]	0x4	0	0	
+10002fa0	FUN_10002ea0	call dword ptr [edx + 0xc]	0xc	2	0	10002f93,10002f9f
+10002fd5	FUN_10002ea0	call dword ptr [edx + 8]	0x8	3	0	10002fca,10002fcf,10002fd4
+10002fe9	FUN_10002ea0	call dword ptr [edx + 8]	0x8	3	0	10002fca,10002fe3,10002fe8
+1000302a	FUN_10002ea0	call dword ptr [eax + 8]	0x8	1	0	10003020
+10003035	FUN_10002ea0	call dword ptr [edx + 8]	0x8	0	0	
+1000308d	FUN_10002ea0	call dword ptr [eax + 8]	0x8	1	0	10003083
+100030c3	FUN_10002ea0	call dword ptr [edx + 8]	0x8	1	0	100030b9
+10003173	FUN_10003130	call dword ptr [edx + 8]	0x8	2	0	10003171,10003172
+10003184	FUN_10003130	call dword ptr [edx + 0x18]	0x18	1	0	10003181
+1000318f	FUN_10003130	call dword ptr [eax + 0x2c]	0x2c	0	0	
+100031ce	FUN_10003130	call dword ptr [edi + 8]	0x8	3	0	1000319b,100031b2,100031cd
+1000321d	FUN_10003200	call dword ptr [eax + 0x20]	0x20	1	0	1000321b
+10003260	FUN_10003200	call dword ptr [edx + 0x20]	0x20	1	0	1000325e
+100032a3	FUN_10003200	call dword ptr [edx + 0x20]	0x20	1	0	1000329f
+100032e0	FUN_10003200	call dword ptr [edx + 0x20]	0x20	1	0	1000329f
+10003322	FUN_10003200	call dword ptr [edx + 0x20]	0x20	1	0	1000331e
+10003361	FUN_10003200	call dword ptr [edx + 0x20]	0x20	1	0	1000331e
+100033a4	FUN_10003200	call dword ptr [edx + 0x20]	0x20	1	0	100033a0
+100033ea	FUN_10003200	call dword ptr [edx + 0x20]	0x20	1	0	100033a0
+1000355c	FUN_10003460	call dword ptr [edx + 8]	0x8	0	0	
+100035dc	FUN_10003460	call dword ptr [eax + 8]	0x8	0	0	
+100035f4	FUN_10003460	call dword ptr [edx + 8]	0x8	0	0	
+100036ea	FUN_10003670	call dword ptr [edx + 8]	0x8	0	0	
+10003767	FUN_10003670	call dword ptr [eax + 8]	0x8	0	0	
+1000377f	FUN_10003670	call dword ptr [edx + 8]	0x8	0	0	
+1000380a	FUN_100037d0	call dword ptr [edx + 0x14]	0x14	2	0	10003805,10003809
+10003842	FUN_100037d0	call dword ptr [eax + 8]	0x8	1	0	10003838
+10003878	FUN_100037d0	call dword ptr [eax + 0x14]	0x14	2	0	10003872,10003873
+100038c3	FUN_100037d0	call dword ptr [edx + 0x18]	0x18	6	0	100038ab,100038b0,100038b4,100038b8,100038b9,100038be
+100038ef	FUN_100037d0	call dword ptr [edx + 0x14]	0x14	3	0	100038de,100038e3,100038e8
+10003910	FUN_100037d0	call dword ptr [eax + 0x18]	0x18	6	0	100038f8,100038fd,10003901,10003905,10003906,1000390b
+10003936	FUN_100037d0	call dword ptr [eax + 0x10]	0x10	2	0	1000392e,1000392f
+10003968	FUN_100037d0	call dword ptr [edx + 0x14]	0x14	2	0	10003963,10003967
+10003990	FUN_100037d0	call dword ptr [edx + 0x14]	0x14	2	0	1000398b,1000398f
+100039b8	FUN_100037d0	call dword ptr [edx + 0x10]	0x10	2	0	100039b3,100039b7
+100039e0	FUN_100037d0	call dword ptr [edx + 0x10]	0x10	2	0	100039db,100039df
+10003a0e	FUN_100037d0	call dword ptr [edx + 0x10]	0x10	2	0	10003a09,10003a0d
+10003a4b	FUN_100037d0	call dword ptr [edx + 0x10]	0x10	2	0	10003a46,10003a4a
+10003a7d	FUN_10003a60	call dword ptr [eax + 0x1c]	0x1c	3	0	10003a6f,10003a71,10003a76
+10003a90	FUN_10003a60	call dword ptr [edx + 0x10]	0x10	4	0	10003a86,10003a88,10003a8a,10003a8e
+10003aef	FUN_10003ad0	call dword ptr [eax + 0x1c]	0x1c	3	0	10003ae1,10003ae3,10003ae8
+10003b0e	FUN_10003ad0	call dword ptr [edx + 0x10]	0x10	4	0	10003af8,10003afd,10003b02,10003b09
+10003b37	FUN_10003ad0	call dword ptr [edx + 0x28]	0x28	3	0	10003b2e,10003b30,10003b32
+10003b45	FUN_10003ad0	call dword ptr [eax + 0x48]	0x48	1	0	10003b42
+10003b69	FUN_10003ad0	call dword ptr [ebx + 0x58]	0x58	4	0	10003b4e,10003b64,10003b65,10003b66
+10003b80	FUN_10003ad0	call dword ptr [edx + 0x24]	0x24	3	0	10003b72,10003b77,10003b79
+10003bde	FUN_10003bc0	call dword ptr [eax + 0x10]	0x10	2	0	10003bd9,10003bda
+10003bee	FUN_10003bc0	call dword ptr [eax + 0x50]	0x50	2	0	10003be7,10003bed
+10003bff	FUN_10003bc0	call dword ptr [eax + 0x1c]	0x1c	3	0	10003bf7,10003bf9,10003bfb
+10003c18	FUN_10003bc0	call dword ptr [edx + 0x10]	0x10	4	0	10003c08,10003c0a,10003c0f,10003c13
+10003c39	FUN_10003bc0	call dword ptr [esi + 0x40]	0x40	3	0	10003c30,10003c37,10003c38
+10003c41	FUN_10003bc0	call dword ptr [edx + 4]	0x4	0	0	
+10003c7a	FUN_10003c50	call dword ptr [eax + 0x10]	0x10	3	0	10003c6e,10003c75,10003c79
+10003c8c	FUN_10003c50	call dword ptr [edx + 0x18]	0x18	1	0	10003c89
+10003ca1	FUN_10003c50	call dword ptr [eax + 8]	0x8	3	0	10003c98,10003c9a,10003ca0
+10003cb3	FUN_10003c50	call dword ptr [eax + 0x44]	0x44	1	0	10003cb0
+10003cc0	FUN_10003c50	call dword ptr [edx + 0x1c]	0x1c	3	0	10003cb8,10003cba,10003cbc
+10003ccd	FUN_10003c50	call dword ptr [eax + 0xc]	0xc	4	0	10003cc5,10003cc6,10003cc7,10003ccb
+10003ce0	FUN_10003c50	call dword ptr [edx + 0xc]	0xc	4	0	10003cd5,10003cdb,10003cdc,10003cde
+10003cf6	FUN_10003c50	call dword ptr [edx + 0x1c]	0x1c	3	0	10003ce5,10003cea,10003cef
+10003d12	FUN_10003c50	call dword ptr [edx + 0xc]	0xc	4	0	10003d09,10003d0d,10003d0e,10003d10
+10003d2e	FUN_10003c50	call dword ptr [edx + 0x10]	0x10	4	0	10003d25,10003d29,10003d2a,10003d2c
+10003d41	FUN_10003c50	call dword ptr [edx + 0xc]	0xc	4	0	10003d36,10003d3c,10003d3d,10003d3f
+10003d4e	FUN_10003c50	call dword ptr [edx + 0x1c]	0x1c	3	0	10003d46,10003d48,10003d4a
+10003d61	FUN_10003c50	call dword ptr [eax + 0xc]	0xc	4	0	10003d56,10003d5c,10003d5d,10003d5f
+10003d76	FUN_10003c50	call dword ptr [eax + 0xc]	0xc	4	0	10003d6c,10003d6f,10003d70,10003d72
+1000402b	FUN_10004000	call dword ptr [eax + 4]	0x4	0	0	
+10004047	FUN_10004000	call dword ptr [edx + 0x1c]	0x1c	1	0	10004044
+10004052	FUN_10004000	call dword ptr [eax + 4]	0x4	0	0	
+100040eb	FUN_10004000	call dword ptr [edx + 8]	0x8	0	0	
+1000415d	FUN_10004000	call dword ptr [edx + 0x1c]	0x1c	1	0	1000415a
+10004168	FUN_10004000	call dword ptr [edx + 4]	0x4	0	0	
+100041e3	FUN_100041a0	call dword ptr [edx + 8]	0x8	1	0	100041dd
+10004213	FUN_100041a0	call dword ptr [eax + 0x34]	0x34	3	0	10004204,10004209,1000420e
+1000422a	FUN_100041a0	call dword ptr [edx + 0x18]	0x18	1	0	10004229
+10004242	FUN_100041a0	call dword ptr [edx + 8]	0x8	3	0	10004233,10004234,10004239
+10004252	FUN_100041a0	call dword ptr [edx + 0x2c]	0x2c	0	0	
+10004269	FUN_100041a0	call dword ptr [eax + 0x40]	0x40	3	0	1000425e,1000425f,10004268
+100042cd	FUN_100041a0	call dword ptr [edx + 0x44]	0x44	4	0	100042c2,100042c9,100042ca,100042cc
+100042ea	FUN_100041a0	call dword ptr [edx + 0x34]	0x34	3	0	100042e0,100042e5,100042e7
+100042fb	FUN_100041a0	call dword ptr [edx + 0xc]	0xc	1	0	100042f5
+10004388	FUN_10004350	call dword ptr [eax + 0x1c]	0x1c	1	0	1000437e
+10004390	FUN_10004350	call dword ptr [eax + 4]	0x4	0	0	
+10004398	FUN_10004350	call dword ptr [edx + 4]	0x4	0	0	
+100043a0	FUN_10004350	call dword ptr [eax + 4]	0x4	0	0	
+100043b7	FUN_10004350	call dword ptr [edx + 0x1c]	0x1c	1	0	100043b6
+100043c8	FUN_10004350	call dword ptr [edx + 0x34]	0x34	0	0	
+10004545	FUN_10004530	call dword ptr [eax + 0x18]	0x18	1	0	10004544
+10004563	FUN_10004530	call dword ptr [edx + 8]	0x8	3	0	1000454b,1000454d,1000454f
+10004571	FUN_10004530	call dword ptr [edx + 0x2c]	0x2c	0	0	
+10004583	FUN_10004530	call dword ptr [edx + 8]	0x8	1	0	10004579
+1000458b	FUN_10004530	call dword ptr [eax + 8]	0x8	0	0	
+100045d9	FUN_100045a0	call dword ptr [edx + 0x1c]	0x1c	1	0	100045d8
+1000465d	FUN_10004640	call dword ptr [eax + 0x14]	0x14	2	0	10004655,10004656
+1000467b	FUN_10004640	call dword ptr [eax + 0x10]	0x10	2	0	1000466f,10004674
+10004690	FUN_10004640	call dword ptr [edx + 0x10]	0x10	2	0	10004684,10004689
+100046a5	FUN_10004640	call dword ptr [eax + 0x10]	0x10	2	0	10004699,1000469e
+100046ba	FUN_10004640	call dword ptr [edx + 0x10]	0x10	2	0	100046ae,100046b3
+100046cf	FUN_10004640	call dword ptr [eax + 0x10]	0x10	2	0	100046c3,100046c8
+100046e4	FUN_10004640	call dword ptr [edx + 0x10]	0x10	2	0	100046d8,100046dd
+100046f9	FUN_10004640	call dword ptr [eax + 0x10]	0x10	2	0	100046ed,100046f2
+1000470e	FUN_10004640	call dword ptr [edx + 0x10]	0x10	2	0	10004702,10004707
+10004723	FUN_10004640	call dword ptr [eax + 0x10]	0x10	2	0	10004717,1000471c
+10004738	FUN_10004640	call dword ptr [edx + 0x10]	0x10	2	0	1000472c,10004731
+1000479d	FUN_10004640	call dword ptr [edx + 0x14]	0x14	2	0	10004798,1000479c
+100047c2	FUN_10004640	call dword ptr [edx + 0x14]	0x14	2	0	100047bd,100047c1
+100047fc	FUN_10004640	call dword ptr [edx + 0x28]	0x28	3	0	100047f3,100047f5,100047f7
+1000480a	FUN_10004640	call dword ptr [eax + 0x48]	0x48	1	0	10004807
+10004838	FUN_10004640	call dword ptr [edx + 0x58]	0x58	4	0	10004816,10004829,10004830,10004837
+1000484f	FUN_10004640	call dword ptr [edx + 0x1c]	0x1c	3	0	10004841,10004846,1000484b
+1000486e	FUN_10004640	call dword ptr [edx + 0x10]	0x10	4	0	10004866,10004867,1000486b,1000486c
+10004875	FUN_10004640	call dword ptr [edx + 4]	0x4	0	0	
+10004b24	FUN_10004a00	call dword ptr [edx + 0x4c]	0x4c	1	0	10004b1f
+10004b33	FUN_10004a00	call dword ptr [edx + 0x50]	0x50	2	0	10004b2f,10004b30
+10004b4d	FUN_10004a00	call dword ptr [edx + 0x58]	0x58	4	0	10004b42,10004b43,10004b45,10004b4a
+10004be0	FUN_10004a00	call dword ptr [eax + 0xc]	0xc	4	0	10004bce,10004bd4,10004bd8,10004bdf
+10004c1e	FUN_10004a00	call dword ptr [eax + 0xc]	0xc	4	0	10004c0c,10004c12,10004c16,10004c1d
+10004c39	FUN_10004a00	call dword ptr [eax + 4]	0x4	0	0	
+10004c53	FUN_10004a00	call dword ptr [edx + 0x28]	0x28	3	0	10004c45,10004c4b,10004c52
+10004c5e	FUN_10004a00	call dword ptr [edx + 0x48]	0x48	1	0	10004c58
+10004c7e	FUN_10004a00	call dword ptr [eax + 0xc]	0xc	4	0	10004c6c,10004c72,10004c76,10004c7d
+10004cab	FUN_10004a00	call dword ptr [eax + 0xc]	0xc	4	0	10004c99,10004c9f,10004ca3,10004caa
+10004cf5	FUN_10004a00	call dword ptr [edx + 4]	0x4	0	0	
+10004d0f	FUN_10004a00	call dword ptr [eax + 0x28]	0x28	3	0	10004d01,10004d07,10004d0e
+10004d1a	FUN_10004a00	call dword ptr [edx + 0x48]	0x48	1	0	10004d14
+10004da2	FUN_10004a00	call dword ptr [eax + 0x24]	0x24	3	0	10004d9a,10004d9e,10004d9f
+10004db5	FUN_10004a00	call dword ptr [edx + 0x58]	0x58	4	0	10004daf,10004db0,10004db1,10004db2
+10004ddf	FUN_10004a00	call dword ptr [edx + 0x18]	0x18	4	0	10004dd9,10004dda,10004ddb,10004ddc
+10004e08	FUN_10004a00	call dword ptr [eax + 4]	0x4	0	0	

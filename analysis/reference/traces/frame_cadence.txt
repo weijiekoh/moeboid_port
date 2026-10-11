@@ -1,0 +1,226 @@
+# Frame cadence. Source: run D2 (+ddraw) and run F2 (+fps only, low overhead).
+# Primary surface = iface 003BFE60. Back buffer = iface 003931E0 (800x572, DDSCAPS_OFFSCREENPLAIN|SYSTEMMEMORY).
+# Frame = one Blt of the whole back buffer to the window rect (112,97)-(912,669) on the primary, flags DDBLT_WAIT.
+# Session time map (run D2): log 572264.0 = engine start; Start clicked near 572273.1; gameplay from about 572276.2.
+
+## Per second: primary Blts, frontbuffer updates (4 per Blt: window clip region), all Blts
+second primaryBlt frontbuf_update allBlt
+572264 1 4 783
+572265 1 4 4
+572273 3 12 16
+572274 3 12 17
+572275 3 12 15
+572276 15 60 56
+572277 18 72 86
+572278 19 76 119
+572279 18 72 173
+572280 18 72 162
+572281 18 72 173
+572282 19 76 171
+572283 18 72 162
+(seconds 572266..572272 absent: no DirectDraw call at all while the title screen is idle)
+
+## Intervals between primary Blts, ms (all)
+572265.784 1054
+572273.093 7309
+572273.150 57
+572273.250 100
+572274.184 934
+572274.291 107
+572274.772 481
+572275.203 431
+572275.310 107
+572275.793 483
+572276.213 420
+572276.270 57
+572276.320 50
+572276.375 55
+572276.431 56
+572276.481 50
+572276.531 50
+572276.593 62
+572276.644 51
+572276.705 61
+572276.764 59
+572276.824 60
+572276.883 59
+572276.944 61
+572276.994 50
+572277.044 50
+572277.094 50
+572277.144 50
+572277.202 58
+572277.252 50
+572277.314 62
+572277.364 50
+572277.414 50
+572277.470 56
+572277.520 50
+572277.570 50
+572277.624 54
+572277.683 59
+572277.732 49
+572277.795 63
+572277.845 50
+572277.905 60
+572277.962 57
+572278.014 52
+572278.071 57
+572278.124 53
+572278.180 56
+572278.233 53
+572278.293 60
+572278.343 50
+572278.402 59
+572278.451 49
+572278.505 54
+572278.563 58
+572278.623 60
+572278.674 51
+572278.724 50
+572278.774 50
+572278.830 56
+572278.881 51
+572278.930 49
+572278.984 54
+572279.042 58
+572279.092 50
+572279.153 61
+572279.203 50
+572279.253 50
+572279.315 62
+572279.375 60
+572279.432 57
+572279.484 52
+572279.544 60
+572279.601 57
+572279.651 50
+572279.714 63
+572279.763 49
+572279.813 50
+572279.875 62
+572279.934 59
+572279.991 57
+572280.044 53
+572280.105 61
+572280.164 59
+572280.214 50
+572280.275 61
+572280.332 57
+572280.391 59
+572280.444 53
+572280.505 61
+572280.563 58
+572280.612 49
+572280.674 62
+572280.724 50
+572280.774 50
+572280.831 57
+572280.881 50
+572280.931 50
+572280.993 62
+572281.043 50
+572281.104 61
+572281.154 50
+572281.212 58
+572281.264 52
+572281.314 50
+572281.364 50
+572281.424 60
+572281.475 51
+572281.525 50
+572281.574 49
+572281.624 50
+572281.681 57
+572281.741 60
+572281.791 50
+572281.841 50
+572281.901 60
+572281.951 50
+572282.002 51
+572282.052 50
+572282.113 61
+572282.163 50
+572282.223 60
+572282.274 51
+572282.324 50
+572282.384 60
+572282.443 59
+572282.495 52
+572282.552 57
+572282.604 52
+572282.660 56
+572282.714 54
+572282.773 59
+572282.834 61
+572282.885 51
+572282.934 49
+572282.984 50
+572283.042 58
+572283.092 50
+572283.155 63
+572283.214 59
+572283.264 50
+572283.324 60
+572283.385 61
+572283.443 58
+572283.493 50
+572283.550 57
+572283.600 50
+572283.650 50
+572283.704 54
+572283.762 58
+572283.812 50
+572283.873 61
+572283.923 50
+572283.984 61
+
+## Histogram of gameplay intervals (after 572276.2), ms: count
+49: 7
+50: 46
+51: 7
+52: 5
+53: 4
+54: 5
+55: 1
+56: 5
+57: 10
+58: 8
+59: 10
+60: 12
+61: 12
+62: 6
+63: 3
+
+## One gameplay frame: Blts into the back buffer between two primary Blts
+572278.830:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003BFE60, dst_rect (112,97)-(912,669), src_surface 003931E0, src_rect (null), flags 0x1000000, fx 00000000.
+572278.830:00d8:00dc:trace:ddraw:ddraw_surface_update_frontbuffer surface 003BFE50, rect (112,97)-(912,541), read 0, swap_interval 0.
+572278.832:00d8:00dc:trace:ddraw:ddraw_surface_update_frontbuffer surface 003BFE50, rect (112,541)-(137,559), read 0, swap_interval 0.
+572278.832:00d8:00dc:trace:ddraw:ddraw_surface_update_frontbuffer surface 003BFE50, rect (303,541)-(912,559), read 0, swap_interval 0.
+572278.832:00d8:00dc:trace:ddraw:ddraw_surface_update_frontbuffer surface 003BFE50, rect (112,559)-(912,669), read 0, swap_interval 0.
+572278.880:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003931E0, dst_rect (282,50)-(782,470), src_surface 003A9B90, src_rect (0,0)-(500,420), flags 0x1000000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003931E0, dst_rect (524,252)-(535,263), src_surface 0166E0B8, src_rect (0,0)-(11,11), flags 0x1008000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003931E0, dst_rect (657,170)-(668,181), src_surface 01601338, src_rect (0,0)-(11,11), flags 0x1008000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003931E0, dst_rect (622,350)-(661,389), src_surface 016FB448, src_rect (0,0)-(39,39), flags 0x1008000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003931E0, dst_rect (696,266)-(735,305), src_surface 016FAF48, src_rect (0,0)-(39,39), flags 0x1008000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003931E0, dst_rect (10,10)-(185,145), src_surface 003AA390, src_rect (0,0)-(175,135), flags 0x1008000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003931E0, dst_rect (5,145)-(185,175), src_surface 0039F7D8, src_rect (0,0)-(180,30), flags 0x1008000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface1_Blt iface 003BFE60, dst_rect (112,97)-(912,669), src_surface 003931E0, src_rect (null), flags 0x1000000, fx 00000000.
+572278.881:00d8:00dc:trace:ddraw:ddraw_surface_update_frontbuffer surface 003BFE50, rect (112,97)-(912,541), read 0, swap_interval 0.
+
+## Run F2: WINEDEBUG=+timestamp,+pid,+fps (counts frontbuffer updates; divide by 4 for frames).
+## Start clicked about 572406.6 (session 6.8 s); gameplay from about 572411.
+572400.857:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 0.00fps
+572402.962:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 1.90fps
+572404.903:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 8.24fps
+572406.404:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 7.33fps
+572408.152:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 5.15fps
+572409.662:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 26.49fps
+572411.195:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 75.67fps
+572412.722:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 73.35fps
+572414.231:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 74.22fps
+572415.752:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 73.64fps
+572417.253:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 75.28fps
+572418.804:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 74.15fps
+572420.345:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 75.28fps
+572421.892:00dc:00e0:trace:fps:ddraw_surface_update_frontbuffer 00155B60 @ approx 74.98fps

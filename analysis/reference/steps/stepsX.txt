@@ -1,0 +1,10 @@
+waitframe 40
+wait 2
+shot 01_title_installed
+click 563 253
+wait 5
+key Right 800
+key Down 800
+wait 4
+shot 20_game_installed
+log cpu_sample

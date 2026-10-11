@@ -1,0 +1,21 @@
+// ZapSpot.exe RT_DIALOG IDD_QUIT_NOTSAVED, language 0x0409, DLGTEMPLATE, 856 bytes, file offset 0x686D0
+// Pixel values: dialog base units 6x13 (MS Sans Serif 8pt strike from sserife.fon, 96 DPI). Client area only; frame size depends on the non-client metrics.
+IDD_QUIT_NOTSAVED DIALOG 0, 0, 235, 90
+// client px: x=0 y=0 w=353 h=146
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_POPUP   // 0x80C008C0
+CAPTION "Play Again Soon"
+FONT 8, "MS Sans Serif"   // DLGTEMPLATE: weight, italic and charset are not stored
+BEGIN
+    CONTROL "Save And Exit", 2003, "Button", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 159, 70, 70, 16
+        // id=2003 (0x7D3) style=0x50030001 exstyle=0x00000000 | px x=239 y=114 w=105 h=26
+    CONTROL ">>", 2007, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 40, 9, 9
+        // id=2007 (0x7D7) style=0x50010000 exstyle=0x00000000 | px x=11 y=65 w=14 h=15
+    CONTROL "Keep Playing", 2001, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 6, 70, 70, 16
+        // id=2001 (0x7D1) style=0x50030000 exstyle=0x00000000 | px x=9 y=114 w=105 h=26
+    CONTROL "Dont Save, just Exit", 2004, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 86, 70, 70, 16
+        // id=2004 (0x7D4) style=0x50030000 exstyle=0x00000000 | px x=129 y=114 w=105 h=26
+    CONTROL "You are about to exit ZapSpot.  You can click the ""Save and Exit"" button to start your own personal ZapSpot and keep all your games in one place.", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 219, 27
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=11 y=11 w=329 h=44
+    CONTROL "If you save ZapSpot, you agree to ZapSpot's Terms of Service and Privacy Policy.  Click this button to read them.", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 19, 40, 207, 27
+        // id=-1 (0xFFFF) style=0x50020000 exstyle=0x00000000 | px x=29 y=65 w=311 h=44
+END

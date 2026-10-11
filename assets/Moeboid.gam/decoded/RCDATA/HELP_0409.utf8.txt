@@ -1,0 +1,24 @@
+"<S3><Cffffff><B>   Moeboid</B>
+<BR>
+<BR>   The motto of Moeboid is 'Eat or be Eaten'.  In the game, you are an amoeba with
+<BR>   an insatiable appetite.  And why not?  All you do all day is swim around and eat.
+<BR>   The more you eat, the bigger you become.  Of course, the laws of nature still
+<BR>   apply, so you can only eat amoebas that are smaller than you.  Try and eat the
+<BR>   larger ones and you will lose one of your lives. The more you eat, the more you
+<BR>   grow, and the more amoebas you can eat. 
+<BR>
+<BR>   Use the arrow keys to move around and eat amoebas that are smaller than you.
+<BR>   The bigger the amoeba you eat, the more points you get for it. New amoebas will
+<BR>   regularly appear around you.  There will always be one amoeba size that you 
+<BR>   will not be able to eat.  A picture of the amoeba you need to avoid will appear
+<BR>   on the upper right corner of the screen. If one of these amoebas touches you,
+<BR>   you will lose a life.  
+<BR>
+<BR>   The good news is that as you increase in size, the amoebas you once avoided
+<BR>   now become your main course.  As a bonus, you will get an extra life every three
+<BR>   levels that you grow.  So stay healthy through those levels.
+<BR>
+<BR>   Bon Appetit!
+<BR>
+<BR><S2><Cffffff><B>  Ready to eat? <CFF3333>How high up <CFFFFFF>the food chain<CFFFFFF><CFFFFFF> can you get?</B>
+"

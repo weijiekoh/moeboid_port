@@ -1,0 +1,11 @@
+# Moeboid.gam string tables: id<TAB>language<TAB>"string"
+# Escapes: \n \r \t \\ \" \xHH. Only defined (non-empty) ids are listed; strings.json lists all 16 slots per block.
+# 2 blocks, 8 defined strings
+3	0x0409	"00.01.01.08"
+4	0x0409	"Moeboid"
+5	0x0409	"{2BFDD7F8-0EC4-4E7C-9FF4-3B2F8DC1D0F2}"
+6	0x0409	"img-shell_icon-80x60.gif"
+7	0x0409	"Action"
+8	0x0409	"Sweat"
+9	0x0409	"ZapSpot's Moeboid: Amoeboes Have all the Fun"
+1000	0x0409	"LANG_ENGLISH"

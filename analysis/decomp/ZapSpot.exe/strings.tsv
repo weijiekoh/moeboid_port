@@ -1,0 +1,926 @@
+address	type	xrefs	value
+0042e35c	string		runtime error 
+0042e370	string		TLOSS error\r\n
+0042e380	string		SING error\r\n
+0042e390	string		DOMAIN error\r\n
+0042e3a0	string		R6028\r\n- unable to initialize heap\r\n
+0042e3c8	string		R6027\r\n- not enough space for lowio initialization\r\n
+0042e400	string		R6026\r\n- not enough space for stdio initialization\r\n
+0042e438	string		R6025\r\n- pure virtual function call\r\n
+0042e460	string		R6024\r\n- not enough space for _onexit/atexit table\r\n
+0042e498	string		R6019\r\n- unable to open console device\r\n
+0042e4c4	string		R6018\r\n- unexpected heap error\r\n
+0042e4e8	string		R6017\r\n- unexpected multithread lock error\r\n
+0042e518	string		R6016\r\n- not enough space for thread data\r\n
+0042e544	string		\r\nabnormal program termination\r\n
+0042e568	string	00401d41:FUN_00401c45@00401c45,00401d7b:FUN_00401c45@00401c45,00401d84:FUN_00401c45@00401c45,00432104:-	R6009\r\n- not enough space for environment\r\n
+0042e594	string		R6008\r\n- not enough space for arguments\r\n
+0042e5c0	string		R6002\r\n- floating point not loaded\r\n
+0042e5e8	string	00401d5e:FUN_00401c45@00401c45	Microsoft Visual C++ Runtime Library
+0042e614	string	00401d18:FUN_00401c45@00401c45	Runtime Error!\n\nProgram: 
+0042e634	string	00401cc2:FUN_00401c45@00401c45	<program name unknown>
+0042e64c	string	00403291:FUN_00403254@00403254	GetLastActivePopup
+0042e660	string	00403289:FUN_00403254@00403254	GetActiveWindow
+0042e670	string	00403278:FUN_00403254@00403254	MessageBoxA
+0042e67c	string	00403261:FUN_00403254@00403254	user32.dll
+0042e9b6	unicode	0040f86a:FUN_0040f5f4@0040f5f4,0040fc9d:FUN_0040f5f4@0040f5f4	null)
+0042e9c5	string	0040fa5d:FUN_0040f5f4@0040f5f4	null)
+0042e9e6	string		GAIsProcessorFeaturePresent
+0042ea04	string	004108ff:FUN_004108ff@004108ff	KERNEL32
+0042ea18	string	00410ab9:FUN_00410a26@00410a26	e+000
+0042ea20	string	00412a71:FUN_0041297c@0041297c	1#QNAN
+0042ea28	string	00412a54:FUN_0041297c@0041297c	1#INF
+0042ea30	string	00412a43:FUN_0041297c@0041297c	1#IND
+0042ea38	string	00412a29:FUN_0041297c@0041297c	1#SNAN
+0042f1f0	string		SunMonTueWedThuFriSat
+0042f208	string		JanFebMarAprMayJunJulAugSepOctNovDec
+00430e14	TerminatedCString		WSOCK32.dll
+00430e22	TerminatedCString		CoInitialize
+00430e32	TerminatedCString		CoUninitialize
+00430e44	TerminatedCString		CoCreateInstance
+00430e56	TerminatedCString		ole32.dll
+00430e62	TerminatedCString		timeGetTime
+00430e70	TerminatedCString		timeEndPeriod
+00430e7e	TerminatedCString		WINMM.dll
+00430e8a	TerminatedCString		GetModuleHandleA
+00430e9e	TerminatedCString		GetStartupInfoA
+00430eb0	TerminatedCString		GetCommandLineA
+00430ec2	TerminatedCString		GetVersion
+00430ed0	TerminatedCString		ExitProcess
+00430ede	TerminatedCString		TerminateProcess
+00430ef2	TerminatedCString		GetCurrentProcess
+00430f06	TerminatedCString		UnhandledExceptionFilter
+00430f22	TerminatedCString		GetModuleFileNameA
+00430f38	TerminatedCString		FreeEnvironmentStringsA
+00430f52	TerminatedCString		FreeEnvironmentStringsW
+00430f6c	TerminatedCString		WideCharToMultiByte
+00430f82	TerminatedCString		GetEnvironmentStrings
+00430f9a	TerminatedCString		GetEnvironmentStringsW
+00430fb4	TerminatedCString		SetHandleCount
+00430fc6	TerminatedCString		GetStdHandle
+00430fd6	TerminatedCString		GetFileType
+00430fe4	TerminatedCString		HeapDestroy
+00430ff2	TerminatedCString		HeapCreate
+00431000	TerminatedCString		VirtualFree
+0043100e	TerminatedCString		HeapFree
+0043101a	TerminatedCString		RtlUnwind
+00431026	TerminatedCString		WriteFile
+00431032	TerminatedCString		GetCPInfo
+0043103e	TerminatedCString		GetACP
+00431048	TerminatedCString		GetOEMCP
+00431054	TerminatedCString		HeapAlloc
+00431060	TerminatedCString		VirtualAlloc
+00431070	TerminatedCString		HeapReAlloc
+0043107e	TerminatedCString		IsBadWritePtr
+0043108e	TerminatedCString		GetProcAddress
+004310a0	TerminatedCString		LoadLibraryA
+004310b0	TerminatedCString		MultiByteToWideChar
+004310c6	TerminatedCString		LCMapStringA
+004310d6	TerminatedCString		LCMapStringW
+004310e6	TerminatedCString		GetStringTypeA
+004310f8	TerminatedCString		GetStringTypeW
+0043110a	TerminatedCString		Sleep
+00431112	TerminatedCString		FreeLibrary
+00431120	TerminatedCString		GlobalUnlock
+00431130	TerminatedCString		GlobalLock
+0043113e	TerminatedCString		GlobalAlloc
+0043114c	TerminatedCString		GetVersionExA
+0043115c	TerminatedCString		DebugBreak
+0043116a	TerminatedCString		FindClose
+00431176	TerminatedCString		CopyFileA
+00431182	TerminatedCString		CreateDirectoryA
+00431196	TerminatedCString		FindFirstFileA
+004311a8	TerminatedCString		SetCurrentDirectoryA
+004311c0	TerminatedCString		GetCurrentDirectoryA
+004311d8	TerminatedCString		SetUnhandledExceptionFilter
+004311f6	TerminatedCString		FormatMessageA
+00431208	TerminatedCString		VirtualQuery
+00431218	TerminatedCString		GetTempPathA
+00431228	TerminatedCString		FindNextFileA
+00431238	TerminatedCString		CloseHandle
+00431246	TerminatedCString		CreateFileA
+00431254	TerminatedCString		ReadFile
+00431260	TerminatedCString		GetFileSize
+0043126e	TerminatedCString		lstrcpyA
+0043127a	TerminatedCString		lstrcpynA
+00431286	TerminatedCString		lstrcmpA
+00431292	TerminatedCString		lstrcmpiA
+0043129e	TerminatedCString		lstrcatA
+004312aa	TerminatedCString		SetThreadPriority
+004312be	TerminatedCString		CreateThread
+004312ce	TerminatedCString		GetSystemDirectoryA
+004312e4	TerminatedCString		OutputDebugStringA
+004312fa	TerminatedCString		SetFilePointer
+0043130a	TerminatedCString		KERNEL32.dll
+0043131a	TerminatedCString		DestroyWindow
+0043132a	TerminatedCString		LoadBitmapA
+00431338	TerminatedCString		CreateWindowExA
+0043134a	TerminatedCString		SetForegroundWindow
+00431360	TerminatedCString		ShowWindow
+0043136e	TerminatedCString		IsIconic
+0043137a	TerminatedCString		RegisterClassA
+0043138c	TerminatedCString		DefWindowProcA
+0043139e	TerminatedCString		LoadIconA
+004313aa	TerminatedCString		SystemParametersInfoA
+004313c2	TerminatedCString		ReleaseDC
+004313ce	TerminatedCString		GetDC
+004313d6	TerminatedCString		MessageBoxA
+004313e4	TerminatedCString		SendMessageA
+004313f4	TerminatedCString		FindWindowA
+00431402	TerminatedCString		SetWindowPos
+00431412	TerminatedCString		SetCursor
+0043141e	TerminatedCString		PostQuitMessage
+00431430	TerminatedCString		EndPaint
+0043143c	TerminatedCString		BeginPaint
+0043144a	TerminatedCString		LoadCursorA
+00431458	TerminatedCString		PostMessageA
+00431468	TerminatedCString		DispatchMessageA
+0043147c	TerminatedCString		TranslateMessage
+00431490	TerminatedCString		PeekMessageA
+004314a0	TerminatedCString		SetFocus
+004314ac	TerminatedCString		MoveWindow
+004314ba	TerminatedCString		LoadStringA
+004314c8	TerminatedCString		CloseClipboard
+004314da	TerminatedCString		SetClipboardData
+004314ee	TerminatedCString		EmptyClipboard
+00431500	TerminatedCString		OpenClipboard
+00431510	TerminatedCString		GetClipboardData
+00431524	TerminatedCString		IsClipboardFormatAvailable
+00431542	TerminatedCString		SetWindowTextA
+00431554	TerminatedCString		CheckDlgButton
+00431566	TerminatedCString		SetDlgItemTextA
+00431578	TerminatedCString		IsDlgButtonChecked
+0043158e	TerminatedCString		GetDlgItemTextA
+004315a0	TerminatedCString		EndDialog
+004315ac	TerminatedCString		DialogBoxParamA
+004315be	TerminatedCString		wsprintfA
+004315ca	TerminatedCString		wvsprintfA
+004315d8	TerminatedCString		ClientToScreen
+004315ea	TerminatedCString		SetCapture
+004315f8	TerminatedCString		GetWindowRect
+00431608	TerminatedCString		ReleaseCapture
+0043161a	TerminatedCString		FillRect
+00431624	TerminatedCString		USER32.dll
+00431632	TerminatedCString		ExtTextOutA
+00431640	TerminatedCString		GetTextMetricsA
+00431652	TerminatedCString		CreateFontIndirectA
+00431668	TerminatedCString		DeleteObject
+00431678	TerminatedCString		DeleteDC
+00431684	TerminatedCString		BitBlt
+0043168e	TerminatedCString		SelectObject
+0043169e	TerminatedCString		CreateCompatibleDC
+004316b4	TerminatedCString		GetDeviceCaps
+004316c4	TerminatedCString		GetSystemPaletteEntries
+004316de	TerminatedCString		CreatePen
+004316ea	TerminatedCString		CreateSolidBrush
+004316fe	TerminatedCString		LineTo
+00431708	TerminatedCString		MoveToEx
+00431714	TerminatedCString		SetBkColor
+00431722	TerminatedCString		SetTextColor
+00431732	TerminatedCString		SetBkMode
+0043173e	TerminatedCString		SetTextJustification
+00431756	TerminatedCString		GetTextExtentPoint32A
+0043176c	TerminatedCString		GDI32.dll
+00431778	TerminatedCString		RegQueryValueExA
+0043178c	TerminatedCString		RegOpenKeyExA
+0043179c	TerminatedCString		RegCloseKey
+004317a8	TerminatedCString		ADVAPI32.dll
+004317b8	TerminatedCString		SHAppBarMessage
+004317ca	TerminatedCString		ShellExecuteA
+004317da	TerminatedCString		SHGetMalloc
+004317e8	TerminatedCString		SHGetPathFromIDListA
+00431800	TerminatedCString		SHGetSpecialFolderLocation
+0043181c	TerminatedCString		SHELL32.dll
+0043182a	TerminatedCString		HeapSize
+00431836	TerminatedCString		IsBadReadPtr
+00431846	TerminatedCString		IsBadCodePtr
+00431856	TerminatedCString		GetLastError
+00431866	TerminatedCString		SetStdHandle
+00431876	TerminatedCString		FlushFileBuffers
+0043188a	TerminatedCString		GetTickCount
+0043189a	TerminatedCString		GetSystemTime
+004318aa	TerminatedCString		SizeofResource
+004318bc	TerminatedCString		LockResource
+004318cc	TerminatedCString		LoadResource
+004318dc	TerminatedCString		FindResourceA
+004318ec	TerminatedCString		SetWindowLongA
+004318fe	TerminatedCString		GetWindowLongA
+00431910	TerminatedCString		CallWindowProcA
+00431922	TerminatedCString		GetKeyState
+00431930	TerminatedCString		GetWindowTextA
+00431942	TerminatedCString		DestroyCursor
+00431952	TerminatedCString		CreatePalette
+00431962	TerminatedCString		RealizePalette
+00431974	TerminatedCString		SelectPalette
+00431984	TerminatedCString		GdiFlush
+00431990	TerminatedCString		GetObjectA
+0043199e	TerminatedCString		SetDIBColorTable
+004319b2	TerminatedCString		CreateDIBSection
+004319c6	TerminatedCString		GetPaletteEntries
+004319da	TerminatedCString		Polygon
+004319e4	TerminatedCString		GetTimeZoneInformation
+004319fe	TerminatedCString		GetLocalTime
+00431a0e	TerminatedCString		GetSystemTimeAsFileTime
+00431a28	TerminatedCString		CompareStringA
+00431a3a	TerminatedCString		CompareStringW
+00431a4c	TerminatedCString		SetEnvironmentVariableA
+00431ad4	TerminatedCString	00431a7c:-	ZapSpot.exe
+00431ae0	TerminatedCString	00431ab0:-	?DebugOutput@@YAXPADZZ
+00431af7	TerminatedCString	00431ab4:-	?Error@@YAXPADZZ
+00431b08	TerminatedCString	00431ab8:-	?FatalError@@YAXPADZZ
+00431b1e	TerminatedCString	00431abc:-	?Info@@YAXPADZZ
+00431b2e	TerminatedCString	00431ac0:-	?MemoryError@@YAXPADZZ
+00431b45	TerminatedCString	00431ac4:-	?Warning@@YAXPADZZ
+004324b0	string	00403d54:FUN_00403d40@00403d40,00403d87:FUN_00403d40@00403d40,00403f17:FUN_00403d40@00403d40,0040483a:FUN_00404790@00404790,00404924:FUN_00404790@00404790,00404969:FUN_00404790@00404790,004324a8:-	ZapSpot
+004324b8	string	00404029:FUN_00403d40@00403d40	trademarks or registered trademarks of ZapSpot, Inc.
+004324f0	string	00404022:FUN_00403d40@00403d40	laws.  ZapSpot, the ZapSpot logo, and Life is Good are
+00432528	string	0040401b:FUN_00403d40@00403d40,0040404e:FUN_00403d40@00403d40	This program is protected by US and international copyright
+00432564	string	00404014:FUN_00403d40@00403d40,0040404e:FUN_00403d40@00403d40,00404054:FUN_00403d40@00403d40	Copyright (c) 2000 ZapSpot, Inc.  All Rights Reserved.
+0043259c	string	00403f9b:FUN_00403d40@00403d40,0041397b:FUN_004138f0@004138f0,00413aca:FUN_00413a00@00413a00,004181b4:FUN_004180f0@004180f0,0041d3e9:FUN_0041d370@0041d370,0041ec18:FUN_0041ebe0@0041ebe0,00422523:FUN_004224a0@004224a0,00425fb7:FUN_00425f60@00425f60,0042ba15:FUN_0042b990@0042b990,0042ba98:FUN_0042b990@0042b990,00435cc8:-,00435cd8:-	Arial
+004325a4	string	00403f3b:FUN_00403d40@00403d40	img-splash
+004325b0	string	00403e9c:FUN_00403d40@00403d40,00404855:FUN_00404790@00404790	Failed to RegisterClass
+004325d0	string	00403e4c:FUN_00403d40@00403d40,00404804:FUN_00404790@00404790	ZapIcon
+004325d8	string	00403daa:FUN_00403d40@00403d40	ZapSpot is having trouble running.  Please email zapspot at 'support@zapspot.com' to let us know about this problem, and we apologize for the inconvenience.
+00432678	string	00403da5:FUN_00403d40@00403d40	Can't stop other running ZapSpot
+0043269c	string	004049a4:FUN_00404790@00404790	Default.skn
+004326a8	string	00404979:FUN_00404790@00404790	Failed in call to CreateWindowEx in AppInit
+004326d4	string	00404a68:FUN_00404a30@00404a30,00408d49:FUN_00408cc0@00408cc0	WindowYLoc
+004326e0	string	00404a48:FUN_00404a30@00404a30,00408d04:FUN_00408cc0@00408cc0	WindowXLoc
+004326f4	string	00404c34:FUN_00404bd0@00404bd0,0041f419:FUN_0041f2a0@0041f2a0,00427085:FUN_00426ff0@00426ff0,00433200:-	GetShellGUID
+00432708	string	00404f4c:-	More ZapSpot games are on the way in the weeks ahead! Subscribe now (in the box to the left) and we'll send them to your e-mail, free!
+00432790	string	00404f47:-	More Games are on the Way!
+004327ac	string	004051ab:FUN_00404f60@00404f60,00433214:-	SetUserProfile
+004327bc	string	00405188:FUN_00404f60@00404f60	WantCustomOffers,1
+004327d0	string	0040517d:FUN_00404f60@00404f60	WantCustomOffers,0
+004327ec	string	00405058:FUN_00404f60@00404f60,004050a0:FUN_00404f60@00404f60,00405279:FUN_00404f60@00404f60	OptOut
+004327f4	string	0040504b:FUN_00404f60@00404f60,0040526f:FUN_00404f60@00404f60,0040db83:FUN_0040d7c0@0040d7c0,0041ad89:FUN_0041acb0@0041acb0	guest
+004327fc	string	00405362:FUN_00405330@00405330	IDD_QUIT_SAVED
+0043280c	string	004053c2:FUN_00405390@00405390	IDD_QUIT_NOTSAVED
+00432820	string	00405444:FUN_00405400@00405400	IDD_CONFIRM_SAVE
+00432834	string	0040550b:FUN_00405480@00405480	IDD_INPUT_BOX2
+00432844	string	004054f6:FUN_00405480@00405480	IDD_INPUT_BOX
+00432854	string	00405592:FUN_00405540@00405540	IDD_TERMSOFSERVICE
+00432868	string	00405568:FUN_00405540@00405540	TermsOfService
+00432878	string	00405753:FUN_004055e0@004055e0	OSInfo2
+00432880	string	004056fb:FUN_004055e0@004055e0,00406712:FUN_00406510@00406510	Crypt32.dll
+00432894	string	004056c1:FUN_004055e0@004055e0,004066e6:FUN_00406510@00406510	WinInet.dll
+004328a0	string	004056b0:FUN_004055e0@004055e0,0040663d:FUN_00406510@00406510	DX%d.%d
+004328ac	string	00405676:FUN_004055e0@004055e0,004065ee:FUN_00406510@00406510	%dx%d
+004328b4	string	0040565e:FUN_004055e0@004055e0,004065db:FUN_00406510@00406510	%d.%d.%d
+004328c0	string	0040562f:FUN_004055e0@004055e0,00406561:FUN_00406510@00406510,0040656b:FUN_00406510@00406510	Win98
+004328c8	string	00405624:FUN_004055e0@004055e0,0040655a:FUN_00406510@00406510,0040656b:FUN_00406510@00406510	Win95
+004328d8	string	00405ab0:FUN_00405950@00405950	SendID
+004328e0	string	004059c1:FUN_00405950@00405950	\\ZapSpot\\System\\etc\\
+004328f8	string	0040599a:FUN_00405950@00405950	eid-*.zdt
+00432904	string	00405d75:FUN_00405c60@00405c60	Flags:%08X
+00432910	string	00405d61:FUN_00405c60@00405c60	DS:%04X  ES:%04X  FS:%04X  GS:%04X
+00432934	string	00405d3b:FUN_00405c60@00405c60	SS:ESP:%04X:%08X  EBP:%08X
+00432950	string	00405d1c:FUN_00405c60@00405c60	CS:EIP:%04X:%08X
+00432964	string	00405d04:FUN_00405c60@00405c60	EAX:%08X\r\nEBX:%08X\r\nECX:%08X\r\nEDX:%08X\r\nESI:%08X\r\nEDI:%08X
+004329a0	string	00405ccd:FUN_00405c60@00405c60	\r\nRegisters:
+004329b0	string	00405cc0:FUN_00405c60@00405c60	Fault address:  %08X %02X:%08X %s
+004329d4	string	00405c86:FUN_00405c60@00405c60	Exception code: %08X %s\r\n
+004329f0	string	00405c6b:FUN_00405c60@00405c60	//=====================================================\r\n
+00432a2c	string	00405ed1:FUN_00405da0@00405da0	NTDLL.DLL
+00432a38	string	00405ebb:FUN_00405da0@00405da0	STACK_OVERFLOW
+00432a48	string	00405eb4:FUN_00405da0@00405da0	PRIV_INSTRUCTION
+00432a5c	string	00405ead:FUN_00405da0@00405da0	INT_OVERFLOW
+00432a6c	string	00405ea6:FUN_00405da0@00405da0	INT_DIVIDE_BY_ZERO
+00432a80	string	00405e9f:FUN_00405da0@00405da0	FLT_UNDERFLOW
+00432a90	string	00405e98:FUN_00405da0@00405da0	FLT_STACK_CHECK
+00432aa0	string	00405e91:FUN_00405da0@00405da0	FLT_OVERFLOW
+00432ab0	string	00405e8a:FUN_00405da0@00405da0	FLT_INVALID_OPERATION
+00432ac8	string	00405e83:FUN_00405da0@00405da0	FLT_INEXACT_RESULT
+00432adc	string	00405e7c:FUN_00405da0@00405da0	FLT_DIVIDE_BY_ZERO
+00432af0	string	00405e5b:FUN_00405da0@00405da0	FLT_DENORMAL_OPERAND
+00432b08	string	00405e54:FUN_00405da0@00405da0	INVALID_HANDLE
+00432b18	string	00405e4d:FUN_00405da0@00405da0	INVALID_DISPOSITION
+00432b2c	string	00405e46:FUN_00405da0@00405da0	NONCONTINUABLE_EXCEPTION
+00432b48	string	00405e3f:FUN_00405da0@00405da0	ILLEGAL_INSTRUCTION
+00432b5c	string	00405e38:FUN_00405da0@00405da0	ARRAY_BOUNDS_EXCEEDED
+00432b74	string	00405e10:FUN_00405da0@00405da0	IN_PAGE_ERROR
+00432b84	string	00405e09:FUN_00405da0@00405da0	SINGLE_STEP
+00432b90	string	00405e02:FUN_00405da0@00405da0	ACCESS_VIOLATION
+00432ba4	string	00405de9:FUN_00405da0@00405da0	BREAKPOINT
+00432bb0	string	00405de2:FUN_00405da0@00405da0	GUARD_PAGE
+00432bbc	string	00405ddb:FUN_00405da0@00405da0	DATATYPE_MISALIGNMENT
+00432bd4	string	0040615f:FUN_004060e0@004060e0,004061d8:FUN_004060e0@004060e0	%08X  %08X  %04X:%08X %s
+00432bf0	string	004060f6:FUN_004060e0@004060e0	Address   Frame     Logical addr  Module
+00432c1c	string	004060ec:FUN_004060e0@004060e0	\r\nCall stack:
+00432c2c	string	004064ed:FUN_00406200@00406200	Contents of ZDT files
+00432c44	string	004064bf:FUN_00406200@00406200	recursive contents of temporary ZapSpot directories
+00432c78	string	00406491:FUN_00406200@00406200	Generic OS Info
+00432c88	string	00406475:FUN_00406200@00406200	Contents of My ZapSpot directory
+00432cac	string	00406455:FUN_00406200@00406200	Contents of ZapSpot directory:
+00432ccc	string	00406435:FUN_00406200@00406200	%d - %s
+00432cd4	string	00406410:FUN_00406200@00406200	\r\nTracked Errors:
+00432ce8	string	00406401:FUN_00406200@00406200	\r\nTracked Errors: None\r\n
+00432d04	string	004063e1:FUN_00406200@00406200	Installed Game Versions:
+00432d20	string	004063b2:FUN_00406200@00406200	outbox.zdt
+00432d2c	string	004063a8:FUN_00406200@00406200	core.zdt
+00432d38	string	0040639d:FUN_00406200@00406200,00406b1d:FUN_00406af0@00406af0	System
+00432d40	string	0040635b:FUN_00406200@00406200	  Installed path: '%s'
+00432d58	string	0040634c:FUN_00406200@00406200	  Installed: true
+00432d6c	string	004062f2:FUN_00406200@00406200,00407292:FUN_004071f0@004071f0,0040a2e7:FUN_0040a0e0@0040a0e0,0040ac63:FUN_0040aa50@0040aa50	ProgramFilesDir
+00432d7c	string	004062d1:FUN_00406200@00406200,0040633d:FUN_00406200@00406200	  Installed: false
+00432d90	string	004062c7:FUN_00406200@00406200	Program Files RegKey doesn't exist!
+00432db4	string	004062b0:FUN_00406200@00406200,00407243:FUN_004071f0@004071f0,0040a286:FUN_0040a0e0@0040a0e0,0040ac02:FUN_0040aa50@0040aa50	Software\\Microsoft\\Windows\\CurrentVersion
+00432de0	string	00406263:FUN_00406200@00406200,00406273:FUN_00406200@00406200,00406305:FUN_00406200@00406200,00406314:FUN_00406200@00406200,0040a326:FUN_0040a0e0@0040a0e0,0040a336:FUN_0040a0e0@0040a0e0,0040ad2b:FUN_0040aa50@0040aa50,0040ad38:FUN_0040aa50@0040aa50,0040d140:FUN_0040d040@0040d040	\\ZapSpot
+00432dec	string	00406222:FUN_00406200@00406200	ZapSpot install status:
+00432e04	string	00406733:FUN_00406510@00406510	  OSInfo Crypt32: Present
+00432e20	string	0040671f:FUN_00406510@00406510	  OSInfo Crypt32: Not Found
+00432e3c	string	00406702:FUN_00406510@00406510	  OSInfo WinInet: Present
+00432e58	string	004066f3:FUN_00406510@00406510	  OSInfo WinInet: Not Found
+00432e74	string	004066d6:FUN_00406510@00406510	  OSInfo Dsound: Present
+00432e90	string	004066c7:FUN_00406510@00406510	  OSInfo DSound: Not Found
+00432eac	string	004066b4:FUN_00406510@00406510,00408ea8:FUN_00408e80@00408e80	DSound.dll
+00432eb8	string	004066a1:FUN_00406510@00406510	  OSInfo DXVer: '%s'
+00432ed0	string	00406690:FUN_00406510@00406510	  OSInfo BitDepth: '%s'
+00432ee8	string	0040667f:FUN_00406510@00406510	  OSInfo PalColors: '%s'
+00432f04	string	0040666e:FUN_00406510@00406510	  OSInfo Resolution: '%s'
+00432f20	string	0040665d:FUN_00406510@00406510	  OSInfo Version: '%s'
+00432f38	string	0040664c:FUN_00406510@00406510	  OSInfo Platform: '%s'
+00432f50	string	004068d1:FUN_00406750@00406750,004068e1:FUN_00406750@00406750	Temp File: '%s'  Size: '%s'
+00432f74	string	004067f2:FUN_00406750@00406750,00406802:FUN_00406750@00406750	Temp Directory: '%s'
+00432f94	string	004069b2:FUN_00406970@00406970,004069c2:FUN_00406970@00406970,0040a13d:FUN_0040a0e0@0040a0e0,0040a14d:FUN_0040a0e0@0040a0e0,0040aaa8:FUN_0040aa50@0040aa50,0040aab8:FUN_0040aa50@0040aa50	\\My ZapSpot
+00432fa0	string	00406a23:FUN_00406a00@00406a00	Missing ZDT: '%s'!\r\n
+00432fb8	string	00406ac0:FUN_00406a40@00406a40	  DumpZDT '%s' Contents:\r\n%s
+00432fd8	string	00406b4d:FUN_00406af0@00406af0	  DumpZDTs:  Can't find System directory!
+00433004	string	00406b32:FUN_00406af0@00406af0,0040c8b9:FUN_0040c8a0@0040c8a0,0040d1a3:FUN_0040d040@0040d040,0040d2f6:FUN_0040d040@0040d040,0040d389:FUN_0040d380@0040d380,00427026:FUN_00426ff0@00426ff0	Outbox.zdt
+00433010	string	00406b28:FUN_00406af0@00406af0,0040c889:FUN_0040c870@0040c870	Core.zdt
+0043301c	string	00406cb3:FUN_00406b70@00406b70	  Game: '%s'  Version: '%s'
+00433038	string	00406c8e:FUN_00406b70@00406b70	  Game: '%s'  Can't LoadLibrary!
+00433064	string	00406d95:FUN_00406d00@00406d00	ZapSpot Running Version: '%s'
+00433084	string	00406d6a:FUN_00406d00@00406d00	ZapSpot Installed Version: '%s'
+004330a4	string	00406d43:FUN_00406d00@00406d00	ZapSpot Version: can't LoadLibrary ZapSpot.exe!
+004330d4	string	00406d34:FUN_00406d00@00406d00	ZapSpot.exe
+004330e0	string	00406f08:FUN_00406db0@00406db0,00406f14:FUN_00406db0@00406db0	File: '%s'  Size: '%s'
+004330f8	string	00406eb3:FUN_00406db0@00406db0,00406ebd:FUN_00406db0@00406db0	Directory: '%s'
+00433108	string	00407058:FUN_00407000@00407000	Thank you for helping us make ZapSpot a better product.  Please remember to paste\nthis information into an email, include a description of the issue, and send it to\nSupport@ZapSpot.com
+004331c4	string	00407053:FUN_00407000@00407000	Thank you for your help
+004331dc	string	0040719f:FUN_004070d0@004070d0	DUMPINFO2
+004331e8	string	00407188:FUN_004070d0@004070d0,004071b6:FUN_004070d0@004070d0	DUMPINFO
+00433220	string	00428fc9:FUN_00428dd0@00428dd0,0043321c:-	TrackEvent2
+0043322c	string	00433218:-	GetARBInfoA
+00433238	string	00407bcf:FUN_00407b90@00407b90,00433210:-	Hello
+00433240	string	0043320c:-	ZapMe
+00433248	string	0041320c:FUN_00413040@00413040,00433208:-	UpdateShellVersion
+0043325c	string	00433204:-	ZapAFriend
+00433268	string	004331fc:-	Subscribe
+00433274	string	0041a29c:FUN_0041a0b0@0041a0b0,0041a45b:FUN_0041a300@0041a300,0041a7cd:FUN_0041a550@0041a550,0041a954:FUN_0041a550@0041a550,0041aa1d:FUN_0041a550@0041a550,00428da1:FUN_00428c20@00428c20,004331f8:-	TrackEvent
+00433288	string	0040754d:FUN_004074f0@004074f0	StartupInfo
+0043329c	string	004079c1:FUN_00407640@00407640,00407d9b:FUN_00407d20@00407d20,00407e84:FUN_00407d20@00407d20	%d.%d.%d.%d
+004332a8	string	0040796a:FUN_00407640@00407640,00407de6:FUN_00407d20@00407d20,00407e3a:FUN_00407d20@00407d20	DefaultIP
+004332b4	string	00407921:FUN_00407640@00407640	216.46.233.11
+004332c4	string	0040790e:FUN_00407640@00407640	api.zapspot.com
+004332e4	string	004077e8:FUN_00407640@00407640,00407891:FUN_00407640@00407640,004230c8:FUN_00422b90@00422b90,0042356c:FUN_00423540@00423540,00423663:FUN_00423540@00423540	DefaultProxyServer
+004332f8	string	0040773c:FUN_00407640@00407640	ProxyServer
+00433304	string	00407710:FUN_00407640@00407640	ProxyEnable
+00433310	string	004076c0:FUN_00407640@00407640	Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings
+0043334c	string	00407676:FUN_00407640@00407640	InternetGetConnectedState
+00433368	string	0040765f:FUN_00407640@00407640	wininet.dll
+00433374	string	00407cb9:FUN_00407b90@00407b90,0040b384:FUN_0040b2e0@0040b2e0	ZapSpot requires an internet connection to proceed.\nPlease make sure you are connected before proceeding.
+004333e0	string	00407cb4:FUN_00407b90@00407b90,0040b37f:FUN_0040b2e0@0040b2e0	Internet Connection Required
+00433408	string	00408114:FUN_004080e0@004080e0	Error Initializing DirectDraw in CSubsystem_Video_DirectX::CSubsystem_Video_DirectX
+0043345c	string	004080ee:FUN_004080e0@004080e0,00426d08:FUN_00426ce0@00426ce0	DDraw.dll
+00433468	string	00408684:Catch@00408680@00408680	Error (catch) calling SetCooperativeLevel in InitDirectDraw (DirectDraw error = 0x%08x)
+004334c0	string	004084c0:FUN_00408130@00408130	Error calling CreatePalette in GetDisplayMode (DirectDraw error = 0x%08x)
+0043350c	string	004084b5:FUN_00408130@00408130	Error calling SetPalette in GetEntries (DirectDraw error = 0x%08x)
+00433550	string	00408488:FUN_00408130@00408130	Error calling SetPalette in GetDisplayMode (DirectDraw error = 0x%08x)
+00433598	string	004083dc:FUN_00408130@00408130	Error occurred calling GetSystemPaletteEntries in InitDirectDraw
+004335dc	string	00408398:FUN_00408130@00408130	Error calling SetHWnd in InitDirectDraw (DirectDraw error = 0x%08x)
+00433620	string	0040837b:FUN_00408130@00408130	Error calling SetClipper in InitDirectDraw (DirectDraw error = 0x%08x)
+00433668	string	00408361:FUN_00408130@00408130	Error calling CreateClipper in InitDirectDraw (DirectDraw error = 0x%08x)
+004336b4	string	0040830f:FUN_00408130@00408130	Error calling CreateSurface in InitDirectDraw (DirectDraw error = 0x%08x)
+00433700	string	004082af:FUN_00408130@00408130	Unavailable resolution
+00433718	string	004082aa:FUN_00408130@00408130	ZapSpot requires a screen resolution of 8bpp or                     greater.  Please go to Settings\\Control Panel\\Display\\Settings and                     increase your screen colors.  ZapSpot will now exit.
+004337e8	string	0040827c:FUN_00408130@00408130	Error calling SetClipper in GetDisplayMode (DirectDraw error = 0x%08x)
+00433830	string	0040822b:FUN_00408130@00408130	Error (try) calling SetCooperativeLevel in InitDirectDraw (DirectDraw error = 0x%08x)
+00433888	string	00408201:FUN_00408130@00408130	NULL GUID returned from DirectDrawCreate
+004338b4	string	004081af:FUN_00408130@00408130	Error calling DirectDrawCreate in InitDirectDraw (DirectDraw error = 0x%08x)
+00433904	string	00408186:FUN_00408130@00408130,00426d32:FUN_00426ce0@00426ce0	DirectDrawCreate function not found
+00433928	string	00408176:FUN_00408130@00408130,0040b0d9:FUN_0040afa0@0040afa0,00426d22:FUN_00426ce0@00426ce0	DirectDrawCreate
+0043393c	string	0040874b:FUN_004086d0@004086d0	Error in call to CreateSurface in CRenderer_DirectX::CreateSurface(DDErr = 0x%08x)
+00433990	string	00408785:-	Error occurred calling SetPalette in CRenderer_DirectX::RealizePalette                      (DirectDraw error = 0x%08x)
+00433a08	string	00408bab:FUN_00408a90@00408a90	Error occurred in call to m_pddsPrimary->Blt in CSubsystem_Video_DirectX (DirectDraw error = 0x%08x,rc = {%d,%d,%d,%d})
+00433a80	string	00408b72:FUN_00408a90@00408a90,00428c0c:-	We're sorry, ZapSpot does not yet support changing the display depth while running, and will now exit.  We're really sorry and hope you'll double click and play again!
+00433b28	string	00408b6d:FUN_00408a90@00408a90,00428c07:-	ZapSpot does not yet support dynamic display depth changes
+00433b6c	string	00408eec:FUN_00408e80@00408e80,00422cea:FUN_00422b90@00422b90,00422d06:FUN_00422b90@00422b90,004232e9:FUN_00423260@00423260	Sound
+00433b74	string	0040913f:FUN_004090d0@004090d0	DirectSound failed to initialize (DirectSound error = 0x%08x)
+00433bb4	string	00409110:FUN_004090d0@004090d0	DirectSoundCreate function not found
+00433bdc	string	004090f8:FUN_004090d0@004090d0	DirectSoundCreate
+00433bf0	string	00409936:-,0040d9bc:FUN_0040d7c0@0040d7c0,00426ee0:FUN_00426e90@00426e90	Shell
+00433bfc	string	0040998d:FUN_00409950@00409950	ownerid
+00433c04	string	004099d1:FUN_004099b0@004099b0,0040d966:FUN_0040d7c0@0040d7c0	Zaplets
+00433c0c	string	00409ad9:FUN_00409a00@00409a00,0040db6c:FUN_0040d7c0@0040d7c0	Email
+00433c1c	string	00409a2c:FUN_00409a00@00409a00	USERS
+00433c24	string	00409cf7:FUN_00409bf0@00409bf0,00409e57:FUN_00409bf0@00409bf0,00409e90:FUN_00409bf0@00409bf0,0040da9a:FUN_0040d7c0@0040d7c0,0040db48:FUN_0040d7c0@0040d7c0	localid
+00433c34	string	00409c31:FUN_00409bf0@00409bf0,0040d910:FUN_0040d7c0@0040d7c0,0040dc9f:FUN_0040dc10@0040dc10	Users
+00433c3c	string	0040a91d:FUN_0040a0e0@0040a0e0,0040a925:FUN_0040a0e0@0040a0e0	\\Accessories\\Games\\ZapSpot.lnk
+00433c5c	string	0040a841:FUN_0040a0e0@0040a0e0,0040a9e9:FUN_0040a0e0@0040a0e0	\\shell32.dll
+00433c6c	string	0040a7c2:FUN_0040a0e0@0040a0e0,0040a7d2:FUN_0040a0e0@0040a0e0,0040a96d:FUN_0040a0e0@0040a0e0,0040a97d:FUN_0040a0e0@0040a0e0	\\ZapSpot.lnk
+00433c7c	string	0040a781:FUN_0040a0e0@0040a0e0	A Whole Lotta Fun!
+00433c91	string	0040a50c:FUN_0040a0e0@0040a0e0,0040ad8f:FUN_0040aa50@0040aa50	Games\\
+00433c98	string	0040a457:FUN_0040a0e0@0040a0e0,0040a45f:FUN_0040a0e0@0040a0e0,0040a48b:FUN_0040a0e0@0040a0e0,0040a498:FUN_0040a0e0@0040a0e0,0040a732:FUN_0040a0e0@0040a0e0,0040a73a:FUN_0040a0e0@0040a0e0	\\ZapSpot.exe
+00433ca8	string	0040a3f4:FUN_0040a0e0@0040a0e0,0040a3fc:FUN_0040a0e0@0040a0e0,00426725:FUN_004266d0@004266d0	\\Games
+00433cb0	string	0040a392:FUN_0040a0e0@0040a0e0,0040a39a:FUN_0040a0e0@0040a0e0	\\System
+00433cc0	string	0040b278:FUN_0040afa0@0040afa0	Couldn't CreateSurface\r\n
+00433cdc	string	0040b23c:FUN_0040afa0@0040afa0	Couldn't Set coop level\r\n
+00433cf8	string	0040b163:FUN_0040afa0@0040afa0	Couldn't QI DDraw2\r\n
+00433d10	string	0040b123:FUN_0040afa0@0040afa0	Couldn't create DDraw\r\n
+00433d28	string	0040b0f7:FUN_0040afa0@0040afa0	Couldn't LoadLibrary DDraw\r\n
+00433d48	string	0040b0b3:FUN_0040afa0@0040afa0	DDRAW.DLL
+00433d54	string	0040b057:FUN_0040afa0@0040afa0,0040b1e2:FUN_0040afa0@0040afa0	Couldn't GetProcAddress DInputCreate\r\n
+00433d7c	string	0040b03e:FUN_0040afa0@0040afa0,0040b1b7:FUN_0040afa0@0040afa0	DirectInputCreateA
+00433d90	string	0040b02c:FUN_0040afa0@0040afa0,0040b195:FUN_0040afa0@0040afa0	Couldn't LoadLibrary DInput\r\n
+00433db0	string	0040b015:FUN_0040afa0@0040afa0,0040b17e:FUN_0040afa0@0040afa0	DINPUT.DLL
+00433dbc	string	0040b4e1:FUN_0040b2e0@0040b2e0	POST /1.0.0/%s.asp HTTP/1.0\nContent-type: application/x-www-form-urlencoded\nContent-length: %d\n\n%s
+00433e20	string	0040b4b5:FUN_0040b2e0@0040b2e0	POST http://%s/1.0.0/%s.asp HTTP/1.0\nContent-type: application/x-www-form-urlencoded\nContent-length: %d\n\n%s
+00433e8c	string	0040b3f7:FUN_0040b2e0@0040b2e0,0041ae02:FUN_0041acb0@0041acb0	{00000000-0000-0000-0000-000000000000}
+00433ec0	string	0040b827:FUN_0040b820@0040b820	ZAPSRV_
+00433ec8	string	0040bd33:FUN_0040bcc0@0040bcc0	Out of Resources in CRenderTarget_DirectX::SetCurColor
+00433f00	string	0040be11:FUN_0040bdc0@0040bdc0	Out of Resources in CRenderContext_DirectX::SetBackgroundColor
+00433f40	string	0040be78:FUN_0040be30@0040be30	Out of Resources in CRenderTarget_DirectX::ClearToColor
+00433f78	string	0040c0c8:FUN_0040bf70@0040bf70	Error occurred in call to Blt in CImage::Draw (DirectDraw error = 0x%08x,rcSrc = {%d,%d,%d,%d}, rcDest ={%d,%d,%d,%d})
+00433ff0	string	0040c485:FUN_0040c440@0040c440	Error loading sound buffer (%s)
+00434010	string	0040c7bc:FUN_0040c780@0040c780,0041c86f:FUN_0041c830@0041c830	CloseShell.wav
+00434020	string	0040c9f3:FUN_0040c8d0@0040c8d0,00426f22:FUN_00426e90@00426e90,00426f74:FUN_00426f40@00426f40	Outbox.ZDT
+0043402c	string	0040c988:FUN_0040c8d0@0040c8d0,0040d0e8:FUN_0040d040@0040d040	\\ZapSpot\\System\\
+00434074	string	0040d28a:FUN_0040d040@0040d040,0040d2a4:FUN_0040d040@0040d040	>ers>
+00434084	string	0040d24d:FUN_0040d040@0040d040,0040d267:FUN_0040d040@0040d040	>ser>
+0043408c	string	0040d43b:FUN_0040d380@0040d380,00420b1b:FUN_00420760@00420760,004219d5:FUN_00421820@00421820,004270f5:FUN_00426ff0@00426ff0	ZapZaplet
+00434098	string	0040d3bd:FUN_0040d380@0040d380,0040d451:FUN_0040d380@0040d380	Params=
+004340a0	string	0040d3ab:FUN_0040d380@0040d380,004239b6:FUN_00423770@00423770,004270ae:FUN_00426ff0@00426ff0	GetUserGUID
+004340ac	string	0040d6af:FUN_0040d510@0040d510,00419fe1:FUN_00419df0@00419df0,0041a007:FUN_00419df0@00419df0,00423387:FUN_00423260@00423260	false
+004340b4	string	0040d67f:FUN_0040d510@0040d510,00419ff8:FUN_00419df0@00419df0	ForceConn
+004340c0	string	0040dbc6:FUN_0040d7c0@0040d7c0	RegDate
+004340c8	string	0040da5d:FUN_0040d7c0@0040d7c0,00426eec:FUN_00426e90@00426e90	DefaultUser
+004340d4	string	0040d8ad:FUN_0040d7c0@0040d7c0,0040dd4f:FUN_0040dc10@0040dc10	shellver
+004340e4	string	0040d846:FUN_0040d7c0@0040d7c0,0040dcdd:FUN_0040dc10@0040dc10	00.01.00.00
+00434168	string	00410365:FUN_0040fdfe@0040fdfe	 \t-\r]
+00434863	string		\nShellLastVerSentToServer
+00434880	string	004131ae:FUN_00413040@00413040	SessionStarted
+00434890	string	0041317b:FUN_00413040@00413040	GetARBInfoB
+0043489c	string	004132dd:FUN_00413270@00413270	SessionStopped
+004348ac	string	004146ae:FUN_004146a0@004146a0	Invalid current key passed to protected surface in CSurface::SetLoc
+004348f0	string	0041472d:FUN_00414720@00414720	Invalid current key passed to protected surface in CSurface::SetVisible
+00434938	string	00414839:FUN_004147f0@004147f0	Error - unrecognized child surface (0x%08x) specified in call to CSurface::           DetachSurface
+0043499c	string	00414cad:FUN_00414ca0@00414ca0	Invalid current key passed to CSurface::Protect
+004349cc	string	004163d4:FUN_00416190@00416190	Unhandled character (%c) in ZML string
+004349f8	string	00416f57:FUN_00416f10@00416f10	Warning - CImage* passed to CImageSeq::RemoveImage was not in the Image Sequence!
+00434a4c	string	00417073:FUN_00417060@00417060	Invalid Image # (#%d) passed to CImageSeq::GetImage (Only %d Images exist in the                Image Sequence
+00434abc	string	0041722f:FUN_004171b0@004171b0	Out of memory in CAnim::RecalcTimes
+00434aec	string	004185e1:FUN_004184e0@004184e0	</C></SH></U>
+00434afc	string	004185c9:FUN_004184e0@004184e0	<T><S3><U><SH><C><CFFFFFF>
+00434b18	string	0041858e:FUN_004184e0@004184e0	</C></sh></U>
+00434b28	string	00418576:FUN_004184e0@004184e0	<T><S3><U><C><Sh><CFFF000>
+00434b44	string	00418564:FUN_004184e0@004184e0,004185b7:FUN_004184e0@004184e0	Out of memory in CHyperLink::CHyperLink
+00434b94	string	0041942e:FUN_00418d90@00418d90	Unrecognized extension (%d) encountered in GIF code (Image #%d, next DWORD = 0x%08x)
+00434bec	string	004193ef:FUN_00418d90@00418d90	GIF code does not handle buffered subblocks yet
+00434c1c	string	004193ca:FUN_00418d90@00418d90	Unrecognized netscape extension data subblock (%d)                                            encountered in GIF code
+00434c94	string	00419075:FUN_00418d90@00418d90,00419082:FUN_00418d90@00418d90	NETSCAPE2.0
+00434ca0	string	00418e9e:FUN_00418d90@00418d90	Invalid GIF signature for file '%s' in CImageSeq::LoadGIF
+00434cdc	string	00418e3b:FUN_00418d90@00418d90	Error loading file (%s) in CImageSeq::LoadGif
+00434d0c	string	00418e0a:FUN_00418d90@00418d90	Out of Memory in CImageSeq::LoadGIF
+00434d40	string	0041a04e:FUN_00419df0@00419df0	Priority
+00434d4c	string	00419fa1:FUN_00419df0@00419df0	Params
+00434d54	string	00419f5f:FUN_00419df0@00419df0	Function
+00434d60	string	00419f1d:FUN_00419df0@00419df0	MsgType
+00434d68	string	00419ece:FUN_00419df0@00419df0	MsgIDL
+00434d70	string	00419e7e:FUN_00419df0@00419df0	MsgIDH
+00434d78	string	00419e43:FUN_00419df0@00419df0,0041a0db:FUN_0041a0b0@0041a0b0,0041a120:FUN_0041a0b0@0041a0b0,0041a337:FUN_0041a300@0041a300,0041a37c:FUN_0041a300@0041a300,0041a586:FUN_0041a550@0041a550,0041a5b4:FUN_0041a550@0041a550,0041a659:FUN_0041a550@0041a550,0041a67e:FUN_0041a550@0041a550,0041a989:FUN_0041a550@0041a550,0041a9b2:FUN_0041a550@0041a550,0041ab8a:FUN_0041a550@0041a550	Message
+00434d84	string	0041b1bb:FUN_0041b170@0041b170	OpenShell.wav
+00434d94	string	0041b1a4:FUN_0041b170@0041b170	Popup.wav
+00434da0	string	0041b18d:FUN_0041b170@0041b170	BtnClick.wav
+00434db0	string	0041b384:FUN_0041b290@0041b290,0041dced:FUN_0041d6c0@0041d6c0,0041e75e:FUN_0041d6c0@0041d6c0,0041efc5:FUN_0041ed90@0041ed90	slb-lilbtnicons.gif
+00434dc4	string	0041b34c:FUN_0041b290@0041b290,0041d3aa:FUN_0041d370@0041d370,0041dcb1:FUN_0041d6c0@0041d6c0,0041e721:FUN_0041d6c0@0041d6c0,0041ef86:FUN_0041ed90@0041ed90	slb-lilbtnbacks-hc.gif
+00434ddc	string	0041b907:FUN_0041b7f0@0041b7f0,004222e7:FUN_004221e0@004221e0	Ultra Color Code
+00434df0	string	0041b8ef:FUN_0041b7f0@0041b7f0,0041f7f2:FUN_0041f500@0041f500,0041fea8:FUN_0041fdf0@0041fdf0,0041ff20:FUN_0041fdf0@0041fdf0,004222cf:FUN_004221e0@004221e0,00435180:-	UltraColorCode
+00434e00	string	0041b8db:FUN_0041b7f0@0041b7f0,004222bb:FUN_004221e0@004221e0	Peh Pai Challenge
+00434e14	string	0041b8c3:FUN_0041b7f0@0041b7f0,004222a3:FUN_004221e0@004221e0	PehPai
+00434e1c	string	0041b874:FUN_0041b7f0@0041b7f0	<S1></b><t></u></i>
+00434e30	string	0041b86d:FUN_0041b7f0@0041b7f0	<S2><b><t></u></i>
+00434e44	string	0041ba3a:FUN_0041b9b0@0041b9b0	slb-bigbtnicons.gif
+00434e58	string	0041b9fb:FUN_0041b9b0@0041b9b0	slb-bigbtnbacks-hc.gif
+00434e74	string	0041c630:FUN_0041c4c0@0041c4c0	Not Installed
+00434e84	string	0041c629:FUN_0041c4c0@0041c4c0	Installed
+00434e98	string	0041c5b0:FUN_0041c4c0@0041c4c0	<S2>%s
+00434ea0	string	0041c7a3:FUN_0041c700@0041c700,0042147d:FUN_00421420@00421420	https://digitalid.verisign.com/as2/ad22220c0f5c11772d39911f24517336
+00434ee4	string	0041c78d:FUN_0041c700@0041c700,00421435:FUN_00421420@00421420	http://www.mcafee.com/ZapSpot
+00434f04	string	0041c777:FUN_0041c700@0041c700	www.zapspot.com/support
+00434f1c	string	0041c761:FUN_0041c700@0041c700	www.zapspot.com/partners
+00434f38	string	0041c74b:FUN_0041c700@0041c700	www.zapspot.com/jobs
+00434f50	string	0041c735:FUN_0041c700@0041c700	www.zapspot.com
+00434f60	string	0041cafd:FUN_0041c910@0041c910	Game Not Found
+00434f70	string	0041cadb:FUN_0041c910@0041c910	We're sorry, but the game "%s" can't be found.  Please contact ZapSpot support at support@zapspot.com.
+00434fd8	string	0041d60e:FUN_0041d370@0041d370	img-home2.gif
+00434fe8	string	0041d5c2:FUN_0041d370@0041d370	img-home.gif
+00434ff8	string	0041e232:FUN_0041d6c0@0041d6c0	<s4><CFFFFFF><u><c>www.ZapSpot.com
+0043501c	string	0041e1d7:FUN_0041d6c0@0041d6c0	img-ZapLogo.gif
+0043502c	string	0041e163:FUN_0041d6c0@0041d6c0	Out of memory in CShell::SetSkin
+00435050	string	0041e012:FUN_0041d6c0@0041d6c0,0041ea00:FUN_0041d6c0@0041d6c0	img-tm2.gif
+0043505c	string	0041dfe2:FUN_0041d6c0@0041d6c0,0041e9d0:FUN_0041d6c0@0041d6c0	img-tm.gif
+00435068	string	0041dfb2:FUN_0041d6c0@0041d6c0,0041e9a0:FUN_0041d6c0@0041d6c0	img-err-arrow.gif
+0043507c	string	0041df82:FUN_0041d6c0@0041d6c0,0041e970:FUN_0041d6c0@0041d6c0	img-err-blue.gif
+00435090	string	0041df53:FUN_0041d6c0@0041d6c0,0041e941:FUN_0041d6c0@0041d6c0	img-err-green.gif
+004350a4	string	0041df24:FUN_0041d6c0@0041d6c0,0041e912:FUN_0041d6c0@0041d6c0	img-err-red.gif
+004350b4	string	0041deb5:FUN_0041d6c0@0041d6c0	img-Logo-88x82.gif
+004350c8	string	0041d9a3:FUN_0041d6c0@0041d6c0,0041e2b4:FUN_0041d6c0@0041d6c0	slb-BevelEdges.gif
+004350dc	string	0041d838:FUN_0041d6c0@0041d6c0,0041e093:FUN_0041d6c0@0041d6c0	img-gamearea.gif
+004350fc	string	0041edd5:FUN_0041ed90@0041ed90	IMG-GETZAPPEDBLOCK.gif
+00435114	string	0041f43b:FUN_0041f2a0@0041f2a0,00426ef8:FUN_00426e90@00426e90,00427052:FUN_00426ff0@00426ff0	ShellGUID
+004351b8	string	004351a0:-	img-prevgamelogo-fenceout.gif
+004351d8	string	0043519c:-	{A47302DC-E7B2-4FFC-9175-6A7DBDA1415D}
+00435200	string	00435198:-	FenceOut
+0043520c	string	00435188:-	img-prevgamelogo-colorcode.gif
+0043522c	string	00435184:-	{0714D4AA-FBC7-4E29-9B03-E3BA5BE20AE6}
+00435254	string	00435170:-	img-prevgamelogo-bubblebound.gif
+00435278	string	0043516c:-	{E887C03A-135B-4C6D-837C-B96853A54B0A}
+004352a0	string	0041f814:FUN_0041f500@0041f500,00435168:-	BubbleBound
+004352ac	string	00435158:-	img-prevgamelogo-pehpai.gif
+004352c8	string	00435154:-	{681FDB0B-DF7A-4E91-9445-0D7CF22687E7}
+004352f0	string	00435150:-	Peh Pai
+004352f8	string	00435140:-	img-prevgamelogo-sortsport.gif
+00435318	string	0043513c:-	{273A0148-835F-43CB-B87B-20053BDE3636}
+00435340	string	0041f7f7:FUN_0041f500@0041f500,0041fee3:FUN_0041fdf0@0041fdf0,00435138:-	SortSport
+0043534c	string	0041f85d:FUN_0041f500@0041f500,00435128:-	img-prevgamelogo-colorbreak.gif
+0043536c	string	0041f88d:FUN_0041f500@0041f500,00435124:-	{252D6EB8-0915-4321-91E8-EB92CA1BD1D1}
+00435394	string	0041f7f7:FUN_0041f500@0041f500,0041f81c:FUN_0041f500@0041f500,0041f87d:FUN_0041f500@0041f500,0041fee3:FUN_0041fdf0@0041fdf0,0041fef2:FUN_0041fdf0@0041fdf0,00435120:-	ColorBreak
+004353a0	string	0041f9ea:FUN_0041f500@0041f500	{00-00-00-00}
+004353b0	string	0041f9dc:FUN_0041f500@0041f500	00.01.00.0000
+004353c0	string	0041f9a9:FUN_0041f500@0041f500	txt-ComingSoon-logo.gif
+004353d8	string	0041f89a:FUN_0041f500@0041f500	00.01.00.0100
+004353e8	string	0041fe90:FUN_0041fdf0@0041fdf0	colorcode.gam
+004353f8	string	00420600:FUN_00420150@00420150,0042172e:FUN_004214b0@004214b0,00422cb9:FUN_00422b90@00422b90,004232bb:FUN_00423260@00423260	slb-rectbtnbacks-hc.gif
+00435410	string	00420af3:FUN_00420760@00420760	%s,%s,%s,%s
+0043541c	string	00420eea:FUN_00420d80@00420d80,004211fe:FUN_00421040@00421040	img-mcafee.gif
+0043542c	string	00420eac:FUN_00420d80@00420d80	<S3><C999999>v%d.%d
+00435440	string	004212f1:FUN_00421040@00421040	img-verisign.gif
+00435454	string	0042146d:FUN_00421420@00421420,00422426:FUN_004223d0@004223d0	AdBannerClicked
+00435464	string	00421468:FUN_00421420@00421420	{26A52249-5C78-450E-A988-B634559AF93A}
+0043548c	string	004217c4:FUN_004214b0@004214b0	Cancel
+0043549c	string	004219a5:FUN_00421820@00421820	%s,%s,%s
+0043551c	string	00435514:-	{9151B780-7683-4C6F-8D38-CE53D4D2B1D9}
+00435544	string	00435510:-	{9EEAADE3-0181-4903-BB5D-157F7EAB0B4B}
+0043556c	string	0043550c:-	{A1C47439-47FE-4419-9944-264949BD2879}
+00435594	string	00435508:-	{6D9B148C-2624-43DE-BB59-7A06A6D87229}
+004355bc	string	00435504:-	{55CF3953-C84A-48DE-8FB5-714B51BACFC1}
+004355e4	string	00435500:-	{F6769DF4-7D3B-4C4C-A9D8-474E0BC1EB4F}
+0043560c	string	004354fc:-	{6E2060C5-7A10-4D03-ADAC-C9C2C2A0D2F6}
+00435634	string	004354f8:-	{490D86F0-A346-4D77-88F9-CCEE271892EB}
+0043565c	string	004354f4:-	{788F0025-D602-443F-A0EC-9D9CAAAC160C}
+00435684	string	004354f0:-	http://service.bfast.com/bfast/click?bfmid=115759&sourceid=29626398&categoryid=auto
+004356d8	string	004354ec:-	http://service.bfast.com/bfast/click?bfmid=18604168&siteid=29939123&bfpage=homepage
+0043572c	string	004354e8:-	http://service.bfast.com/bfast/click?bfmid=6902732&siteid=29904196&bfpage=home
+0043577c	string	004354e4:-	http://service.bfast.com/bfast/click?bfmid=5647408&siteid=29904199&bfpage=people550
+004357d0	string	004354e0:-	http://service.bfast.com/bfast/click?bfmid=8188256&siteid=30189225&bfpage=homepage
+00435824	string	004354dc:-	http://www.mcafee.com/zapspot
+00435844	string	004354d8:-	http://www.zapspot.com/Affiliate
+00435868	string	004354cc:-	ani-adbanner5.gif
+0043587c	string	004354c8:-	ani-adbanner4.gif
+00435890	string	004354c4:-	ani-adbanner3.gif
+004358a4	string	004354c0:-	ani-adbanner2.gif
+004358b8	string	004354bc:-	ani-adbanner1.gif
+004358cc	string	004354b8:-	MCAFEE.gif
+004358d8	string	004354b4:-	--Affiliate--
+004358e8	string	00421f8c:FUN_00421ef0@00421ef0,004354b0:-	ZapFriend.gif
+004358f8	string	004354ac:-	GetZapped.gif
+00435908	string	004220a5:FUN_00421ef0@00421ef0	AdBannerTime
+00435918	string	00422326:FUN_004221e0@004221e0	<cffff66><s1>Mail <Cffffff>%s<cffff66> to a friend
+0043594c	string	00422247:FUN_004221e0@004221e0	a ZapSpot game
+0043595c	string	00422808:FUN_004224a0@004224a0,0042298a:FUN_004224a0@004224a0,00422b0c:FUN_004224a0@004224a0	for details.</b>
+00435970	string	004227eb:FUN_004224a0@004224a0,0042296d:FUN_004224a0@004224a0,00422aef:FUN_004224a0@004224a0	<S1><b><ccc0000>Click here
+0043598c	string	0042270c:FUN_004224a0@004224a0,004227b0:FUN_004224a0@004224a0,0042288e:FUN_004224a0@004224a0,00422932:FUN_004224a0@004224a0,00422a10:FUN_004224a0@004224a0,00422ab4:FUN_004224a0@004224a0	subscriber from %s.
+004359a0	string	004226f5:FUN_004224a0@004224a0,00422799:FUN_004224a0@004224a0,00422877:FUN_004224a0@004224a0,0042291b:FUN_004224a0@004224a0,004229f9:FUN_004224a0@004224a0,00422a9d:FUN_004224a0@004224a0	<S1><c000000>Earn $1 for every new ZapSpot
+004359cc	string	00422686:FUN_004224a0@004224a0	<S0><i><ccc0000><b>Are your friends?</b></i>
+004359fc	string	004225fa:FUN_004224a0@004224a0,00422669:FUN_004224a0@004224a0	<S0><c000000>Having enough fun?
+00435a1c	string	00422561:FUN_004224a0@004224a0	<C000000><c>Hello %s.</c>
+00435a38	string	00422d23:FUN_00422b90@00422b90	Enabled
+00435a40	string	004234e3:FUN_00423260@00423260,00423704:FUN_00423540@00423540	Okay to Save to Desktop?
+00435a5c	string	004234de:FUN_00423260@00423260,004236ff:FUN_00423540@00423540	In order to maintain this setting, ZapSpot needs to save itself to your desktop - is this okay?\nIf you click okay, then we can remember this setting next time...
+00435b0c	string	00423dc8:FUN_00423d10@00423d10,00424182:FUN_00424100@00424100	<S4><C>
+00435b14	string	0042409c:FUN_00423ff0@00423ff0	</C></u>
+00435b20	string	00424069:FUN_00423ff0@00423ff0	<S4><u><C>
+00435b30	string	0042455d:FUN_004243b0@004243b0	Sweat
+00435b40	string	0042450f:FUN_004243b0@004243b0	Logic
+00435b48	string	004244ea:FUN_004243b0@004243b0	Action
+00435b50	string	0042486f:FUN_00424620@00424620	GameStarted
+00435b60	string	0042469e:FUN_00424620@00424620	Error - file specified in call to Start (%s) is NOT a game DLL!
+00435ba0	string	00424684:FUN_00424620@00424620	Shell_StartApplet
+00435bb4	string	004249d6:FUN_004248a0@004248a0	GameStopped2
+00435bc4	string	004249b1:FUN_004248a0@004248a0,00427030:FUN_00426ff0@00426ff0	DiagCode
+00435bd4	string	004248cb:FUN_004248a0@004248a0	Error - file specified in call to Stop (%s) is NOT a game DLL!
+00435c14	string	004248b7:FUN_004248a0@004248a0	Shell_StopApplet
+00435c28	string	00425bf8:FUN_00425a80@00425a80	HourGlass.cur
+00435c38	string	00425bc4:FUN_00425a80@00425a80	ClosedHand.cur
+00435c48	string	00425b90:FUN_00425a80@00425a80	OpenHand.cur
+00435c58	string	00425b5c:FUN_00425a80@00425a80	NoLink.cur
+00435c64	string	00425b28:FUN_00425a80@00425a80	Hand.cur
+00435c70	string	00425af7:FUN_00425a80@00425a80	Pointer.cur
+00435c7c	string	00425e35:FUN_00425df0@00425df0	Error - unrecognized Cursor passed to CSubsystem_Cursor_Win32::DeleteCursor
+00435d28	string	00426376:FUN_00426330@00426330	Error - unrecognized font passed to CSubsystem_Font_Win32::DeleteFont
+00435d70	string	0042678a:FUN_004266d0@004266d0,0042683b:FUN_004266d0@004266d0	*.gam
+00435d78	string	00426ea4:FUN_00426e90@00426e90,00426f5f:FUN_00426f40@00426f40	Core.ZDT
+00435d88	string	0042785b:FUN_00427810@00427810	Error - unrecognized EventListener (0x%08x) specified in call to CEvent::           RemoveListener
+00435dec	string	00428071:FUN_00427ef0@00427ef0	Error - Unrecognized file (%s) specified in CFile::CFile
+00435e28	string	00427f81:FUN_00427ef0@00427ef0	Couldn't load resource (%s) in CFile_Win32::CFile_Win32
+00435e60	string	00427f3a:FUN_00427ef0@00427ef0	Error - creation of files is not yet implemented
+00435e94	string	0042900b:FUN_00428fe0@00428fe0,00429052:FUN_00428fe0@00428fe0,00429241:FUN_00429200@00429200,00429286:FUN_00429200@00429200,00429418:FUN_00429200@00429200,00429520:FUN_004294f0@004294f0,00429565:FUN_004294f0@004294f0,00429751:FUN_00429710@00429710,00429773:FUN_00429710@00429710,00429908:FUN_00429710@00429710	ZLSProp
+00435e9c	string	00429497:FUN_00429200@00429200,00429987:FUN_00429710@00429710	value
+00435eac	string	00429d2b:FUN_00429cc0@00429cc0	Out of Resources in CRenderTarget_GDI::SetCurColor
+00435ee0	string	00429ddd:FUN_00429d90@00429d90	Out of Resources in CRenderContext_GDI::SetBackgroundColor
+00435f1c	string	00429e71:FUN_00429e30@00429e30	Out of Resources in CRenderTarget_GDI::ClearToColor
+0043606c	string	0042bef2:FUN_0042b990@0042b990	<T><S2><b><FArial><sh><CFFFF33><c>%s</c></b>
+0043609c	string	0042beb7:FUN_0042b990@0042b990	<T><S4><FArial><sh><CFFFF33><C><U>%s</U></c>
+004360cc	string	0042bc53:FUN_0042b990@0042b990,0042bdae:FUN_0042b990@0042b990,0042c032:FUN_0042b990@0042b990	<T><S2><b><FArial><sh><CFFFFFF><c>%s</c></b>
+004360fc	string	0042bc14:FUN_0042b990@0042b990,0042bd73:FUN_0042b990@0042b990,0042bff8:FUN_0042b990@0042b990	<T><S4><FArial><sh><CFFFFFF><C><U>%s</U></c>
+00493370	PascalUnicode		
+00493372	PascalUnicode	00406d61:FUN_00406d00@00406d00,00406d8f:FUN_00406d00@00406d00	01.01.01.1034
+0049338e	PascalUnicode		www.ZapSpot.com
+004933ae	PascalUnicode	00404d7f:FUN_00404cf0@00404cf0,00406ca6:FUN_00406b70@00406b70,00424457:FUN_004243b0@004243b0	
+004933b0	PascalUnicode	00424469:FUN_004243b0@004243b0	
+004933b2	PascalUnicode	0042447b:FUN_004243b0@004243b0	
+004933b4	PascalUnicode	00424490:FUN_004243b0@004243b0	
+004933b6	PascalUnicode	004244d1:FUN_004243b0@004243b0	
+004933b8	PascalUnicode	004244e2:FUN_004243b0@004243b0	
+004933ba	PascalUnicode		
+004933bc	PascalUnicode		
+004933be	PascalUnicode		
+004933c0	PascalUnicode		
+004933c2	PascalUnicode		
+004933c4	PascalUnicode		
+004933c6	PascalUnicode		
+004933c8	PascalUnicode		
+004933ca	PascalUnicode		
+004933cc	PascalUnicode		
+004933ce	PascalUnicode		
+004933d0	PascalUnicode		ZapSpot Help
+004933ea	PascalUnicode		<S1><Cffffff><U>Table of Contents</U><br><br><S2><B>Getting Started with ZapSpot</B><BR><S3><A111>What is ZapSpot?</A>, <A111>How do I start playing?</A>, <A111>Wow, can I keep it?</A><BR><BR><S2><B>Enjoying ZapSpot Games</B><BR><S3><A112>Can I get more ZapSpot games?</A>, <A112>How do I save all my ZapSpot games in one place?</A><BR><A113>How do I play different games?</A>, <A113>How do I close ZapSpot?</A>, <A113>How do I hide it from the boss?</A><BR><A114>What's the difference between different colored games?</A><BR><BR><S2><B>Sharing ZapSpot Games</B><BR><S3><A115>Can I share ZapSpot with my friends?</A>, <A115>Why should I subscribe?</A><BR><BR><S2><B>Product Support</B><BR><S3><A116>What will ZapSpot do on my Computer?</A>, <A116>How do I unsubscribe?</A><BR><A116>How do I remove ZapSpot from my computer?</A><BR><A118>Extended Support Information</A><BR><BR><S2><B>ZapSpot Information</B><BR><S3><A117>Where can I learn more?</A>, <A117>How do I contact ZapSpot?</A><BR>
+00493ba6	PascalUnicode		
+00493ba8	PascalUnicode		
+00493baa	PascalUnicode		
+00493bac	PascalUnicode		
+00493bae	PascalUnicode		
+00493bb0	PascalUnicode		
+00493bb2	PascalUnicode		
+00493bb4	PascalUnicode		
+00493bb6	PascalUnicode		
+00493bb8	PascalUnicode		<S1><Cffffff><U>Getting started with ZapSpot</u><br><br><S2><B>What is ZapSpot?</B><BR><S3>So what is ZapSpot, you might ask? Well, ZapSpot is fun. ZapSpot is relief. ZapSpot is a cool game, delivered straight to your e-mail inbox every week. And it's absolutely free.<br><br><S2><B>How do I start playing?</b><br><s3>Depending on when you read this, you may already be in the middle of a ZapSpot game.  You'll know because the bottom of the screen will say the game is paused.  If you are in the middle of a game, just unpause using the arrow button.  If you want to switch games or select a new game to play, click the View All Games button.  To select a game, just click on its icon and you'll jump right into the fun.  To reset a game and start over, click the New Game button.  If you need to take a break from the game, just click the Pause button and then resume it by clicking on the Resume button.<br><br><S2><B>Wow, can I keep it?</b><br><s3>Absolutely! Not only can you keep this ZapSpot game and any future ones, but you can also play with them when you are not connected to the Internet!  If you haven't already saved ZapSpot, just click the Install ZapSpot link from within the shell, or the Save and Exit button on your way out of ZapSpot. After you save, you can click on the ZapSpot icon on your desktop and dive into your fun break.<BR><BR><A101>Back to Table of Contents</A><BR>
+004946a8	PascalUnicode		<S1><Cffffff><U>Enjoying ZapSpot Games</U><br><br><S2><B>Can I get more ZapSpot games?</B><BR><S3>Of course! We design a new game every week and send it out to subscribers all over the world. You can enjoy many more fun games by simply sending us your e-mail address. All you have to do is enter it in the 'Subscribe to ZapSpot' textbox and click the arrow.  We will then Zap you a new cool, free game the next week, the week after that, the week after that...<br><br><S2><B>How do I save all my ZapSpot games in one place?</B><br><S3>You don't have to do a thing, because we will do it for you!  All you have to do is click the Install ZapSpot link inside ZapSpot.  Alternatively, you can click the Save and Exit button when you close ZapSpot.  Either of these options will add ZapSpot to your desktop and give you the full ZapSpot experience.  After this, every time you open a new game, it automatically gets stored in the same "Spot" as the others.  When you run ZapSpot from your desktop you will start in the game selection screen and you can select which of the many games you want to play.<BR><BR><A101>Back to Table of Contents</A><BR>
+00494f9a	PascalUnicode		<S1><Cffffff><U>Enjoying ZapSpot Games</U><br><br><S2><B>How do I play different games?</B><BR><S3>It's simple.  If you start ZapSpot after installing it to your desktop, you will automatically be in the View All Games screen.  From there, just click on any game to start the fun.<BR><BR>If you are already in the middle of playing a game, just click the View all Games button and you'll be placed into the View All screen.  And like we said, just click on any game to start the fun.  It's easy.<BR><BR><S2><B>How do I close ZapSpot?</B><BR><S3>To close ZapSpot, click the round button with the 'X' on it.<br><br><S2><B>How do I hide ZapSpot from the boss?</B><BR><S3>The ultimate pastime wouldn't be as good without a little guilt, eh?  Well, to hide ZapSpot, just click the ESC key on your computer.  ZapSpot will instantly minimize itself to your taskbar.<br><BR><A101>Back to Table of Contents</A><BR>
+004956ae	PascalUnicode		<S1><Cffffff><U>Enjoying ZapSpot Games<br><br><S2><B>What's the difference between Blue, Green, and Red Games?</B></u><br><S3>ZapSpot specializes in games that are easy to learn and fun to play. When you get a ZapSpot game, the color of its border indicates the type of experience you are about to get:<br><br><B>Red Games</b> (Make you sweat) - Looking for some fast action?  A little eye-hand satisfaction?  Something more than a little distraction?  Then get ready for the Red Games, because they'll keep you at the edge of your seat.<br><br><B>Blue Games</b> (Make you think) - Put on your thinking cap and wipe off that smile, because you're going nowhere, pal. Blue Games might seem easy at first, but they get very difficult, very fast.<br><br><b>Green Games</b> (Make you relax) - Think of Green Games as entertaining bits of fun. You can enjoy Green Games while talking on the phone, sitting in a boring meeting, or pretending to take lecture notes on your laptop. Isn't that what computers are really for?<BR><BR><A101>Back to Table of Contents</A><BR>
+00495efc	PascalUnicode		<S1><Cffffff><U>Sharing ZapSpot Games</U><br><br><S2><B>Can I share the games with my friends?</B><BR><S3>Absolutely! That's the best part about ZapSpot. If you got ZapSpot via e-mail, you can simply forward the e-mail to your friends.  If you're in the middle of a game, just click the Mail This button, and our servers will e-mail the game for you.  Think of it as sending a little bit of interactive fun directly through e-mail.  And of course, you can always put ZapSpot on a floppy and take it with you.  Either way, ZapSpot games require no other downloads or installations.<br><br><S2><B>Why should I subscribe if I can get the games from other users?</B><br><S3>Good question! Here at ZapSpot, we're continually looking for ways to improve your ZapSpot experience. This means that we not only design new games, but also constantly improve the old ones. For instance, we will periodically add certain features to already existing games that will enhance your excitement and increase your fun. This is why subscribing to ZapSpot is the best way to enjoy our service. If you are a member of the ZapSpot community, you will receive ZapSpot updates and improvements along with your weekly supply of new games. And remember - our service is absolutely free. If you have not yet subscribed, be sure to do so in the 'Subscribe to ZapSpot' section, or sign up on our web site at <A10000>www.ZapSpot.com</a><BR><BR><A101>Back to Table of Contents</A><BR>
+00496a56	PascalUnicode		<S1><Cffffff><U>Product Support</U><br><br><S2><B>What will ZapSpot do on my computer?</B><BR><S3>ZapSpot considers your privacy, safety and stability to be the company's top priority, and we want our users to be satisfied with our product.  So, while other applications install files to sensitive areas within your hard drive, ZapSpot does not.  We've made it possible for you to run ZapSpot with a single click, without ever accessing your core files or affecting the stability of your machine.  In short - you can be sure that ZapSpot is safe.<br><br><S2><B>How do I unsubscribe from my weekly game mailing?</B><br><S3>To cancel your weekly ZapSpot game and stop receiving this e-mail, simply send an e-mail to unsubscribe@ZapSpot.com from the e-mail address that you used to subscribe.<BR><BR><S2><B>How do I remove ZapSpot from my computer?</B></u><br><S3>Although this version of ZapSpot does not include an uninstall feature, a complete uninstall feature will be included in the next version of ZapSpot.  In the interim, we have placed a tool that will remove ZapSpot from your computer on our web site.  Should you desire to uninstall ZapSpot, detailed instructions for doing so can be found on our support site, at<br><A10003>http://www.ZapSpot.com/support</a>.<br><br><A101>Back to Table of Contents</A><BR>
+004974a2	PascalUnicode		<S1><Cffffff><U>ZapSpot Information</U><br><br><S2><B>Where can I learn more about ZapSpot?</B><br><S3>For a more in-depth knowledge of the technical aspects of ZapSpot, as well as the company's background and employment opportunities, please visit our web site at <br><A10000>www.ZapSpot.com.</A><br><br><S2><B>I have some questions about ZapSpot. How do I contact you?</B><br><S3>If you need to contact the ZapSpot team for any reason (questions about the product, technical issues, etc.) you can send an e-mail to any of the following addresses:<br><BR>  info@ZapSpot.com : general information and feedback.<BR>  jobs@ZapSpot.com : employment opportunities.<BR>  support@ZapSpot.com : technical support issues.<BR>  unsubscribe@zapspot.com : unsubscribe from ZapSpot.<BR><BR><A101>Back to Table of Contents</A><BR>
+00497b06	PascalUnicode		<S1><Cffffff><U>Extended Support Information</U><br><br><S2><BR>ZapSpot Shell Version:<BR>ZapSpot Shell GUID:<BR>ZapSpot Install Folder:<BR><BR>Active Game:<BR>Game Version:<BR><BR><BR><BR><BR><BR><A101>Back to Table of Contents</A><BR>
+00497ce0	PascalUnicode		
+00497ce2	PascalUnicode		
+00497ce4	PascalUnicode		
+00497ce6	PascalUnicode		
+00497ce8	PascalUnicode		
+00497cea	PascalUnicode		
+00497cec	PascalUnicode		
+00497cee	PascalUnicode		
+00497cf0	PascalUnicode		
+00497cf8	PascalUnicode		
+00497cfa	PascalUnicode		
+00497cfc	PascalUnicode		
+00497cfe	PascalUnicode		
+00497d00	PascalUnicode		
+00497d02	PascalUnicode		
+00497d04	PascalUnicode		
+00497d06	PascalUnicode		
+00497d08	PascalUnicode		About ZapSpot
+00497d24	PascalUnicode		<S3><Cffffff>So, what is ZapSpot?  And why do you care??  ZapSpot is fun.  ZapSpot is relief.  ZapSpot is like chocolate without the guilt.  ZapSpot is a quick distraction from the world around you.  ZapSpot is a fresh breeze wafting through a stuffy room.<BR><BR>And what does ZapSpot give you?<BR><BR><b>Free Games Every Week</b> - ZapSpot means games.  Fun, quick, easy to play games in endless colors, shapes, and sizes.  Just join the ZapSpot family, and we'll send you a new game every week - right in your e-mail.  And did we mention it's all free???  All you have to do is subscribe in the 'Subscribe to ZapSpot' section over there (look down and left).<BR><BR>So, who makes ZapSpot?  Our team is made up of fun-loving, easy-going, break-taking folks that decided to change the way the world relaxes and distracts itself.  Our mission? Simple.  Make the world a better place with weekly bits of fun.<BR><BR>We hope you will enjoy playing ZapSpot as much as we enjoy creating it.<BR><BR>Get started in <A20002>ZapSpot Help</A> (also accessible via the question mark in the upper right).<BR><BR>Find out about <A20000>ZapSpot's security precautions</a>.<BR>To find out more, visit <A10000>http://www.ZapSpot.com</A>.<BR>To inquire about jobs at ZapSpot, visit <A10001>http://www.ZapSpot.com/jobs</A>.<BR>To partner with ZapSpot, visit <A10002>http://www.ZapSpot.com/partners</A>.<BR>
+00498800	PascalUnicode		<S3><Cffffff>Are you concerned about security? So are we.  The ZapSpot team has taken every possible safety measure and precaution to ensure that you get the best experience.
+0049895e	PascalUnicode		<S3><Cffffff>We start by virus checking every one of our executables using McAfee.com Clinic.  The best way to protect yoruself is with an anti-virus program.  That is why we partnered with McAfee.com to offer you a <A10004>FREE Trial Subscription to Clinic</a>.<BR><BR>We then sign all of our executables with a Digital ID acquired from Verisign.  This <A10005>digital signature</a> authenticates the files you get and lets you now that the game you got is an authentic ZapSpot game.  If you are running on Internet Explorer or Outlook Express, look for the certificate saying ZapSpot, Inc.  That way, you'll know it's coming from us.
+00498e56	PascalUnicode		<S3><Cffffff>We take security very seriously at ZapSpot.  If you have any questions, concerns, ideas, or suggestions, please contact us at info@ZapSpot.com<BR>Sincerely,<BR><BR>- the ZapSpot team
+00498fde	PascalUnicode		
+00498fe0	PascalUnicode		
+00498fe2	PascalUnicode		
+00498fe8	PascalUnicode		
+00498fea	PascalUnicode		
+00498fec	PascalUnicode		
+00498fee	PascalUnicode		
+00498ff0	PascalUnicode		
+00498ff2	PascalUnicode		
+00498ff4	PascalUnicode		
+00498ff6	PascalUnicode		
+00498ff8	PascalUnicode		
+00498ffa	PascalUnicode		
+00498ffc	PascalUnicode		
+00498ffe	PascalUnicode		
+00499000	PascalUnicode		Personalize ZapSpot
+00499028	PascalUnicode		<s3><cffffff>Our team believes that you should get the most personalized, customized experience possible when using your software.  We are in the process of adding technology to ZapSpot that will allow you to make using it as fun and exciting as possible.<BR><BR><BR>Want to stay on top of all ZapSpot developments?  It's easy.  All you have to do is subscribe to ZapSpot (over to the left) or visit our web site at <A10000>http://www.ZapSpot.com</a>.
+004993b0	PascalUnicode		<S3><cffffff>Sound effects are currently
+00499402	PascalUnicode		   <B><C00FFFF>On</b>
+00499430	PascalUnicode		   <B><C00FFFF>Off</b>
+0049945e	PascalUnicode		Toggle
+0049946c	PascalUnicode		<s3><cffffff>If ZapSpot is unable to see the internet, you may need to tell us your 'proxy server':
+00499534	PascalUnicode		<s3><cffffff>Server Name
+00499566	PascalUnicode		<s3><cffffff>Port Number
+00499598	PascalUnicode		
+0049959a	PascalUnicode		
+0049959c	PascalUnicode		
+0049959e	PascalUnicode		
+004995a0	PascalUnicode		
+004995a2	PascalUnicode		
+004995a4	PascalUnicode		
+004995a6	PascalUnicode		
+004995a8	PascalUnicode		
+004995aa	PascalUnicode		
+004995ac	PascalUnicode		
+004995b0	PascalUnicode		View All Games
+004995ce	PascalUnicode		<S2><Cffffff><b>My ZapSpot</b>
+0049960c	PascalUnicode		<s4><cffffff>Coming soon...
+00499644	PascalUnicode		<S4><cffffff>Make You Think
+0049967c	PascalUnicode		<S4><cffffff>Make You Relax
+004996b4	PascalUnicode		<S4><cffffff>Make You Sweat
+004996ec	PascalUnicode		<S2><cffffff>ZapSpot is best experienced in resolutions of 800x600 or greater.  However, we've made it possible for you to play anyway.  Please understand that some of the functionality may not be accessible in this resolution until a future version.<br><BR>Key Links:
+00499906	PascalUnicode		About ZapSpot
+00499922	PascalUnicode		Personalize ZapSpot
+0049994a	PascalUnicode		<S2><cffffff>To subscribe to ZapSpot, send mail to: subscribe@zapspot.com
+004999de	PascalUnicode		
+004999e0	PascalUnicode		
+004999e2	PascalUnicode		
+004999e4	PascalUnicode		
+004999e6	PascalUnicode		
+004999e8	PascalUnicode		
+004999f0	PascalUnicode		Zap Me A Game
+00499a0c	PascalUnicode		<s3><cffffff>ZapSpot is committed to delivering new and exciting content to you.  This is one easy way we thought to bring our content to you.  You select the game and we'll e-mail it to you.  It's that easy.<BR><BR>Please enter the e-mail to which you would like us to send the game.
+00499c46	PascalUnicode		<s3><cffffff>E-mail (e.g. dan@zapspot.com):
+00499c9e	PascalUnicode		<s3><cffffff><b><c>The server has received your request.<BR>You should receive your game shortly</c></b>
+00499d70	PascalUnicode		
+00499d72	PascalUnicode		
+00499d74	PascalUnicode		
+00499d76	PascalUnicode		
+00499d78	PascalUnicode		
+00499d7a	PascalUnicode		
+00499d7c	PascalUnicode		
+00499d7e	PascalUnicode		
+00499d80	PascalUnicode		
+00499d82	PascalUnicode		
+00499d84	PascalUnicode		
+00499d86	PascalUnicode		
+00499d88	PascalUnicode		
+00499d8a	PascalUnicode		
+00499d8c	PascalUnicode		
+00499d8e	PascalUnicode		
+00499d90	PascalUnicode		Coming Soon!
+00499daa	PascalUnicode		<s3><cffffff>Here at ZapSpot Gaming Central (ZGC, for those of you who are acronym driven) we're always looking to make more fun.  Big fun.  Exciting fun.  Casual fun.  You know, fun fun.<BR><BR>And there's more fun coming your way.  All you have to do is 'Subscribe to ZapSpot' (enter your e-mail address in the text box in the lower left corner of ZapSpot to subscribe!).<BR><BR>We're looking forward to having you as part of our team,<BR><BR>- the ZapSpot team
+0049a14a	PascalUnicode		
+0049a14c	PascalUnicode		
+0049a14e	PascalUnicode		
+0049a150	PascalUnicode		
+0049a152	PascalUnicode		
+0049a154	PascalUnicode		
+0049a156	PascalUnicode		
+0049a158	PascalUnicode		
+0049a15a	PascalUnicode		
+0049a15c	PascalUnicode		
+0049a160	PascalUnicode		
+0049a162	PascalUnicode		
+0049a164	PascalUnicode		
+0049a166	PascalUnicode		
+0049a168	PascalUnicode		
+0049a16a	PascalUnicode		
+0049a16c	PascalUnicode		
+0049a16e	PascalUnicode		
+0049a170	PascalUnicode		Zap %s to a Friend
+0049a196	PascalUnicode		<S3><cffffff>Zap %s to your friends and add some fun to their lives.<BR><BR>All you have to do is enter their e-mail names and click on the Send button.  If you'd like, you can also enter a simple message for them.<BR><BR>You can enter multiple e-mail addresses, separated by a comma.
+0049a3d0	PascalUnicode		<s3><cffffff>'From' E-mail address:
+0049a418	PascalUnicode		<s3><cffffff>'To' E-mail address :
+0049a45e	PascalUnicode		<s3><cffffff>Message:
+0049a48a	PascalUnicode		<s3><cffffff><b><c>Your friend has been zapped.<BR>Feel free to zap another!</b></c>
+0049a534	PascalUnicode		
+0049a536	PascalUnicode		
+0049a538	PascalUnicode		
+0049a53a	PascalUnicode		
+0049a53c	PascalUnicode		
+0049a53e	PascalUnicode		
+0049a540	PascalUnicode		
+0049a542	PascalUnicode		
+0049a544	PascalUnicode		
+0049a546	PascalUnicode		
+0049a548	PascalUnicode		
+0049a54a	PascalUnicode		
+0049a54c	PascalUnicode		
+0049a54e	PascalUnicode		
+0049a550	PascalUnicode		Subscribe to ZapSpot
+0049a57a	PascalUnicode		<S1><cffffff><C>That's not your e-mail!</c>
+0049a5d2	PascalUnicode		<S3><cffffff>How do we know that?  Because you typed an invalid or incomplete e-mail address.  A complete e-mail address requires an '@', a '.', and cannot contain spaces.  For example, 'joe21@zapspot.com' is a valid e-mail address.  Please reenter your e-mail in the 'Subscribe to ZapSpot' textbox to the left.<BR><BR>Thanks,<BR><BR>- the ZapSpot team
+0049a894	PascalUnicode		<S1><cffffff><c>Sending subscription information to server...</c>
+0049a918	PascalUnicode		<S3><cffffff>ZapSpot will now send your e-mail address to our servers so we can start sending you weekly bits of fun.  This action requires ZapSpot to connect to the internet and may take a little bit of time to complete (like bringing up a web page).<BR><BR>Sit back, relax, and think of all the entertainment you're about to get.<BR><BR>Back in a minute,<BR><BR>- the ZapSpot team
+0049ac16	PascalUnicode		<S1><cffffff><c>Cannot Connect to Server.</c>
+0049ac72	PascalUnicode		<S3><cffffff>We're sorry, but we cannot contact our servers, and therefore cannot send up your subscription request.  However, if you connect to the internet later on and have ZapSpot running, we will automatically send it up.<BR><BR>You can also subscribe by sending mail to subscribe@ZapSpot.com - it's easy!<BR><BR>Apologies,<BR><BR>- the ZapSpot team
+0049af38	PascalUnicode		<S1><cffffff><c>Duplicate subscription</c>
+0049af8e	PascalUnicode		<S3><cffffff>You know what?  Looking at our servers, it seems as though you have already subscribed to ZapSpot.  Don't worry, we won't double your mail load, but you'll continue to receive ZapSpot games every week.  And if you were looking for two games a week, then you'll just have to wait your turn like everyone else.<BR><BR>Enjoy,<BR><BR>- the ZapSpot team
+0049b262	PascalUnicode		<S1><cffffff><c>Subscription received</c>
+0049b2b6	PascalUnicode		<S3><cffffff>You have been successfully subscribed, and will begin receiving your free games soon.  You will be receiving a confirmation e-mail shortly.  In the meantime, feel free to continue playing!<BR><BR>Enjoy,<BR><BR>- the ZapSpot team
+0049b49a	PascalUnicode		
+0049b49c	PascalUnicode		
+0049b49e	PascalUnicode		
+0049b4a0	PascalUnicode		
+0049b4a2	PascalUnicode		
+0049b4a4	PascalUnicode		
+0049b4a6	PascalUnicode		
+0049b4a8	PascalUnicode		
+0049b4aa	PascalUnicode		
+0049b4b0	PascalUnicode		How To Play
+0049b4c8	PascalUnicode		
+0049b4ca	PascalUnicode		
+0049b4cc	PascalUnicode		
+0049b4ce	PascalUnicode		
+0049b4d0	PascalUnicode		
+0049b4d2	PascalUnicode		
+0049b4d4	PascalUnicode		
+0049b4d6	PascalUnicode		
+0049b4d8	PascalUnicode		
+0049b4da	PascalUnicode		
+0049b4dc	PascalUnicode		
+0049b4de	PascalUnicode		
+0049b4e0	PascalUnicode		
+0049b4e2	PascalUnicode		
+0049b4e4	PascalUnicode		
+0049b4e8	PascalUnicode		
+0049b4ea	PascalUnicode		
+0049b4ec	PascalUnicode		
+0049b4ee	PascalUnicode		
+0049b4f0	PascalUnicode		Install ZapSpot
+0049b510	PascalUnicode		<s1><cffffff><C>ZapSpot has been saved to your desktop</c>
+0049b586	PascalUnicode		
+0049b588	PascalUnicode		
+0049b58a	PascalUnicode		
+0049b58c	PascalUnicode		
+0049b58e	PascalUnicode		
+0049b590	PascalUnicode		
+0049b592	PascalUnicode		
+0049b594	PascalUnicode		
+0049b596	PascalUnicode		
+0049b598	PascalUnicode		
+0049b5a0	PascalUnicode		View All Games
+0049b5be	PascalUnicode		Personalize ZapSpot
+0049b5e6	PascalUnicode		About ZapSpot
+0049b602	PascalUnicode		<s4><cffffff><sh>Coming Soon...  ZapSpot news and messages.</sh>
+0049b684	PascalUnicode		<S1><Cffffff><B><SH><C>Subscribe To ZapSpot</C></SH></B>
+0049b6f6	PascalUnicode		<s4><Cffffff>Enter your e-mail to get free games every week and save ZapSpot on your computer
+0049b7b2	PascalUnicode		
+0049b7b4	PascalUnicode		Install ZapSpot
+0049b7d4	PascalUnicode		Terms of Service and Privacy Policy
+0049b81c	PascalUnicode		<s4><cffffff><sh>Please support our advertisers and keep ZapSpot free (Clicking will automatically pause your game):</sh>
+0049b910	PascalUnicode		Mail This
+0049b924	PascalUnicode		New Game
+0049b936	PascalUnicode		Pause
+0049b942	PascalUnicode		Resume
+0049b950	PascalUnicode		How To Play
+0049b968	PascalUnicode		High Scores
+0049b980	PascalUnicode		<S1><cffffff><c>Resume your game using the button to the left</c>
+0049ba04	PascalUnicode		<s3><cffffff><c>Your game is currently paused.  Jump out and go back to your game?</c>
+0049bab2	PascalUnicode		<s4><cffffff><c>Want to play when you're not connected?</c>
+0049bb2a	PascalUnicode		<s4><cffffff><c>Want to save your high scores and games?</c>
+0049bba4	PascalUnicode		
+0049bba6	PascalUnicode		
+0049bba8	PascalUnicode		
+0049bbaa	PascalUnicode		
+0049bbac	PascalUnicode		
+0049bbae	PascalUnicode		
+0049bbb0	PascalUnicode		
+0049bbb2	PascalUnicode		
+0049bbb4	PascalUnicode		
+0049bbb6	PascalUnicode		
+0049bbb8	PascalUnicode		
+0049bbba	PascalUnicode		
+0049bbc0	PascalUnicode		Send
+0049bbca	PascalUnicode		Cancel
+0049bbd8	PascalUnicode		Apply
+0049bbe4	PascalUnicode		<s3><cff0000><b>An error was encountered...<BR><cffffff>You must enter a valid e-mail of the form 'dan@zapspot.com'</b>
+0049bcd4	PascalUnicode		<s3><cff0000><b>An error was encountered...<BR><cffffff>Spaces are not valid characters in e-mail names.<BR>Please retype your e-mail name.</b>
+0049bdf4	PascalUnicode		<s3><ccc0000><b>Please wait - sending...</b>
+0049be4e	PascalUnicode		<s3><cff0000><b>Error: Cannot contact server...<BR><cffffff>ZapSpot cannot complete this action.<BR>Please try again later.</b>
+0049bf4e	PascalUnicode		
+0049bf50	PascalUnicode		
+0049bf52	PascalUnicode		
+0049bf54	PascalUnicode		
+0049bf56	PascalUnicode		
+0049bf58	PascalUnicode		
+0049bf5a	PascalUnicode		
+0049bf5c	PascalUnicode		
+0049bf5e	PascalUnicode		
+0049bf60	PascalUnicode		LANG_ENGLISH
+0049bf7a	PascalUnicode		
+0049bf7c	PascalUnicode		
+0049bf7e	PascalUnicode		
+0049bf80	PascalUnicode		
+0049bf82	PascalUnicode		
+0049bf84	PascalUnicode		
+0049bf86	PascalUnicode		
+0049bf88	PascalUnicode		
+0049bf8a	PascalUnicode		
+0049bf8c	PascalUnicode		
+0049bf8e	PascalUnicode		
+0049bf90	PascalUnicode		
+0049bf92	PascalUnicode		
+0049bf94	PascalUnicode		
+0049bf96	PascalUnicode		
+ffdff1ac	uchar[36]		
+ffdffc00	wchar16[261]		

@@ -1,0 +1,52 @@
+# Run N (fresh, not-installed state). WINEDEBUG=+timestamp,+pid,+relay,+winsock,+wininet; RelayInclude:
+L"RelayInclude" = L"wsock32.*;ws2_32.*;ShellExecuteA;ShellExecuteExA;ShellExecuteExW;RegOpenKeyExA;RegQueryValueExA;CreateFileA;CreateDirectoryA;CopyFileA;DeleteFileA;MoveFileA;CoCreateInstance;LoadLibraryA"
+# ZapSpot.exe = Wine pid 00d8, main thread 00dc. Window-proc and DLL-attach lines removed.
+571880.609:00d8:00dc:Call KERNEL32.CreateFileA(0026fb1c "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Core.ZDT",80000000,00000000,00000000,00000003,00000080,00000000) ret=0040d125
+571880.609:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=ffffffff ret=0040d125
+571880.609:00d8:00dc:Call KERNEL32.CreateFileA(0026fb1c "C:\\users\\user\\AppData\\Roaming\\ZapSpot\\System\\Outbox.ZDT",80000000,00000000,00000000,00000003,00000080,00000000) ret=0040d125
+571880.609:00d8:00dc:Ret  KERNEL32.CreateFileA() retval=ffffffff ret=0040d125
+571880.609:00d8:00dc:Call KERNEL32.LoadLibraryA(0043345c "DDraw.dll") ret=00426d13
+571880.613:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=7a530000 ret=00426d13
+571880.997:00d8:00dc:Call KERNEL32.LoadLibraryA(0043345c "DDraw.dll") ret=00408100
+571880.997:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=7a530000 ret=00408100
+571881.070:00d8:00dc:Call KERNEL32.LoadLibraryA(00432eac "DSound.dll") ret=00408eb3
+571881.072:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79f10000 ret=00408eb3
+571881.072:00d8:00dc:Call combase.CoCreateInstance(79f3b674,00000000,00000001,79f3b6c4,0026fc04) ret=79f1d3bb
+571881.292:00d8:00dc:Ret  combase.CoCreateInstance() retval=00000000 ret=79f1d3bb
+571881.292:00d8:00dc:Call combase.CoCreateInstance(79f3b674,00000000,00000001,79f3b6c4,0026fbf4) ret=79f30a0e
+571881.292:00d8:00dc:Ret  combase.CoCreateInstance() retval=00000000 ret=79f30a0e
+571881.305:00d8:00dc:Call ws2_32.WSAStartup(00000101,0026fbb4) ret=0040747c
+571881.305:00d8:00dc:trace:winsock:WSAStartup version 0x101
+571881.305:00d8:00dc:trace:winsock:WSAStartup increasing startup count to 1
+571881.305:00d8:00dc:Ret  ws2_32.WSAStartup() retval=00000000 ret=0040747c
+571881.305:00d8:00dc:Call KERNEL32.LoadLibraryA(00433368 "wininet.dll") ret=00407670
+571881.306:00d8:00dc:trace:wininet:DllMain 79D00000,1,00000000
+571881.307:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79d00000 ret=00407670
+571881.307:00d8:00dc:trace:wininet:InternetGetConnectedState (0026FB9C, 0x00000000)
+571881.307:00d8:00dc:trace:wininet:InternetGetConnectedStateExW (0026FB9C, 00000000, 0, 0x00000000)
+571881.307:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f540, in_size 56, out_buffer 0x27ea740, out_size 122628
+571881.308:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121008, in_buffer 0x4a1798, in_size 52, out_buffer 0x26f714, out_size 16
+571881.308:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f4c0, in_size 56, out_buffer 0x580a48, out_size 4356
+571881.308:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f4c0, in_size 56, out_buffer 0x580848, out_size 3844
+571881.308:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f490, in_size 56, out_buffer 0x27ea740, out_size 6660
+571881.308:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f490, in_size 56, out_buffer 0x580d38, out_size 5124
+571881.308:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f540, in_size 56, out_buffer 0x27ea740, out_size 122628
+571881.308:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121008, in_buffer 0x57fb90, in_size 52, out_buffer 0x26f714, out_size 16
+571881.309:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f4c0, in_size 56, out_buffer 0x581470, out_size 4356
+571881.309:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f4c0, in_size 56, out_buffer 0x581270, out_size 3844
+571881.309:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f490, in_size 56, out_buffer 0x27ea740, out_size 6660
+571881.309:00d8:00dc:trace:winsock:sock_ioctl handle 0xf4, code 0x121000, in_buffer 0x26f490, in_size 56, out_buffer 0x27ea740, out_size 5124
+571881.309:00d8:00dc:trace:wininet:DllMain 79D00000,0,00000000
+571881.332:00d8:00dc:Call KERNEL32.LoadLibraryA(0026cb5c "Moeboid.gam") ret=004243ef
+571881.332:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=10000000 ret=004243ef
+571881.334:00d8:00dc:Call KERNEL32.LoadLibraryA(0026e334 "Moeboid.gam") ret=004243ef
+571881.335:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=10000000 ret=004243ef
+571881.335:00d8:00dc:Call KERNEL32.LoadLibraryA(0026e334 "Moeboid.gam") ret=00424684
+571881.335:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=10000000 ret=00424684
+571881.361:00d8:00dc:Call KERNEL32.LoadLibraryA(00432894 "WinInet.dll") ret=004056c8
+571881.363:00d8:00dc:trace:wininet:DllMain 79D00000,1,00000000
+571881.363:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79d00000 ret=004056c8
+571881.363:00d8:00dc:trace:wininet:DllMain 79D00000,0,00000000
+571881.363:00d8:00dc:Call KERNEL32.LoadLibraryA(00432880 "Crypt32.dll") ret=00405702
+571881.367:00d8:00dc:Ret  KERNEL32.LoadLibraryA() retval=79ca0000 ret=00405702
+# (repeated LoadLibraryA("Moeboid.gam") pairs cut: the engine calls it about 60 times while it reads resources)

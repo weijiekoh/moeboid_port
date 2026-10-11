@@ -1,0 +1,14 @@
+key n 80
+wait 1.5
+shot 53_after_no_00
+wait 3
+shot 53_after_no_01
+desk 53_after_no_desk
+tree
+click 776 22
+wait 1.5
+desk 54_close_00
+tree
+wait 2
+desk 54_close_01
+tree

@@ -1,0 +1,17 @@
+// ZapSpot.exe RT_DIALOG IDD_TERMSOFSERVICE, language 0x0409, DLGTEMPLATEEX, 1086 bytes, file offset 0x68B60
+// Pixel values: dialog base units 6x13 (MS Sans Serif 8pt strike from sserife.fon, 96 DPI). Client area only; frame size depends on the non-client metrics.
+IDD_TERMSOFSERVICE DIALOGEX 0, 0, 279, 170
+// client px: x=0 y=0 w=419 h=276
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_POPUP   // 0x80C008C0
+CAPTION "ZapSpot Terms of Service and Privacy Policy"
+FONT 8, "MS Sans Serif", 0, 0, 0x1   // point size, face, weight, italic, charset
+BEGIN
+    CONTROL "&OK", 2002, "Button", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 101, 151, 73, 16, WS_EX_TRANSPARENT
+        // id=2002 (0x7D2) style=0x50030000 exstyle=0x00000020 | px x=152 y=245 w=110 h=26
+    CONTROL "", 2005, "Edit", ES_LEFT | ES_MULTILINE | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_GROUP | WS_TABSTOP, 5, 7, 266, 85
+        // id=2005 (0x7D5) style=0x50A30804 exstyle=0x00000000 | px x=8 y=11 w=399 h=138
+    CONTROL "Yes, I would like to receive special offers, advertisments, and promotions from ZapSpot based on my usage. (If you uncheck this option, we will need to save ZapSpot to your machine in order to keep track of your privacy preferences).", 2006, "Button", BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 7, 98, 272, 26
+        // id=2006 (0x7D6) style=0x50032403 exstyle=0x00000000 | px x=11 y=159 w=408 h=42
+    CONTROL "ZapSpot respects your online privacy. If you'd like to review our policy or understand what data is being sent to ZapSpot, please read our full Privacy Policy above.", -1, "Static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 128, 271, 23
+        // id=-1 (0xFFFFFFFF) style=0x50020000 exstyle=0x00000000 | px x=12 y=208 w=407 h=37
+END
