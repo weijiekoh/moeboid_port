@@ -45,6 +45,12 @@ typedef struct TimerSys {
     uint32_t game_base;  /* +0x18 GetTickCount base of the game clock */
     bool paused;         /* +0x1c */
     EngineTimer *polling; /* timer whose callback runs now (port only, see timer_release) */
+    /* Port extension for the modal dialogs of the engine (M4, src/engine/README.md): while `held`
+     * no pass runs (the original modal loop runs no timer pass, timing.md 2.5). */
+    bool held;
+    bool stop_pass;      /* set by timersys_suspend_pass inside a callback */
+    bool pass_open;      /* a pass was suspended at index pass_i */
+    uint32_t pass_i;
     uint32_t polls;      /* statistics: polls and fires since init (port only) */
     uint32_t fires;
 } TimerSys;
@@ -67,6 +73,14 @@ uint32_t timersys_real_time(const TimerSys *ts);
 /* Z:0x427510 GetGameTime = GetTickCount - game_base. Note: it keeps counting while paused;
  * SetPaused(0) moves game_base, so the value falls back to the pause time at resume. */
 uint32_t timersys_game_time(const TimerSys *ts);
+/* Port extension (M4 modal suspend). timersys_hold: no pass runs until timersys_resume.
+ * timersys_suspend_pass, called from inside a timer callback: the current pass ends after that
+ * callback and the list is held. timersys_resume: release the hold; if a pass was suspended, poll
+ * the rest of it (from the next index; the array may have changed, as in the original loop).
+ * Without these calls the behaviour is unchanged. */
+void timersys_hold(TimerSys *ts);
+void timersys_suspend_pass(TimerSys *ts);
+void timersys_resume(TimerSys *ts);
 /* Smallest step j > k at which a pass can fire any timer of the list, with the current state
  * (paused flag, timer fields). UINT64_MAX if none can fire. Port only: exact lower bound for
  * the jump optimisation of timing.md 9 rule 3. */

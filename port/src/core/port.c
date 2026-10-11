@@ -132,7 +132,7 @@ uint64_t core_next_event_step(const Port *p) {
         uint64_t j = vclock_first_step_at_or_after(&p->clock, head->t);
         best = j <= k ? k + 1 : j;
     }
-    if (!p->inactive) {
+    if (!p->inactive && !p->timers.held) {
         uint64_t j = timersys_next_fire_step(&p->timers, k);
         if (j < best) best = j;
     }

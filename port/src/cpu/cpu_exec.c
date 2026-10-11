@@ -50,6 +50,10 @@ void cpu_raise(Cpu *c, uint32_t kind, const char *text) {
     c->stop_req = 1;
 }
 void cpu_stop(Cpu *c) { c->stop_req = 1; }
+void cpu_suspend(Cpu *c) {
+    c->susp_req = 1;
+    c->stop_req = 1;
+}
 uint64_t cpu_insn_count(const Cpu *c) { return c->icount; }
 
 void cpu_fsin_default(Cpu *c); /* cpu_x87.c */
@@ -1438,7 +1442,7 @@ CpuRunResult cpu_run(Cpu *c, uint32_t begin, uint32_t until, uint64_t max_insn) 
         uint32_t eip = c->eip;
         if (eip == until) return CPU_RUN_UNTIL;
         if (max_insn && n >= max_insn) return CPU_RUN_COUNT;
-        if (c->stop_req) return FAULTED(c) ? CPU_RUN_FAULT : CPU_RUN_STOPPED;
+        if (c->stop_req) return FAULTED(c) ? CPU_RUN_FAULT : (c->susp_req ? CPU_RUN_SUSPENDED : CPU_RUN_STOPPED);
         if (c->m.on && eip - CPU_STUB_LO < CPU_STUB_SIZE) {
             c->blk_open = false;
             cpu_thunk(c, eip);

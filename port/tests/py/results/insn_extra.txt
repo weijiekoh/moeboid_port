@@ -3,7 +3,7 @@
 # instruction length (C decoder vs capstone) mismatches: 0
 # mismatching states: 0
 # DIV/IDIV Unicorn #DE reporting quirk states: 217
-# wall time 7.9 s
+# wall time 7.8 s
 form	instructions	states	error_states	mismatches
 adc m16,i16 pfx=66 op=81	4	80	0	0
 adc m16,i16 pfx=66 op=83	4	80	0	0

@@ -42,14 +42,41 @@ uint32_t timersys_remove(TimerSys *ts, EngineTimer *t) {
     return 0x14;
 }
 
-void timersys_run(TimerSys *ts) {
+static void timersys_run_from(TimerSys *ts, uint32_t i) {
     /* Z:0x4273d0: count, paused and the array are read again at each index. A callback that
      * removes an earlier or the current timer shifts the array, so the next timer is skipped in
      * this pass (timing.md 2.4). */
-    for (uint32_t i = 0; i < ts->count; i++) {
+    for (; i < ts->count; i++) {
         EngineTimer *t = ts->items[i];
         if (!ts->paused) timer_poll(ts, t);
         else if (t->realtime) timer_poll(ts, t);
+        if (ts->stop_pass) { /* port: modal suspend inside this callback (M4) */
+            ts->stop_pass = false;
+            ts->held = true;
+            ts->pass_open = true;
+            ts->pass_i = i;
+            return;
+        }
+    }
+}
+
+void timersys_run(TimerSys *ts) {
+    if (ts->held) return;
+    timersys_run_from(ts, 0);
+}
+
+void timersys_hold(TimerSys *ts) { ts->held = true; }
+
+void timersys_suspend_pass(TimerSys *ts) {
+    if (!ts->held) ts->stop_pass = true;
+}
+
+void timersys_resume(TimerSys *ts) {
+    if (!ts->held) return;
+    ts->held = false;
+    if (ts->pass_open) {
+        ts->pass_open = false;
+        timersys_run_from(ts, ts->pass_i + 1u);
     }
 }
 

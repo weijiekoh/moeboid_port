@@ -10,6 +10,7 @@
 #include "cpu_int.h"
 
 uint32_t k32_nargs(int stub);
+static uint32_t call_finish(Cpu *c, CpuRunResult r, uint32_t func, uint32_t esp0, const uint32_t saved[4]);
 
 /* (interface, vtable slot, argc) of every engine method the game calls: analysis/interface.tsv
  * (54 rows; argc = column argc, callee pop = 4 * argc verified there for every row). */
@@ -100,6 +101,7 @@ uint32_t cpu_call(Cpu *c, uint32_t func, uint32_t nargs, const uint32_t *args, c
     if (m->depth == 0) {
         cpu_clear_fault(c);
         c->stop_req = 0;
+        c->susp_req = 0;
     }
     if (m->depth >= CPU_MAX_DEPTH) {
         cpu_set_fault(c, CPU_FAULT_HOST, 0, 0, "guest call nesting deeper than %d", CPU_MAX_DEPTH);
@@ -119,6 +121,25 @@ uint32_t cpu_call(Cpu *c, uint32_t func, uint32_t nargs, const uint32_t *args, c
     m->depth++;
     CpuRunResult r = cpu_run(c, func, CPU_SENTINEL, m->call_limit);
     m->depth--;
+    return call_finish(c, r, func, esp0, saved);
+}
+
+/* End of a guest call: checks, ESP restore, EAX; or the suspension of a top-level call. */
+static uint32_t call_finish(Cpu *c, CpuRunResult r, uint32_t func, uint32_t esp0, const uint32_t saved[4]) {
+    CpuMachine *m = &c->m;
+    if (r == CPU_RUN_SUSPENDED) {
+        c->susp_req = 0;
+        c->stop_req = 0;
+        if (m->depth != 0) {
+            cpu_set_fault(c, CPU_FAULT_HOST, 0, 0, "guest call %08x suspended inside a nested guest call", func);
+            return 0;
+        }
+        m->suspended = true;
+        m->sus_func = func;
+        m->sus_esp0 = esp0;
+        for (int i = 0; i < 4; i++) m->sus_saved[i] = saved[i];
+        return 0;
+    }
     if (r != CPU_RUN_UNTIL) {
         if (!FAULTED(c))
             cpu_set_fault(c, CPU_FAULT_HOST, 0, 0, "guest call %08x did not return (eip=%08x, %s)", func, c->eip,
@@ -133,6 +154,26 @@ uint32_t cpu_call(Cpu *c, uint32_t func, uint32_t nargs, const uint32_t *args, c
         }
     c->r[CPU_ESP] = esp0;
     return c->r[CPU_EAX];
+}
+
+bool cpu_suspended(const Cpu *c) { return c->m.suspended; }
+
+uint32_t cpu_resume(Cpu *c, uint32_t eax) {
+    CpuMachine *m = &c->m;
+    if (!m->suspended || m->depth != 0) {
+        cpu_set_fault(c, CPU_FAULT_HOST, 0, 0, "cpu_resume without a suspended top-level call");
+        return 0;
+    }
+    m->suspended = false;
+    cpu_clear_fault(c);
+    c->stop_req = 0;
+    c->susp_req = 0;
+    c->r[CPU_EAX] = eax;
+    uint32_t saved[4] = {m->sus_saved[0], m->sus_saved[1], m->sus_saved[2], m->sus_saved[3]};
+    m->depth++;
+    CpuRunResult r = cpu_run(c, c->eip, CPU_SENTINEL, m->call_limit);
+    m->depth--;
+    return call_finish(c, r, m->sus_func, m->sus_esp0, saved);
 }
 
 uint32_t cpu_call_cdecl(Cpu *c, uint32_t func, uint32_t nargs, const uint32_t *args) {

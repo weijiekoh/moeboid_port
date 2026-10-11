@@ -74,6 +74,10 @@ typedef struct CpuMachine {
     int8_t argc_ovr[CPU_IF_COUNT][CPU_ENGINE_SLOTS]; /* -2 = use the built-in table */
     uint64_t call_limit;
     int depth;
+    /* suspended top-level cpu_call (cpu_suspend / cpu_resume) */
+    bool suspended;
+    uint32_t sus_esp0, sus_func;
+    uint32_t sus_saved[4];
 } CpuMachine;
 
 struct Cpu {
@@ -97,6 +101,7 @@ struct Cpu {
     /* run state */
     uint32_t next_eip; /* address after the current instruction */
     uint32_t stop_req;
+    uint32_t susp_req; /* cpu_suspend: the stop is a suspension */
     uint32_t ctl; /* current instruction transfers control (ends a block) */
     uint64_t icount;
     CpuFault fault;

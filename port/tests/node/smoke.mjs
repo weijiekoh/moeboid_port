@@ -54,14 +54,15 @@ async function smoke(path, traceBuild) {
   let f = ex.port_advance(1000);
   check((f & 1) === 1, "first advance reports a new frame");
   f = ex.port_advance(1100);
-  check(f === 0, "second advance: no flags");
+  // M4/M5: the engine's 50 ms render timer and the shell draw the frame (content checked by the
+  // engine and shell tests); here: opaque pixels, and the bytes stay the same across memory growth.
+  check(f === 1, "second advance: first render");
   check(ex.port_now() === 100, "100 clock steps after 100 ms (1 ms step)");
   const fb = new Uint8Array(ex.memory.buffer, ex.port_frame_ptr(), 800 * 572 * 4);
   let bad = 0;
-  for (let i = 0; i < fb.length; i += 4) {
-    if (fb[i] !== 0x33 || fb[i + 1] !== 0x33 || fb[i + 2] !== 0xcc || fb[i + 3] !== 0xff) bad++;
-  }
-  check(bad === 0, `frame buffer is #3333cc (${bad} other pixels)`);
+  for (let i = 3; i < fb.length; i += 4) if (fb[i] !== 0xff) bad++;
+  check(bad === 0, `frame buffer opaque (${bad} other pixels)`);
+  const frameHead = Array.from(fb.slice(0, 64));
   check(ex.port_cursor() === 0, "cursor 0");
   check(ex.port_sound_cmds(0) === 0, "empty sound queue");
   check(ex.port_input(1, 0x25, 0, 1150) === 1, "input queued");
@@ -88,8 +89,8 @@ async function smoke(path, traceBuild) {
   new Uint8Array(ex.memory.buffer, big, 64 * 1024 * 1024).fill(0xa5);
   ex.port_free(big);
   check(ex.port_alloc(0x7fffffff) === 0, "request above the arena limit returns 0");
-  const fb2 = new Uint8Array(ex.memory.buffer, ex.port_frame_ptr(), 4);
-  check(fb2[0] === 0x33 && fb2[2] === 0xcc, "frame intact after memory growth");
+  const fb2 = Array.from(new Uint8Array(ex.memory.buffer, ex.port_frame_ptr(), 64));
+  check(fb2.every((v, i) => v === frameHead[i]), "frame intact after memory growth");
 
   // clock step 15.625 ms on a fresh instance
   const two = await load(path, []);

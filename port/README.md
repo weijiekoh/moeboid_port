@@ -67,7 +67,10 @@ The page loads only `moeboid.wasm`, `pack.bin` and `Moeboid.gam` from its own di
 | `src/core/storage.*` | settings and high-score text blob |
 | `src/core/trace.*` | lockstep trace hashes (same as `analysis/verification/harness/mock.py`) |
 | `src/core/port.*` | `Port` state, main loop (`core_advance`), hooks |
-| `src/main.c` | wasm exports (`port_*`) |
+| `src/engine/` | engine core (M4): applet manager, the 54 interface methods, surfaces, events, sounds, settings, modal dialogs; `src/engine/README.md` |
+| `src/gfx/draw.*`, `dirty.*`, `cursor.h` | render-target draw rules, dirty rectangles, cursor ids (M4) |
+| `src/snd/` | 16-voice table (M4) |
+| `src/main.c` | wasm exports (`port_*`); `port_probe` diagnostics; `port_test_*` in the trace build |
 | `host/` | `index.html`, `style.css`, `main.ts`, `input.ts`, `storage.ts`, `audio.ts`, `serve.py` |
 
 ## Rules for other modules

@@ -2,6 +2,8 @@
  * Only the wasm build compiles this file. The single global Port is `g_port`; engine and shell
  * code receive it through the hooks (src/core/port.h), not through this symbol. */
 #include "core/port.h"
+#include "cpu/cpu.h"
+#include "engine/engine.h"
 
 #define EXPORT(name) __attribute__((export_name(#name), used))
 
@@ -71,3 +73,64 @@ EXPORT(port_trace_mode) uint32_t port_trace_mode(uint32_t mode) {
     trace_set_mode(&g_port.trace, mode);
     return 1;
 }
+
+/* Extension (M4): engine diagnostics for tests. what: 1 applet running, 2 game screen kind
+ * (1 title, 2 play, 3 credits, 0 none), 3 / 4 player x / y (float32 bits; play screen only),
+ * 5 engine renders, 6 trace ticks begun, 7 1 if a guest fault stopped the game, 8 timer pause,
+ * 9 INVINCIBLE cheat flag (G:0x1000f604), 10 lives (play screen +0x1a4). */
+EXPORT(port_probe) uint32_t port_probe(uint32_t what) {
+    Port *p = &g_port;
+    struct Cpu *c = engine_cpu(p);
+    uint32_t game = c ? cpu_rd32(c, 0x1000f5d8u) : 0u;          /* game object (G:0x100025f0) */
+    uint32_t st = game ? cpu_rd32(c, game) : 0u;                 /* current screen */
+    uint32_t vt = st ? cpu_rd32(c, st) : 0u;                     /* screen vtable (G:0x1000d150..) */
+    uint32_t pl = (vt == 0x1000d158u) ? cpu_rd32(c, st + 0xcu) : 0u;
+    switch (what) {
+    case 1: return engine_applet_running(p) ? 1u : 0u;
+    case 2: return vt == 0x1000d15cu ? 1u : vt == 0x1000d158u ? 2u : vt == 0x1000d154u ? 3u : 0u;
+    case 3: return pl ? cpu_rd32(c, pl + 0x10u) : 0u;
+    case 4: return pl ? cpu_rd32(c, pl + 0x14u) : 0u;
+    case 5: return engine_render_count(p);
+    case 6: return p->trace.tick;
+    case 7: return engine_fault_text(p)[0] ? 1u : 0u;
+    case 8: return engine_paused(p) ? 1u : 0u;
+    case 9: return c ? cpu_rd32(c, 0x1000f604u) & 0xffu : 0u;
+    case 10: return (vt == 0x1000d158u) ? cpu_rd32(c, st + 0x1a4u) : 0u;
+    default: return 0u;
+    }
+}
+
+#if PORT_TRACE
+/* Test exports of the trace build (M4 lockstep: port/tests/py/wasm_replay.mjs). Not in the release
+ * build. port_test_init = port_init with the trace on from step 0 (DllMain, Shell_StartApplet). */
+void engine_test_goto(Port *p, uint32_t ms);
+void engine_test_input(Port *p, uint32_t kind, int32_t a, int32_t b);
+void engine_test_finish_step(Port *p);
+bool engine_test_storage_set(Port *p, const char *key, const char *value);
+
+EXPORT(port_test_storage_set) uint32_t port_test_storage_set(const char *key, const char *value) {
+    return engine_test_storage_set(&g_port, key, value) ? 1u : 0u;
+}
+EXPORT(port_test_init)
+int32_t port_test_init(const uint8_t *pack, uint32_t pack_len, const uint8_t *gam, uint32_t gam_len, uint32_t seed,
+                       uint32_t trace_mode) {
+    core_init(&g_port, 0, 0xffffffffu, seed);
+    trace_set_mode(&g_port.trace, trace_mode);
+    int32_t r = core_start(&g_port, pack, pack_len, gam, gam_len);
+    engine_test_auto_dialogs(&g_port, true);
+    core_advance(&g_port, 0);
+    return r;
+}
+EXPORT(port_test_goto) void port_test_goto(uint32_t ms) { engine_test_goto(&g_port, ms); }
+EXPORT(port_test_input) void port_test_input(uint32_t kind, int32_t a, int32_t b) { engine_test_input(&g_port, kind, a, b); }
+EXPORT(port_test_finish_step) void port_test_finish_step(void) { engine_test_finish_step(&g_port); }
+void engine_test_run_through(Port *p, uint32_t ms);
+EXPORT(port_test_run_through) void port_test_run_through(uint32_t ms) { engine_test_run_through(&g_port, ms); }
+EXPORT(port_test_button_point) uint32_t port_test_button_point(const char *label, int32_t *xy) {
+    return engine_test_button_point(&g_port, label, &xy[0], &xy[1]) ? 1u : 0u;
+}
+EXPORT(port_test_answer) void port_test_answer(const char *text) { engine_test_answer(&g_port, text); }
+EXPORT(port_test_applet_event) void port_test_applet_event(int32_t arg) { engine_applet_event(&g_port, arg); }
+EXPORT(port_test_stop) void port_test_stop(void) { engine_applet_stop(&g_port); }
+EXPORT(port_test_fault) const char *port_test_fault(void) { return engine_fault_text(&g_port); }
+#endif

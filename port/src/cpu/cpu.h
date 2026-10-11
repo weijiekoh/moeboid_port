@@ -83,7 +83,8 @@ typedef enum CpuRunResult {
     CPU_RUN_UNTIL = 0, /* EIP reached the stop address */
     CPU_RUN_COUNT = 1, /* instruction limit reached */
     CPU_RUN_STOPPED = 2, /* cpu_stop() (from a hook or a bridge callback) */
-    CPU_RUN_FAULT = 3 /* see cpu_fault() */
+    CPU_RUN_FAULT = 3, /* see cpu_fault() */
+    CPU_RUN_SUSPENDED = 4 /* cpu_suspend() from engine_dispatch (modal engine call, M4) */
 } CpuRunResult;
 
 typedef enum CpuFaultKind {
@@ -240,5 +241,17 @@ uint32_t cpu_call_cdecl(Cpu *c, uint32_t func, uint32_t nargs, const uint32_t *a
 void cpu_set_call_limit(Cpu *c, uint64_t max_insn);
 /* Set a fault from engine code (for example inside engine_dispatch) and stop the run. */
 void cpu_raise(Cpu *c, uint32_t kind, const char *text);
+
+/* ---- suspend and resume (M4: modal ISystem::MessageBox / InputBox) ----
+ * cpu_suspend, called inside engine_dispatch: the thunk returns as usual (EAX = the dispatch value,
+ * replaced by cpu_resume), then the run stops and the top-level cpu_call returns 0 with
+ * cpu_suspended() true. The guest stack and registers stay as they are. Only a top-level call can
+ * suspend (nesting depth 1); a suspend inside a nested guest call faults (CPU_FAULT_HOST).
+ * cpu_resume sets EAX and continues the suspended call to its end; it returns like cpu_call
+ * (EAX, or 0 with a fault), and it can suspend again. No other guest call may run while a call is
+ * suspended (the engine guarantees it). */
+void cpu_suspend(Cpu *c);
+bool cpu_suspended(const Cpu *c);
+uint32_t cpu_resume(Cpu *c, uint32_t eax);
 
 #endif
