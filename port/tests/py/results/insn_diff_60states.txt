@@ -1,0 +1,8 @@
+# test_insn_diff.py --states 60 --seed 7 (extended run, summary only): C interpreter vs Unicorn 2.1.4, one instruction per state
+# addresses=15677 (listing 15674 + 3 split WAIT successors) forms=280 states_per_address=60 seed=7 states=940620
+# instruction length (C decoder vs capstone) mismatches: 0
+# mismatching states: 0 (unexplained)
+# FSIN/FCOS states compared against the x87 table: 120
+# DIV/IDIV states where Unicorn left EIP at the instruction without reporting #DE (counted as #DE): 541
+# control transfers to an unmapped target (Unicorn reports the fetch fault of the next instruction, same EIP): 120
+# wall time 150.2 s

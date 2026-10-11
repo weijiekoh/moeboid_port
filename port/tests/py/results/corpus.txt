@@ -1,0 +1,88 @@
+# test_corpus.py: per-tick hashes of run.py on Unicorn, C CPU via shim, C machine (native bridge)
+autopilot replay: unicorn ok 1.6s, shim ok 1.1s, native ok 0.9s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs logs/run_autopilot.ticks.tsv (expected equal): identical (2835 ticks)
+  shim vs logs/run_autopilot.ticks.tsv (expected equal): identical (2835 ticks)
+  native vs logs/run_autopilot.ticks.tsv (expected equal): identical (2835 ticks)
+tour replay --coverage: unicorn ok 5.5s, shim ok 5.1s, native ok 4.6s
+  shim vs unicorn: identical (5663 ticks)
+  native vs unicorn: identical (5663 ticks)
+  coverage lines identical: ['# coverage: game functions entered 70/72; game code bytes executed 14748/16656 (88.5%)']
+autopilot script (live generator): unicorn ok 1.7s, shim ok 1.2s, native ok 1.0s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs autopilot reference (expected equal): identical (2835 ticks)
+  shim vs autopilot reference (expected equal): identical (2835 ticks)
+  native vs autopilot reference (expected equal): identical (2835 ticks)
+replay, scribble 0x00: unicorn ok 1.6s, shim ok 1.1s, native ok 0.9s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs autopilot reference (expected equal): identical (2835 ticks)
+  shim vs autopilot reference (expected equal): identical (2835 ticks)
+  native vs autopilot reference (expected equal): identical (2835 ticks)
+replay, scribble 0xa5: unicorn ok 1.6s, shim ok 1.1s, native ok 0.9s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs autopilot reference (expected equal): identical (2835 ticks)
+  shim vs autopilot reference (expected equal): identical (2835 ticks)
+  native vs autopilot reference (expected equal): identical (2835 ticks)
+replay, scribble 0x5a: unicorn ok 1.6s, shim ok 1.1s, native ok 0.9s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs autopilot reference (expected equal): identical (2835 ticks)
+  shim vs autopilot reference (expected equal): identical (2835 ticks)
+  native vs autopilot reference (expected equal): identical (2835 ticks)
+replay, fill 0xcc: unicorn ok 1.6s, shim ok 1.1s, native ok 0.9s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs autopilot reference (expected equal): identical (2835 ticks)
+  shim vs autopilot reference (expected equal): identical (2835 ticks)
+  native vs autopilot reference (expected equal): identical (2835 ticks)
+replay, image at 0x20000000: unicorn ok 1.6s, shim ok 1.1s, native ok 0.9s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs autopilot reference (expected equal): identical (2835 ticks)
+  shim vs autopilot reference (expected equal): identical (2835 ticks)
+  native vs autopilot reference (expected equal): identical (2835 ticks)
+replay, no x87 table option: unicorn ok 1.6s, shim ok 1.0s, native ok 0.9s
+  shim vs unicorn: identical (2835 ticks)
+  native vs unicorn: identical (2835 ticks)
+  unicorn vs autopilot reference (expected equal): identical (2835 ticks)
+  shim vs autopilot reference (expected equal): identical (2835 ticks)
+  native vs autopilot reference (expected equal): identical (2835 ticks)
+replay, seed 999: unicorn ok 1.1s, shim ok 0.7s, native ok 0.6s
+  shim vs unicorn: identical (2836 ticks)
+  native vs unicorn: identical (2836 ticks)
+  unicorn vs autopilot reference (expected diverge 35): DIVERGES at tick 35
+  shim vs autopilot reference (expected diverge 35): DIVERGES at tick 35
+  native vs autopilot reference (expected diverge 35): DIVERGES at tick 35
+replay, clock step 15.625: unicorn ok 1.1s, shim ok 0.7s, native ok 0.6s
+  shim vs unicorn: identical (1828 ticks)
+  native vs unicorn: identical (1828 ticks)
+  unicorn vs autopilot reference (expected diverge 5): DIVERGES at tick 5
+  shim vs autopilot reference (expected diverge 5): DIVERGES at tick 5
+  native vs autopilot reference (expected diverge 5): DIVERGES at tick 5
+memory identity after DllMain, Shell_StartApplet, 4000 ms of the autopilot recording (emu.py machine on Unicorn vs C machine): identical
+  image: unicorn=4fbaf86a87d418a1 c=4fbaf86a87d418a1
+  heap: unicorn=76720decd4bf7075 c=76720decd4bf7075
+  va: unicorn=2f1b145e4200b518 c=2f1b145e4200b518
+  stack: unicorn=8b8de47594658b0f c=8b8de47594658b0f
+  teb: unicorn=a9a44c0e36da5a3f c=a9a44c0e36da5a3f
+  data: unicorn=d5ef5e66acb74023 c=d5ef5e66acb74023
+  fake: unicorn=dcd7b27776096823 c=dcd7b27776096823
+  regs: unicorn=(2096896, 575, 256, 0) c=(2096896, 575, 256, 0)
+  heap_next: unicorn=33573648 c=33573648
+  ticks: unicorn=(32, 4000, 0, 'e3b0c44298fc1c14', '-') c=(32, 4000, 0, 'e3b0c44298fc1c14', '-')
+memory identity after DllMain, Shell_StartApplet, 60000 ms of the autopilot recording (emu.py machine on Unicorn vs C machine): identical
+  image: unicorn=0062ba4b8a3020be c=0062ba4b8a3020be
+  heap: unicorn=0c90069a54167a36 c=0c90069a54167a36
+  va: unicorn=c8b6fddcf623bf24 c=c8b6fddcf623bf24
+  stack: unicorn=4079071f41586ef5 c=4079071f41586ef5
+  teb: unicorn=a9a44c0e36da5a3f c=a9a44c0e36da5a3f
+  data: unicorn=cf9d41cbd22382fa c=cf9d41cbd22382fa
+  fake: unicorn=cf4a0d1381c632e0 c=cf4a0d1381c632e0
+  regs: unicorn=(2096896, 575, 0, 0) c=(2096896, 575, 0, 0)
+  heap_next: unicorn=33573648 c=33573648
+  ticks: unicorn=(2832, 60000, 27, '206c5c645076e59e', '0bce85659916') c=(2832, 60000, 27, '206c5c645076e59e', '0bce85659916')
+# result: PASS; wall 51.6 s

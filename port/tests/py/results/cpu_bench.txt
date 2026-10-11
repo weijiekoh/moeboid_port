@@ -1,0 +1,15 @@
+# test_cpu_bench.py: Moeboid.gam with the C engine mock of port/tests/native/cpu_bench.c, 600000 ms game time
+native:
+  game_ms=600000 ticks=29819 engine_calls=674270 objects=5367 guest_insns=66556066 wall_s=0.910
+  ticks_per_s=32753 guest_insns_per_s=73.1M insns_per_tick=2232 realtime_factor=659
+  hash_calls=b1d69d3cc7819fc7 hash_mem=91ee0f99586d530e nested_calls=348
+native, no nested calls:
+  game_ms=600000 ticks=29819 engine_calls=674270 objects=5367 guest_insns=66545626 wall_s=0.906
+  ticks_per_s=32929 guest_insns_per_s=73.5M insns_per_tick=2232 realtime_factor=663
+  hash_calls=b1d69d3cc7819fc7 hash_mem=91ee0f99586d530e nested_calls=0
+wasm:
+  game_ms=600000 ticks=29819 engine_calls=674270 objects=5367 guest_insns=66556066 wall_s=1.331
+  ticks_per_s=22404 guest_insns_per_s=50.0M realtime_factor=451
+  hash_calls=b1d69d3cc7819fc7 hash_mem=91ee0f99586d530e nested_calls=348
+# native and wasm ticks, call hash, memory hash: identical
+# nested guest calls from engine_dispatch (strlen per ISound.Play): ticks and call hash unchanged
