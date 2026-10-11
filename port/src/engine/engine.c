@@ -513,7 +513,7 @@ static int32_t eng_init(Port *p, const uint8_t *pack, uint32_t pack_len, const u
     if (!e->dirty) return -1;
     e->p = p;
     p->engine = e;
-    e->smoothing = 1; /* decision 4b */
+    e->smoothing = p->smoothing ? 1 : 0; /* decision 4b: Port.smoothing (default 1 = Standard) */
     e->shell_key = SHELL_KEY;
     if (pack && pack_len && mpack_open(&e->pack, pack, pack_len) == 0) {
         text_fonts_load(&e->fonts, &e->pack);

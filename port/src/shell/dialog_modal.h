@@ -10,7 +10,7 @@
  *   dlgm_open_*(m, ..., now)                   opens; returns 0 or -1 (busy or data missing)
  *   dlgm_input(m, kind, a, b, now)             every host input event (also while closed: it records
  *                                              whether the last input was keyboard or mouse)
- *   dlgm_wheel(m, delta, now)                  mouse wheel (the host has no input kind for it yet)
+ *   dlgm_wheel(m, delta, now)                  mouse wheel (host input kind 10, core/input.h)
  *   dlgm_tick(m, now)                          caret blink, scroll repeat; true = redraw needed
  *   dlgm_compose(m, frame_rgba, w, h)          draws (when dirty) and copies the window into the frame
  *   dlgm_done(m) / dlgm_take(m, &res, &text)   result when the dialog ended; take closes the manager

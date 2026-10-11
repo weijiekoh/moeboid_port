@@ -20,10 +20,10 @@
 #include "../core/port.h"
 #include "dialog_modal.h"
 
-/* Proposed host input kind for the mouse wheel (core/input.h has none yet): kind 10, a = wheel delta in
+/* Host input kind for the mouse wheel: PORT_IN_WHEEL (kind 10, core/input.h), a = wheel delta in
  * WHEEL_DELTA units (120 per notch, positive = away from the user). The input hook passes it to the open
- * dialog; until the host sends it, shell_modal_wheel is the entry. */
-#define SHELL_IN_WHEEL 10u
+ * dialog; shell_modal_wheel is the direct entry for tests. */
+#define SHELL_IN_WHEEL ((uint32_t)PORT_IN_WHEEL)
 
 struct Shell {
     DlgModal modal;

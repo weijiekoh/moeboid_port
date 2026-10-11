@@ -16,7 +16,7 @@ ShellFrame *shell_frame_get(Port *p) {
         p->shell = &all->modal; /* shell_modal_init keeps an existing Port.shell */
         ShellFrame *f = &all->f;
         f->p = p;
-        f->smoothing = 1; /* decision 4b */
+        f->smoothing = p->smoothing ? 1 : 0; /* decision 4b: Port.smoothing (default 1 = Standard) */
         f->phase = SH_WAIT_START;
         f->vag_first = true;       /* DAT_004351b4 = 1 (.data) */
         f->new_game_click = false; /* DAT_00434e70 = 1 (.data): the click of Z:0x41c910 never plays */

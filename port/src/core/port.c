@@ -14,6 +14,7 @@ void core_init(Port *p, uint32_t step_index, uint32_t quirks, uint32_t seed) {
     if (p->ready) timersys_free(&p->timers);
     p->ready = false;
     p->quirks = quirks;
+    p->smoothing = 1; /* decision 4b: Standard */
     p->seed = seed;
     p->pack = p->gam = NULL;
     p->pack_len = p->gam_len = 0;

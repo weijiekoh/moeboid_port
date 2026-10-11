@@ -13,6 +13,7 @@ int32_t shell_modal_init(Port *p) {
     }
     struct Shell *s = sh(p);
     s->ok = dlgm_init(&s->modal, p->pack, p->pack_len) == 0;
+    if (s->ok) s->modal.env.smoothing = p->smoothing ? 1u : 0u; /* decision 4b: Port.smoothing */
     if (!s->ok) rt_log("shell: dialog data missing in the pack; dialogs close at once");
     return 0;
 }
@@ -111,7 +112,7 @@ void shell_modal_input(Port *p, const PortInput *ev) {
         }
         return;
     }
-    if (k == SHELL_IN_WHEEL) { /* proposed host kind, see shell_modal.h */
+    if (k == SHELL_IN_WHEEL) { /* host kind 10 (core/input.h PORT_IN_WHEEL) */
         dlgm_wheel(m, ev->a, core_ticks(p));
         return;
     }

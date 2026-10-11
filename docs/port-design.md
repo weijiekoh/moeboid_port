@@ -76,7 +76,8 @@ Guest memory is a set of host byte arrays per region (or a page table); the CPU 
 Exports (C, `src/main.c`):
 - `port_alloc(n)`, `port_init(pack_ptr, pack_len, gam_ptr, gam_len, clock_step_index, quirks)`.
 - `port_advance(wall_ms_u32)`: runs all due clock steps (timing.md 9). Returns flags: bit0 frame changed, bit1 sound commands pending, bit2 storage changed.
-- `port_input(kind, a, b, time_ms)`: kind 1 key down (a = Windows VK, b = repeat), 2 key up, 3 mouse move (a = x, b = y in frame pixels), 4 button down, 5 button up, 6 focus lost, 7 focus gained, 8 click-to-start done.
+- `port_input(kind, a, b, time_ms)`: kind 1 key down (a = Windows VK, b = repeat), 2 key up, 3 mouse move (a = x, b = y in frame pixels), 4 button down, 5 button up, 6 focus lost, 7 focus gained, 8 click-to-start done. Added in phase 2: 9 character (WM_CHAR, a = cp1252 byte), 10 wheel (a = signed delta in units of 120); bits 8-15 of kinds 4 and 5 carry the DOM button. Authoritative list: `port/src/core/input.h`.
+- Also exported (phase 2): `port_free`, `port_set_seed` (before `port_init`), `port_set_smoothing` (0 = off, 1 = Standard, default 1), `port_frame_w`, `port_frame_h`, `port_sound_cmds_max`, `port_now`, `port_trace_mode`, `port_probe` (diagnostics, cases listed in `src/main.c`); `port_test_*` only in the trace build.
 - `port_frame_ptr()`: 800x572 RGBA, row-major, top-down (may grow if dialogs need a larger canvas; constants `PORT_W`, `PORT_H`).
 - `port_cursor()`: current cursor id (0..5), host sets CSS cursor.
 - `port_sound_cmds(ptr_out)`: drains commands {op, sound_id, voice, at_ms}; sound data comes from the pack.

@@ -9,6 +9,11 @@
  *   6 focus lost   7 focus gained   8 click-to-start done
  *   9 character    a = character code (Windows-1252), b = 1 for an auto-repeat
  *                  (port extension: TranslateMessage/WM_CHAR needs the host keyboard layout)
+ *  10 mouse wheel  a = signed delta in WHEEL_DELTA units (120 per notch, positive = wheel turned away
+ *                  from the user, as WM_MOUSEWHEEL), b = 0 (port extension, host/input.ts wheelUnits).
+ *                  Only an open modal dialog reads it (src/shell/shell_modal.c: scroll the focused
+ *                  edit control); the frame and the game ignore it (the frame WndProc Z:0x4040e0 has
+ *                  no WM_MOUSEWHEEL case, audio-input.md 3.2). It does not change the key state.
  * Time stamps: host ms in the same time base as port_advance. */
 #ifndef MOEBOID_CORE_INPUT_H
 #define MOEBOID_CORE_INPUT_H
@@ -25,6 +30,7 @@ enum {
     PORT_IN_FOCUS_GAINED = 7,
     PORT_IN_START = 8,
     PORT_IN_CHAR = 9,
+    PORT_IN_WHEEL = 10,
 };
 #define PORT_IN_KIND(k) ((k) & 0xffu)
 #define PORT_IN_BUTTON(k) (((k) >> 8) & 0xffu)

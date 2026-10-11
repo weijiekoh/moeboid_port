@@ -1,0 +1,92 @@
+# port/build.sh verify (M7): every test of the port and the M7 acceptance checks
+# date 2026-10-11 14:10; tools: clang version 23.1.1; v25.2.1; Chromium 153.0.8010.52 Arch Linux; Mozilla Firefox 157.0.1
+# scenarios: port/tests/accept/scenarios.py (port/build/accept/*.scn); logs: port/build/accept/logs/
+# browser runs: tools/bin/web-test inside tools/bin/nonet (reports: port/build/browser-tests/<name>/report.json)
+Result: 74 of 74 checks PASS, 0 FAIL; wall 320 s.
+
+== build
+PASS  build.sh all                       wasm, wasm-trace, native, pylib, pack, host  [2.6 s]
+PASS  accept_drv (native driver)         built  [0.1 s]
+== native
+PASS  test_dialog                        251 passed, 0 failed  [0.1 s]
+PASS  test_dialog_modal                  61 passed, 0 failed  [0.0 s]
+PASS  test_engine                        177 passed, 0 failed  [0.0 s]
+PASS  test_engine_modal                  51 passed, 0 failed  [1.5 s]
+PASS  test_loop                          145 passed, 0 failed  [0.3 s]
+PASS  test_misc                          57 passed, 0 failed  [0.0 s]
+PASS  test_rt                            119 passed, 0 failed  [0.0 s]
+PASS  test_settings                      21 passed, 0 failed  [0.2 s]
+PASS  test_shell                         54 passed, 0 failed  [0.3 s]
+PASS  test_timers                        154 passed, 0 failed  [0.0 s]
+== node
+PASS  smoke.mjs                          smoke: 76 passed, 0 failed  [0.1 s]
+== python
+PASS  test_atlas.py                      0 failures  [1.7 s]
+PASS  test_corpus.py                     native vs unicorn: identical (1828 ticks); # result: PASS; wall 51.8 s  [51.9 s]
+PASS  test_cpu_bench.py                  # native and wasm ticks, call hash, memory hash: identical  [5.2 s]
+PASS  test_dialog.py                     test_dialog_modal: 61 passed, 0 failed; test_dialog.py: 93 passed, 0 failed  [4.3 s]
+PASS  test_engine_frame.py               result: PASS  [0.2 s]
+PASS  test_engine_lockstep.py            # result: PASS  [17.8 s]
+PASS  test_fsin_path.py                  # result: PASS wall 5.9 s  [6.0 s]
+PASS  test_gif.py                        total: 81 GIFs, 258 frames, 4052317 pixels compared twice, 0 failures  [3.3 s]
+PASS  test_insn_diff.py                  # addresses=15677 (listing 15674 + 3 split WAIT successors) forms=280 states_per_address=10 seed=1 states=156770; # mismatching states: 0 (unexplained)  [29.9 s]
+PASS  test_insn_extra.py                 # mismatching states: 0  [8.0 s]
+PASS  test_luna.py                       test_luna: 192 passed, 0 failed  [0.9 s]
+PASS  test_shell_compare.py              test_shell: 54 passed, 0 failed; test_shell_compare: pass  [2.7 s]
+PASS  test_shell_cursors.py              test_shell_cursors: pass  [0.1 s]
+PASS  test_zml.py                        result: PASS  [3.6 s]
+PASS  test_zml_wine.py                   result: PASS  [0.9 s]
+== drivers
+PASS  native timing0                     11 checkpoints, 20 sound commands  [0.7 s]
+PASS  native timing1                     11 checkpoints, 17 sound commands  [0.6 s]
+PASS  native timing2                     11 checkpoints, 17 sound commands  [0.6 s]
+PASS  native soak                        30 checkpoints, 203 sound commands  [3.2 s]
+PASS  native credits_fresh               7 checkpoints, 101 sound commands  [1.7 s]
+PASS  native credits_after               7 checkpoints, 158 sound commands  [2.2 s]
+PASS  wasm soak                          30 checkpoints, 203 sound commands  [3.7 s]
+PASS  wasm credits_after                 7 checkpoints, 158 sound commands  [2.7 s]
+== browser
+PASS  smoke                              chromium; 3 requests, 0 non-loopback; screenshot (10,10) = 51,51,204,255 ; (5,7) = 236,233,216,255  [0.8 s]
+PASS  guard_check                        blocked by design: 2 external requests aborted and reported, exit 1  [1.0 s]
+PASS  audio_wav                          chromium; 13 requests, 0 non-loopback; page: moeboid: audio: 15 sounds, 48000 Hz  [1.0 s]
+PASS  audio_sched                        chromium; 2 requests, 0 non-loopback; STOP: levels [[10,0],[140,0.5],[149,0.5],[160,0.25],[260,0],[400,0]]  [0.7 s]
+PASS  audio_focus                        chromium; 3 requests, 0 non-loopback; GLOBALFOCUS sound (CloseShell) stays audible while muted: 32000 samples, 0 differ  [1.0 s]
+PASS  input_keys                         chromium; 2 requests, 0 non-loopback; framePos at dpr 1.5, scale 2: 2400 points, 0 wrong  [0.9 s]
+PASS  engine_play                        chromium; 10 requests, 0 non-loopback; renders 70, ticks 192, lives 2  [10.1 s]
+PASS  shell_flow                         chromium; 10 requests, 0 non-loopback; dialog face ece9d8  [19.9 s]
+PASS  settings                           chromium; 50 requests, 0 non-loopback; Start label colours with smoothing off: 2 (66ccff 0)  [6.7 s]
+PASS  run_sh                             chromium; 10 requests, 0 non-loopback; black pixels in the game area during play: 44282  [8.0 s]
+PASS  timing                             chromium; 90 requests, 0 non-loopback; clock 2 rate 144 Hz: 1092 ticks, 1092 renders in 60000 ms (screen 2, fault 0); 17 sound commands; wall 0.9 s  [10.8 s]
+PASS  soak                               chromium; 10 requests, 0 non-loopback; 30 min of virtual time in 4.8 s; 203 sound commands; 2 log lines (0 not allowed)  [5.8 s]
+PASS  run_sh_firefox                     firefox; 10 requests, 0 non-loopback; black pixels in the game area during play: 44282  [9.9 s]
+PASS  timing_firefox                     firefox; 90 requests, 0 non-loopback; clock 2 rate 144 Hz: 1092 ticks, 1092 renders in 60000 ms (screen 2, fault 0); 17 sound commands; wall 1.0 s  [18.3 s]
+PASS  soak_rt                            chromium; 10 requests, 0 non-loopback; 99 input actions in 60 s; clock 63521 ms; 18 sound commands; 0 log lines  [64.4 s]
+== (a) timing
+PASS  chromium clock 0                   clock 1 ms (50 Hz): 60 s game ticks/renders native 3000/1200, expected 3000/1200; browser 30 Hz 3000/1200, 60 Hz 3000/1200, 144 Hz 3000/1200; 11 checkpoint frame hashes and 20 sound commands equal native
+PASS  chromium clock 1                   clock 15.625 ms (32 Hz): 60 s game ticks/renders native 1920/960, expected 1920/960; browser 30 Hz 1920/960, 60 Hz 1920/960, 144 Hz 1920/960; 11 checkpoint frame hashes and 17 sound commands equal native
+PASS  chromium clock 2                   clock 54.925 ms (18.2 Hz): 60 s game ticks/renders native 1092/1092, expected 1092/1092..1093/1093; browser 30 Hz 1092/1092, 60 Hz 1092/1092, 144 Hz 1092/1092; 11 checkpoint frame hashes and 17 sound commands equal native
+PASS  firefox clock 0                    clock 1 ms (50 Hz): 60 s game ticks/renders native 3000/1200, expected 3000/1200; browser 30 Hz 3000/1200, 60 Hz 3000/1200, 144 Hz 3000/1200; 11 checkpoint frame hashes and 20 sound commands equal native
+PASS  firefox clock 1                    clock 15.625 ms (32 Hz): 60 s game ticks/renders native 1920/960, expected 1920/960; browser 30 Hz 1920/960, 60 Hz 1920/960, 144 Hz 1920/960; 11 checkpoint frame hashes and 17 sound commands equal native
+PASS  firefox clock 2                    clock 54.925 ms (18.2 Hz): 60 s game ticks/renders native 1092/1092, expected 1092/1092..1093/1093; browser 30 Hz 1092/1092, 60 Hz 1092/1092, 144 Hz 1092/1092; 11 checkpoint frame hashes and 17 sound commands equal native
+== (b) sound
+PASS  PLAY at_ms = game Play call time   30 min soak: 66 game PLAY commands, 66 at the clock ms of their ISound.Play call (trace), 0 mismatches; 99 Play calls, 33 without PLAY (33 with the Sound setting off, 0 with 16 busy voices); platform sounds (ids 12..16) 137; trace on/off same commands: True  [3.3 s]
+PASS  wasm = native commands             203 commands (op, id, voice, at_ms) of the 30 min soak equal in moeboid.wasm and native
+PASS  page = native commands             162 commands drained by the page host in 9 runs (3 clocks x 30/60/144 Hz) equal native
+== (c) network
+PASS  web-test runs: loopback only       14 browser runs, 313 requests, 0 to a host other than 127.0.0.1
+PASS  static scan of host and page       15 files (port/host, port/build/web): no fetch to another origin, XMLHttpRequest, WebSocket, EventSource, sendBeacon, window.open, external href/src, service worker
+PASS  shipped page files                 port/build/web = 10 files
+PASS  wasm imports                       moeboid.wasm imports ['env.host_log:function']
+PASS  CSP meta and header                meta: default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src blob: data:; connect-src 'self'; base-uri 'none'; form-action 'none'; serve.py sends the CSP header (run_sh browser test reads it: yes); serve.py binds 127.0.0.1 only: True
+PASS  guest imports                      Moeboid.gam imports ['KERNEL32.dll'] only (KERNEL32 stubs)
+== (d) soak
+PASS  native 30 min                      30 checkpoints, 12292 game calls, 4407 renders, 203 sound commands; faults 0; engine log lines 2 (original Error() diagnostics 2, other 0); minute samples title/play/credits/none 9/12/0/9; heap in use MiB at min 5:99.3, 10:9.4, 15:9.5, 20:99.3, 25:99.3, 30:99.3; high-water 103.6 -> 104.3 MiB
+PASS  browser 30 min (fake rAF 60 Hz)    wall 4.8 s; faults 0: True; log lines 2 (other 0); wasm memory MiB at min 1:110.9, 6:111.0, 11:111.0, 16:111.0, 21:111.5, 26:111.5, end 111.5
+PASS  browser real time 60 s             99 Playwright input actions, real requestAnimationFrame; clock 63521 ms; faults 0; log lines 0; wasm memory MiB 110.9; JS heap MiB 4.5
+== (e) determinism
+PASS  native = wasm (node), 30 min soak  30 checkpoints: frame SHA-256 and 11 probe values equal
+PASS  native = page (Chromium)           30 checkpoints of the soak in the real page (fake rAF 60 Hz): frame SHA-256 and probes equal native
+PASS  frame hashes (first, last)         5ab7b8912f2da641.., a84e344dac499702..
+== credits
+PASS  CREDITS from a fresh DLL           typed 'credits' on the title: credits screen for 60 s, 3000 game calls, no fault, 0 log lines
+PASS  CREDITS after a game (original bug) precondition (title after game over, DAT_1000f5e4 = 4000b50 dangling): True; guest fault at G:0x10001401 (CMP EDX,[ECX], ECX = freed play screen +0xc) first seen at 1226000 ms; native = wasm: True. Expected: the original game reads the freed play screen here (use-after-free, G:0x100013f3..0x10001401); the port reproduces it (see docs/exactness.md)

@@ -9,6 +9,9 @@
 #   test        native, pylib, wasm, wasm-trace, then every test: build/native/test_*,
 #               tests/node/*.mjs (argument: build/moeboid.wasm), tests/py/test_*.py (python -I -B)
 #   all         wasm wasm-trace native pylib pack host
+#   verify      M7 suite: all, every test (native, node, python, browser through tools/bin/web-test) and
+#               the acceptance checks; writes port/tests/results/verify.txt (port/tests/accept/verify.py;
+#               VERIFY_RT_SOAK_S = seconds of the real-time browser soak, default 600)
 #   clean       remove port/build/
 # Sources: every *.c below port/src/<module>/ for the modules in PORT_MODULES (default:
 # rt core cpu gfx text engine shell snd); a new file needs no change here.
@@ -213,6 +216,7 @@ main() {
         host) target_host ;;
         pack) target_pack ;;
         test) target_test ;;
+        verify) (cd "$ROOT" && "$PYTHON" -I -B "$PORT/tests/accept/verify.py") ;;
         all) target_wasm; target_wasm_trace; target_native; target_pylib; target_pack; target_host ;;
         clean) rm -rf "$OUT" ;;
         *) log "unknown target: $t"; exit 2 ;;

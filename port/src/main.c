@@ -19,6 +19,12 @@ EXPORT(port_free) void port_free(void *p) { rt_free(p); }
 static uint32_t g_seed = MSVC_RAND_DEFAULT_STATE;
 EXPORT(port_set_seed) void port_set_seed(uint32_t seed) { g_seed = seed; }
 
+/* Extension: font smoothing (decision 4b; the host settings of the click-to-start page). 1 = Standard
+ * (default: grey text where the font's gasp table allows it), 0 = off (monochrome text). Call before
+ * port_init; the engine, frame and dialog text read it once at start. */
+static uint32_t g_smoothing = 1u;
+EXPORT(port_set_smoothing) void port_set_smoothing(uint32_t on) { g_smoothing = on ? 1u : 0u; }
+
 /* The pack and Moeboid.gam blocks must stay allocated (the engine reads them later).
  * clock_step_index: 0 = 1 ms, 1 = 15.625 ms, 2 = 54.925 ms (3 = 10.0144 ms, tests only).
  * Returns 0 or the first error of an init hook. Call once per module instance. */
@@ -26,6 +32,7 @@ EXPORT(port_init)
 int32_t port_init(const uint8_t *pack, uint32_t pack_len, const uint8_t *gam, uint32_t gam_len, uint32_t clock_step_index,
                   uint32_t quirks) {
     core_init(&g_port, clock_step_index, quirks, g_seed);
+    g_port.smoothing = (uint8_t)g_smoothing;
     return core_start(&g_port, pack, pack_len, gam, gam_len);
 }
 
@@ -77,7 +84,10 @@ EXPORT(port_trace_mode) uint32_t port_trace_mode(uint32_t mode) {
 /* Extension (M4): engine diagnostics for tests. what: 1 applet running, 2 game screen kind
  * (1 title, 2 play, 3 credits, 0 none), 3 / 4 player x / y (float32 bits; play screen only),
  * 5 engine renders, 6 trace ticks begun, 7 1 if a guest fault stopped the game, 8 timer pause,
- * 9 INVINCIBLE cheat flag (G:0x1000f604), 10 lives (play screen +0x1a4). */
+ * 9 INVINCIBLE cheat flag (G:0x1000f604), 10 lives (play screen +0x1a4); M7 acceptance drivers
+ * (port/tests/accept): 11 1 if the game waits for a dialog, 13 the game's play-screen pointer
+ * DAT_1000f5e4 (G:0x1000f5e4), 14 / 15 heap bytes in use / carved (rt_heap_stats). No shell symbol
+ * here: the engine-only test link (port/tests/py/enginedrv.py) has no src/shell. */
 EXPORT(port_probe) uint32_t port_probe(uint32_t what) {
     Port *p = &g_port;
     struct Cpu *c = engine_cpu(p);
@@ -96,6 +106,14 @@ EXPORT(port_probe) uint32_t port_probe(uint32_t what) {
     case 8: return engine_paused(p) ? 1u : 0u;
     case 9: return c ? cpu_rd32(c, 0x1000f604u) & 0xffu : 0u;
     case 10: return (vt == 0x1000d158u) ? cpu_rd32(c, st + 0x1a4u) : 0u;
+    case 11: return engine_dialog_waiting(p) ? 1u : 0u;
+    case 13: return c ? cpu_rd32(c, 0x1000f5e4u) : 0u;
+    case 14:
+    case 15: {
+        RtHeapStats hs;
+        rt_heap_stats(&hs);
+        return what == 14 ? hs.in_use : hs.top;
+    }
     default: return 0u;
     }
 }

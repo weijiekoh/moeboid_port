@@ -74,6 +74,8 @@ struct Cpu;    /* M2 */
 struct Port {
     bool ready;
     uint32_t quirks; /* port_settings.quirks bits (port-design.md section 3), default all on */
+    uint8_t smoothing; /* font smoothing: 1 Standard (decision 4b, default), 0 off; read by the engine and
+                        * shell init (core_init sets 1; port_init copies port_set_smoothing) */
     uint32_t seed;   /* engine srand seed (original: timeGetTime at start, Z:0x403dc4) */
     const uint8_t *pack;
     uint32_t pack_len;

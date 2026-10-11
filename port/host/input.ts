@@ -14,7 +14,7 @@ export const IN_FOCUS_LOST = 6;
 export const IN_FOCUS_GAINED = 7;
 export const IN_START = 8;
 export const IN_CHAR = 9;
-// Port extension (M5a/M5b, src/shell/shell_modal.h SHELL_IN_WHEEL): WM_MOUSEWHEEL for the modal
+// Port extension (src/core/input.h PORT_IN_WHEEL = 10): WM_MOUSEWHEEL for the modal
 // dialogs; a = signed delta in WHEEL_DELTA units (120 per notch, positive = wheel away from the user).
 export const IN_WHEEL = 10;
 

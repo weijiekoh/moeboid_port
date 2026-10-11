@@ -128,3 +128,7 @@ playwright-core 1.64.0 expects Chromium 156; it drives the system Chromium 153 w
 - After `kill -9` of Xvfb, `/tmp/.XN-lock` and `/tmp/.X11-unix/XN` stay; `xvfb-run-wine` then skips `:N`. Remove them by hand.
 - No splash capture was tried on Xvfb (the `:0` runs gave black splash captures).
 - Wine prints `MESA-EGL` warnings at start (no DRI on Xvfb); harmless with `renderer=no3d`.
+
+## Firefox (added in M7)
+
+`WEB_TEST_BROWSER=firefox tools/bin/web-test SCRIPT.mjs` drives the installed `/usr/bin/firefox` through playwright-core channel `moz-firefox` (WebDriver BiDi), headless, inside nonet. No browser download.

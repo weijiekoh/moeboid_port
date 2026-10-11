@@ -6,7 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import assert from "node:assert/strict";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { chromium } from "playwright-core";
+import { chromium, firefox } from "playwright-core";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PORT_DIR = path.resolve(HERE, "../..");
@@ -101,13 +101,27 @@ try {
   report.baseURL = `http://127.0.0.1:${server.address().port}`;
 
   const extra = (process.env.WEB_TEST_ARGS ?? "").split(/\s+/).filter(Boolean);
-  browser = await chromium.launch({
-    executablePath: process.env.WEB_TEST_CHROMIUM ?? "/usr/bin/chromium",
-    headless: true,
-    chromiumSandbox: process.env.WEB_TEST_NO_SANDBOX !== "1",
-    args: ["--disable-gpu", "--no-proxy-server", "--disable-component-update", ...extra],
-  });
-  report.chromium = browser.version();
+  // WEB_TEST_BROWSER=firefox (M7): the installed Firefox through WebDriver BiDi (playwright-core channel
+  // "moz-firefox"; no browser download). Default: the installed Chromium.
+  const useFirefox = process.env.WEB_TEST_BROWSER === "firefox";
+  if (useFirefox) {
+    browser = await firefox.launch({
+      channel: "moz-firefox",
+      executablePath: process.env.WEB_TEST_FIREFOX ?? "/usr/bin/firefox",
+      headless: true,
+      args: extra,
+      firefoxUserPrefs: { "network.proxy.type": 0, "app.update.enabled": false, "browser.safebrowsing.malware.enabled": false,
+                          "browser.safebrowsing.phishing.enabled": false, "datareporting.policy.dataSubmissionEnabled": false },
+    });
+  } else {
+    browser = await chromium.launch({
+      executablePath: process.env.WEB_TEST_CHROMIUM ?? "/usr/bin/chromium",
+      headless: true,
+      chromiumSandbox: process.env.WEB_TEST_NO_SANDBOX !== "1",
+      args: ["--disable-gpu", "--no-proxy-server", "--disable-component-update", ...extra],
+    });
+  }
+  report.chromium = `${useFirefox ? "firefox" : "chromium"} ${browser.version()}`;
   const context = await browser.newContext({
     viewport: { width: 1024, height: 768 }, deviceScaleFactor: 1, serviceWorkers: "block",
   });
@@ -169,7 +183,7 @@ for (const e of report.pageErrors) console.log(`PAGE ERROR: ${e.message}`);
 for (const v of report.violations) console.log(`NETWORK VIOLATION (${v.kind}): ${v.url}`);
 if (report.error) console.log(`ERROR: ${report.error}`);
 const hosts = [...new Set(report.requests.map((r) => new URL(r.url).host || new URL(r.url).protocol))];
-console.log(`chromium ${report.chromium}; ${report.requests.length} requests (hosts: ${hosts.join(", ") || "none"}); ` +
+console.log(`${report.chromium}; ${report.requests.length} requests (hosts: ${hosts.join(", ") || "none"}); ` +
             `${report.console.length} console messages; report ${path.join(opt.out, "report.json")}`);
 console.log(report.ok ? "PASS" : "FAIL");
 process.exit(report.ok ? 0 : 1);

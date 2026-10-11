@@ -46,14 +46,32 @@ It prints `test programs: N, failed: F` and exits non-zero on a failure.
 
 ## Run locally
 
+Inputs (phase 1 outputs, read-only): `extracted/Moeboid.gam`, `extracted/ZapSpot.exe`, `fonts/` (Arial 2.82, `sserife.fon`, the user's `tahoma.ttf`, `tahomabd.ttf`, `trebucbd.ttf`, `luna.msstyles`). Browser: Chromium or Firefox (verified: headless Chromium 153 and Firefox 157, `port/tests/browser/run_sh.mjs`).
+
 ```
-port/build.sh wasm pack host
-port/serve.sh 8000         # http://127.0.0.1:8000/  (127.0.0.1 only)
+source /home/user/moeboid_port/tools/env.sh
+cd /home/user/moeboid_port
+port/run.sh                # builds what is missing (port/build.sh all), serves port/build/web
+                           # prints: serving .../port/build/web at http://127.0.0.1:8000/
+port/run.sh 8080           # another port; port/run.sh 0 lets the kernel choose one
 ```
 
-Open `http://127.0.0.1:8000/` and click "Click to start". The click creates the AudioContext. Clock step setting (decision 2): `?clock=0` (1 ms, default), `?clock=1` (15.625 ms), `?clock=2` (54.925 ms).
+Open the printed URL (`http://127.0.0.1:8000/`), then click "Click to start". The server binds to 127.0.0.1 only and stops with Ctrl+C. After a change of the sources, run `port/build.sh all` (run.sh rebuilds only when a page file is missing).
 
 The page loads only `moeboid.wasm`, `pack.bin` and `Moeboid.gam` from its own directory. The Content-Security-Policy (meta tag in `host/index.html`, also sent as a header by `host/serve.py`) blocks every other origin.
+
+**Settings** (click-to-start page, "Settings"; kept in `localStorage` key `moeboid.settings.v1`, read at page load, applied at `port_init`; a change takes effect after a page reload, the page states this rule):
+- Clock model (decision 2): Windows 2000-like 1 ms step, 50 Hz game ticks (default); Windows XP-like 15.625 ms, 32 Hz; Windows 98-like 54.925 ms, 18.2 Hz. The URL parameter `?clock=0|1|2` overrides the stored model for one load.
+- Font smoothing (decision 4b): Standard (default; grey text where the font's `gasp` table allows it) or Off. Export `port_set_smoothing` before `port_init`; `Port.smoothing` reaches engine, frame and dialog text.
+- Engine quirks (decision 10, provisional: on): one switch per `port_settings.quirks` bit (now `ENG_QUIRK_DETACH_DIRTY`). Game quirks are in the original game code and always stay.
+
+## Verify
+
+```
+port/build.sh verify       # about 15 min; VERIFY_RT_SOAK_S=60 port/build.sh verify for a short real-time soak
+```
+
+Builds everything, runs every native, node, Python and browser test (browser tests through `tools/bin/web-test`, inside `tools/bin/nonet`; Firefox runs too when `/usr/bin/firefox` exists) and the M7 acceptance checks, and writes `port/tests/results/verify.txt` (one PASS/FAIL line per check with its numbers). Sources: `tests/accept/verify.py` (orchestrator), `tests/accept/scenarios.py` (input recordings), `tests/native/accept_drv.c` (native driver), `tests/accept/wasm_drv.mjs` (moeboid.wasm in node), `tests/browser/pagedrv.mjs` (the real page with a fake `requestAnimationFrame`), `tests/browser/{timing,soak,soak_rt,settings,run_sh}.mjs`. Exactness summary: `docs/exactness.md`.
 
 ## Source map
 
@@ -71,7 +89,9 @@ The page loads only `moeboid.wasm`, `pack.bin` and `Moeboid.gam` from its own di
 | `src/gfx/draw.*`, `dirty.*`, `cursor.h` | render-target draw rules, dirty rectangles, cursor ids (M4) |
 | `src/snd/` | 16-voice table (M4) |
 | `src/main.c` | wasm exports (`port_*`); `port_probe` diagnostics; `port_test_*` in the trace build |
-| `host/` | `index.html`, `style.css`, `main.ts`, `input.ts`, `storage.ts`, `audio.ts`, `serve.py` |
+| `host/` | `index.html`, `style.css`, `main.ts`, `input.ts`, `storage.ts`, `audio.ts`, `settings.ts` (click-to-start settings, M7), `serve.py` |
+| `run.sh` | local run: build what is missing, serve `build/web` on 127.0.0.1 (M7) |
+| `tests/accept/` | M7 verification suite (`verify.py`), scenarios, wasm driver |
 
 ## Rules for other modules
 
