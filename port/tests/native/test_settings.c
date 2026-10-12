@@ -1,4 +1,4 @@
-/* Font smoothing setting (M7; decision 4b, host settings of the click-to-start page).
+/* Font smoothing setting (M7; decision 4b; the page host uses Standard).
  * Port.smoothing (core_init: 1 = Standard; port_init copies port_set_smoothing) reaches the three text
  * paths: engine text (game, IImage DrawText/DrawZML), shell frame text (rail, menu, ZML pages) and the
  * dialogs (Luna caption). The test runs the full port twice (smoothing 1 and 0) to the title frame and

@@ -1,7 +1,7 @@
 // M7 local run: the page as served by port/run.sh (host/serve.py), not by the web-test server.
 // The script starts `port/run.sh 0` (kernel-chosen port on 127.0.0.1) inside the same network namespace,
 // reads the printed URL, and checks: HTTP headers (Content-Security-Policy, nosniff), the CSP meta tag,
-// click-to-start, the splash, the title frame in the canvas, a game start with the keyboard and mouse,
+// start without a click, the splash, the title frame in the canvas, a game start with the keyboard and mouse,
 // no guest fault, no page error. Works with Chromium (default) and Firefox (WEB_TEST_BROWSER=firefox,
 // run.mjs). Run: tools/bin/web-test --timeout 120 port/tests/browser/run_sh.mjs
 import { spawn } from "node:child_process";
@@ -34,6 +34,8 @@ export default async function ({ page, browser, assert, log }) {
   const { proc, url } = await startServer(log);
   try {
     log(`browser ${browser.browserType().name()} ${browser.version()}; page ${url}`);
+    // The page starts the port without a click; the host logs its settings just before port_init.
+    const started = page.waitForEvent("console", { predicate: (m) => m.text().startsWith("moeboid: settings:"), timeout: 30000 });
     const resp = await page.goto(url);
     assert.equal(resp.status(), 200);
     const h = await resp.allHeaders();
@@ -43,8 +45,7 @@ export default async function ({ page, browser, assert, log }) {
     assert.equal(h["x-content-type-options"], "nosniff");
     const meta = await page.getAttribute('meta[http-equiv="Content-Security-Policy"]', "content");
     assert.match(meta ?? "", /^default-src 'none';/);
-    await page.waitForFunction(() => !document.getElementById("start").disabled, null, { timeout: 30000 });
-    await page.click("#start");
+    await started;
     const px = (x, y) =>
       page.evaluate(([x, y]) => Array.from(document.getElementById("screen").getContext("2d").getImageData(x, y, 1, 1).data).slice(0, 3), [x, y]);
     await page.waitForTimeout(700);

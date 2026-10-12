@@ -5,7 +5,7 @@
 <!--
   Content-Security-Policy (the same policy also comes as an HTTP header from host/serve.py):
   default-src 'none'            everything not listed below is blocked (fonts, frames, workers, media, objects)
-  script-src 'self'             the page scripts main.js, input.js, storage.js, audio.js, settings.js from this origin
+  script-src 'self'             the page scripts main.js, input.js, storage.js, audio.js from this origin
              'wasm-unsafe-eval' WebAssembly.compile/instantiate of moeboid.wasm (no JavaScript eval)
   style-src 'self'              style.css only; no inline style attributes (script sets CSSOM properties)
   img-src blob: data:           cursor images made from pack data (M6) and the empty data: icon below
@@ -24,18 +24,6 @@
 <body>
 <div id="stage">
   <canvas id="screen" width="800" height="572" tabindex="0"></canvas>
-  <div id="panel">
-    <button id="start" type="button" disabled>Loading</button>
-    <section id="settings" aria-label="Settings">
-      <p id="settings-current" class="small"></p>
-      <p class="small">Settings are kept in this browser only. A change takes effect after a page reload.</p>
-      <details id="settings-details">
-        <summary>Settings</summary>
-        <div id="settings-controls"></div>
-      </details>
-      <p id="settings-note" class="small" role="status"></p>
-    </section>
-  </div>
   <p id="status" role="status"></p>
 </div>
 </body>

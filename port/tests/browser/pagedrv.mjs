@@ -4,8 +4,8 @@
 // - a fake requestAnimationFrame: the test calls the page's frame callback with chosen timestamps, so
 //   the host's port_advance sees an exact 30, 60 or 144 Hz frame clock (and no real frame runs);
 // - a wrapper around WebAssembly.instantiate: the host gets a copy of the exports in which
-//   port_set_seed uses the scenario seed, port_input records every host input (the click-to-start time
-//   is the scenario time 0), port_sound_cmds records every sound command the host drains, and
+//   port_set_seed uses the scenario seed, port_input records every host input (the start time, input
+//   kind 8, is the scenario time 0), port_sound_cmds records every sound command the host drains, and
 //   env.host_log is counted.
 // Scenario inputs go straight to port_input (time stamp = click time + scenario ms) before the first
 // frame at or after their time: the host frame rule of port/tests/native/accept_drv.c.
@@ -75,13 +75,11 @@ export async function instrument(page, seed, fakeRaf = true) {
   }, { seedValue: seed, fake: fakeRaf });
 }
 
-// Open the page, click "Click to start", wait until the host runs (first frame requested).
+// Open the page (it starts the port without a click), wait until the host runs (first frame requested).
 export async function start(page, url) {
   const resp = await page.goto(url);
   if (resp.status() !== 200) throw new Error(`${url}: HTTP ${resp.status()}`);
   // interval polling: the default polling uses requestAnimationFrame, which the fake one replaces
-  await page.waitForFunction(() => !document.getElementById("start").disabled, null, { timeout: 20000, polling: 50 });
-  await page.click("#start");
   await page.waitForFunction(
     () => window.__drv && window.__drv.startT !== null && (window.__rafQueue.length > 0 || window.__drv.ex !== null),
     null,

@@ -26,8 +26,6 @@ export default async function ({ page, baseURL, assert, log }) {
   });
   const resp = await page.goto(`${baseURL}/index.html`);
   assert.equal(resp.status(), 200);
-  await page.waitForFunction(() => !document.getElementById("start").disabled, null, { timeout: 20000 });
-  await page.click("#start");
   const probe = (what) => page.evaluate((w) => window.__moeboid.exports.port_probe(w), what);
   await page.waitForFunction(() => window.__moeboid && window.__moeboid.exports.port_probe(2) === 1 &&
                              window.__moeboid.exports.port_probe(5) >= 1, null, { timeout: 15000 });

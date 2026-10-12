@@ -26,7 +26,7 @@ Date: 2026-10-11 (M7). Labels: **proven** = a test compares the port with an ind
 | Determinism | same input recording | verify (e) | 30 min random-input soak: native = wasm = page at 30 checkpoints (frame SHA-256 and 11 probe values); 203 sound commands equal |
 | Soak | random valid input, fixed seed | verify (d) | 30 min native and 30 min page (virtual time), 10 min real time: no guest fault, no engine error, heap and wasm memory bounded |
 | No network | web-test guard, static scan | verify (c) | 0 non-loopback requests in every browser run; no XMLHttpRequest, WebSocket, EventSource, sendBeacon, window.open, external href/src, service worker; wasm imports only `env.host_log`; CSP meta and header; Moeboid.gam imports only KERNEL32 |
-| Font smoothing setting | grey vs mono atlases | `tests/native/test_settings.c`, `tests/browser/settings.mjs` | Standard: 17 colours in the "Start" label, Off: 2; engine, frame and dialog text follow the setting |
+| Font smoothing setting | grey vs mono atlases | `tests/native/test_settings.c`, `tests/browser/autostart.mjs` (Standard only; the page has no setting) | Standard: 17 colours in the "Start" label, Off: 2; engine, frame and dialog text follow the setting |
 
 ## 2. Exact by construction
 

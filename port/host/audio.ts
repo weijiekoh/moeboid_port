@@ -1,6 +1,8 @@
 // Web Audio host (M6; analysis/audio-input.md 2.3 to 2.7 and 4, decisions.md item 12).
 //
-// - One AudioContext at the device rate, created and resumed in the click-to-start gesture.
+// - One AudioContext at the device rate, created at page start. Without a user gesture the
+//   browser keeps it suspended; the first key press or mouse button press in the page resumes it.
+//   Sound commands made before the context runs are dropped (createAudio).
 // - Every sound of SOUND_TABLE is decoded once from pack.bin with the engine RIFF rules (only
 //   the first `fmt ` and the first `data` chunk count, audio-input.md 2.3) into an AudioBuffer
 //   at the WAV's own rate (8000 or 11025 Hz); the browser resamples to the device rate.
@@ -251,16 +253,33 @@ export function createPlayer(ctx: BaseAudioContext | null): PortAudio {
   };
 }
 
-// Call inside the click-to-start gesture handler: browsers allow audio only after a gesture.
-// No sampleRate option: the context runs at the device rate (decision 12).
+// Call at page start. Browsers start an AudioContext made outside a user gesture in the
+// "suspended" state and allow resume() only inside a gesture (keydown, or a mouse or pen press).
+// Commands that arrive while the context is not running are dropped: a suspended context would
+// play them all at once on resume. No sampleRate option: the context runs at the device rate
+// (decision 12).
 export function createAudio(): PortAudio {
   let ctx: AudioContext | null = null;
   try {
     ctx = new AudioContext();
-    void ctx.resume().catch((err: unknown) => console.warn("moeboid: AudioContext.resume failed", err));
   } catch (err) {
     console.warn("moeboid: no Web Audio", err);
-    ctx = null;
+    return createPlayer(null);
   }
-  return createPlayer(ctx);
+  const c = ctx;
+  const player = createPlayer(c);
+  const gestures = ["keydown", "pointerdown", "pointerup"];
+  const resume = (): void => {
+    void c.resume().catch((err: unknown) => console.warn("moeboid: AudioContext.resume failed", err));
+  };
+  for (const g of gestures) window.addEventListener(g, resume, true);
+  c.addEventListener("statechange", () => {
+    if (c.state === "running") for (const g of gestures) window.removeEventListener(g, resume, true);
+  });
+  resume(); // runs at once where the browser allows audio without a gesture
+  const commands = player.commands;
+  player.commands = (words: Uint32Array, count: number, nowMs: number): void => {
+    if (c.state === "running") commands(words, count, nowMs);
+  };
+  return player;
 }

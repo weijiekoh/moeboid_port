@@ -126,3 +126,11 @@
 > is it ready to run yet?
 
 **Summary:** Yes. A smoke test started `port/run.sh` on a spare port: the server served the page, the wasm module, the resource pack and `Moeboid.gam` (HTTP 200) with the Content-Security-Policy header, and then stopped cleanly. Run it with `source tools/env.sh; port/run.sh` and open http://127.0.0.1:8000/ in Chromium or Firefox. Decisions #10, #11, the CREDITS crash and the crash-record deletion still wait for the user; none of them blocks a run.
+
+## 16
+
+> remove the loading page (the one you added with the "Click to start" button)
+>
+> keep the default settings - it's okay for them to not be configurable at this time
+
+**Summary:** Removed the start page and the settings form (`port/host/settings.ts` deleted). The game now starts at page load with fixed default settings: 1 ms clock step (50 Hz), Standard font smoothing, engine quirks on. Browsers block audio before a user gesture, so sound starts at the first key or mouse press in the page, and sounds before that are dropped; a page that loads without focus now reports focus loss to the engine. Updated the browser tests (new `autostart.mjs` replaces `settings.mjs`), the README and the decisions. `port/build.sh verify` passes 74 of 74 checks, including the 10-minute real-time run.

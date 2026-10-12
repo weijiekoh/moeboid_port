@@ -33,8 +33,6 @@ export default async function ({ page, baseURL, outDir, args, assert, log }) {
   const ri = (lo, hi) => lo + Math.floor(rnd() * (hi - lo + 1));
   await instrument(page, 12345, false);
   await page.goto(`${baseURL}/index.html`);
-  await page.waitForFunction(() => !document.getElementById("start").disabled, null, { timeout: 20000 });
-  await page.click("#start");
   await page.waitForFunction(() => window.__drv && window.__drv.ex !== null, null, { timeout: 20000 });
   await page.waitForTimeout(3000);
   const box = await (await page.$("#screen")).boundingBox();

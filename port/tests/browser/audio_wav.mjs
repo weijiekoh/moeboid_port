@@ -127,11 +127,9 @@ export default async function ({ page, baseURL, outDir, assert, log }) {
   assert.equal(s.bits24, null, "24-bit");
   log("parseWav RIFF rules: 10 synthetic cases pass");
 
-  // Real page: click to start (user gesture) creates the AudioContext and decodes the pack sounds.
+  // Real page: the host creates the AudioContext at start (no click) and decodes the pack sounds.
   const info = page.waitForEvent("console", { predicate: (m) => m.text().startsWith("moeboid: audio:"), timeout: 20000 });
   await page.goto(`${baseURL}/index.html`);
-  await page.waitForSelector("#start:not([disabled])", { timeout: 20000 });
-  await page.click("#start");
   const msg = (await info).text();
   log(`page: ${msg}`);
   assert.match(msg, /^moeboid: audio: 15 sounds, \d+ Hz$/);

@@ -48,7 +48,7 @@ ALLOWED_LOGS = (
 EXPECTED_RATES = {0: ((3000, 3000), (1200, 1200)), 1: ((1920, 1920), (960, 960)), 2: ((1092, 1093), (1092, 1093))}
 CLOCK_NAME = {0: "1 ms (50 Hz)", 1: "15.625 ms (32 Hz)", 2: "54.925 ms (18.2 Hz)"}
 # Every kept file of the shipped page (port/build/web).
-PAGE_FILES = {"index.html", "style.css", "main.js", "input.js", "storage.js", "audio.js", "settings.js",
+PAGE_FILES = {"index.html", "style.css", "main.js", "input.js", "storage.js", "audio.js",
               "moeboid.wasm", "pack.bin", "Moeboid.gam"}
 CC_TEST = ["clang", "-std=c11", "-O2", "-ffp-contract=off", "-fno-math-errno", "-Wall", "-Wextra",
            "-I" + os.path.join(PORT, "src"), "-I" + os.path.join(PORT, "tests", "native")]
@@ -244,7 +244,7 @@ def browser_tests(rep, rt_soak_s):
     for n in ("audio_wav", "audio_sched", "audio_focus", "input_keys", "engine_play"):
         web_test(rep, n, n + ".mjs", timeout=120)
     web_test(rep, "shell_flow", "shell_flow.mjs", timeout=180)
-    web_test(rep, "settings", "settings.mjs", timeout=120)
+    web_test(rep, "autostart", "autostart.mjs", timeout=120)
     web_test(rep, "run_sh", "run_sh.mjs", timeout=180)
     web_test(rep, "timing", "timing.mjs", args=[ACC], timeout=300)
     web_test(rep, "soak", "soak.mjs", args=[ACC, "30"], timeout=900)

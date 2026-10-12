@@ -1,4 +1,4 @@
-/* Native test of the shell frame part (M5b): start-up (click-to-start, splash, frame), rail, pages, pause,
+/* Native test of the shell frame part (M5b): start-up (page start, splash, frame), rail, pages, pause,
  * quit dialog, ToS dialog, sounds, cursors. Runs the real engine with Moeboid.gam on the virtual clock.
  * Data: port/build/web/pack.bin, extracted/Moeboid.gam.
  *
@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
     engine_test_smoothing(P, smooth); /* game text drawn from now on (the title screen is drawn already) */
     CHECK_EQ(shell_test_phase(P), SH_WAIT_START);
 
-    /* click-to-start (kind 8) at host time 0, then the splash for 2000 ms of virtual time (decision 13) */
+    /* page start (kind 8) at host time 0, then the splash for 2000 ms of virtual time (decision 13) */
     T = 0;
     core_input(P, PORT_IN_START, 0, 0, 0);
     adv(1000);

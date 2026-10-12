@@ -1,7 +1,7 @@
 // M7 soak in the real page: the first MINUTES (default 10) of the random soak recording of
 // port/tests/accept/scenarios.py (fixed seed) at a fake 60 Hz frame clock (pagedrv.mjs). Records per
 // minute the probes, the frame hash and the wasm memory size. Asserts: no guest fault, every engine log
-// line is an original-engine diagnostic (ALLOWED), no host input besides click-to-start, canvas equals
+// line is an original-engine diagnostic (ALLOWED), no host input besides the page start, canvas equals
 // the frame buffer. port/tests/accept/verify.py compares the checkpoints with the native run.
 // Run: tools/bin/web-test --timeout 600 port/tests/browser/soak.mjs [SCENARIO_DIR [MINUTES]]
 //   SCENARIO_DIR (default port/build/accept) holds soak.scn. Output: <outDir>/soak.json.
@@ -52,6 +52,6 @@ export default async function ({ context, baseURL, outDir, args, assert, log }) 
   assert.equal(checks.length, minutes, "one checkpoint per minute");
   assert.ok(checks.every((c) => c.fault === 0), "no guest fault");
   assert.deepEqual(bad, [], "no engine error");
-  assert.equal(hostInputs.length, 0, "no host input besides click-to-start");
+  assert.equal(hostInputs.length, 0, "no host input besides the page start");
   assert.equal(canvasDiff, 0, "canvas equals the frame buffer");
 }

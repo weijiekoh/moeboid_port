@@ -139,6 +139,8 @@ target_host() {
     for f in "$PORT"/host/*.html "$PORT"/host/*.css; do
         [ -f "$f" ] && cp "$f" "$OUT/web/"
     done
+    # One .js per host/*.ts: remove scripts of deleted sources first.
+    rm -f "$OUT/web"/*.js
     # module.stripTypeScriptTypes is experimental in node 25.2.1: the warning is suppressed.
     node --disable-warning=ExperimentalWarning --input-type=module -e '
         import { stripTypeScriptTypes } from "node:module";

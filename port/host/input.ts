@@ -157,7 +157,7 @@ export function attachInput(
   onActive?: (active: boolean) => void,
 ): void {
   const t = (e: Event): number => Math.floor(e.timeStamp) >>> 0;
-  // The C side starts active (the click-to-start gesture gives the page focus).
+  // The C side starts active; the end of this function reports a page without focus.
   let active = true;
   let buttons = 0; // PointerEvent.buttons bits sent so far: 1 left, 2 right
   let lastX = NaN; // last position sent (frame pixels)
@@ -266,16 +266,17 @@ export function attachInput(
 
   // Focus: WM_ACTIVATE model (timing.md 2.5, 9 rule 6). One event per state change. The C side
   // releases every key and button on focus loss; the host forgets its button state too.
-  const setActive = (on: boolean, e: Event): void => {
+  const setActive = (on: boolean, time: number): void => {
     if (on === active) return;
     active = on;
     if (!on) buttons = 0;
-    sink(on ? IN_FOCUS_GAINED : IN_FOCUS_LOST, 0, 0, t(e));
+    sink(on ? IN_FOCUS_GAINED : IN_FOCUS_LOST, 0, 0, time);
     onActive?.(on);
   };
-  window.addEventListener("blur", (e: Event) => setActive(false, e));
-  window.addEventListener("focus", (e: Event) => setActive(true, e));
-  document.addEventListener("visibilitychange", (e: Event) => {
-    setActive(document.visibilityState === "visible" && document.hasFocus(), e);
-  });
+  const focused = (): boolean => document.visibilityState === "visible" && document.hasFocus();
+  window.addEventListener("blur", (e: Event) => setActive(false, t(e)));
+  window.addEventListener("focus", (e: Event) => setActive(true, t(e)));
+  document.addEventListener("visibilitychange", (e: Event) => setActive(focused(), t(e)));
+  // The page starts without a user gesture: it can load in a background tab or window.
+  if (!focused()) setActive(false, Math.floor(performance.now()) >>> 0);
 }

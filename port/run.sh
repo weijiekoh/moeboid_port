@@ -19,7 +19,7 @@ for f in extracted/Moeboid.gam extracted/ZapSpot.exe fonts; do
 done
 
 missing=""
-for f in index.html style.css main.js input.js storage.js audio.js settings.js moeboid.wasm pack.bin Moeboid.gam; do
+for f in index.html style.css main.js input.js storage.js audio.js moeboid.wasm pack.bin Moeboid.gam; do
     [ -f "$WEB/$f" ] || missing="$missing $f"
 done
 if [ -n "$missing" ]; then

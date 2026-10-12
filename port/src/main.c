@@ -19,7 +19,7 @@ EXPORT(port_free) void port_free(void *p) { rt_free(p); }
 static uint32_t g_seed = MSVC_RAND_DEFAULT_STATE;
 EXPORT(port_set_seed) void port_set_seed(uint32_t seed) { g_seed = seed; }
 
-/* Extension: font smoothing (decision 4b; the host settings of the click-to-start page). 1 = Standard
+/* Extension: font smoothing (decision 4b; the host sets Standard, port/host/main.ts). 1 = Standard
  * (default: grey text where the font's gasp table allows it), 0 = off (monochrome text). Call before
  * port_init; the engine, frame and dialog text read it once at start. */
 static uint32_t g_smoothing = 1u;

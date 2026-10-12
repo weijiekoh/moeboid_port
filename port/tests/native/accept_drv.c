@@ -7,7 +7,7 @@
  * Usage: accept_drv SCENARIO [--trace FILE [--trace-grep TEXT]] [--quiet-sound] [--dump DIR]
  * Data: port/build/web/pack.bin, extracted/Moeboid.gam (MOEBOID_ROOT or the source path).
  *
- * Scenario (text, one command per line, times in ms after click-to-start, nondecreasing):
+ * Scenario (text, one command per line, times in ms after the page start (input kind 8), nondecreasing):
  *   seed N | clock N | smoothing N | quirks N | frame N     settings (before the first event);
  *                                                          frame = host frame period (default 16)
  *   in T KIND A B                                          port_input(KIND, A, B, T)

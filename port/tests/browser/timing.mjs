@@ -56,7 +56,7 @@ export default async function ({ context, baseURL, outDir, args, assert, log }) 
         `clock ${clock} rate ${rate} Hz: ${run.ticks} ticks, ${run.renders} renders in ${run.window_ms} ms ` +
           `(screen ${c1.screen}, fault ${c1.fault}); ${sounds.length} sound commands; wall ${wall.toFixed(1)} s`,
       );
-      assert.equal(hostInputs.length, 0, "no host input besides click-to-start (the test sends every input)");
+      assert.equal(hostInputs.length, 0, "no host input besides the page start (the test sends every input)");
       assert.equal(canvasDiff, 0, "canvas equals the frame buffer");
       assert.equal(c1.fault, 0, "no guest fault");
       assert.equal(c0.screen, 2, "play screen at 10 s");

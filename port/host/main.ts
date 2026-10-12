@@ -1,13 +1,11 @@
-// Moeboid page host (M1). Loads moeboid.wasm, pack.bin and Moeboid.gam from this origin, shows
-// the click-to-start screen, then drives port_advance from requestAnimationFrame.
+// Moeboid page host (M1). Loads moeboid.wasm, pack.bin and Moeboid.gam from this origin, starts
+// the port at once (no start screen), then drives port_advance from requestAnimationFrame.
 // Host API: docs/port-design.md section 6; src/main.c.
 
 import { attachInput, IN_START } from "./input.js";
 import { loadStorage, saveStorage } from "./storage.js";
 import { createAudio } from "./audio.js";
 import type { PortAudio } from "./audio.js";
-import { attachSettingsForm, loadSettings, quirksWord } from "./settings.js";
-import type { PortSettings } from "./settings.js";
 
 interface PortExports {
   memory: WebAssembly.Memory;
@@ -75,16 +73,15 @@ async function compileModule(): Promise<WebAssembly.Module> {
   }
 }
 
-// Settings in effect for this page load (settings.ts; decisions 2, 4b, 10). The URL parameter
-// ?clock=0|1|2 overrides the stored clock model for this load only (tests, links).
-function activeSettings(): PortSettings {
-  const s = loadSettings();
-  const q = new URLSearchParams(window.location.search).get("clock");
-  if (q !== null) {
-    const v = Number(q);
-    s.clock = v === 1 || v === 2 ? v : 0;
-  }
-  return s;
+// Fixed settings (decisions 2, 4b, 10; not user-configurable): Standard font smoothing, every
+// engine-side quirk on, clock model 0 (1 ms clock step, 50 Hz game ticks). The URL parameter
+// ?clock=0|1|2 selects the clock model for one page load (browser tests).
+const SMOOTHING = 1;
+const QUIRKS = 0xffffffff;
+
+function clockModel(): number {
+  const v = Number(new URLSearchParams(window.location.search).get("clock"));
+  return v === 1 || v === 2 ? v : 0;
 }
 
 // Largest integer number of device pixels per frame pixel that fits the window (minimum 1).
@@ -95,15 +92,9 @@ function fitCanvas(canvas: HTMLCanvasElement, w: number, h: number): void {
   canvas.style.height = `${(h * f) / dpr}px`;
 }
 
-async function start(
-  module: WebAssembly.Module,
-  pack: Uint8Array,
-  gam: Uint8Array,
-  clickTime: number,
-  settings: PortSettings,
-): Promise<void> {
+async function start(module: WebAssembly.Module, pack: Uint8Array, gam: Uint8Array): Promise<void> {
   const canvas = $<HTMLCanvasElement>("screen");
-  // M6 audio: AudioContext inside the click gesture; sounds decoded from pack.bin.
+  // M6 audio: sounds decoded from pack.bin; output starts at the first user gesture (audio.ts).
   const audio: PortAudio = createAudio();
   const nSounds = audio.load(pack);
   if (audio.ctx) console.info(`moeboid: audio: ${nSounds} sounds, ${audio.ctx.sampleRate} Hz`);
@@ -138,17 +129,17 @@ async function start(
   }
   const packPtr = copyIn(pack);
   const gamPtr = copyIn(gam);
-  const quirks = quirksWord(settings);
-  ex.port_set_smoothing?.(settings.smoothing);
-  console.info(
-    `moeboid: settings: clock ${settings.clock}, smoothing ${settings.smoothing}, quirks 0x${quirks.toString(16)}`,
-  );
-  const rc = ex.port_init(packPtr, pack.length, gamPtr, gam.length, settings.clock, quirks);
+  const clock = clockModel();
+  ex.port_set_smoothing?.(SMOOTHING);
+  console.info(`moeboid: settings: clock ${clock}, smoothing ${SMOOTHING}, quirks 0x${QUIRKS.toString(16)}`);
+  const rc = ex.port_init(packPtr, pack.length, gamPtr, gam.length, clock, QUIRKS);
   if (rc !== 0) {
     setStatus(`Start failed (code ${rc}).`);
     return;
   }
 
+  // Start time of the splash (decision 13) and of the engine start sequence.
+  ex.port_input(IN_START, 0, 0, Math.floor(performance.now()) >>> 0);
   // M6 input: focus loss sends kind 6 and mutes audio, focus gain kind 7 and unmutes.
   attachInput(
     canvas,
@@ -159,15 +150,12 @@ async function start(
     },
     (active) => audio.setActive(active),
   );
-  ex.port_input(IN_START, 0, 0, Math.floor(clickTime) >>> 0);
 
   const ctx = canvas.getContext("2d", { alpha: false });
   if (!ctx) throw new Error("no 2D canvas context");
   const soundMax = ex.port_sound_cmds_max();
   const soundBuf = ex.port_alloc(soundMax * 16);
   let cursor = -1;
-  $("panel").hidden = true;
-  setStatus("");
   canvas.focus();
   fitCanvas(canvas, W, H);
   window.addEventListener("resize", () => fitCanvas(canvas, W, H));
@@ -199,33 +187,17 @@ async function start(
 }
 
 async function boot(): Promise<void> {
-  const button = $<HTMLButtonElement>("start");
   const canvas = $<HTMLCanvasElement>("screen");
   fitCanvas(canvas, canvas.width, canvas.height);
-  const settings = activeSettings();
-  attachSettingsForm(settings);
   try {
     const [module, pack, gam] = await Promise.all([
       compileModule(),
       fetchBytes("pack.bin", true),
       fetchBytes("Moeboid.gam", false),
     ]);
-    button.textContent = "Click to start";
-    button.disabled = false;
-    button.addEventListener(
-      "click",
-      (e: MouseEvent) => {
-        button.disabled = true;
-        start(module, pack, gam, e.timeStamp, settings).catch((err: unknown) => {
-          setStatus(String(err));
-          console.error(err);
-        });
-      },
-      { once: true },
-    );
+    await start(module, pack, gam);
   } catch (err) {
-    button.textContent = "Cannot start";
-    setStatus(String(err));
+    setStatus(`Cannot start: ${String(err)}`);
     console.error(err);
   }
 }

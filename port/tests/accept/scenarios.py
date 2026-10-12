@@ -1,6 +1,6 @@
 """Scenario files for the acceptance drivers (M7): port/tests/native/accept_drv.c (native),
 port/tests/accept/wasm_drv.mjs (moeboid.wasm in node), port/tests/browser/timing.mjs and soak.mjs (page).
-Format: see accept_drv.c. Times are ms after click-to-start (input kind 8 at 0).
+Format: see accept_drv.c. Times are ms after the page start (input kind 8 at 0).
 
 Scenarios:
   timing(clock)        title, typed INVINCIBLE, Start click, then 60 s of play without input; checkpoints

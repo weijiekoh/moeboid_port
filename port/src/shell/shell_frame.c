@@ -406,7 +406,7 @@ static void hook_input(Port *p, const PortInput *ev) {
     if (!f) return;
     uint32_t k = PORT_IN_KIND(ev->kind);
     if (k == PORT_IN_START) {
-        start_splash(f); /* click-to-start done (port-design.md 6, kind 8) */
+        start_splash(f); /* page start done (port-design.md 6, kind 8) */
         return;
     }
     if (k == PORT_IN_MOUSEMOVE || k == PORT_IN_BUTTONDOWN || k == PORT_IN_BUTTONUP) {

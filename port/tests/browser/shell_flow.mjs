@@ -1,4 +1,4 @@
-// Shell flow in the real page (M5b): click-to-start, splash, title frame, How To Play, a page change
+// Shell flow in the real page (M5b): start without a click, splash, title frame, How To Play, a page change
 // (About), a game with New Game and the "Warning: Game in Progress" dialog, the original cursors.
 // Run (after port/build.sh wasm host pack):
 //   tools/bin/web-test --timeout 120 port/tests/browser/shell_flow.mjs
@@ -11,11 +11,10 @@ const RESULTS = join(dirname(fileURLToPath(import.meta.url)), "../results/shell"
 
 export default async function ({ page, baseURL, assert, log }) {
   mkdirSync(RESULTS, { recursive: true });
+  // The page starts the port without a click; the host logs its settings just before port_init.
+  const started = page.waitForEvent("console", { predicate: (m) => m.text().startsWith("moeboid: settings:"), timeout: 30000 });
   await page.goto(`${baseURL}/index.html`);
-  await page.waitForFunction(() => {
-    const b = document.getElementById("start");
-    return b && !b.disabled;
-  });
+  await started;
   const rect = await page.evaluate(() => {
     const r = document.getElementById("screen").getBoundingClientRect();
     return { x: r.x, y: r.y, w: r.width, h: r.height };
@@ -42,8 +41,7 @@ export default async function ({ page, baseURL, assert, log }) {
     await page.waitForTimeout(300);
   };
 
-  // click-to-start, then the splash (decision 13): black canvas, IMG-SPLASH at the centre
-  await page.click("#start");
+  // the splash (decision 13): black canvas, IMG-SPLASH at the centre
   await page.waitForTimeout(800);
   const sp = [await px(10, 10), await px(220, 200), await px(500, 260)];
   log("splash pixels", sp.map(hex).join(" "));

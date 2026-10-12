@@ -56,14 +56,14 @@ port/run.sh                # builds what is missing (port/build.sh all), serves 
 port/run.sh 8080           # another port; port/run.sh 0 lets the kernel choose one
 ```
 
-Open the printed URL (`http://127.0.0.1:8000/`), then click "Click to start". The server binds to 127.0.0.1 only and stops with Ctrl+C. After a change of the sources, run `port/build.sh all` (run.sh rebuilds only when a page file is missing).
+Open the printed URL (`http://127.0.0.1:8000/`). The page starts the game at once (splash, then the frame); sound starts at the first click or key press in the page, because browsers block audio before a user gesture. The server binds to 127.0.0.1 only and stops with Ctrl+C. After a change of the sources, run `port/build.sh all` (run.sh rebuilds only when a page file is missing).
 
 The page loads only `moeboid.wasm`, `pack.bin` and `Moeboid.gam` from its own directory. The Content-Security-Policy (meta tag in `host/index.html`, also sent as a header by `host/serve.py`) blocks every other origin.
 
-**Settings** (click-to-start page, "Settings"; kept in `localStorage` key `moeboid.settings.v1`, read at page load, applied at `port_init`; a change takes effect after a page reload, the page states this rule):
-- Clock model (decision 2): Windows 2000-like 1 ms step, 50 Hz game ticks (default); Windows XP-like 15.625 ms, 32 Hz; Windows 98-like 54.925 ms, 18.2 Hz. The URL parameter `?clock=0|1|2` overrides the stored model for one load.
-- Font smoothing (decision 4b): Standard (default; grey text where the font's `gasp` table allows it) or Off. Export `port_set_smoothing` before `port_init`; `Port.smoothing` reaches engine, frame and dialog text.
-- Engine quirks (decision 10, provisional: on): one switch per `port_settings.quirks` bit (now `ENG_QUIRK_DETACH_DIRTY`). Game quirks are in the original game code and always stay.
+**Settings** are fixed (user decision after M7: no start screen, no settings form). `host/main.ts` passes them to `port_init`:
+- Clock model (decision 2): 1 ms clock step, 50 Hz game ticks. The C side keeps the other two models (15.625 ms, 32 Hz; 54.925 ms, 18.2 Hz); the URL parameter `?clock=0|1|2` selects one for a page load (browser tests).
+- Font smoothing (decision 4b): Standard (grey text where the font's `gasp` table allows it), through `port_set_smoothing` before `port_init`. The C side keeps Off for the native tests.
+- Engine quirks (decision 10, provisional: on): every `port_settings.quirks` bit on (now `ENG_QUIRK_DETACH_DIRTY`). Game quirks are in the original game code and always stay.
 
 ## Verify
 
@@ -89,7 +89,7 @@ Builds everything, runs every native, node, Python and browser test (browser tes
 | `src/gfx/draw.*`, `dirty.*`, `cursor.h` | render-target draw rules, dirty rectangles, cursor ids (M4) |
 | `src/snd/` | 16-voice table (M4) |
 | `src/main.c` | wasm exports (`port_*`); `port_probe` diagnostics; `port_test_*` in the trace build |
-| `host/` | `index.html`, `style.css`, `main.ts`, `input.ts`, `storage.ts`, `audio.ts`, `settings.ts` (click-to-start settings, M7), `serve.py` |
+| `host/` | `index.html`, `style.css`, `main.ts`, `input.ts`, `storage.ts`, `audio.ts`, `serve.py` |
 | `run.sh` | local run: build what is missing, serve `build/web` on 127.0.0.1 (M7) |
 | `tests/accept/` | M7 verification suite (`verify.py`), scenarios, wasm driver |
 
@@ -110,7 +110,7 @@ Owner M6. Sources: `host/audio.ts`, `host/input.ts`, the `M6` lines in `host/mai
 **Sound contract** (`src/core/sound_ids.h`, mirrored in `audio.ts` `SOUND_TABLE`; `tests/browser/audio_wav.mjs` fails when the two differ). Command record = `PortSoundCmd` {op, sound_id, voice, at_ms}, 4 x u32. op 1 PLAY, op 2 STOP (voice, or 0xffffffff = all). Ids 1..11: game sounds in the Moeboid.gam load order; 12..15: BTNCLICK, POPUP, OPENSHELL, CLOSESHELL. Flag 1 = GLOBALFOCUS (CloseShell: not muted on blur). The C side (M4) owns the name-to-id lookup, the Sound setting check, the 16-voice table with drop-when-full and the voice release time (WAV duration plus the 10 ms voice-thread pass); the header lists these duties. The host plays every PLAY it gets and has no voice limit.
 
 **Audio** (`audio.ts`):
-- One `AudioContext` at the device rate, created and resumed in the click-to-start handler (decision 12). The page logs `moeboid: audio: 15 sounds, <rate> Hz`.
+- One `AudioContext` at the device rate, created at page start (decision 12). The browser keeps it suspended until the first key press or mouse press in the page, which resumes it; sound commands before that are dropped, so no queued sounds play at once on resume. The page logs `moeboid: audio: 15 sounds, <rate> Hz`.
 - `load(pack)`: every table entry from `pack.bin`, RIFF parsed as the engine (`Z:0x40c540`: first `fmt `, first `data`, other chunks skipped, walk ends at riff_size + 8), PCM to float32 exactly (8-bit `(b - 128) / 128`, 16-bit `s / 32768`), `AudioBuffer` at the WAV rate (8000 or 11025 Hz). The browser resamples to the device rate (Chromium 153: linear interpolation, seen in a probe; not the DirectSound resampler).
 - `commands(words, n, port_now())` after each `port_advance` with bit 1: start = `currentTime + LATENCY_S + (at_ms - now_ms) / 1000`, never before `currentTime`. `LATENCY_S` = 50 ms, so a batch of one host frame up to 30 Hz keeps its clock spacing exactly; older commands (stalls) start at once. One `AudioBufferSourceNode` per PLAY into the master `GainNode` (gain 1.0, no pan; mono up-mix gives L = R).
 - `setActive(false)` (blur, hidden tab): master gain 0 from the event time + `LATENCY_S` (the time line of the sounds); sources keep running. `setActive(true)`: gain 1.

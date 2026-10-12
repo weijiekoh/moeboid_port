@@ -6,7 +6,7 @@ Date: 2026-10-11. Source: user answers to `docs/architecture.md` section 6 and l
 
 - Exact gameplay, timing and visuals. Fixed-timestep loop, independent of the display refresh rate.
 - Exact Microsoft fonts. Exact colours.
-- Simple click-to-start screen in the web page.
+- ~~Simple click-to-start screen in the web page.~~ Replaced (2026-10-11, after M7): no start screen; the page starts the game at load. Sound starts at the first key press or mouse press in the page (browser autoplay rule); sounds before that are dropped.
 - Local high scores only. No accounts, no bfast.com, no game downloads.
 - No ads and no network communication.
 - Keep the ZapSpot frame and platform menu, minus ads, network features and downloads.
@@ -17,7 +17,7 @@ Date: 2026-10-11. Source: user answers to `docs/architecture.md` section 6 and l
 | # | Item | Decision | Status |
 |---|---|---|---|
 | 1 | Technology | Option (d): original Moeboid.gam in an x86 interpreter, engine and shell in C, one wasm module (clang, no Emscripten), thin TypeScript host. Fallback to (a) at the M2 gate is automatic and must be reported. | user |
-| 2 | Clock model | A setting with three values (1 ms, 15.625 ms, 54.9 ms step). Default: 1 ms step, 50 Hz game ticks. | user |
+| 2 | Clock model | 1 ms step, 50 Hz game ticks. Not configurable (2026-10-11, after M7: settings form removed, "keep the default settings"); the C side keeps the 15.625 ms and 54.925 ms models for tests (`?clock=1|2`). | user |
 | 3 | Colour look | 24/32-bit desktop look, exact GIF RGB. | default |
 | 4a | Windows look for native dialogs and MessageBox | Windows XP Luna (blue). Note: ZapSpot.exe has no RT_MANIFEST resource, so on XP its dialog and MessageBox controls are classic (unthemed); only the non-client frame (title bar, caption buttons, border) uses Luna. Verify this in phase 2. | user |
 | 4b | Font smoothing | Standard (XP default): greyscale antialiasing where the `gasp` table allows it. Exactness of greyscale pixels cannot be proven without Windows; mark as unproven. | user |
@@ -29,10 +29,10 @@ Date: 2026-10-11. Source: user answers to `docs/architecture.md` section 6 and l
 | 8b | Help and About texts | Verbatim, links inert (same look, no click target). Security page link target removed. | default |
 | 8c | Personalize page | Keep the sound toggle; remove the proxy section. | default |
 | 9 | Ad area | Fill with the frame's blue background colour (#3333cc, verify against rendering.md). | user |
-| 10 | Quirks ("play again" snap, virtual-key quirks) | DEFERRED: user asked to be reminded later. Provisional: keep them (the interpreter keeps game quirks automatically); make engine-side quirks switchable. | reminder |
+| 10 | Quirks ("play again" snap, virtual-key quirks) | DEFERRED: user asked to be reminded later. Provisional: keep them (the interpreter keeps game quirks automatically); engine-side quirks on (the C side keeps the switch bits; the page has no switch since the settings form was removed). | reminder |
 | 11 | FSIN/FCOS reference values from a modern Intel CPU | DEFERRED: user asked to be reminded later. Provisional: use them. | reminder |
 | 12 | Audio | 16-voice limit, mute on blur, AudioContext at the device rate. | default |
-| 13 | Splash screen | Keep, shown for about 2 s after click-to-start (original duration = engine start-up time, unknown). | user |
+| 13 | Splash screen | Keep, shown for about 2 s after the page start (original duration = engine start-up time, unknown). | user |
 
 ## Process decisions
 

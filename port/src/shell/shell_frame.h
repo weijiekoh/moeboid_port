@@ -42,7 +42,7 @@ enum {
 
 #define SH_SPLASH_W 400
 #define SH_SPLASH_H 240
-#define SH_SPLASH_MS 2000u         /* decision 13: about 2 s of virtual time after click-to-start */
+#define SH_SPLASH_MS 2000u         /* decision 13: about 2 s of virtual time after the page start */
 #define SH_GAME_FILE "Moeboid.gam" /* platform +0x5c: the game file of the command line (shell.md 7) */
 #define SH_STR_MAX 5000            /* LoadStringA buffer of the shell (0x1388) */
 /* port_cursor() ids after the six cursors of the cursor manager (gfx/cursor.h): system cursors of the
