@@ -120,3 +120,9 @@
 ## Event (not a prompt): phase 2 report received
 
 **Summary:** The orchestrator finished phase 2 (M1 to M7, last commit e7a8413). The original `Moeboid.gam` runs unchanged on a C x86 interpreter in wasm, and `port/build.sh verify` passes 74 of 74 checks (re-checked in `port/tests/results/verify.txt`). Start it with `port/run.sh` and open http://127.0.0.1:8000/. Glyph pixels, greyscale smoothing, XP dialog geometry and the retail XP font versions remain unproven, and the details are in `docs/exactness.md`. Deferred decisions #10 (quirks, including a newly found use-after-free crash on CREDITS after a game) and #11 (FSIN/FCOS values) now wait for the user.
+
+## 15
+
+> is it ready to run yet?
+
+**Summary:** Yes. A smoke test started `port/run.sh` on a spare port: the server served the page, the wasm module, the resource pack and `Moeboid.gam` (HTTP 200) with the Content-Security-Policy header, and then stopped cleanly. Run it with `source tools/env.sh; port/run.sh` and open http://127.0.0.1:8000/ in Chromium or Firefox. Decisions #10, #11, the CREDITS crash and the crash-record deletion still wait for the user; none of them blocks a run.
