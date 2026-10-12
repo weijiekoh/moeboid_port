@@ -18,13 +18,14 @@ workstream B's analysis/interface.tsv exists.
 
 Usage: python -I callsites.py [OUT.tsv]
 """
+import os
 import sys
 
 import capstone
 from capstone import x86 as X
 import pefile
 
-ROOT = "/home/user/moeboid_port"
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 GAM = f"{ROOT}/extracted/Moeboid.gam"
 FTSV = f"{ROOT}/analysis/decomp/Moeboid.gam/functions.tsv"
 GAME_LO, GAME_HI = 0x10001000, 0x10005110

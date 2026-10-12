@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Extract and decode every PE resource of the Moeboid / ZapSpot binaries.
 
-Run:  source /home/user/moeboid_port/tools/env.sh
-      python -I /home/user/moeboid_port/assets/tools/extract_resources.py
+Run from the project root:
+      source tools/env.sh
+      python -I assets/tools/extract_resources.py
 
-Inputs (read only):
-  /home/user/moeboid_port/extracted/Moeboid.gam
-  /home/user/moeboid_port/extracted/ZapSpot.exe
-  /home/user/moeboid_port/moeboid.exe
-  /home/user/moeboid_port/fonts/sserife.fon   (dialog base units)
-Outputs: /home/user/moeboid_port/assets/ (this script writes nowhere else).
+Inputs (read only, paths relative to the project root):
+  extracted/Moeboid.gam
+  extracted/ZapSpot.exe
+  moeboid.exe
+  fonts/sserife.fon   (dialog base units)
+Outputs: assets/ (this script writes nowhere else).
 
 The script removes and rebuilds assets/<binary>/ and the top-level index files.
 It does not touch assets/tools/.
@@ -28,7 +29,7 @@ from pathlib import Path
 import pefile
 from PIL import Image
 
-ROOT = Path('/home/user/moeboid_port')
+ROOT = Path(__file__).resolve().parents[2]  # assets/tools/ -> project root
 OUT = ROOT / 'assets'
 BINARIES = [
     ('Moeboid.gam', ROOT / 'extracted' / 'Moeboid.gam'),
@@ -800,7 +801,7 @@ def dialog_base_units(font):
     bu = dict(x=(ext // 26 + 1) // 2, y=f['pix_height'],
               method='GdiGetCharDimensions: x=(extent("a..zA..Z")/26+1)/2, y=tmHeight; '
                      'px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding',
-              font_file=str(DIALOG_FONT_FILE), font_file_sha256=sha256(DIALOG_FONT_FILE.read_bytes()),
+              font_file=DIALOG_FONT_FILE.relative_to(ROOT).as_posix(), font_file_sha256=sha256(DIALOG_FONT_FILE.read_bytes()),
               strike=dict(points=f['points'], pix_height=f['pix_height'], internal_leading=f['internal_leading'],
                           ascent=f['ascent'], avg_width=f['avg_width'], charset=f['charset'], version=f['version']),
               alphabet_extent_px=ext, requested_height_px=-req_em, logpixelsy=LOGPIXELSY)
@@ -1375,7 +1376,7 @@ def process_binary(binname, path, palette_reg, gif_all):
         ANOMALIES.append((binname, '.rsrc bytes not referenced by the resource tree and not zero: offset 0x%X, '
                                    '%d bytes, starts %s' % (gp['offset'], gp['length'], gp['sample'][:32])))
     extra = nonresource(binname, data, secs, dirs, bdir)
-    meta = OrderedDict(binary=binname, path=str(path), size=len(data), sha256=sha256(data),
+    meta = OrderedDict(binary=binname, path=path.relative_to(ROOT).as_posix(), size=len(data), sha256=sha256(data),
                        resource_count=len(entries), pefile_count=len(pf), pefile_match=pefile_match,
                        rsrc_section=dict(name=rsec['name'], file_offset='0x%X' % rsec['roff'], raw_size=rsec['rsize'],
                                          virtual_size=rsec['vsize']),
@@ -1591,10 +1592,11 @@ def write_index_md(all_records, metas, pal, dups):
     A = L.append
     A('# Moeboid resource assets')
     A('')
-    A('The script `tools/extract_resources.py` writes this file. Do not edit it by hand. To rebuild all outputs, run:')
+    A('The script `tools/extract_resources.py` writes this file. Do not edit it by hand. To rebuild all outputs, '
+      'run from the project root:')
     A('')
-    A('    source /home/user/moeboid_port/tools/env.sh')
-    A('    python -I /home/user/moeboid_port/assets/tools/extract_resources.py')
+    A('    source tools/env.sh')
+    A('    python -I assets/tools/extract_resources.py')
     A('')
     A('Paths are relative to `assets/`. `index.json` holds the same data in machine-readable form. '
       '`palettes.json` holds every colour table.')

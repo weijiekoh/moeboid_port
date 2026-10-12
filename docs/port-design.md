@@ -133,7 +133,7 @@ Metric rules (TrueType; values for Arial equal the fonts.md 10.4 table, verified
 
 ## 10. Process rules for subagents
 
-- `source /home/user/moeboid_port/tools/env.sh` in every shell. Absolute paths.
+- `source tools/env.sh` in the project root in every shell. Absolute paths.
 - Never modify `moeboid.exe`, `extracted/`, user-supplied `fonts/` files, `prompts.md`. Never commit.
 - Original binaries run only through `tools/bin/nonet` and only on the hidden Xvfb display set by `tools/bin/xvfb-run-wine` (never `:0`, never capture `:0`).
 - Browser tests run headless inside `tools/bin/nonet`.

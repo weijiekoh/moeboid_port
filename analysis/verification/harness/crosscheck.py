@@ -11,7 +11,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import mock  # noqa: E402
 
-ITSV = "/home/user/moeboid_port/analysis/interface.tsv"
+ITSV = os.path.join(HERE, "..", "..", "interface.tsv")
 
 
 def main():

@@ -5,12 +5,13 @@ Read-only: the engine binary is only decoded, never executed.
 Usage: python -I engine_vtables.py [--json OUT] [VTABLE_ADDR ...]
 """
 import json
+import os
 import sys
 
 import capstone
 import pefile
 
-ROOT = "/home/user/moeboid_port"
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 EXE = f"{ROOT}/extracted/ZapSpot.exe"
 VTXT = f"{ROOT}/analysis/decomp/ZapSpot.exe/vtables.txt"
 FTSV = f"{ROOT}/analysis/decomp/ZapSpot.exe/functions.tsv"

@@ -320,7 +320,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,
@@ -669,7 +669,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,
@@ -888,7 +888,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,
@@ -1076,7 +1076,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,
@@ -1233,7 +1233,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,
@@ -1484,7 +1484,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,
@@ -1641,7 +1641,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,
@@ -1838,7 +1838,7 @@
    "x": 6,
    "y": 13,
    "method": "GdiGetCharDimensions: x=(extent(\"a..zA..Z\")/26+1)/2, y=tmHeight; px: x,cx *bx/4, y,cy *by/8 with MulDiv rounding",
-   "font_file": "/home/user/moeboid_port/fonts/sserife.fon",
+   "font_file": "fonts/sserife.fon",
    "font_file_sha256": "28877eee4ccda2a33e0fac39da7f3effdea061e4fd9cc019f00d82405b9f9682",
    "strike": {
     "points": 8,

@@ -4,10 +4,10 @@ Source: Ghidra 12.1.4 project `analysis/ghidra_project` (`moeboid`), default aut
 Script: `analysis/decomp/scripts/ExportAll.java`. Re-run (one Ghidra process per project at a time):
 
 ```
-source tools/env.sh
-analyzeHeadless /home/user/moeboid_port/analysis/ghidra_project moeboid -process ZapSpot.exe \
-  -noanalysis -readOnly -scriptPath /home/user/moeboid_port/analysis/decomp/scripts \
-  -postScript ExportAll.java /home/user/moeboid_port/analysis/decomp
+source tools/env.sh   # in the project root; Ghidra needs absolute paths, hence "$PWD"
+analyzeHeadless "$PWD/analysis/ghidra_project" moeboid -process ZapSpot.exe \
+  -noanalysis -readOnly -scriptPath "$PWD/analysis/decomp/scripts" \
+  -postScript ExportAll.java "$PWD/analysis/decomp"
 ```
 
 One directory per program: `Moeboid.gam/` (281 functions), `ZapSpot.exe/` (1257 functions).

@@ -5,7 +5,7 @@ Formats: `docs/port-design.md` sections 7 (pack) and 8 (atlases, image buffer, t
 ## Rebuild
 
 ```
-source /home/user/moeboid_port/tools/env.sh
+source tools/env.sh                          # in the project root
 python -I -B port/tools/mkpack.py            # pack.bin + Moeboid.gam into port/build/web/, prints the manifest
 python -I -B port/tools/mkatlas.py --verify  # atlases only: report, fonts.md 10.3 reproduction
 python -I -B port/tests/py/test_gif.py       # gate (a)

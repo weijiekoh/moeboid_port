@@ -159,3 +159,11 @@
 > "Run it using <command>"
 
 **Summary:** Added "Run it using `port/run.sh`" with the URL after the first sentence of `README.md`, plus the build requirements. A fresh clone builds with `port/build.sh all`; without `pefile` the build only warns and omits the Luna frame entries from `pack.bin`, and with `pefile` the pack is byte-identical to the verified one.
+
+## 21
+
+> i don't want my local linux username to in the repo. what changes need to be made to remove it, without affecting the port?
+>
+> don't worry about scrubbing git history; i will do that later
+
+**Summary:** Removed the local user name from 21 tracked files (history not rewritten). Scripts with a hard-coded project path now derive it from their own location, and the docs use paths relative to the project root. The regenerated asset index files store relative paths. Wine paths in the reference traces use `user`; the shortcut file uses the same-length placeholder `xx` so its internal fields stay valid. A bare mention in an earlier log entry was removed. The rebuilt page files are byte-identical, the changed harness scripts reproduce their committed outputs, and `port/build.sh test` passes all 26 test programs.

@@ -2,7 +2,7 @@
  "binaries": [
   {
    "binary": "Moeboid.gam",
-   "path": "/home/user/moeboid_port/extracted/Moeboid.gam",
+   "path": "extracted/Moeboid.gam",
    "size": 270880,
    "sha256": "c7d13dc930c73c7939eb4562f6e9cb803e6cd33312d901c4a636835d93e7090b",
    "resource_count": 60,
@@ -59,7 +59,7 @@
   },
   {
    "binary": "ZapSpot.exe",
-   "path": "/home/user/moeboid_port/extracted/ZapSpot.exe",
+   "path": "extracted/ZapSpot.exe",
    "size": 492056,
    "sha256": "9181bb0e68510931c47a9078895e732b27cfd062287261c3dd1a5c1eece05ca8",
    "resource_count": 82,
@@ -122,7 +122,7 @@
   },
   {
    "binary": "moeboid.exe",
-   "path": "/home/user/moeboid_port/moeboid.exe",
+   "path": "moeboid.exe",
    "size": 520672,
    "sha256": "82b6e4c16404dae85cd045c26b10a977f47f7acc78cc11bbe65b33e617bfdeee",
    "resource_count": 3,

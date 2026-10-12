@@ -1,9 +1,9 @@
 # Moeboid resource assets
 
-The script `tools/extract_resources.py` writes this file. Do not edit it by hand. To rebuild all outputs, run:
+The script `tools/extract_resources.py` writes this file. Do not edit it by hand. To rebuild all outputs, run from the project root:
 
-    source /home/user/moeboid_port/tools/env.sh
-    python -I /home/user/moeboid_port/assets/tools/extract_resources.py
+    source tools/env.sh
+    python -I assets/tools/extract_resources.py
 
 Paths are relative to `assets/`. `index.json` holds the same data in machine-readable form. `palettes.json` holds every colour table.
 
@@ -136,7 +136,7 @@ Findings (verified from the colour tables and the decoded pixel indices):
 
 ## Moeboid.gam
 
-Source: `/home/user/moeboid_port/extracted/Moeboid.gam`, 270880 bytes. .rsrc section at file offset 0x10000, raw size 196608.
+Source: `extracted/Moeboid.gam`, 270880 bytes. .rsrc section at file offset 0x10000, raw size 196608.
 
 | Type | Name/ID | Lang | Size | SHA-256 | Raw path | Decoded path | Description |
 |---|---|---|---|---|---|---|---|
@@ -203,7 +203,7 @@ Source: `/home/user/moeboid_port/extracted/Moeboid.gam`, 270880 bytes. .rsrc sec
 
 ## ZapSpot.exe
 
-Source: `/home/user/moeboid_port/extracted/ZapSpot.exe`, 492056 bytes. .rsrc section at file offset 0x37000, raw size 245760.
+Source: `extracted/ZapSpot.exe`, 492056 bytes. .rsrc section at file offset 0x37000, raw size 245760.
 
 | Type | Name/ID | Lang | Size | SHA-256 | Raw path | Decoded path | Description |
 |---|---|---|---|---|---|---|---|
@@ -292,7 +292,7 @@ Source: `/home/user/moeboid_port/extracted/ZapSpot.exe`, 492056 bytes. .rsrc sec
 
 ## moeboid.exe
 
-Source: `/home/user/moeboid_port/moeboid.exe`, 520672 bytes. .rsrc section at file offset 0xA000, raw size 4096.
+Source: `moeboid.exe`, 520672 bytes. .rsrc section at file offset 0xA000, raw size 4096.
 
 | Type | Name/ID | Lang | Size | SHA-256 | Raw path | Decoded path | Description |
 |---|---|---|---|---|---|---|---|

@@ -21,7 +21,8 @@ import emu  # noqa: E402
 from unicorn.x86_const import UC_X86_REG_EBP, UC_X86_REG_ESI, UC_X86_REG_FPSW, UC_X86_REG_FP0, \
     UC_X86_REG_FPCW  # noqa: E402
 
-GAM = "/home/user/moeboid_port/extracted/Moeboid.gam"
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
+GAM = os.path.join(ROOT, "extracted", "Moeboid.gam")
 START, END = 0x10001252, 0x1000127c
 
 

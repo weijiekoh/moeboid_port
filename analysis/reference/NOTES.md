@@ -260,3 +260,6 @@ SessionStopped <seconds>), `GetARBInfoA/B`, `GetShellGUID "01.01.01.1034"`
   (winedbg commands) and `decode_tasks.py` (decodes its output).
 - `screens/`: curated screenshots (section 3). `traces/`: extracts (see `traces/README.md`).
 - `prefix_files/`: ZDT files and the shortcut copied from the prefix.
+- Local user name removed: `traces/` and `analysis/shell.md` write the Wine user folder as
+  `C:\users\user`; `prefix_files/after_install/ZapSpot.lnk` uses `xx`, a placeholder of the same
+  length, so the size, offset and string-length fields of the shortcut stay valid.

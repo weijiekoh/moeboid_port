@@ -9,11 +9,10 @@ Contract: `docs/port-design.md`. Decisions: `docs/decisions.md`. Timing rules: `
 - Python 3 (resource pack, Python tests, local server).
 - Optional: `port/node_modules` (`typescript` for the type check in `build.sh host`, `playwright-core` for browser tests).
 
-Start every shell with:
+Start every shell in the project root with:
 
 ```
-source /home/user/moeboid_port/tools/env.sh
-cd /home/user/moeboid_port
+source tools/env.sh
 ```
 
 ## Build
@@ -49,8 +48,7 @@ It prints `test programs: N, failed: F` and exits non-zero on a failure.
 Inputs (phase 1 outputs, read-only): `extracted/Moeboid.gam`, `extracted/ZapSpot.exe`, `fonts/` (Arial 2.82, `sserife.fon`, the user's `tahoma.ttf`, `tahomabd.ttf`, `trebucbd.ttf`, `luna.msstyles`). Browser: Chromium or Firefox (verified: headless Chromium 153 and Firefox 157, `port/tests/browser/run_sh.mjs`).
 
 ```
-source /home/user/moeboid_port/tools/env.sh
-cd /home/user/moeboid_port
+source tools/env.sh        # in the project root
 port/run.sh                # builds what is missing (port/build.sh all), serves port/build/web
                            # prints: serving .../port/build/web at http://127.0.0.1:8000/
 port/run.sh 8080           # another port; port/run.sh 0 lets the kernel choose one

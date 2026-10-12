@@ -21,7 +21,8 @@ sys.path.insert(0, HERE)
 import emu  # noqa: E402
 import mock  # noqa: E402
 
-GAM = "/home/user/moeboid_port/extracted/Moeboid.gam"
+ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
+GAM = os.path.join(ROOT, "extracted", "Moeboid.gam")
 VK = {"left": 6, "right": 7, "up": 8, "down": 9}   # engine key ids (inferred, Moeboid.gam:0x10003200)
 GAMEPLAY_VTABLE = 0x1000d158                        # vtable of the gameplay state (Moeboid.gam:0x10002a80)
 TITLE_VTABLE = 0x1000d15c                           # vtable of the title state (Moeboid.gam:0x100041a0)
@@ -82,7 +83,7 @@ GAME_LO, GAME_HI = 0x10001000, 0x10005110      # game code (CRT starts at __ftol
 
 def game_functions():
     """Entry addresses of the game functions (Ghidra functions.tsv), CRT excluded."""
-    path = "/home/user/moeboid_port/analysis/decomp/Moeboid.gam/functions.tsv"
+    path = os.path.join(ROOT, "analysis", "decomp", "Moeboid.gam", "functions.tsv")
     out = []
     for i, line in enumerate(open(path)):
         if i:
