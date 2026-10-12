@@ -140,3 +140,9 @@
 > explain briefly how the port to WASM was done. was the original game code emulated, or ported? if the latter is true, briefly explain how it was ported.
 
 **Summary:** Both. The game logic (`Moeboid.gam`) is emulated: its original x86 bytes run unchanged on an i386 and x87 interpreter written in C, with KERNEL32 calls and engine method calls caught at fake thunk addresses and served by C code. The ZapSpot engine and shell (`ZapSpot.exe`) are ported: rewritten in C from the Ghidra decompilation and the phase 1 analysis, and checked tick by tick against a reference model and visually against Wine screenshots. Everything compiles with clang into one wasm module; a thin TypeScript host copies the frame buffer to a canvas, plays sound commands with Web Audio and forwards input.
+
+## 18
+
+> work on the TODOs in @README.md
+
+**Summary:** Replaced both TODOs in the user's `README.md`: an `<img>` tag for `start.png` (the first TODO said `start.md`, read as a typo, because `start.png` is the screenshot in the project root) and a Markdown link to `prompts.md`. The image has no width attribute, so it shows at its natural 798x570 size without scaling. Committed `README.md`, `start.png` and this log; the deletion of the tracked `Moeboid_Win_EN.zip` in the working tree was left uncommitted for the user to decide.
