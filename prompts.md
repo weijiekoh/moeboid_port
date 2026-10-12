@@ -134,3 +134,9 @@
 > keep the default settings - it's okay for them to not be configurable at this time
 
 **Summary:** Removed the start page and the settings form (`port/host/settings.ts` deleted). The game now starts at page load with fixed default settings: 1 ms clock step (50 Hz), Standard font smoothing, engine quirks on. Browsers block audio before a user gesture, so sound starts at the first key or mouse press in the page, and sounds before that are dropped; a page that loads without focus now reports focus loss to the engine. Updated the browser tests (new `autostart.mjs` replaces `settings.mjs`), the README and the decisions. `port/build.sh verify` passes 74 of 74 checks, including the 10-minute real-time run.
+
+## 17
+
+> explain briefly how the port to WASM was done. was the original game code emulated, or ported? if the latter is true, briefly explain how it was ported.
+
+**Summary:** Both. The game logic (`Moeboid.gam`) is emulated: its original x86 bytes run unchanged on an i386 and x87 interpreter written in C, with KERNEL32 calls and engine method calls caught at fake thunk addresses and served by C code. The ZapSpot engine and shell (`ZapSpot.exe`) are ported: rewritten in C from the Ghidra decompilation and the phase 1 analysis, and checked tick by tick against a reference model and visually against Wine screenshots. Everything compiles with clang into one wasm module; a thin TypeScript host copies the frame buffer to a canvas, plays sound commands with Web Audio and forwards input.
