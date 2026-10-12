@@ -146,3 +146,16 @@
 > work on the TODOs in @README.md
 
 **Summary:** Replaced both TODOs in the user's `README.md`: an `<img>` tag for `start.png` (the first TODO said `start.md`, read as a typo, because `start.png` is the screenshot in the project root) and a Markdown link to `prompts.md`. The image has no width attribute, so it shows at its natural 798x570 size without scaling. Committed `README.md`, `start.png` and this log; the deletion of the tracked `Moeboid_Win_EN.zip` in the working tree was left uncommitted for the user to decide.
+
+## 19
+
+> check this repo for any sensitive data i might have pushed to the git remote
+
+**Summary:** The remote is the public GitHub repository `weijiekoh/moeboid_port` (master at f534fdb, 32 commits). A scan of all 1317 blobs in the history found no secrets: no keys or tokens, no environment dump, and none of the secret environment values of this session or of the Wine crash records (session token, D-Bus and X authority values, hostname, machine ID). The 790 images contain no capture of the user's screen; the 1024x768 images show only the hidden Wine desktop. Personal data in the history: the commit e-mail `contact@kohweijie.com` and the local Linux user name in paths in 13 files and in Wine paths. The repository also publishes copyrighted files: the original game binaries (`moeboid.exe`, `Moeboid_Win_EN.zip` in history, `extracted/`), the extracted assets, the decompilation, the Microsoft fonts and `luna.msstyles`.
+
+## 20
+
+> add run instructions to the readme, right after the first sentence.
+> "Run it using <command>"
+
+**Summary:** Added "Run it using `port/run.sh`" with the URL after the first sentence of `README.md`, plus the build requirements. A fresh clone builds with `port/build.sh all`; without `pefile` the build only warns and omits the Luna frame entries from `pack.bin`, and with `pefile` the pack is byte-identical to the verified one.
