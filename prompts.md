@@ -167,3 +167,9 @@
 > don't worry about scrubbing git history; i will do that later
 
 **Summary:** Removed the local user name from 19 tracked files (history not rewritten). Scripts with a hard-coded project path now derive it from their own location, and the docs use paths relative to the project root. The regenerated asset index files store relative paths. Wine paths in the reference traces use `user`; the shortcut file uses the same-length placeholder `xx` so its internal fields stay valid. A bare mention in an earlier log entry was removed. The rebuilt page files are byte-identical, the changed harness scripts reproduce their committed outputs, and `port/build.sh test` passes all 26 test programs.
+
+## 22
+
+> rewrite the git history so i can force push
+
+**Summary:** Rewrote all 35 commits with git-filter-repo (installed into `tools/.venv`) after a backup bundle and a dry run on a clone. In every historical file version, `/home/<name>` became `/home/user`, the Wine paths `users\<name>` became `users\user`, the old shortcut file was replaced by its patched version, and one log sentence lost the bare name. Commit messages, authors, dates and the final tree are unchanged; only the 19 affected files differ, and no stored object contains the name. git-filter-repo removed the `origin` remote; it was added again without remote-tracking refs. The force push is left to the user.
